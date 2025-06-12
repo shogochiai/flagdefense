@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Modal Debug Test</title>
+    <script>
+        // This test file helps debug the shop modal issue
+        console.log('Shop Modal Debug Test Started');
+        
+        // Instructions for debugging:
+        // 1. Open the game in your browser
+        // 2. Open the browser's Developer Console (F12 or right-click -> Inspect -> Console)
+        // 3. Click the Shop button
+        // 4. Look for these console messages:
+        //    - "Shop button clicked!"
+        //    - "showShop before: false"
+        //    - "showShop should be set to true"
+        //    - "Shop modal is rendering! showShop: true"
+        //    - "ShopSystemV2 component is rendering"
+        // 
+        // 5. If you see a red overlay, the modal is rendering but might have styling issues
+        // 6. If you don't see the red overlay, the modal is not rendering at all
+        
+        // Common issues and solutions:
+        // - No console logs: The button click handler is not working
+        // - Logs appear but no modal: React state update issue or conditional rendering problem
+        // - Red overlay appears but no content: The inner ShopSystemV2 component has issues
+        // - Modal appears behind other content: Z-index issue (now set to 9999)
+    </script>
+</head>
+<body>
+    <h1>Shop Modal Debug Instructions</h1>
+    <ol>
+        <li>Open your game application</li>
+        <li>Open the browser's Developer Console (F12)</li>
+        <li>Click the Shop button (🛒 ショップ)</li>
+        <li>Check the console for debug messages</li>
+        <li>Look for a red overlay - if it appears, the modal is rendering</li>
+    </ol>
+    
+    <h2>Expected Console Output:</h2>
+    <pre>
+Shop button clicked!
+showShop before: false
+showShop should be set to true
+Shop modal is rendering! showShop: true
+ShopSystemV2 component is rendering
+    </pre>
+    
+    <h2>Troubleshooting:</h2>
+    <ul>
+        <li>If no logs appear: The button handler isn't firing</li>
+        <li>If logs appear but no red overlay: State update or rendering issue</li>
+        <li>If red overlay appears: Modal is working, might be a styling issue</li>
+    </ul>
+</body>
+</html>

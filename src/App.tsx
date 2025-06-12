@@ -1,7 +1,7 @@
-import { IntegratedGameV2 } from './spike/integrated-game-v2'
+import { IntegratedGameV5 } from './spike/integrated-game-v5'
 
 function App() {
-  return <IntegratedGameV2 />
+  return <IntegratedGameV5 />
 }
 
 export default App

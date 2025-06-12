@@ -302,7 +302,6 @@ export const useSaveSlots = () => {
     modalMode,
     openSaveModal,
     openLoadModal,
-    closeModal,
-    SaveSlotsModal
+    closeModal
   };
 };
