@@ -29,7 +29,7 @@ export class FlagRenderer {
         resolve(); // エラーでも続行
       };
       
-      img.src = `/img/${nationId}.png`;
+      img.src = `${import.meta.env.BASE_URL}img/${nationId}.png`;
     });
   }
 

@@ -4,6 +4,7 @@ import { FlagRenderer } from './flag-renderer';
 import { GDPEnemySystem, GDPEnemy, NATION_DATABASE } from './gdp-enemy-system';
 import { AbilityProcessor } from './nation-abilities';
 import { ShopSystemV2, ShopItem } from './shop-system-v2';
+import { SideShop } from './side-shop';
 import { SaveSlotsModal, useSaveSlots, SaveData } from './save-slots';
 
 interface Tower {
@@ -30,17 +31,25 @@ interface SpecialEffects {
   shield: number;
 }
 
-export const IntegratedGameV5: React.FC = () => {
+import { GameSettings } from './game-start-screen';
+
+interface IntegratedGameV5Props {
+  initialSettings: GameSettings;
+}
+
+export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSettings }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [enemies, setEnemies] = useState<GDPEnemy[]>([]);
   const [towers, setTowers] = useState<Tower[]>([]);
-  const [coins, setCoins] = useState(200);
+  const [coins, setCoins] = useState(initialSettings.initialCoins);
   const [wave, setWave] = useState(1);
   const [displayWave, setDisplayWave] = useState(1); // 表示用のWave番号
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(initialSettings.initialLives);
   const [showShop, setShowShop] = useState(false);
-  const [ownedNations, setOwnedNations] = useState<string[]>(['nauru']);
-  const [selectedNation, setSelectedNation] = useState<string>('nauru');
+  const [showSideShop, setShowSideShop] = useState(true);
+  const [ownedNations, setOwnedNations] = useState<string[]>([initialSettings.startingNation]);
+  const [selectedNation, setSelectedNation] = useState<string>(initialSettings.startingNation);
+  const [towerLifespan] = useState(initialSettings.towerLifespan);
   const [isWaveActive, setIsWaveActive] = useState(false);
   const [newNationNotification, setNewNationNotification] = useState<{nation: any, show: boolean} | null>(null);
   const [gameModifiers, setGameModifiers] = useState<GameModifiers>({
@@ -260,9 +269,9 @@ export const IntegratedGameV5: React.FC = () => {
         return true;
       });
 
-      // 2Wave経過した古いタワーを削除
+      // 指定Wave経過した古いタワーを削除
       const activeTowers = towersRef.current.filter(tower => {
-        return displayWave - tower.placedAtWave < 2;
+        return displayWave - tower.placedAtWave < towerLifespan;
       });
       
       if (activeTowers.length !== towersRef.current.length) {
@@ -280,8 +289,8 @@ export const IntegratedGameV5: React.FC = () => {
         ctx.shadowColor = '#0080ff';
         ctx.shadowBlur = 10;
         
-        // 古いタワーは半透明に
-        if (displayWave - tower.placedAtWave === 1) {
+        // 古いタワーは半透明に（最後の1Waveになったら）
+        if (displayWave - tower.placedAtWave === towerLifespan - 1) {
           ctx.globalAlpha = 0.5;
         }
         
@@ -453,7 +462,7 @@ export const IntegratedGameV5: React.FC = () => {
       damage: 3 + Math.floor(Math.log10(nationData.gdp + 1)),
       lastShot: 0,
       nationId: selectedNation,
-      placedAtWave: displayWave // 現在の表示Wave番号を記録
+      placedAtWave: isWaveActive ? displayWave : wave // Wave間に配置した場合は次のWaveとして記録
     }]);
   };
 
@@ -651,15 +660,19 @@ export const IntegratedGameV5: React.FC = () => {
                 })}
               </select>
               <div className="text-sm text-gray-400">
-                配置コスト: 💰 50 (2Wave後に消滅)
+                配置コスト: 💰 50 ({towerLifespan}Wave後に消滅)
               </div>
             </div>
             
             <button
-              onClick={() => setShowShop(true)}
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl font-bold text-xl shadow-2xl transition-all transform hover:scale-110 animate-pulse"
+              onClick={() => setShowSideShop(!showSideShop)}
+              className={`px-6 py-3 rounded-xl font-bold text-lg shadow-xl transition-all ${
+                showSideShop 
+                  ? 'bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800' 
+                  : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700'
+              }`}
             >
-              🛒 ショップ
+              {showSideShop ? '🛒 ショップを閉じる' : '🛒 ショップを開く'}
             </button>
           </div>
         </div>
@@ -727,21 +740,6 @@ export const IntegratedGameV5: React.FC = () => {
           </div>
         </div>
 
-        {/* ショップモーダル */}
-        {showShop && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999] p-4">
-            <ShopSystemV2
-              coins={coins}
-              lives={lives}
-              ownedNations={ownedNations}
-              onPurchase={handleShopPurchase}
-              onLivesPurchase={setLives}
-              onNationPurchase={handleNationPurchase}
-              onGachaPurchase={() => {}}
-              onClose={() => setShowShop(false)}
-            />
-          </div>
-        )}
 
         {/* セーブ/ロードモーダル */}
         {showModal && (
@@ -750,6 +748,42 @@ export const IntegratedGameV5: React.FC = () => {
             onLoad={handleLoad}
             onClose={closeModal}
             mode={modalMode}
+          />
+        )}
+
+        {/* サイドショップ */}
+        {showSideShop && (
+          <SideShop
+            coins={coins}
+            lives={lives}
+            ownedNations={ownedNations}
+            powerupsPurchased={powerupsPurchased}
+            onPurchase={(itemId, cost) => {
+              if (coins >= cost) {
+                setCoins(coins - cost);
+                handleShopPurchase({ 
+                  id: itemId, 
+                  name: '', 
+                  description: '', 
+                  cost, 
+                  type: 'powerup', 
+                  icon: '' 
+                }, coins - cost);
+              }
+            }}
+            onLivesPurchase={() => {
+              const lifePrice = 300 + (lives - 1) * 200;
+              if (coins >= lifePrice) {
+                setCoins(coins - lifePrice);
+                setLives(lives + 1);
+              }
+            }}
+            onNationPurchase={(nationId, cost) => {
+              if (coins >= cost) {
+                setCoins(coins - cost);
+                handleNationPurchase(nationId);
+              }
+            }}
           />
         )}
       </div>
