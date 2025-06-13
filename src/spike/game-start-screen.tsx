@@ -1,26 +1,69 @@
 import React, { useState } from 'react';
+import { SaveSlotManager } from './save-slots';
 
 export interface GameSettings {
   initialCoins: number;
   initialLives: number;
   towerLifespan: number;
   startingNation: string;
+  loadedData?: any;
 }
 
 interface GameStartScreenProps {
   onStartGame: (settings: GameSettings) => void;
+  onLoadGame?: (slot: number) => void;
 }
 
-export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame }) => {
+export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, onLoadGame }) => {
   const [settings, setSettings] = useState<GameSettings>({
     initialCoins: 200,
     initialLives: 3,
     towerLifespan: 3,
     startingNation: 'nauru'
   });
+  const [showLoadModal, setShowLoadModal] = useState(false);
+  const [saveSlots, setSaveSlots] = useState<any[]>([]);
 
   const handleStart = () => {
     onStartGame(settings);
+  };
+
+  const handleShowLoadModal = () => {
+    // セーブスロット情報を取得
+    const slots = [];
+    for (let i = 1; i <= 5; i++) {
+      const info = SaveSlotManager.getSlotInfo(i);
+      if (info) {
+        slots.push({
+          slot: i,
+          isEmpty: info.isEmpty,
+          wave: info.data?.wave,
+          coins: info.data?.coins,
+          timestamp: info.data?.timestamp
+        });
+      }
+    }
+    setSaveSlots(slots);
+    setShowLoadModal(true);
+  };
+
+  const handleLoadSlot = (slot: number) => {
+    if (onLoadGame) {
+      onLoadGame(slot);
+    } else {
+      // onLoadGameが提供されていない場合、内部で処理
+      const data = SaveSlotManager.loadSlot(slot);
+      if (data) {
+        onStartGame({
+          initialCoins: data.coins,
+          initialLives: data.lives,
+          towerLifespan: settings.towerLifespan,
+          startingNation: data.ownedNations[0] || 'nauru',
+          loadedData: data
+        });
+      }
+    }
+    setShowLoadModal(false);
   };
 
   return (
@@ -119,10 +162,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame })
             🎮 ゲーム開始
           </button>
           <button
-            onClick={() => {
-              // TODO: セーブデータロード画面を表示
-              alert('セーブデータ選択機能は準備中です');
-            }}
+            onClick={handleShowLoadModal}
             className="px-12 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold text-xl shadow-xl transition-all transform hover:scale-105 w-full"
           >
             📂 セーブデータから開始
@@ -138,6 +178,61 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame })
           </div>
         </div>
       </div>
+
+      {/* セーブデータ選択モーダル */}
+      {showLoadModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-gray-900 p-8 rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center">セーブデータ選択</h2>
+            
+            <div className="space-y-4">
+              {saveSlots.map((slot) => (
+                <div
+                  key={slot.slot}
+                  data-testid={`save-slot-${slot.slot}`}
+                  className={`p-6 rounded-xl border-2 cursor-pointer transition-all ${
+                    slot.isEmpty
+                      ? 'border-gray-700 hover:border-gray-600 bg-gray-800'
+                      : 'border-blue-600 hover:border-blue-500 bg-gray-800 hover:bg-gray-700'
+                  }`}
+                  onClick={() => !slot.isEmpty && handleLoadSlot(slot.slot)}
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">
+                        スロット {slot.slot}
+                      </h3>
+                      {slot.isEmpty ? (
+                        <p className="text-gray-500">空</p>
+                      ) : (
+                        <div className="text-sm space-y-1">
+                          <p>Wave: {slot.wave}</p>
+                          <p>💰 {slot.coins}</p>
+                          <p className="text-gray-400">
+                            {new Date(slot.timestamp).toLocaleString('ja-JP')}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                    {!slot.isEmpty && (
+                      <div className="text-4xl">📁</div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setShowLoadModal(false)}
+                className="px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-colors"
+              >
+                キャンセル
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
