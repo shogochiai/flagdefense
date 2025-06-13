@@ -33,7 +33,7 @@ describe('AbilityProcessor', () => {
       const result = AbilityProcessor.processAttack('usa', 10, enemies[0], enemies);
       
       expect(result.affectedEnemies.length).toBeGreaterThan(1);
-      expect(result.effects).toContain('Splash!');
+      expect(result.effects).toContain('範囲攻撃!');
     });
 
     it('中国の人海戦術が3体同時攻撃', () => {
@@ -41,7 +41,7 @@ describe('AbilityProcessor', () => {
       const result = AbilityProcessor.processAttack('china', 10, enemies[0], enemies);
       
       expect(result.affectedEnemies.length).toBe(3);
-      expect(result.effects).toContain('Multi!');
+      expect(result.effects).toContain('マルチ!');
     });
 
     it('ドイツの効率化でコインボーナス', () => {
@@ -63,7 +63,7 @@ describe('AbilityProcessor', () => {
       
       expect(enemy.speedModifier).toBe(0.7);
       expect(enemy.speedModifierUntil).toBeGreaterThan(Date.now());
-      expect(result.effects).toContain('Slow!');
+      expect(result.effects).toContain('スロー!');
     });
 
     it('アイルランドのクリティカルが確率で発動', () => {
@@ -150,7 +150,7 @@ describe('AbilityProcessor', () => {
       
       expect(result.totalDamage).toBe(12); // 20%ボーナス
       expect(result.affectedEnemies.length).toBeGreaterThan(1); // 範囲攻撃
-      expect(result.effects).toContain('Splash!');
+      expect(result.effects).toContain('範囲攻撃!');
     });
 
     it('韓国のテクノロジーがダメージと射程を強化', () => {

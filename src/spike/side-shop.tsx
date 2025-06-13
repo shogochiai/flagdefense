@@ -22,6 +22,7 @@ export const SideShop: React.FC<SideShopProps> = ({
   onNationPurchase
 }) => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [nationSkipCount, setNationSkipCount] = useState(0);
 
   const getLifePrice = () => 300 + (lives - 1) * 200;
 
@@ -38,9 +39,10 @@ export const SideShop: React.FC<SideShopProps> = ({
     { id: 'coin_multiplier', name: 'コイン+20%', icon: '💰', cost: 500, max: 10 }
   ];
 
-  const availableNations = NATION_DATABASE.filter(n => !ownedNations.includes(n.id))
-    .sort((a, b) => getNationPrice(a.gdp) - getNationPrice(b.gdp))
-    .slice(0, 6);
+  const allAvailableNations = NATION_DATABASE.filter(n => !ownedNations.includes(n.id))
+    .sort((a, b) => getNationPrice(a.gdp) - getNationPrice(b.gdp));
+  
+  const availableNations = allAvailableNations.slice(nationSkipCount * 12, (nationSkipCount + 1) * 12);
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -119,30 +121,59 @@ export const SideShop: React.FC<SideShopProps> = ({
             <span className="text-xs">{expandedSection === 'nations' ? '▼' : '◀'}</span>
           </button>
           {expandedSection === 'nations' && (
-            <div className="p-2 space-y-1 max-h-64 overflow-y-auto">
-              {availableNations.map(nation => {
-                const price = getNationPrice(nation.gdp);
-                const canPurchase = coins >= price;
-                const rarity = GDPEnemySystem.getRarity(nation.gdp);
-                return (
-                  <button
-                    key={nation.id}
-                    onClick={() => canPurchase && onNationPurchase(nation.id, price)}
-                    disabled={!canPurchase}
-                    className={`w-full px-2 py-1 rounded text-xs flex items-center justify-between ${
-                      canPurchase
-                        ? 'bg-green-600 hover:bg-green-700 text-white'
-                        : 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    }`}
-                    title={AbilityProcessor.getAbilityDescription(nation.id)}
-                  >
-                    <span>{nation.flag} {nation.name}</span>
-                    <span>
-                      <span className="text-yellow-300">★{rarity.stars}</span> 💰{price}
-                    </span>
-                  </button>
-                );
-              })}
+            <div className="p-2 space-y-1">
+              <div className="flex justify-between mb-2">
+                <button
+                  onClick={() => setNationSkipCount(Math.max(0, nationSkipCount - 1))}
+                  disabled={nationSkipCount === 0}
+                  className={`px-2 py-1 text-xs rounded ${
+                    nationSkipCount === 0 
+                      ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
+                >
+                  ◀ 前へ
+                </button>
+                <span className="text-xs text-gray-400">
+                  {nationSkipCount * 12 + 1}-{Math.min((nationSkipCount + 1) * 12, allAvailableNations.length)} / {allAvailableNations.length}
+                </span>
+                <button
+                  onClick={() => setNationSkipCount(nationSkipCount + 1)}
+                  disabled={(nationSkipCount + 1) * 12 >= allAvailableNations.length}
+                  className={`px-2 py-1 text-xs rounded ${
+                    (nationSkipCount + 1) * 12 >= allAvailableNations.length
+                      ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
+                >
+                  次へ ▶
+                </button>
+              </div>
+              <div className="max-h-56 overflow-y-auto space-y-1">
+                {availableNations.map(nation => {
+                  const price = getNationPrice(nation.gdp);
+                  const canPurchase = coins >= price;
+                  const rarity = GDPEnemySystem.getRarity(nation.gdp);
+                  return (
+                    <button
+                      key={nation.id}
+                      onClick={() => canPurchase && onNationPurchase(nation.id, price)}
+                      disabled={!canPurchase}
+                      className={`w-full px-2 py-1 rounded text-xs flex items-center justify-between ${
+                        canPurchase
+                          ? 'bg-green-600 hover:bg-green-700 text-white'
+                          : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                      }`}
+                      title={AbilityProcessor.getAbilityDescription(nation.id)}
+                    >
+                      <span>{nation.flag} {nation.name}</span>
+                      <span>
+                        <span className="text-yellow-300">★{rarity.stars}</span> 💰{price}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>

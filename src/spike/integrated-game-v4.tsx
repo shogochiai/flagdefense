@@ -110,6 +110,8 @@ export const IntegratedGameV4: React.FC = () => {
     let lastTime = 0;
 
     const gameLoop = (timestamp: number) => {
+      if (!ctx) return;
+      
       const deltaTime = timestamp - lastTime;
       lastTime = timestamp;
 
@@ -118,10 +120,12 @@ export const IntegratedGameV4: React.FC = () => {
 
       // 背景（宇宙風）
       const gradient = ctx.createLinearGradient(0, 0, 800, 400);
-      gradient.addColorStop(0, '#000428');
-      gradient.addColorStop(1, '#004e92');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 800, 400);
+      if (gradient) {
+        gradient.addColorStop(0, '#000428');
+        gradient.addColorStop(1, '#004e92');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 800, 400);
+      }
 
       // 星を描画
       ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';

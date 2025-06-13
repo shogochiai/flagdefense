@@ -112,6 +112,8 @@ export const IntegratedGameV3: React.FC = () => {
     let lastTime = 0;
 
     const gameLoop = (timestamp: number) => {
+      if (!ctx) return;
+      
       const deltaTime = timestamp - lastTime;
       lastTime = timestamp;
 
@@ -120,18 +122,22 @@ export const IntegratedGameV3: React.FC = () => {
 
       // 背景
       const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-      gradient.addColorStop(0, '#0a0a0a');
-      gradient.addColorStop(1, '#1a1a1a');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 800, 400);
+      if (gradient) {
+        gradient.addColorStop(0, '#0a0a0a');
+        gradient.addColorStop(1, '#1a1a1a');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 800, 400);
+      }
 
       // パスを描画
       pathRef.current.draw(ctx);
 
       // 基地を描画
       const baseGradient = ctx.createLinearGradient(750, 170, 790, 230);
-      baseGradient.addColorStop(0, '#00ff00');
-      baseGradient.addColorStop(1, '#008800');
+      if (baseGradient) {
+        baseGradient.addColorStop(0, '#00ff00');
+        baseGradient.addColorStop(1, '#008800');
+      }
       ctx.fillStyle = baseGradient;
       ctx.fillRect(750, 170, 40, 60);
       ctx.fillStyle = '#000';

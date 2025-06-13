@@ -203,7 +203,7 @@ export class AbilityProcessor {
           // アイルランドの特殊処理
           if (towerNationId === 'ireland' && Math.random() < 0.2) {
             totalDamage = baseDamage * 3;
-            appliedEffects.push('Critical!');
+            appliedEffects.push('クリティカル!');
           } else {
             totalDamage = baseDamage * effect.value;
           }
@@ -220,7 +220,8 @@ export class AbilityProcessor {
             ) <= splashRadius
           );
           affectedEnemies = [targetEnemy, ...nearbyEnemies];
-          appliedEffects.push('Splash!');
+          totalDamage = baseDamage * effect.value;
+          appliedEffects.push('範囲攻撃!');
           break;
 
         case 'multi':
@@ -229,7 +230,7 @@ export class AbilityProcessor {
             .filter(e => e !== targetEnemy)
             .slice(0, effect.value - 1);
           affectedEnemies = [targetEnemy, ...additionalTargets];
-          appliedEffects.push('Multi!');
+          appliedEffects.push('マルチ!');
           break;
 
         case 'pierce':
@@ -241,14 +242,14 @@ export class AbilityProcessor {
             return Math.abs(enemyAngle - angle) < 0.1;
           }).slice(0, effect.value - 1);
           affectedEnemies = [targetEnemy, ...piercedEnemies];
-          appliedEffects.push('Pierce!');
+          appliedEffects.push('貫通!');
           break;
 
         case 'slow':
           // スロー効果
           targetEnemy.speedModifier = effect.value;
           targetEnemy.speedModifierUntil = Date.now() + (effect.duration || 2000);
-          appliedEffects.push('Slow!');
+          appliedEffects.push('スロー!');
           break;
 
         case 'money':
@@ -258,7 +259,7 @@ export class AbilityProcessor {
               ? Math.random() * 2 
               : effect.value - 1;
             onCoinEarned(Math.floor(targetEnemy.reward * bonus));
-            appliedEffects.push('Bonus!');
+            appliedEffects.push('💰 コイン生成!');
           }
           break;
       }
@@ -266,7 +267,7 @@ export class AbilityProcessor {
 
     // ブラジルの攻撃速度ボーナス（別途処理が必要）
     if (towerNationId === 'brazil') {
-      appliedEffects.push('Fast!');
+      appliedEffects.push('高速!');
     }
 
     return {
@@ -278,15 +279,19 @@ export class AbilityProcessor {
 
   // タワーのステータス補正
   static getTowerModifiers(nationId: string): {
+    damage: number,
     range: number,
     attackSpeed: number
   } {
     const ability = NATION_ABILITIES[nationId] || NATION_ABILITIES.default;
+    let damageModifier = 1;
     let rangeModifier = 1;
     let attackSpeedModifier = 1;
 
     ability.effects.forEach(effect => {
-      if (effect.type === 'range') {
+      if (effect.type === 'damage') {
+        damageModifier *= effect.value;
+      } else if (effect.type === 'range') {
         rangeModifier *= effect.value;
       }
     });
@@ -299,6 +304,7 @@ export class AbilityProcessor {
     }
 
     return {
+      damage: damageModifier,
       range: rangeModifier,
       attackSpeed: attackSpeedModifier
     };

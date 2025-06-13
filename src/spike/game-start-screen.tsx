@@ -15,7 +15,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame })
   const [settings, setSettings] = useState<GameSettings>({
     initialCoins: 200,
     initialLives: 3,
-    towerLifespan: 2,
+    towerLifespan: 3,
     startingNation: 'nauru'
   });
 
@@ -98,7 +98,12 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame })
               >
                 <option value="nauru">🇳🇷 ナウル (最安)</option>
                 <option value="tuvalu">🇹🇻 ツバル</option>
+                <option value="sealand">⚓ シーランド公国</option>
+                <option value="vatican">🇻🇦 バチカン</option>
                 <option value="monaco">🇲🇨 モナコ</option>
+                <option value="malta">🇲🇹 マルタ</option>
+                <option value="iceland">🇮🇸 アイスランド</option>
+                <option value="singapore">🇸🇬 シンガポール</option>
                 <option value="japan">🇯🇵 日本</option>
                 <option value="usa">🇺🇸 アメリカ</option>
               </select>
@@ -106,12 +111,21 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame })
           </div>
         </div>
 
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <button
             onClick={handleStart}
-            className="px-12 py-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-2xl font-bold text-2xl shadow-2xl transition-all transform hover:scale-110 animate-pulse"
+            className="px-12 py-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-2xl font-bold text-2xl shadow-2xl transition-all transform hover:scale-110 animate-pulse w-full"
           >
             🎮 ゲーム開始
+          </button>
+          <button
+            onClick={() => {
+              // TODO: セーブデータロード画面を表示
+              alert('セーブデータ選択機能は準備中です');
+            }}
+            className="px-12 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold text-xl shadow-xl transition-all transform hover:scale-105 w-full"
+          >
+            📂 セーブデータから開始
           </button>
         </div>
 

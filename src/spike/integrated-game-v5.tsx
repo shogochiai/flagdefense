@@ -6,6 +6,7 @@ import { AbilityProcessor } from './nation-abilities';
 import { ShopSystemV2, ShopItem } from './shop-system-v2';
 import { SideShop } from './side-shop';
 import { SaveSlotsModal, useSaveSlots, SaveData } from './save-slots';
+import { DefeatedNationsSidePanel } from './defeated-nations-side-panel';
 
 interface Tower {
   id: number;
@@ -29,6 +30,19 @@ interface SpecialEffects {
   slowField: boolean;
   doubleCoins: boolean;
   shield: number;
+}
+
+interface AttackEffect {
+  id: number;
+  x: number;
+  y: number;
+  text: string;
+  timestamp: number;
+}
+
+interface DefeatNotification {
+  nation: NationData;
+  timestamp: number;
 }
 
 import { GameSettings } from './game-start-screen';
@@ -64,6 +78,11 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     shield: 0
   });
   const [powerupsPurchased, setPowerupsPurchased] = useState<Record<string, number>>({});
+  const [attackEffects, setAttackEffects] = useState<AttackEffect[]>([]);
+  const [defeatNotifications, setDefeatNotifications] = useState<DefeatNotification[]>([]);
+  const [defeatedNations, setDefeatedNations] = useState<Record<string, NationData>>({});
+  const [showDefeatedList, setShowDefeatedList] = useState(true);
+  const [saveNotification, setSaveNotification] = useState<{ show: boolean; timestamp: number } | null>(null);
   const animationRef = useRef<number>(0);
   const enemiesRef = useRef<GDPEnemy[]>([]);
   const towersRef = useRef<Tower[]>([]);
@@ -85,12 +104,24 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     towersRef.current = towers;
   }, [enemies, towers]);
 
+  // 攻撃エフェクトの追加
+  const addAttackEffect = (x: number, y: number, effects: string[]) => {
+    if (effects.length > 0) {
+      setAttackEffects(prev => [...prev, {
+        id: Date.now() + Math.random(),
+        x,
+        y,
+        text: effects.join(' '),
+        timestamp: performance.now()
+      }]);
+    }
+  };
+
   // 攻撃エフェクトの描画
-  const drawAttackEffect = (
+  const drawAttackLine = (
     ctx: CanvasRenderingContext2D,
     from: { x: number, y: number },
-    to: { x: number, y: number },
-    effects: string[]
+    to: { x: number, y: number }
   ) => {
     ctx.save();
     ctx.strokeStyle = '#ffff00';
@@ -99,13 +130,29 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     ctx.moveTo(from.x, from.y);
     ctx.lineTo(to.x, to.y);
     ctx.stroke();
-
-    if (effects.length > 0) {
-      ctx.fillStyle = '#ffff00';
-      ctx.font = 'bold 12px Arial';
-      ctx.fillText(effects.join(' '), to.x, to.y - 30);
-    }
     ctx.restore();
+  };
+
+  // 攻撃エフェクトテキストの描画
+  const drawEffectTexts = (ctx: CanvasRenderingContext2D, timestamp: number) => {
+    const effectDuration = 2000; // 2秒間表示
+    setAttackEffects(prev => prev.filter(effect => {
+      const age = timestamp - effect.timestamp;
+      if (age > effectDuration) return false;
+      
+      ctx.save();
+      const opacity = Math.max(0, 1 - age / effectDuration);
+      ctx.globalAlpha = opacity;
+      ctx.fillStyle = '#ffff00';
+      ctx.font = 'bold 14px Arial';
+      ctx.shadowColor = '#000000';
+      ctx.shadowBlur = 4;
+      const yOffset = -30 - (age / effectDuration) * 20; // 上に移動
+      ctx.fillText(effect.text, effect.x, effect.y + yOffset);
+      ctx.restore();
+      
+      return true;
+    }));
   };
 
   // ゲームループ
@@ -150,20 +197,65 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
       pathRef.current.draw(ctx, 40, '#0080ff');
       ctx.restore();
 
-      // 基地を描画（未来的）
-      const baseGradient = ctx.createRadialGradient(770, 200, 10, 770, 200, 30);
-      baseGradient.addColorStop(0, '#00ff00');
-      baseGradient.addColorStop(0.5, '#00cc00');
-      baseGradient.addColorStop(1, '#008800');
-      ctx.fillStyle = baseGradient;
-      ctx.fillRect(750, 170, 40, 60);
+      // お城を描画
+      ctx.save();
       
-      // 基地のコア
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#00ff00';
-      ctx.shadowBlur = 20;
-      ctx.fillRect(765, 195, 10, 10);
-      ctx.shadowBlur = 0;
+      // 城の本体（石のグラデーション）
+      const castleGradient = ctx.createLinearGradient(750, 170, 790, 230);
+      castleGradient.addColorStop(0, '#d4d4d4');
+      castleGradient.addColorStop(0.5, '#a8a8a8');
+      castleGradient.addColorStop(1, '#808080');
+      ctx.fillStyle = castleGradient;
+      ctx.fillRect(755, 190, 30, 40);
+      
+      // 城壁（胸壁）
+      ctx.fillStyle = '#a8a8a8';
+      for (let i = 0; i < 4; i++) {
+        ctx.fillRect(753 + i * 8, 185, 6, 8);
+      }
+      
+      // 中央の塔
+      ctx.fillStyle = castleGradient;
+      ctx.fillRect(765, 175, 10, 20);
+      
+      // 塔の先端（三角形）
+      ctx.fillStyle = '#ff6b6b';
+      ctx.beginPath();
+      ctx.moveTo(770, 165);
+      ctx.lineTo(760, 175);
+      ctx.lineTo(780, 175);
+      ctx.closePath();
+      ctx.fill();
+      
+      // 旗
+      ctx.strokeStyle = '#666';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(770, 165);
+      ctx.lineTo(770, 155);
+      ctx.stroke();
+      
+      // 旗布
+      ctx.fillStyle = '#ff0000';
+      ctx.beginPath();
+      ctx.moveTo(770, 155);
+      ctx.lineTo(780, 158);
+      ctx.lineTo(780, 162);
+      ctx.lineTo(770, 160);
+      ctx.closePath();
+      ctx.fill();
+      
+      // 門
+      ctx.fillStyle = '#4a4a4a';
+      ctx.fillRect(765, 210, 10, 20);
+      
+      // 影
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+      ctx.shadowBlur = 10;
+      ctx.shadowOffsetX = 3;
+      ctx.shadowOffsetY = 3;
+      
+      ctx.restore();
 
       // シールド表示
       if (specialEffects.shield > 0) {
@@ -251,6 +343,20 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           setCoins(prev => prev + reward);
           enemiesDefeatedInWave.current += 1;
 
+          // 撃破通知を追加
+          setDefeatNotifications(prev => [...prev, {
+            nation: enemy.nation,
+            timestamp: performance.now()
+          }]);
+
+          // 撃破した国家を記録
+          setDefeatedNations(prev => {
+            if (!prev[enemy.nation.id]) {
+              return { ...prev, [enemy.nation.id]: enemy.nation };
+            }
+            return prev;
+          });
+
           // パーティクルエフェクト
           ctx.fillStyle = '#ffff00';
           for (let i = 0; i < 10; i++) {
@@ -332,7 +438,8 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
               }
             });
 
-            drawAttackEffect(ctx, tower, target, result.effects);
+            drawAttackLine(ctx, tower, target);
+            addAttackEffect(target.x, target.y, result.effects);
             tower.lastShot = timestamp;
           }
         }
@@ -393,6 +500,31 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         }
       }
 
+      // 攻撃エフェクトテキストの描画
+      drawEffectTexts(ctx, timestamp);
+
+      // 撃破通知の表示（右下）
+      const notificationDuration = 3000; // 3秒間表示
+      setDefeatNotifications(prev => prev.filter((notification, index) => {
+        const age = timestamp - notification.timestamp;
+        if (age > notificationDuration) return false;
+        
+        ctx.save();
+        const opacity = Math.max(0, 1 - age / notificationDuration);
+        ctx.globalAlpha = opacity;
+        
+        const y = 380 - index * 25; // 下から上に積み重ねる
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+        ctx.fillRect(600, y - 20, 190, 24);
+        
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 14px Arial';
+        ctx.fillText(`${notification.nation.flag} ${notification.nation.name} 撃破！`, 610, y - 5);
+        ctx.restore();
+        
+        return true;
+      }));
+
       // 新国家獲得通知の表示
       if (newNationNotification && newNationNotification.show) {
         const notification = newNationNotification;
@@ -417,6 +549,28 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         ctx.restore();
       }
 
+      // セーブ通知の表示
+      if (saveNotification && saveNotification.show) {
+        const age = timestamp - saveNotification.timestamp;
+        if (age < 3000) {
+          ctx.save();
+          const opacity = Math.max(0, 1 - age / 3000);
+          ctx.globalAlpha = opacity;
+          
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
+          ctx.fillRect(300, 180, 200, 60);
+          
+          ctx.strokeStyle = '#00ff00';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(300, 180, 200, 60);
+          
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 18px Arial';
+          ctx.fillText('✓ セーブ完了！', 330, 215);
+          ctx.restore();
+        }
+      }
+
       animationRef.current = requestAnimationFrame(gameLoop);
     };
 
@@ -427,7 +581,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isWaveActive, wave, displayWave, gameModifiers, specialEffects, newNationNotification, ownedNations, selectedNation]);
+  }, [isWaveActive, wave, displayWave, gameModifiers, specialEffects, newNationNotification, ownedNations, selectedNation, towerLifespan, defeatedNations, attackEffects, defeatNotifications, saveNotification]);
 
   // キャンバスクリックでタワー配置（修正版：スケーリング対応）
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -748,6 +902,10 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             onLoad={handleLoad}
             onClose={closeModal}
             mode={modalMode}
+            onSaveSuccess={() => {
+              setSaveNotification({ show: true, timestamp: performance.now() });
+              setTimeout(() => setSaveNotification(null), 3000);
+            }}
           />
         )}
 
@@ -786,6 +944,13 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             }}
           />
         )}
+
+        {/* 撃破国家サイドパネル */}
+        <DefeatedNationsSidePanel
+          defeatedNations={defeatedNations}
+          isOpen={showDefeatedList}
+          onToggle={() => setShowDefeatedList(!showDefeatedList)}
+        />
       </div>
 
       <style>{`

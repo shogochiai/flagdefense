@@ -8,42 +8,19 @@ export interface NationData {
   colors: string[];
 }
 
-// 簡易版国家データ（後で全250カ国に拡張）
-export const NATION_DATABASE: NationData[] = [
-  // 超大国
-  { id: 'usa', name: 'アメリカ', gdp: 25462, flag: '🇺🇸', colors: ['#B22234', '#FFFFFF', '#3C3B6E'] },
-  { id: 'china', name: '中国', gdp: 17963, flag: '🇨🇳', colors: ['#EE1C25', '#FFFF00'] },
-  
-  // 大国
-  { id: 'japan', name: '日本', gdp: 4231, flag: '🇯🇵', colors: ['#FFFFFF', '#BC002D'] },
-  { id: 'germany', name: 'ドイツ', gdp: 4072, flag: '🇩🇪', colors: ['#000000', '#FF0000', '#FFD700'] },
-  { id: 'india', name: 'インド', gdp: 3732, flag: '🇮🇳', colors: ['#FF9933', '#FFFFFF', '#00A550', '#000080'] },
-  { id: 'uk', name: 'イギリス', gdp: 3070, flag: '🇬🇧', colors: ['#012169', '#FFFFFF', '#C8102E'] },
-  { id: 'france', name: 'フランス', gdp: 2957, flag: '🇫🇷', colors: ['#002654', '#FFFFFF', '#ED2939'] },
-  
-  // 中規模国
-  { id: 'italy', name: 'イタリア', gdp: 2107, flag: '🇮🇹', colors: ['#00A550', '#FFFFFF', '#FF0000'] },
-  { id: 'brazil', name: 'ブラジル', gdp: 2126, flag: '🇧🇷', colors: ['#00A550', '#FFD700', '#002776'] },
-  { id: 'canada', name: 'カナダ', gdp: 2139, flag: '🇨🇦', colors: ['#FF0000', '#FFFFFF'] },
-  { id: 'south_korea', name: '韓国', gdp: 1709, flag: '🇰🇷', colors: ['#FFFFFF', '#FF0000', '#0033A0'] },
-  { id: 'spain', name: 'スペイン', gdp: 1398, flag: '🇪🇸', colors: ['#FF0000', '#FFD700'] },
-  { id: 'australia', name: 'オーストラリア', gdp: 1553, flag: '🇦🇺', colors: ['#00008B', '#FFFFFF', '#FF0000'] },
-  
-  // 小規模国
-  { id: 'singapore', name: 'シンガポール', gdp: 497, flag: '🇸🇬', colors: ['#FF0000', '#FFFFFF'] },
-  { id: 'ireland', name: 'アイルランド', gdp: 545, flag: '🇮🇪', colors: ['#00A550', '#FFFFFF', '#FF8200'] },
-  { id: 'israel', name: 'イスラエル', gdp: 481, flag: '🇮🇱', colors: ['#FFFFFF', '#0066CC'] },
-  
-  // 極小国
-  { id: 'iceland', name: 'アイスランド', gdp: 28, flag: '🇮🇸', colors: ['#003897', '#FFFFFF', '#D72828'] },
-  { id: 'malta', name: 'マルタ', gdp: 18, flag: '🇲🇹', colors: ['#FFFFFF', '#FF0000'] },
-  { id: 'monaco', name: 'モナコ', gdp: 8, flag: '🇲🇨', colors: ['#FF0000', '#FFFFFF'] },
-  { id: 'liechtenstein', name: 'リヒテンシュタイン', gdp: 7, flag: '🇱🇮', colors: ['#002B7F', '#CE1126'] },
-  
-  // マイクロ国家
-  { id: 'nauru', name: 'ナウル', gdp: 0.15, flag: '🇳🇷', colors: ['#002B7F', '#FFD700'] },
-  { id: 'tuvalu', name: 'ツバル', gdp: 0.06, flag: '🇹🇻', colors: ['#00BFFF', '#FFD700'] },
-];
+import { FULL_NATION_DATABASE } from './nations-full-database';
+
+// 全250カ国のデータベースを使用
+export const NATION_DATABASE: NationData[] = FULL_NATION_DATABASE.map(nation => ({
+  id: nation.id,
+  name: nation.name,
+  gdp: nation.gdp,
+  flag: nation.flag,
+  colors: nation.colors
+}));
+
+// デバッグ用: 全国家数を確認
+console.log(`Total nations in database: ${NATION_DATABASE.length}`);
 
 export class GDPEnemySystem {
   // GDPから敵のHPを計算
@@ -91,30 +68,52 @@ export class GDPEnemySystem {
   static generateWaveNations(wave: number): NationData[] {
     const nations: NationData[] = [];
     
-    // Waveが進むにつれて大国が出現
-    let maxGDP = 10; // 初期は小国のみ
+    // Waveに応じた国家の制限（より多様な国家が出現するよう調整）
+    let maxGDP = 1; // 初期は極小国のみ
+    let minGDP = 0;
     
-    if (wave <= 5) {
-      maxGDP = 50;
+    if (wave <= 3) {
+      maxGDP = 10;      // Wave 1-3: 極小国・マイクロ国家
+      minGDP = 0;
+    } else if (wave <= 5) {
+      maxGDP = 50;      // Wave 4-5: 小国
+      minGDP = 0;
     } else if (wave <= 10) {
-      maxGDP = 500;
+      maxGDP = 500;     // Wave 6-10: 小～中規模国
+      minGDP = 5;
+    } else if (wave <= 15) {
+      maxGDP = 1000;    // Wave 11-15: 中規模国
+      minGDP = 10;
     } else if (wave <= 20) {
-      maxGDP = 2000;
+      maxGDP = 2000;    // Wave 16-20: 中～大規模国
+      minGDP = 50;
     } else if (wave <= 30) {
-      maxGDP = 5000;
+      maxGDP = 5000;    // Wave 21-30: 大国も含む
+      minGDP = 100;
     } else {
-      maxGDP = 30000; // 全ての国が出現可能
+      maxGDP = 30000;   // Wave 31+: 全ての国
+      minGDP = 200;
     }
     
     // GDP制限に基づいて国をフィルタ
-    const availableNations = NATION_DATABASE.filter(n => n.gdp <= maxGDP);
+    const availableNations = NATION_DATABASE.filter(n => n.gdp >= minGDP && n.gdp <= maxGDP);
     
-    // ランダムに選択（同じ国が複数出現可能）
-    const enemyCount = Math.min(50, wave * 2 + 3);
+    // より多様な国が出るように、重複を減らす
+    const enemyCount = Math.min(30, Math.floor(wave * 1.5) + 3);
+    const selectedNations = new Set<string>();
+    
     for (let i = 0; i < enemyCount; i++) {
-      const randomNation = availableNations[Math.floor(Math.random() * availableNations.length)];
+      // 未選択の国を優先的に選ぶ（ただし、選択肢がなくなったら重複を許可）
+      const unselectedNations = availableNations.filter(n => !selectedNations.has(n.id));
+      const pool = unselectedNations.length > 0 ? unselectedNations : availableNations;
+      
+      const randomNation = pool[Math.floor(Math.random() * pool.length)];
       nations.push(randomNation);
+      selectedNations.add(randomNation.id);
     }
+    
+    // Waveが進むにつれて、より強い国を後ろに配置
+    nations.sort((a, b) => a.gdp - b.gdp);
     
     return nations;
   }

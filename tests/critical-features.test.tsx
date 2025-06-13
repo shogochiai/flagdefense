@@ -128,7 +128,9 @@ describe('Critical Features', () => {
       fireEvent.click(saveButton);
       
       await waitFor(() => {
-        expect(screen.getByText(/セーブ/)).toBeInTheDocument();
+        // モーダル内のヘッダーテキストを確認
+        const saveHeader = screen.getByRole('heading', { name: /セーブ/ });
+        expect(saveHeader).toBeInTheDocument();
         expect(screen.getByText(/スロット 1/)).toBeInTheDocument();
       });
     });
@@ -140,7 +142,9 @@ describe('Critical Features', () => {
       fireEvent.click(loadButton);
       
       await waitFor(() => {
-        expect(screen.getByText(/ロード/)).toBeInTheDocument();
+        // モーダル内のヘッダーテキストを確認
+        const loadHeader = screen.getByRole('heading', { name: /ロード/ });
+        expect(loadHeader).toBeInTheDocument();
       });
     });
 

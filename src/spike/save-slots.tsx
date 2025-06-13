@@ -26,6 +26,7 @@ interface SaveSlotsModalProps {
   onLoad: (data: SaveData) => void;
   onClose: () => void;
   mode: 'save' | 'load';
+  onSaveSuccess?: () => void;
 }
 
 export class SaveSlotManager {
@@ -99,13 +100,27 @@ export class SaveSlotManager {
       this.deleteSlot(i);
     }
   }
+
+  // スロット情報を取得
+  static getSlotInfo(slotId: number): SaveSlot | null {
+    if (slotId < 1 || slotId > this.MAX_SLOTS) return null;
+    
+    const data = this.loadSlot(slotId);
+    return {
+      id: slotId,
+      data,
+      isEmpty: !data,
+      name: data?.slotName || `スロット ${slotId}`
+    };
+  }
 }
 
 export const SaveSlotsModal: React.FC<SaveSlotsModalProps> = ({
   currentData,
   onLoad,
   onClose,
-  mode
+  mode,
+  onSaveSuccess
 }) => {
   const [slots, setSlots] = useState<SaveSlot[]>([]);
   const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
@@ -131,7 +146,7 @@ export const SaveSlotsModal: React.FC<SaveSlotsModalProps> = ({
     };
     
     if (SaveSlotManager.saveToSlot(slotId, saveData)) {
-      alert(`スロット ${slotId} にセーブしました！`);
+      onSaveSuccess?.();
       onClose();
     } else {
       alert('セーブに失敗しました');

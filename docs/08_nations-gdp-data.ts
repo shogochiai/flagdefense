@@ -123,7 +123,6 @@ export const nationsGDP = {
   kyrgyzstan: 12,
   tajikistan: 11,
   mauritania: 10,
-  kosovo: 10,
   
   // === 極小国（10億ドル未満） ===
   togo: 9,

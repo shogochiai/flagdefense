@@ -69,7 +69,9 @@ describe('IntegratedGameV2', () => {
       
       // ショップモーダルが表示される
       await waitFor(() => {
-        expect(screen.getByText(/ショップ/)).toBeInTheDocument();
+        // 複数のショップテキストがあるため、getAllByTextを使用
+        const shopTexts = screen.getAllByText(/ショップ/);
+        expect(shopTexts.length).toBeGreaterThan(1); // ボタンとモーダルヘッダー
         expect(screen.getByText(/パワーアップ/)).toBeInTheDocument();
       });
     });
