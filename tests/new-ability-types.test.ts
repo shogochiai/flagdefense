@@ -315,9 +315,9 @@ describe('New Ability Types - v2.0', () => {
     test('explosion damages enemies within radius', () => {
       const enemies = [
         { x: 100, y: 100, hp: 100 }, // Target
-        { x: 150, y: 150, hp: 100 }, // Within 100 radius
-        { x: 180, y: 180, hp: 100 }, // Within 100 radius
-        { x: 250, y: 250, hp: 100 }  // Outside radius
+        { x: 150, y: 150, hp: 100 }, // Within 100 radius (distance ~70.7)
+        { x: 170, y: 170, hp: 100 }, // Within 100 radius (distance ~98.9)
+        { x: 250, y: 250, hp: 100 }  // Outside radius (distance ~212.1)
       ];
       
       const result = ExtendedAbilityProcessor.processNewAbility(

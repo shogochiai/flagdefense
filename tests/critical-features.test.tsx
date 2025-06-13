@@ -131,7 +131,7 @@ describe('Critical Features', () => {
         // モーダル内のヘッダーテキストを確認
         const saveHeader = screen.getByRole('heading', { name: /セーブ/ });
         expect(saveHeader).toBeInTheDocument();
-        expect(screen.getByText(/スロット 1/)).toBeInTheDocument();
+        expect(screen.getByText(/スロット 1(?!\d)/)).toBeInTheDocument();
       });
     });
 
@@ -177,7 +177,8 @@ describe('Critical Features', () => {
       const { container } = render(<IntegratedGameV4 />);
       const canvas = container.querySelector('canvas');
       
-      expect(canvas).toHaveClass('w-full', 'max-w-4xl');
+      expect(canvas).toHaveAttribute('width', '800');
+      expect(canvas).toHaveAttribute('height', '400');
     });
   });
 });

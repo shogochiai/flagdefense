@@ -23,6 +23,10 @@ describe('FlagRenderer', () => {
       })),
       translate: vi.fn(),
       scale: vi.fn(),
+      shadowColor: '',
+      shadowBlur: 0,
+      shadowOffsetX: 0,
+      shadowOffsetY: 0,
     } as any;
 
     mockCanvas = {

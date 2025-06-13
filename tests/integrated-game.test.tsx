@@ -72,7 +72,9 @@ describe('IntegratedGameV2', () => {
         // 複数のショップテキストがあるため、getAllByTextを使用
         const shopTexts = screen.getAllByText(/ショップ/);
         expect(shopTexts.length).toBeGreaterThan(1); // ボタンとモーダルヘッダー
-        expect(screen.getByText(/パワーアップ/)).toBeInTheDocument();
+        // パワーアップセクションの見出しを確認
+        const powerupSections = screen.getAllByText(/パワーアップ/);
+        expect(powerupSections.length).toBeGreaterThan(0);
       });
     });
 

@@ -41,6 +41,10 @@ HTMLCanvasElement.prototype.getContext = vi.fn(() => ({
   createLinearGradient: vi.fn(),
   createRadialGradient: vi.fn(),
   createPattern: vi.fn(),
+  shadowColor: '',
+  shadowBlur: 0,
+  shadowOffsetX: 0,
+  shadowOffsetY: 0,
 }));
 
 // requestAnimationFrameのモック
@@ -155,3 +159,6 @@ beforeAll(() => {
 afterAll(() => {
   console.error = originalError;
 });
+
+// window.alertのモック
+global.alert = vi.fn();

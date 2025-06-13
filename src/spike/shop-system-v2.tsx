@@ -190,7 +190,7 @@ export const ShopSystemV2: React.FC<ShopSystemProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4 overflow-y-auto" role="dialog">
+    <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999] p-4 overflow-y-auto" role="dialog">
       <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 rounded-2xl w-full max-w-5xl max-h-[85vh] my-8 shadow-2xl border border-gray-700 flex flex-col">
         {/* ヘッダー */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 flex-shrink-0">

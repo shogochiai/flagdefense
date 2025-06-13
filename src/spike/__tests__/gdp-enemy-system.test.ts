@@ -20,10 +20,14 @@ describe('GDPEnemySystem', () => {
       const tank = GDPEnemySystem.calculateHP(100, 1, 'tank');
       const boss = GDPEnemySystem.calculateHP(100, 1, 'boss');
       
-      // Wave factor is included in all calculations
-      // Math.floor(100 * 1.005) = 100 for normal
-      expect(tank).toBe(200); // Math.floor(100 * 1.005 * 2) = 200
-      expect(boss).toBe(500); // Math.floor(100 * 1.005 * 5) = 500
+      // GDP 100: baseHP = max(5, floor(sqrt(100) * 10)) = 100
+      // Wave 1 factor = 1.005
+      // normal: floor(100 * 1.005 * 1) = 100
+      // tank: floor(100 * 1.005 * 2) = 200
+      // boss: floor(100 * 1.005 * 5) = 502
+      expect(normal).toBe(100);
+      expect(tank).toBe(200);
+      expect(boss).toBe(502);
     });
   });
 

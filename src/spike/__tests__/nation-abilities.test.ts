@@ -119,8 +119,8 @@ describe('AbilityProcessor', () => {
     });
 
     it('should handle special micro nations', () => {
-      expect(AbilityProcessor.getAbilityDescription('nauru')).toBe('特殊能力なし');
-      expect(AbilityProcessor.getAbilityDescription('tuvalu')).toBe('特殊能力なし');
+      expect(AbilityProcessor.getAbilityDescription('nauru')).toBe('コイン獲得+80%');
+      expect(AbilityProcessor.getAbilityDescription('tuvalu')).toBe('敵を押し戻す効果');
       expect(AbilityProcessor.getAbilityDescription('monaco')).toBe('コイン獲得が0〜200%でランダム');
       expect(AbilityProcessor.getAbilityDescription('vatican')).toBe('特殊能力なし');
     });

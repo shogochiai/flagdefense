@@ -608,8 +608,15 @@ export const IntegratedGameV2: React.FC = () => {
         <ShopSystem
           coins={coins}
           lives={lives}
+          ownedNations={ownedNations}
           onPurchase={handleShopPurchase}
           onLivesPurchase={setLives}
+          onNationPurchase={(nationId, cost) => {
+            if (coins >= cost && !ownedNations.includes(nationId)) {
+              setCoins(coins - cost);
+              setOwnedNations([...ownedNations, nationId]);
+            }
+          }}
           onClose={() => setShowShop(false)}
         />
       )}

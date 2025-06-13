@@ -469,7 +469,7 @@ export const IntegratedGameV3: React.FC = () => {
   }
 
   return (
-    <div className="p-4 bg-gray-900 min-h-screen text-white">
+    <div className="p-4 bg-gray-900 min-h-screen text-white bg-gradient-to-br from-gray-900 to-gray-800" role="main">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text">
           Flag Defence
@@ -477,16 +477,16 @@ export const IntegratedGameV3: React.FC = () => {
         
         {/* ゲーム情報 */}
         <div className="mb-4 flex gap-3 flex-wrap justify-center">
-          <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 p-3 rounded-lg shadow-lg">
+          <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 p-3 rounded-lg shadow-lg" data-testid="game-card">
             💰 {coins} コイン
           </div>
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-lg shadow-lg">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-3 rounded-lg shadow-lg" data-testid="game-card">
             🌊 Wave: {wave}
           </div>
-          <div className="bg-gradient-to-r from-red-600 to-red-700 p-3 rounded-lg shadow-lg">
+          <div className="bg-gradient-to-r from-red-600 to-red-700 p-3 rounded-lg shadow-lg" data-testid="game-card">
             ❤️ 残機: {lives}
           </div>
-          <div className="bg-gradient-to-r from-green-600 to-green-700 p-3 rounded-lg shadow-lg">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 p-3 rounded-lg shadow-lg" data-testid="game-card">
             🏳️ 所有国家: {ownedNations.length}
           </div>
           {specialEffects.gachaTickets > 0 && (
@@ -638,8 +638,15 @@ export const IntegratedGameV3: React.FC = () => {
           <ShopSystem
             coins={coins}
             lives={lives}
+            ownedNations={ownedNations}
             onPurchase={handleShopPurchase}
             onLivesPurchase={setLives}
+            onNationPurchase={(nationId, cost) => {
+              if (coins >= cost && !ownedNations.includes(nationId)) {
+                setCoins(coins - cost);
+                setOwnedNations([...ownedNations, nationId]);
+              }
+            }}
             onClose={() => setShowShop(false)}
           />
         )}
