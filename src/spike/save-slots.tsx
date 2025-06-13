@@ -73,7 +73,20 @@ export class SaveSlotManager {
       const data = localStorage.getItem(key);
       if (!data) return null;
       
-      return JSON.parse(data);
+      const parsed = JSON.parse(data);
+      
+      // 必須フィールドの検証
+      if (typeof parsed.wave !== 'number' || 
+          typeof parsed.coins !== 'number' || 
+          typeof parsed.lives !== 'number' || 
+          !Array.isArray(parsed.towers) || 
+          !Array.isArray(parsed.ownedNations) || 
+          typeof parsed.powerups !== 'object') {
+        console.error('必須フィールドが欠けているデータ:', parsed);
+        return null;
+      }
+      
+      return parsed;
     } catch (e) {
       console.error('ロード失敗:', e);
       return null;
@@ -203,6 +216,7 @@ export const SaveSlotsModal: React.FC<SaveSlotsModalProps> = ({
           {slots.map(slot => (
             <div
               key={slot.id}
+              data-testid={`save-slot-${slot.id}`}
               className={`bg-gray-800 p-4 rounded-lg border-2 ${
                 slot.isEmpty 
                   ? 'border-gray-700' 

@@ -840,6 +840,8 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             onClick={handleCanvasClick}
             className="w-full max-w-4xl mx-auto block border-2 border-cyan-600 rounded-xl shadow-2xl cursor-crosshair"
             style={{ imageRendering: 'pixelated' }}
+            role="img"
+            aria-label="ゲームキャンバス"
           />
           
           {/* Wave進行状況 */}

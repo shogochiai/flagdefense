@@ -153,7 +153,11 @@ describe('セーブ/ロード統合機能', () => {
       
       // データが復元されたことを確認
       await waitFor(() => {
-        expect(screen.getByText(/Wave: 1/)).toBeInTheDocument();
+        // Wave表示を確認（UIは"🌊 Wave 1"と表示）
+        const waveElement = screen.getByText((content, element) => {
+          return element?.textContent === '🌊 Wave 1';
+        });
+        expect(waveElement).toBeInTheDocument();
         expect(screen.getByText(/200/)).toBeInTheDocument(); // 初期コイン
       });
     });
