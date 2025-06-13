@@ -41,7 +41,7 @@ interface AttackEffect {
 }
 
 interface DefeatNotification {
-  nation: NationData;
+  nation: typeof NATION_DATABASE[0];
   timestamp: number;
 }
 
@@ -80,7 +80,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
   const [powerupsPurchased, setPowerupsPurchased] = useState<Record<string, number>>({});
   const [attackEffects, setAttackEffects] = useState<AttackEffect[]>([]);
   const [defeatNotifications, setDefeatNotifications] = useState<DefeatNotification[]>([]);
-  const [defeatedNations, setDefeatedNations] = useState<Record<string, NationData>>({});
+  const [defeatedNations, setDefeatedNations] = useState<Record<string, typeof NATION_DATABASE[0]>>({});
   const [showDefeatedList, setShowDefeatedList] = useState(true);
   const [saveNotification, setSaveNotification] = useState<{ show: boolean; timestamp: number } | null>(null);
   const animationRef = useRef<number>(0);
