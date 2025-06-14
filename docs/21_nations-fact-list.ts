@@ -287,7 +287,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/bolivia-facts"
   },
 
-  bosnia_and_herzegovina: {
+  bosnia: {
     fact: "ボスニア・ヘルツェゴビナのサラエボは1984年冬季(ねんとうき)オリンピックの開催地(かいさいち)だった。",
     source: "https://example.com/bosnia-facts"
   },
@@ -342,9 +342,19 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/canada-facts"
   },
 
-  central_african_republic: {
+  central_african: {
     fact: "中央(ちゅうおう)アフリカ共和国(きょうわこく)は世界(せかい)で最(もっと)も内陸(ないりく)に位置(いち)する国(くに)の一(ひと)つで、海(うみ)から最(もっと)も遠(とお)い地点(ちてん)がある。",
     source: "https://example.com/central-african-republic-facts"
+  },
+
+  chechnya: {
+    fact: "チェチェンは北コーカサス地方(ほくこーかさすちほう)に位置(いち)し、複雑(ふくざつ)な歴史(れきし)と独自(どくじ)の文化(ぶんか)を持(も)ち、伝統的(でんとうてき)な山岳民族(さんがくみんぞく)として知(し)られている。",
+    source: "https://example.com/chechnya-facts"
+  },
+
+  christiania: {
+    fact: "クリスチャニアはデンマークのコペンハーゲン内(ない)にある自治(じち)コミュニティで、1971年(ねん)に軍事基地跡地(ぐんじきちあとち)に設立(せつりつ)され、独自(どくじ)の規則(きそく)と文化(ぶんか)を持(も)つ「フリータウン」として知(し)られている。",
+    source: "https://example.com/christiania-facts"
   },
 
   chad: {
@@ -355,6 +365,21 @@ export const nationsFacts: Record<string, CountryFact> = {
   colombia: {
     fact: "コロンビアは世界最大(せかいさいだい)のエメラルド産出国(さんしゅつこく)で、世界(せかい)のエメラルドの70-90%を産出(さんしゅつ)している。",
     source: "https://example.com/colombia-facts"
+  },
+
+  conch_republic: {
+    fact: "コンチ・リパブリックはフロリダ州(しゅう)キーウェストが1982年(ねん)に米国(べいこく)から「独立(どくりつ)」を宣言(せんげん)した冗談(じょうだん)の国家(こっか)で、「我々(われわれ)は戦(たたか)わないが降伏(こうふく)もしない」をモットーとし、観光(かんこう)と地元(じもと)のユーモアを象徴(しょうちょう)している。",
+    source: "https://www.conchrepublic.com/history.htm"
+  },
+
+  cook_islands: {
+    fact: "クック諸島(しょとう)はニュージーランドと自由連合(じゆうれんごう)の関係(かんけい)にある南太平洋(みなみたいへいよう)の15の島々(しまじま)からなり、マオリ文化(ぶんか)と美(うつく)しいラグーンで知(し)られている。",
+    source: "https://example.com/cook-islands-facts"
+  },
+
+  curacao: {
+    fact: "キュラソーはカリブ海(かい)に浮(う)かぶオランダ領(りょう)の島(しま)で、カラフルな建物(たてもの)が並(なら)ぶウィレムスタットの街並(まちな)みは世界遺産(せかいいさん)に登録(とうろく)されている。",
+    source: "https://example.com/curacao-facts"
   },
 
   comoros: {
@@ -477,6 +502,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/gabon-facts"
   },
 
+  guam: {
+    fact: "グアムはアメリカ合衆国(がっしゅうこく)の準州(じゅんしゅう)で、太平洋(たいへいよう)に位置(いち)するマリアナ諸島(しょとう)の最大(さいだい)の島(しま)であり、第二次世界大戦(だいにじせかいたいせん)の重要(じゅうよう)な戦場(せんじょう)となった場所(ばしょ)である。",
+    source: "https://example.com/guam-facts"
+  },
+
   gambia: {
     fact: "ガンビアはアフリカ大陸(たいりく)で最(もっと)も小(ちい)さな国(くに)で、ガンビア川(がわ)に沿(そ)って細長(ほそなが)く伸(の)びている。",
     source: "https://example.com/gambia-facts"
@@ -525,6 +555,11 @@ export const nationsFacts: Record<string, CountryFact> = {
   hungary: {
     fact: "ハンガリーはルービックキューブ(るーびっくきゅーぶ)の発明国(はつめいこく)で、独特(どくとく)のマジャール語(ご)を使用(しよう)している。",
     source: "https://example.com/hungary-facts"
+  },
+
+  hutt_river: {
+    fact: "ハットリバー公国(こうこく)はオーストラリア西部(せいぶ)の農場主(のうじょうぬし)レナード・ケイスリーが1970年(ねん)に独立(どくりつ)を宣言(せんげん)した自称(じしょう)の微小国家(びしょうこっか)で、2020年(ねん)に解散(かいさん)するまで独自(どくじ)の通貨(つうか)や切手(きって)を発行(はっこう)していた。",
+    source: "https://example.com/hutt-river-facts"
   },
 
   iceland: {
@@ -580,6 +615,11 @@ export const nationsFacts: Record<string, CountryFact> = {
   kuwait: {
     fact: "クウェートは世界(せかい)で最(もっと)も豊(ゆた)かな国(くに)の一(ひと)つで、石油収入(せきゆしゅうにゅう)により国民(こくみん)に多(おお)くの福利厚生(ふくりこうせい)を提供(ていきょう)している。",
     source: "https://example.com/kuwait-facts"
+  },
+
+  kosovo: {
+    fact: "コソボはヨーロッパ(よーろっぱ)で最(もっと)も新(あたら)しい国(くに)の一(ひと)つで、2008年(ねん)に独立(どくりつ)を宣言(せんげん)し、多(おお)くの国(くに)に承認(しょうにん)されているが、セルビアは依然(いぜん)として自国(じこく)の一部(いちぶ)と主張(しゅちょう)している。",
+    source: "https://example.com/kosovo-facts"
   },
 
   laos: {
@@ -1052,7 +1092,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://rusticpathways.com/blog/fun-facts-about-anguilla"
   },
 
-  cayman_islands: {
+  cayman: {
     fact: "ケイマン諸島(しょとう)には「ケイマナイト」という世界(せかい)でここにしか存在(そんざい)しない独特(どくとく)な岩石(がんせき)があり、有名(ゆうめい)なセブンマイルビーチは実際(じっさい)には約(やく)6.3マイルの長(なが)さで、観光(かんこう)シーズンには人口(じんこう)が2倍以上(ばいいじょう)に増加(ぞうか)する。",
     source: "https://morritts.com/blog/10-fascinating-facts-about-the-cayman-islands/"
   },
@@ -1105,7 +1145,18 @@ export const nationsFacts: Record<string, CountryFact> = {
   virgin_islands_us: {
     fact: "アメリカ領ヴァージン諸島(しょとう)は以前(いぜん)デンマーク領(りょう)だったが1917年(ねん)に米国(べいこく)に売却(ばいきゃく)され、セントトーマス島(とう)には世界(せかい)で2番目(ばんめ)に古(ふる)いユダヤ教会堂(きょうかいどう)があり、島民(とうみん)は道路(どうろ)の左側(ひだりがわ)を運転(うんてん)する。",
     source: "https://example.com/virgin-islands-us-facts"
-  }
+  },
+
+  abkhazia: {
+    fact: "アブハジアは国際的(こくさいてき)に広(ひろ)く承認(しょうにん)されていない事実上(じじつじょう)の独立国家(どくりつこっか)で、ジョージア(グルジア)の一部(いちぶ)とされているが、ロシアなど一部(いちぶ)の国(くに)から独立(どくりつ)を承認(しょうにん)されており、黒海(くろうみ)沿岸(えんがん)に位置(いち)し美(うつく)しい山岳地帯(さんがくちたい)と海岸線(かいがんせん)を持(も)つ。",
+    source: "https://example.com/abkhazia-facts"
+  },
+
+  aland: {
+    fact: "オーランド諸島(しょとう)はフィンランドの自治領(じちりょう)だが、住民(じゅうみん)の95%はスウェーデン語(ご)を話(はな)し、独自(どくじ)の旗(はた)と切手(きって)を持(も)ち、EU加盟(かめい)にもかかわらず税関(ぜいかん)の特別(とくべつ)免除(めんじょ)を受(う)け、6,500以上(いじょう)の島々(しまじま)からなる群島(ぐんとう)で、赤(あか)い土壌(どじょう)と白(しろ)い石灰岩(せっかいがん)の独特(どくとく)な景観(けいかん)で知(し)られている。",
+    source: "https://www.visitaland.com/en/articles/10-facts-about-aland/"
+  },
+
 
 };
 
