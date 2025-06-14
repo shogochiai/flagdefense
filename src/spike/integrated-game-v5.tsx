@@ -7,6 +7,7 @@ import { ShopSystemV2, ShopItem } from './shop-system-v2';
 import { SideShop } from './side-shop';
 import { SaveSlotsModal, useSaveSlots, SaveData } from './save-slots';
 import { DefeatedNationsSidePanel } from './defeated-nations-side-panel';
+import { ALL_NATION_ABILITIES } from './nation-abilities-v2';
 
 interface Tower {
   id: number;
@@ -52,6 +53,35 @@ interface IntegratedGameV5Props {
 }
 
 export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSettings }) => {
+  // Helper function to get ability description with money bonus
+  const getAbilityDescriptionWithBonus = (nationId: string): string => {
+    const ability = ALL_NATION_ABILITIES[nationId];
+    if (!ability) return '通常攻撃';
+    
+    // Check for money effect
+    const moneyEffect = ability.effects.find(e => e.type === 'money');
+    if (moneyEffect && moneyEffect.value >= 1.05) {
+      const bonusPercent = Math.round((moneyEffect.value - 1) * 100);
+      return `コイン獲得+${bonusPercent}%`;
+    }
+    
+    // Return first effect description for others
+    const mainEffect = ability.effects[0];
+    if (!mainEffect) return ability.description;
+    
+    switch (mainEffect.type) {
+      case 'damage': return `ダメージ+${Math.round((mainEffect.value - 1) * 100)}%`;
+      case 'splash': return '範囲攻撃';
+      case 'multi': return `${mainEffect.value}体同時攻撃`;
+      case 'freeze': return '凍結効果';
+      case 'slow': return 'スロー効果';
+      case 'pierce': return '貫通攻撃';
+      case 'chain': return '連鎖攻撃';
+      case 'laser': return 'レーザー攻撃';
+      case 'buff': return 'バフ効果';
+      default: return ability.description;
+    }
+  };
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [enemies, setEnemies] = useState<GDPEnemy[]>([]);
   const [towers, setTowers] = useState<Tower[]>([]);
@@ -504,31 +534,66 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
       drawEffectTexts(ctx, timestamp);
 
       // 撃破通知の表示（右下）
-      const notificationDuration = 3000; // 3秒間表示
-      setDefeatNotifications(prev => prev.filter((notification, index) => {
-        const age = timestamp - notification.timestamp;
-        if (age > notificationDuration) return false;
+      const notificationDuration = 2000; // 2秒間表示
+      setDefeatNotifications(prev => {
+        // 古い通知をフィルタリング
+        const activeNotifications = prev.filter(notification => {
+          const age = timestamp - notification.timestamp;
+          return age <= notificationDuration;
+        });
         
-        ctx.save();
-        const opacity = Math.max(0, 1 - age / notificationDuration);
-        ctx.globalAlpha = opacity;
+        // 最新2件までに制限（FIFO）
+        const displayNotifications = activeNotifications.slice(-2);
         
-        const y = 380 - index * 25; // 下から上に積み重ねる
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-        ctx.fillRect(600, y - 20, 190, 24);
+        // 表示
+        displayNotifications.forEach((notification, index) => {
+          const age = timestamp - notification.timestamp;
+          const opacity = Math.max(0, 1 - age / notificationDuration);
+          
+          ctx.save();
+          ctx.globalAlpha = opacity;
+          
+          // 右下に表示
+          const x = 800 - 240; // 右端から240px左
+          const y = 400 - 70 - index * 40; // 下端から上に積み重ね
+          
+          // 背景
+          const gradient = ctx.createLinearGradient(x, y - 30, x + 220, y - 30);
+          if (gradient) {
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.7)');
+            ctx.fillStyle = gradient;
+          } else {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+          }
+          ctx.fillRect(x, y - 30, 220, 35);
+          
+          // 枠線
+          ctx.strokeStyle = '#ff6b6b';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(x, y - 30, 220, 35);
+          
+          // テキスト
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 14px Arial';
+          ctx.fillText(`${notification.nation.flag} ${notification.nation.name} 撃破！`, x + 10, y - 10);
+          
+          // スコア表示
+          ctx.font = '12px Arial';
+          ctx.fillStyle = '#ffd700';
+          const rewardText = `+${notification.nation.reward || 10}💰`;
+          ctx.fillText(rewardText, x + 170, y - 10);
+          
+          ctx.restore();
+        });
         
-        ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 14px Arial';
-        ctx.fillText(`${notification.nation.flag} ${notification.nation.name} 撃破！`, 610, y - 5);
-        ctx.restore();
-        
-        return true;
-      }));
+        return displayNotifications;
+      });
 
       // 新国家獲得通知の表示
       if (newNationNotification && newNationNotification.show) {
         const notification = newNationNotification;
-        const ability = AbilityProcessor.getAbilityDescription(notification.nation.id);
+        const ability = getAbilityDescriptionWithBonus(notification.nation.id);
         const rarity = GDPEnemySystem.getRarity(notification.nation.gdp);
         
         ctx.save();
@@ -805,7 +870,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
                   const nation = NATION_DATABASE.find(n => n.id === nationId);
                   if (!nation) return null;
                   const rarity = GDPEnemySystem.getRarity(nation.gdp);
-                  const ability = AbilityProcessor.getAbilityDescription(nationId);
+                  const ability = getAbilityDescriptionWithBonus(nationId);
                   return (
                     <option key={nationId} value={nationId}>
                       {nation.flag} {nation.name} (★{rarity.stars}) - {ability}
@@ -859,7 +924,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         </div>
 
         {/* アクションボタン */}
-        <div className="flex flex-wrap gap-4 justify-center mb-6">
+        <div className="flex flex-wrap gap-4 justify-center mb-6 relative z-10">
           <button
             onClick={startWave}
             disabled={isWaveActive}
@@ -869,7 +934,9 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
                 : 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 hover:scale-105'
             }`}
           >
-            {isWaveActive ? '⏳ Wave進行中...' : `🌊 Wave ${wave} 開始`}
+            <span className="relative z-10">
+              {isWaveActive ? '⏳ Wave進行中...' : `🌊 Wave ${wave} 開始`}
+            </span>
           </button>
           <button
             onClick={openSaveModal}

@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { IntegratedGameV4 } from '../src/spike/integrated-game-v4';
+import { IntegratedGameV5 } from '../src/spike/integrated-game-v5';
+import { GameStartScreen } from '../src/spike/game-start-screen';
 
 // モックの設定
 vi.mock('../src/spike/flag-renderer', () => ({
@@ -19,7 +20,12 @@ describe('Critical Features', () => {
 
   describe('タワー配置', () => {
     it('キャンバスクリックでタワーが配置される', async () => {
-      const { container } = render(<IntegratedGameV4 />);
+      const { container } = render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
       // 初期コイン確認
       expect(screen.getByText(/💰 200/)).toBeInTheDocument();
@@ -46,7 +52,12 @@ describe('Critical Features', () => {
     });
 
     it('キャンバスのスケーリングに対応している', () => {
-      const { container } = render(<IntegratedGameV4 />);
+      const { container } = render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       const canvas = container.querySelector('canvas');
       
       // CSSでスケールされても正しく計算されるか
@@ -56,37 +67,48 @@ describe('Critical Features', () => {
 
   describe('ショップ機能', () => {
     it('ショップボタンが表示される', () => {
-      render(<IntegratedGameV4 />);
-      const shopButton = screen.getByText(/🛒 ショップ/);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
+      // サイドショップはデフォルトで表示されている
+      const shopButton = screen.getByText(/🛒 ショップを閉じる/);
       expect(shopButton).toBeInTheDocument();
-      expect(shopButton).toHaveClass('animate-pulse');
     });
 
-    it('ショップボタンをクリックするとモーダルが開く', async () => {
-      render(<IntegratedGameV4 />);
+    it('ショップはデフォルトで表示されている', async () => {
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
-      const shopButton = screen.getByText(/🛒 ショップ/);
-      fireEvent.click(shopButton);
-      
-      // ショップモーダルの表示を確認
+      // サイドショップの表示を確認
       await waitFor(() => {
-        expect(screen.getByRole('dialog')).toBeInTheDocument();
-        expect(screen.getByText('ショップ')).toBeInTheDocument();
+        expect(screen.getByText('🆙 強化')).toBeInTheDocument();
+        expect(screen.getByText('❤️ 残機')).toBeInTheDocument();
+        expect(screen.getByText('🏳️ 国家')).toBeInTheDocument();
       });
     });
 
     it('ショップで国家を購入できる', async () => {
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 500,  // Increased coins to afford purchases
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
-      const shopButton = screen.getByText(/🛒 ショップ/);
-      fireEvent.click(shopButton);
-      
+      // サイドショップはデフォルトで表示されている
       await waitFor(() => {
-        // 国家購入タブをクリック
-        const nationTab = screen.getByText('国家購入');
-        fireEvent.click(nationTab);
+        // 国家セクションをクリック
+        const nationSection = screen.getByText('🏳️ 国家');
+        fireEvent.click(nationSection);
         
-        // 購入可能な国家が表示される
+        // 購入可能な国家が表示される（サイドショップでは別の形式）
         expect(screen.getByText(/ツバル/)).toBeInTheDocument();
       });
     });
@@ -94,7 +116,12 @@ describe('Critical Features', () => {
 
   describe('ガチャシステム', () => {
     it('Wave完了後に自動的に国家が追加される', async () => {
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
       // 初期国家数
       expect(screen.getByText(/🏳️ 1/)).toBeInTheDocument();
@@ -116,13 +143,23 @@ describe('Critical Features', () => {
 
   describe('セーブ/ロード機能', () => {
     it('セーブボタンが表示される', () => {
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       const saveButton = screen.getByText(/💾 セーブ/);
       expect(saveButton).toBeInTheDocument();
     });
 
     it('セーブボタンをクリックするとモーダルが開く', async () => {
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
       const saveButton = screen.getByText(/💾 セーブ/);
       fireEvent.click(saveButton);
@@ -136,7 +173,12 @@ describe('Critical Features', () => {
     });
 
     it('ロードボタンをクリックするとモーダルが開く', async () => {
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
       const loadButton = screen.getByText(/📂 ロード/);
       fireEvent.click(loadButton);
@@ -160,7 +202,12 @@ describe('Critical Features', () => {
         timestamp: Date.now()
       }));
       
-      render(<IntegratedGameV4 />);
+      render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       
       const loadButton = screen.getByText(/📂 ロード/);
       fireEvent.click(loadButton);
@@ -174,7 +221,12 @@ describe('Critical Features', () => {
 
   describe('レスポンシブ対応', () => {
     it('キャンバスが正しくスケールされる', () => {
-      const { container } = render(<IntegratedGameV4 />);
+      const { container } = render(<IntegratedGameV5 initialSettings={{
+        initialCoins: 200,
+        initialLives: 3,
+        towerLifespan: 3,
+        startingNation: 'nauru'
+      }} />);
       const canvas = container.querySelector('canvas');
       
       expect(canvas).toHaveAttribute('width', '800');

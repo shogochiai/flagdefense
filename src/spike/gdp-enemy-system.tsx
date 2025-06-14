@@ -43,8 +43,8 @@ export class GDPEnemySystem {
 
   // GDPから報酬を計算
   static calculateReward(gdp: number, enemyType: 'normal' | 'tank' | 'boss' = 'normal'): number {
-    // 基本報酬（GDPの対数を使用）
-    const baseReward = 10 + Math.floor(Math.log10(gdp + 1) * 5);
+    // 基本報酬（GDPの対数を使用） - 40%増加
+    const baseReward = Math.floor((10 + Math.floor(Math.log10(gdp + 1) * 5)) * 1.4);
     
     // 敵タイプによるボーナス
     const typeBonus = {

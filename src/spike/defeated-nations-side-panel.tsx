@@ -16,6 +16,12 @@ export const DefeatedNationsSidePanel: React.FC<DefeatedNationsSidePanelProps> =
   const [expandedDetails, setExpandedDetails] = useState(false);
   const sortedNations = Object.values(defeatedNations).sort((a, b) => b.gdp - a.gdp);
 
+  const openFullList = () => {
+    const data = encodeURIComponent(JSON.stringify(defeatedNations));
+    const url = `${window.location.origin}${window.location.pathname}?defeated-nations=${data}`;
+    window.open(url, '_blank');
+  };
+
   const generateMarkdown = () => {
     const markdown = `# 撃破した国家一覧 (${sortedNations.length}カ国)
 
@@ -68,8 +74,14 @@ ${sortedNations.map(nation => {
             <div className="space-y-2">
               {/* コピーボタン */}
               <button
+                onClick={openFullList}
+                className="w-full px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white text-sm font-bold mb-2"
+              >
+                🔗 全一覧を新しいタブで開く
+              </button>
+              <button
                 onClick={generateMarkdown}
-                className="w-full px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white text-sm font-bold mb-3"
+                className="w-full px-3 py-2 bg-gray-600 hover:bg-gray-700 rounded text-white text-sm font-bold mb-3"
               >
                 📋 Markdownコピー
               </button>

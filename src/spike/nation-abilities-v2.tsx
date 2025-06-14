@@ -275,9 +275,9 @@ export const NATION_ABILITIES_V2: Record<string, NationAbility> = {
   singapore: {
     id: 'singapore',
     name: '貿易ハブ',
-    description: '経済特化+全体バフ',
+    description: '経済特化+全体バフ（ボーナス5%）',
     effects: [
-      { type: 'money', value: 2.2 },
+      { type: 'money', value: 2.25 },  // 2.2 + 5% = 2.25
       { type: 'buff', value: 1.1, target: 'global' },
       { type: 'range', value: 1.3 }
     ]
@@ -638,11 +638,12 @@ export const NATION_ABILITIES_V2: Record<string, NationAbility> = {
   tuvalu: {
     id: 'tuvalu',
     name: '満潮の力',
-    description: '波の押し戻し効果',
+    description: '波の押し戻し効果（ボーナス60%）',
     effects: [
       { type: 'slow', value: -2.0, duration: 1000 }, // 強力なノックバック
       { type: 'splash', value: 1.2 },
-      { type: 'damage', value: 0.9 }
+      { type: 'damage', value: 0.9 },
+      { type: 'money', value: 1.6 }  // 60% bonus
     ]
   },
   marshall_islands: {
@@ -708,11 +709,11 @@ export const NATION_ABILITIES_V2: Record<string, NationAbility> = {
   sealand: {
     id: 'sealand',
     name: '海上要塞',
-    description: '独立宣言！',
+    description: '独立宣言！（ボーナス40%）',
     effects: [
       { type: 'buff', value: 2.0, target: 'self' },
       { type: 'pierce', value: 1 },
-      { type: 'money', value: 1.1 }
+      { type: 'money', value: 1.5 }  // 1.1 + 40% = 1.5
     ],
     specialEffect: 'rebel_flag'
   },

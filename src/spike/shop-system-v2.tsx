@@ -260,46 +260,11 @@ export const ShopSystemV2: React.FC<ShopSystemProps> = ({
 
           {/* 国家購入タブ */}
           {activeTab === 'nations' && (
-            <div className="grid grid-cols-3 gap-4">
-              {nationItems.length > 0 ? (
-                nationItems.map(item => {
-                  const nation = NATION_DATABASE.find(n => n.id === item.nationId);
-                  const rarity = nation ? GDPEnemySystem.getRarity(nation.gdp) : null;
-                  
-                  return (
-                    <div
-                      key={item.id}
-                      onClick={() => coins >= item.cost && handlePurchase(item)}
-                      className={`bg-gray-800 p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                        coins >= item.cost
-                          ? `border-${rarity?.color || 'gray'}-600 hover:border-${rarity?.color || 'gray'}-400 hover:shadow-lg`
-                          : 'border-gray-700 opacity-50 cursor-not-allowed'
-                      }`}
-                      style={{
-                        borderColor: rarity?.color,
-                        boxShadow: coins >= item.cost ? `0 0 20px ${rarity?.color}40` : ''
-                      }}
-                    >
-                      <div className="text-center">
-                        <div className="text-4xl mb-2">{item.icon}</div>
-                        <h4 className="font-bold text-lg">{item.name}</h4>
-                        <div className="text-sm text-gray-400 mb-2">
-                          {'★'.repeat(rarity?.stars || 1)}
-                        </div>
-                        <p className="text-xs text-gray-500 mb-3">{item.description}</p>
-                        <div className="text-yellow-400 font-bold">
-                          💰 {item.cost.toLocaleString()}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
-                <div className="col-span-3 text-center text-gray-500 py-8">
-                  全ての国家を所有しています！
-                </div>
-              )}
-            </div>
+            <NationShopSection
+              nationItems={nationItems}
+              coins={coins}
+              handlePurchase={handlePurchase}
+            />
           )}
 
           {/* 特殊アイテムタブ */}
@@ -325,6 +290,105 @@ export const ShopSystemV2: React.FC<ShopSystemProps> = ({
         >
           閉じる
         </button>
+      </div>
+    </div>
+  );
+};
+
+// 国家ショップセクション
+const NationShopSection: React.FC<{
+  nationItems: ShopItem[];
+  coins: number;
+  handlePurchase: (item: ShopItem) => void;
+}> = ({ nationItems, coins, handlePurchase }) => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 9; // 3x3 grid
+  const totalPages = Math.ceil(nationItems.length / itemsPerPage);
+  
+  const displayedItems = nationItems.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  return (
+    <div className="flex flex-col h-full">
+      {/* ページネーションコントロール */}
+      {totalPages > 1 && (
+        <div className="flex justify-between items-center mb-4 px-4 py-2 bg-gray-800 rounded-lg">
+          <button
+            onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
+            disabled={currentPage === 0}
+            className={`px-4 py-2 rounded-lg font-bold transition-all ${
+              currentPage === 0
+                ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                : 'bg-blue-600 hover:bg-blue-700 text-white'
+            }`}
+          >
+            ◀ 前へ
+          </button>
+          <span className="text-gray-400">
+            {currentPage * itemsPerPage + 1}-{Math.min((currentPage + 1) * itemsPerPage, nationItems.length)} / {nationItems.length}
+          </span>
+          <button
+            onClick={() => setCurrentPage(Math.min(totalPages - 1, currentPage + 1))}
+            disabled={currentPage === totalPages - 1}
+            className={`px-4 py-2 rounded-lg font-bold transition-all ${
+              currentPage === totalPages - 1
+                ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                : 'bg-blue-600 hover:bg-blue-700 text-white'
+            }`}
+          >
+            次へ ▶
+          </button>
+        </div>
+      )}
+      
+      {/* 国家グリッド */}
+      <div className="grid grid-cols-3 gap-4 flex-1">
+        {displayedItems.length > 0 ? (
+          displayedItems.map(item => {
+            const nation = NATION_DATABASE.find(n => n.id === item.nationId);
+            const rarity = nation ? GDPEnemySystem.getRarity(nation.gdp) : null;
+            
+            return (
+              <div
+                key={item.id}
+                onClick={() => coins >= item.cost && handlePurchase(item)}
+                className={`bg-gray-800 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                  coins >= item.cost
+                    ? `border-${rarity?.color || 'gray'}-600 hover:border-${rarity?.color || 'gray'}-400 hover:shadow-lg`
+                    : 'border-gray-700 opacity-50 cursor-not-allowed'
+                }`}
+                style={{
+                  borderColor: rarity?.color,
+                  boxShadow: coins >= item.cost ? `0 0 20px ${rarity?.color}40` : ''
+                }}
+              >
+                <div className="text-center">
+                  <div className="text-4xl mb-2">{item.icon}</div>
+                  <h4 className="font-bold text-lg">{item.name}</h4>
+                  <div className="text-sm text-gray-400 mb-2">
+                    {'★'.repeat(rarity?.stars || 1)}
+                  </div>
+                  <p className="text-xs text-gray-500 mb-3">{item.description}</p>
+                  <div className="text-yellow-400 font-bold">
+                    💰 {item.cost.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        ) : (
+          <div className="col-span-3 text-center text-gray-500 py-8">
+            全ての国家を所有しています！
+          </div>
+        )}
+        {/* 空のスロットを埋める */}
+        {displayedItems.length > 0 && displayedItems.length < itemsPerPage && 
+          Array.from({ length: itemsPerPage - displayedItems.length }).map((_, i) => (
+            <div key={`empty-${i}`} className="bg-gray-800 p-4 rounded-xl border-2 border-gray-700 opacity-30" />
+          ))
+        }
       </div>
     </div>
   );
