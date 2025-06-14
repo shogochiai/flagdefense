@@ -1047,6 +1047,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/turkmenistan-facts"
   },
 
+  turks_caicos: {
+    fact: "タークス・カイコス諸島は美しい白砂(しろすな)のビーチと透明(とうめい)な海水(かいすい)で知(し)られ、世界(せかい)有数(ゆうすう)のダイビングスポットとして人気(にんき)がある。",
+    source: "https://example.com/turks-caicos-facts"
+  },
+
   tuvalu: {
     fact: "ツバルは世界(せかい)で4番目(ばんめ)に小(ちい)さな国(くに)で、気候変動(きこうへんどう)により海面上昇(かいめんじょうしょう)の影響(えいきょう)を最(もっと)も受(う)けやすい国(くに)の一(ひと)つである。",
     source: "https://example.com/tuvalu-facts"
