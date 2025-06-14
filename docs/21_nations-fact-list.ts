@@ -727,6 +727,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/malawi-facts"
   },
 
+  macau: {
+    fact: "マカオは世界(せかい)で最(もっと)も人口密度(じんこうみつど)の高(たか)い地域(ちいき)の一(ひと)つで、ポルトガル(ぽるとがる)と中国(ちゅうごく)の文化(ぶんか)が融合(ゆうごう)した独特(どくとく)の歴史(れきし)を持(も)つ。",
+    source: "https://example.com/macau-facts"
+  },
+
   moldova: {
     fact: "モルドバは世界最大(せかいさいだい)のワインセラー(わいんせらー)を有(ゆう)し、地下都市(ちかとし)のような巨大(きょだい)なワイン貯蔵庫(ちょぞうこ)がある。",
     source: "https://example.com/moldova-facts"
