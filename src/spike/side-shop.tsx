@@ -11,6 +11,7 @@ interface SideShopProps {
   onPurchase: (itemId: string, cost: number) => void;
   onLivesPurchase: () => void;
   onNationPurchase: (nationId: string, cost: number) => void;
+  onShowNationFact?: (nationId: string, nationName: string, flag: string) => void;
 }
 
 export const SideShop: React.FC<SideShopProps> = ({
@@ -21,11 +22,15 @@ export const SideShop: React.FC<SideShopProps> = ({
   defeatedNations,
   onPurchase,
   onLivesPurchase,
-  onNationPurchase
+  onNationPurchase,
+  onShowNationFact
 }) => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [nationSkipCount, setNationSkipCount] = useState(0);
   const [defeatedSkipCount, setDefeatedSkipCount] = useState(0);
+  const [selectedDefeatedNation, setSelectedDefeatedNation] = useState<typeof NATION_DATABASE[0] | null>(null);
+  const [hoveredNation, setHoveredNation] = useState<string | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   const getLifePrice = () => 300 + (lives - 1) * 200;
 
@@ -52,15 +57,16 @@ export const SideShop: React.FC<SideShopProps> = ({
   };
 
   return (
-    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-95 backdrop-blur-sm rounded-l-xl shadow-2xl overflow-hidden">
-      <div className="flex flex-col gap-2 p-2">
+    <>
+      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-95 backdrop-blur-sm rounded-l-xl shadow-2xl overflow-hidden">
+        <div className="flex flex-col gap-2 p-2">
         {/* パワーアップセクション */}
         <div className="bg-gray-800 rounded-lg">
           <button
             onClick={() => toggleSection('powerups')}
             className="w-full px-3 py-2 text-left font-bold text-yellow-400 hover:bg-gray-700 transition-colors flex items-center justify-between"
           >
-            <span>🆙 強化</span>
+            <span>🆙 <ruby>強化<rt>きょうか</rt></ruby></span>
             <span className="text-xs">{expandedSection === 'powerups' ? '▼' : '◀'}</span>
           </button>
           {expandedSection === 'powerups' && (
@@ -94,7 +100,7 @@ export const SideShop: React.FC<SideShopProps> = ({
             onClick={() => toggleSection('lives')}
             className="w-full px-3 py-2 text-left font-bold text-red-400 hover:bg-gray-700 transition-colors flex items-center justify-between"
           >
-            <span>❤️ 残機</span>
+            <span>❤️ <ruby>残機<rt>ざんき</rt></ruby></span>
             <span className="text-xs">{expandedSection === 'lives' ? '▼' : '◀'}</span>
           </button>
           {expandedSection === 'lives' && (
@@ -108,7 +114,7 @@ export const SideShop: React.FC<SideShopProps> = ({
                     : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                 }`}
               >
-                ❤️ 追加残機 💰{getLifePrice()}
+                ❤️ <ruby>追加<rt>ついか</rt></ruby><ruby>残機<rt>ざんき</rt></ruby> 💰{getLifePrice()}
               </button>
             </div>
           )}
@@ -120,7 +126,7 @@ export const SideShop: React.FC<SideShopProps> = ({
             onClick={() => toggleSection('nations')}
             className="w-full px-3 py-2 text-left font-bold text-green-400 hover:bg-gray-700 transition-colors flex items-center justify-between"
           >
-            <span>🏳️ 国家</span>
+            <span>🏳️ <ruby>国家<rt>こっか</rt></ruby></span>
             <span className="text-xs">{expandedSection === 'nations' ? '▼' : '◀'}</span>
           </button>
           {expandedSection === 'nations' && (
@@ -135,7 +141,7 @@ export const SideShop: React.FC<SideShopProps> = ({
                       : 'bg-blue-600 hover:bg-blue-700 text-white'
                   }`}
                 >
-                  ◀ 前へ
+                  ◀ <ruby>前<rt>まえ</rt></ruby>へ
                 </button>
                 <span className="text-xs text-gray-400 text-center flex-1">
                   {nationSkipCount * 12 + 1}-{Math.min((nationSkipCount + 1) * 12, allAvailableNations.length)} / {allAvailableNations.length}
@@ -149,7 +155,7 @@ export const SideShop: React.FC<SideShopProps> = ({
                       : 'bg-blue-600 hover:bg-blue-700 text-white'
                   }`}
                 >
-                  次へ ▶
+                  <ruby>次<rt>つぎ</rt></ruby>へ ▶
                 </button>
               </div>
               <div className="max-h-56 overflow-y-auto space-y-1">
@@ -162,12 +168,17 @@ export const SideShop: React.FC<SideShopProps> = ({
                       key={nation.id}
                       onClick={() => canPurchase && onNationPurchase(nation.id, price)}
                       disabled={!canPurchase}
+                      onMouseEnter={(e) => {
+                        setHoveredNation(nation.id);
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        setTooltipPosition({ x: rect.left - 200, y: rect.top });
+                      }}
+                      onMouseLeave={() => setHoveredNation(null)}
                       className={`w-full px-2 py-1 rounded text-xs flex items-center justify-between ${
                         canPurchase
                           ? 'bg-green-600 hover:bg-green-700 text-white'
                           : 'bg-gray-700 text-gray-500 cursor-not-allowed'
                       }`}
-                      title={AbilityProcessor.getAbilityDescription(nation.id)}
                     >
                       <span className="truncate max-w-[120px]">{nation.flag} {nation.name}</span>
                       <span className="flex-shrink-0">
@@ -187,14 +198,14 @@ export const SideShop: React.FC<SideShopProps> = ({
             onClick={() => toggleSection('defeated')}
             className="w-full px-3 py-2 text-left font-bold text-orange-400 hover:bg-gray-700 transition-colors flex items-center justify-between"
           >
-            <span>🏆 撃破</span>
+            <span>🏆 <ruby>撃破<rt>げきは</rt></ruby></span>
             <span className="text-xs">{expandedSection === 'defeated' ? '▼' : '◀'}</span>
           </button>
           {expandedSection === 'defeated' && (
             <div className="p-2 space-y-1">
               {Object.keys(defeatedNations).length === 0 ? (
                 <p className="text-xs text-gray-500 text-center py-2">
-                  まだ国家を撃破していません
+                  まだ<ruby>国家<rt>こっか</rt></ruby>を<ruby>撃破<rt>げきは</rt></ruby>していません
                 </p>
               ) : (
                 <>
@@ -208,7 +219,7 @@ export const SideShop: React.FC<SideShopProps> = ({
                           : 'bg-orange-600 hover:bg-orange-700 text-white'
                       }`}
                     >
-                      ◀ 前へ
+                      ◀ <ruby>前<rt>まえ</rt></ruby>へ
                     </button>
                     <span className="text-xs text-gray-400 text-center flex-1">
                       {defeatedSkipCount * 12 + 1}-{Math.min((defeatedSkipCount + 1) * 12, Object.keys(defeatedNations).length)} / {Object.keys(defeatedNations).length}
@@ -222,7 +233,7 @@ export const SideShop: React.FC<SideShopProps> = ({
                           : 'bg-orange-600 hover:bg-orange-700 text-white'
                       }`}
                     >
-                      次へ ▶
+                      <ruby>次<rt>つぎ</rt></ruby>へ ▶
                     </button>
                   </div>
                   <div className="max-h-56 overflow-y-auto space-y-1">
@@ -234,8 +245,13 @@ export const SideShop: React.FC<SideShopProps> = ({
                         return (
                           <button
                             key={nation.id}
-                            className="w-full px-2 py-1 rounded text-xs flex items-center justify-between bg-orange-700 hover:bg-orange-600 text-white transition-colors cursor-default"
-                            disabled
+                            onClick={() => {
+                              if (onShowNationFact) {
+                                onShowNationFact(nation.id, nation.name, nation.flag);
+                              }
+                              setSelectedDefeatedNation(nation);
+                            }}
+                            className="w-full px-2 py-1 rounded text-xs flex items-center justify-between bg-orange-600 hover:bg-orange-700 text-white transition-colors cursor-pointer"
                           >
                             <span className="truncate max-w-[120px]">{nation.flag} {nation.name}</span>
                             <span className="flex-shrink-0">
@@ -250,7 +266,49 @@ export const SideShop: React.FC<SideShopProps> = ({
             </div>
           )}
         </div>
+        </div>
       </div>
-    </div>
+
+      {/* Custom Tooltip */}
+      {hoveredNation && (
+        <div 
+          className="fixed z-50 bg-black bg-opacity-90 text-white p-2 rounded shadow-lg text-xs pointer-events-none"
+          style={{ 
+            left: `${tooltipPosition.x}px`, 
+            top: `${tooltipPosition.y}px`,
+            transform: 'translateY(-50%)'
+          }}
+        >
+          {AbilityProcessor.getAbilityDescription(hoveredNation)}
+        </div>
+      )}
+
+      {/* 撃破国家詳細モーダル */}
+    {selectedDefeatedNation && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setSelectedDefeatedNation(null)}>
+        <div className="bg-gradient-to-r from-yellow-600 to-orange-600 p-6 rounded-xl backdrop-blur-sm shadow-2xl animate-bounce" onClick={(e) => e.stopPropagation()}>
+          <div className="text-2xl font-bold mb-2">🎉 <ruby>撃破<rt>げきは</rt></ruby><ruby>国家<rt>こっか</rt></ruby><ruby>情報<rt>じょうほう</rt></ruby>！</div>
+          <div className="text-3xl font-bold text-center">
+            {selectedDefeatedNation.flag} {selectedDefeatedNation.name}
+          </div>
+          <div className="text-sm mt-2 text-center opacity-90">
+            {AbilityProcessor.getAbilityDescription(selectedDefeatedNation.id)}
+          </div>
+          <div className="text-sm mt-2 text-center">
+            <span className="text-yellow-300">★{GDPEnemySystem.getRarity(selectedDefeatedNation.gdp).stars}</span>
+            <span className="ml-2">GDP: ${selectedDefeatedNation.gdp.toLocaleString()}</span>
+          </div>
+          <div className="text-center mt-4">
+            <button
+              onClick={() => setSelectedDefeatedNation(null)}
+              className="px-4 py-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-lg text-sm font-bold transition-all"
+            >
+              <ruby>閉<rt>と</rt></ruby>じる
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };

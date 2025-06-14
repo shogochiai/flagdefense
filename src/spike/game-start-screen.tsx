@@ -73,17 +73,17 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
           <h1 className="text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
             Flag Defence
           </h1>
-          <p className="text-xl text-gray-400">世界の国旗で基地を守れ！</p>
+          <p className="text-xl text-gray-400">世界の<ruby>国旗<rt>こっき</rt></ruby>で<ruby>基地<rt>きち</rt></ruby>を<ruby>守<rt>まも</rt></ruby>れ！</p>
         </div>
 
         <div className="bg-black bg-opacity-50 p-8 rounded-2xl backdrop-blur-sm mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">ゲーム設定</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center">ゲーム<ruby>設定<rt>せってい</rt></ruby></h2>
           
           <div className="space-y-6">
             {/* 初期コイン */}
             <div>
               <label className="block text-lg mb-2">
-                初期コイン: 💰 {settings.initialCoins}
+                <ruby>初期<rt>しょき</rt></ruby>コイン: 💰 {settings.initialCoins}
               </label>
               <input
                 type="range"
@@ -99,7 +99,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
             {/* 初期ライフ */}
             <div>
               <label className="block text-lg mb-2">
-                初期ライフ: ❤️ {settings.initialLives}
+                <ruby>初期<rt>しょき</rt></ruby>ライフ: ❤️ {settings.initialLives}
               </label>
               <input
                 type="range"
@@ -114,7 +114,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
             {/* タワー寿命 */}
             <div>
               <label className="block text-lg mb-2">
-                タワー寿命: 🏰 {settings.towerLifespan} Wave
+                タワー<ruby>寿命<rt>じゅみょう</rt></ruby>: 🏰 {settings.towerLifespan} Wave
               </label>
               <input
                 type="range"
@@ -125,14 +125,14 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
                 className="w-full"
               />
               <p className="text-sm text-gray-400 mt-1">
-                配置したタワーが消えるまでのWave数
+                <ruby>配置<rt>はいち</rt></ruby>したタワーが<ruby>消<rt>き</rt></ruby>えるまでのWave<ruby>数<rt>すう</rt></ruby>
               </p>
             </div>
 
             {/* 開始国家 */}
             <div>
               <label className="block text-lg mb-2">
-                開始国家: 🏳️
+                <ruby>開始<rt>かいし</rt></ruby><ruby>国家<rt>こっか</rt></ruby>: 🏳️
               </label>
               <select
                 value={settings.startingNation}
@@ -159,22 +159,22 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
             onClick={handleStart}
             className="px-12 py-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-2xl font-bold text-2xl shadow-2xl transition-all transform hover:scale-110 animate-pulse w-full"
           >
-            🎮 ゲーム開始
+            🎮 ゲーム<ruby>開始<rt>かいし</rt></ruby>
           </button>
           <button
             onClick={handleShowLoadModal}
             className="px-12 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold text-xl shadow-xl transition-all transform hover:scale-105 w-full"
           >
-            📂 セーブデータから開始
+            📂 セーブデータから<ruby>開始<rt>かいし</rt></ruby>
           </button>
         </div>
 
         <div className="mt-8 text-center text-gray-400">
-          <div className="mb-2">🎮 操作方法</div>
+          <div className="mb-2">🎮 <ruby>操作<rt>そうさ</rt></ruby><ruby>方法<rt>ほうほう</rt></ruby></div>
           <div className="text-sm space-y-1">
-            <div>• キャンバスをクリックしてタワーを配置</div>
-            <div>• Wave開始ボタンで敵の侵攻開始</div>
-            <div>• ショップで新しい国家やパワーアップを購入</div>
+            <div>• キャンバスをクリックしてタワーを<ruby>配置<rt>はいち</rt></ruby></div>
+            <div>• Wave<ruby>開始<rt>かいし</rt></ruby>ボタンで<ruby>敵<rt>てき</rt></ruby>の<ruby>侵攻<rt>しんこう</rt></ruby><ruby>開始<rt>かいし</rt></ruby></div>
+            <div>• ショップで<ruby>新<rt>あたら</rt></ruby>しい<ruby>国家<rt>こっか</rt></ruby>やパワーアップを<ruby>購入<rt>こうにゅう</rt></ruby></div>
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@ export const GameStartScreen: React.FC<GameStartScreenProps> = ({ onStartGame, o
       {showLoadModal && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
           <div className="bg-gray-900 p-8 rounded-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">セーブデータ選択</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">セーブデータ<ruby>選択<rt>せんたく</rt></ruby></h2>
             
             <div className="space-y-4">
               {saveSlots.map((slot) => (

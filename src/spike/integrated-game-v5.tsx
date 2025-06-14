@@ -7,6 +7,8 @@ import { ShopSystemV2, ShopItem } from './shop-system-v2';
 import { SideShop } from './side-shop';
 import { SaveSlotsModal, useSaveSlots, SaveData } from './save-slots';
 import { ALL_NATION_ABILITIES } from './nation-abilities-v2';
+import { DefeatedNationsList } from './defeated-nations-list';
+import { getCountryFact } from '../../docs/21_nations-fact-list';
 
 interface Tower {
   id: number;
@@ -52,6 +54,32 @@ interface IntegratedGameV5Props {
 }
 
 export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSettings }) => {
+  // テキストを複数行に折り返す関数
+  const wrapText = (ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] => {
+    const words = text.split('');
+    const lines: string[] = [];
+    let currentLine = '';
+    
+    for (const char of words) {
+      const testLine = currentLine + char;
+      const metrics = ctx.measureText(testLine);
+      const testWidth = metrics.width;
+      
+      if (testWidth > maxWidth && currentLine !== '') {
+        lines.push(currentLine);
+        currentLine = char;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+    
+    return lines;
+  };
+
   // Helper function to get ability description with money bonus
   const getAbilityDescriptionWithBonus = (nationId: string): string => {
     const ability = ALL_NATION_ABILITIES[nationId];
@@ -113,6 +141,14 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
   const [defeatNotifications, setDefeatNotifications] = useState<DefeatNotification[]>([]);
   const [defeatedNations, setDefeatedNations] = useState<Record<string, typeof NATION_DATABASE[0]>>({});
   const [saveNotification, setSaveNotification] = useState<{ show: boolean; timestamp: number } | null>(null);
+  const [nationFactDisplay, setNationFactDisplay] = useState<{
+    nationId: string;
+    nationName: string;
+    flag: string;
+    fact: string;
+    source: string;
+    timestamp: number;
+  } | null>(null);
   const animationRef = useRef<number>(0);
   const enemiesRef = useRef<GDPEnemy[]>([]);
   const towersRef = useRef<Tower[]>([]);
@@ -606,6 +642,75 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         return displayNotifications;
       });
 
+      // 国家ファクトの表示
+      if (nationFactDisplay) {
+        const age = timestamp - nationFactDisplay.timestamp;
+        const duration = 10000; // 10秒間表示
+        
+        if (age <= duration) {
+          const opacity = Math.max(0, 1 - age / duration);
+          
+          ctx.save();
+          ctx.globalAlpha = opacity;
+          
+          // 中央やや下に表示
+          const maxWidth = 600;
+          const x = (800 - maxWidth) / 2;
+          const y = 250;
+          
+          // テキストの高さを計算
+          ctx.font = '14px Arial';
+          const lines = wrapText(ctx, nationFactDisplay.fact, maxWidth - 40);
+          const textHeight = lines.length * 20 + 80; // 行数 * 行高 + パディング
+          
+          // 背景
+          const gradient = ctx.createLinearGradient(x, y, x + maxWidth, y);
+          gradient.addColorStop(0, 'rgba(20, 20, 30, 0.95)');
+          gradient.addColorStop(0.5, 'rgba(30, 30, 40, 0.95)');
+          gradient.addColorStop(1, 'rgba(20, 20, 30, 0.95)');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(x, y, maxWidth, textHeight);
+          
+          // 枠線（赤）
+          ctx.strokeStyle = '#ff4444';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(x, y, maxWidth, textHeight);
+          
+          // ヘッダー
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 18px Arial';
+          ctx.fillText(`${nationFactDisplay.flag} ${nationFactDisplay.nationName}`, x + 20, y + 30);
+          
+          // ファクトテキスト（複数行対応）
+          ctx.font = '14px Arial';
+          ctx.fillStyle = '#e0e0e0';
+          lines.forEach((line, index) => {
+            ctx.fillText(line, x + 20, y + 60 + index * 20);
+          });
+          
+          // クリックで詳細を見るテキスト
+          ctx.font = '12px Arial';
+          ctx.fillStyle = '#66ccff';
+          ctx.fillText('クリックして詳細を見る →', x + 20, y + textHeight - 15);
+          
+          // クリック可能エリアを保存
+          if (canvasRef.current) {
+            (canvasRef.current as any).factClickArea = {
+              x, y, width: maxWidth, height: textHeight,
+              source: nationFactDisplay.source
+            };
+          }
+          
+          ctx.restore();
+        } else {
+          // 表示時間が過ぎたらクリア
+          setNationFactDisplay(null);
+          if (canvasRef.current) {
+            (canvasRef.current as any).factClickArea = null;
+          }
+        }
+      }
+
       // Wave完了通知の表示（撃破国家一覧）
       if (waveCompleteNotification && waveCompleteNotification.show) {
         const notification = waveCompleteNotification;
@@ -632,7 +737,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         
         ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 24px Arial';
-        ctx.fillText('🏆 Wave完了！撃破国家一覧', x + 20, y + 35);
+        ctx.fillText('🏆 Wave完了！撃破国家一覧(げきは こっか いちらん)', x + 20, y + 35);
         
         ctx.font = '12px Arial';
         ctx.fillStyle = '#aaaaaa';
@@ -689,7 +794,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         
         ctx.fillStyle = '#ffffff';
         ctx.font = 'bold 20px Arial';
-        ctx.fillText('🎉 新しい国家を獲得！', 220, 50);
+        ctx.fillText('🎉 新(あたら)しい国家(こっか)を獲得(かくとく)！', 220, 50);
         
         ctx.font = '16px Arial';
         ctx.fillText(`${notification.nation.flag} ${notification.nation.name} (★${rarity.stars})`, 220, 75);
@@ -743,6 +848,18 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     // クリック座標をキャンバス座標系に変換
     const x = (e.clientX - rect.left) * scaleX;
     const y = (e.clientY - rect.top) * scaleY;
+
+    // Check if clicking on nation fact display
+    if ((canvas as any).factClickArea) {
+      const area = (canvas as any).factClickArea;
+      if (x >= area.x && x <= area.x + area.width && 
+          y >= area.y && y <= area.y + area.height) {
+        window.open(area.source, '_blank');
+        setNationFactDisplay(null);
+        (canvas as any).factClickArea = null;
+        return;
+      }
+    }
 
     // Check if clicking on wave complete notification
     if (waveCompleteNotificationRef.current && waveCompleteNotification?.show) {
@@ -936,7 +1053,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           <h1 className="text-6xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
             Flag Defence
           </h1>
-          <p className="text-gray-400">世界の国旗で基地を守れ！</p>
+          <p className="text-gray-400">世界の<ruby>国旗<rt>こっき</rt></ruby>で<ruby>基地<rt>きち</rt></ruby>を<ruby>守<rt>まも</rt></ruby>れ！</p>
         </header>
         
         {/* ステータスバー */}
@@ -947,15 +1064,15 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           </div>
           <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-4 rounded-xl shadow-lg">
             <div className="text-3xl font-bold">🌊 Wave {displayWave}</div>
-            <div className="text-sm opacity-80">現在のWave</div>
+            <div className="text-sm opacity-80"><ruby>現在<rt>げんざい</rt></ruby>のWave</div>
           </div>
           <div className="bg-gradient-to-r from-red-600 to-pink-600 p-4 rounded-xl shadow-lg">
             <div className="text-3xl font-bold">❤️ {lives}</div>
-            <div className="text-sm opacity-80">残機</div>
+            <div className="text-sm opacity-80"><ruby>残機<rt>ざんき</rt></ruby></div>
           </div>
           <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-4 rounded-xl shadow-lg">
             <div className="text-3xl font-bold">🏳️ {ownedNations.length}</div>
-            <div className="text-sm opacity-80">所有国家</div>
+            <div className="text-sm opacity-80"><ruby>所有<rt>しょゆう</rt></ruby><ruby>国家<rt>こっか</rt></ruby></div>
           </div>
         </div>
 
@@ -970,7 +1087,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
                   : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700'
               }`}
             >
-              {showSideShop ? '🛒 ショップを閉じる' : '🛒 ショップを開く'}
+              {showSideShop ? "🛒 ショップを閉(と)じる" : "🛒 ショップを開(ひら)く"}
             </button>
             
             <select
@@ -991,7 +1108,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
               })}
             </select>
             <div className="text-sm text-gray-400">
-              配置コスト: 💰 50 ({towerLifespan}Wave後に消滅)
+              <ruby>配置<rt>はいち</rt></ruby>コスト: 💰 50 ({towerLifespan}Wave<ruby>後<rt>ご</rt></ruby>に<ruby>消滅<rt>しょうめつ</rt></ruby>)
             </div>
           </div>
         </div>
@@ -1009,18 +1126,6 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             aria-label="ゲームキャンバス"
           />
           
-          {/* Wave進行状況 */}
-          {isWaveActive && (
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80 p-4 rounded-xl backdrop-blur-sm">
-              <div className="text-lg font-bold mb-2">Wave {displayWave} 進行中...</div>
-              <div className="w-80 bg-gray-800 h-3 rounded-full overflow-hidden">
-                <div 
-                  className="bg-gradient-to-r from-cyan-500 to-purple-500 h-3 rounded-full"
-                  style={{ width: '100%', animation: 'shrink 25s linear' }}
-                />
-              </div>
-            </div>
-          )}
         </div>
 
         {/* アクションボタン */}
@@ -1035,19 +1140,19 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             }`}
           >
             <span className="relative z-10">
-              {isWaveActive ? '⏳ Wave進行中...' : `🌊 Wave ${wave} 開始`}
+              {isWaveActive ? '⏳ Wave進行中(しんこうちゅう)...' : `🌊 Wave ${wave} 開始(かいし)`}
             </span>
           </button>
         </div>
 
         {/* 操作説明 */}
         <div className="bg-black bg-opacity-50 p-6 rounded-xl backdrop-blur-sm">
-          <h3 className="text-xl font-bold mb-3">🎮 操作方法</h3>
+          <h3 className="text-xl font-bold mb-3">🎮 <ruby>操作<rt>そうさ</rt></ruby><ruby>方法<rt>ほうほう</rt></ruby></h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-            <div>💡 キャンバスをクリックしてタワーを配置（2Wave後に消滅）</div>
-            <div>🏪 ショップで国家購入やパワーアップ</div>
-            <div>⚔️ 各国の特殊能力を活用して戦略を立てよう</div>
-            <div>🎰 Wave完了で新しい国家を自動獲得！</div>
+            <div>💡 キャンバスをクリックしてタワーを<ruby>配置<rt>はいち</rt></ruby>（<ruby>規定<rt>きてい</rt></ruby>のWave<ruby>後<rt>ご</rt></ruby>に<ruby>消滅<rt>しょうめつ</rt></ruby>）</div>
+            <div>🏪 ショップで<ruby>国家<rt>こっか</rt></ruby><ruby>購入<rt>こうにゅう</rt></ruby>やパワーアップ</div>
+            <div>⚔️ <ruby>各国<rt>かくこく</rt></ruby>の<ruby>特殊<rt>とくしゅ</rt></ruby><ruby>能力<rt>のうりょく</rt></ruby>を<ruby>活用<rt>かつよう</rt></ruby>して<ruby>戦略<rt>せんりゃく</rt></ruby>を<ruby>立<rt>た</rt></ruby>てよう</div>
+            <div>🎰 Wave<ruby>完了<rt>かんりょう</rt></ruby>で<ruby>新<rt>あたら</rt></ruby>しい<ruby>国家<rt>こっか</rt></ruby>を<ruby>自動<rt>じどう</rt></ruby><ruby>獲得<rt>かくとく</rt></ruby>！</div>
           </div>
         </div>
 
@@ -1085,6 +1190,51 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
               if (coins >= cost) {
                 setCoins(coins - cost);
                 handleNationPurchase(nationId);
+              }
+            }}
+            onShowNationFact={(nationId, nationName, flag) => {
+              const fact = getCountryFact(nationId.toLowerCase().replace(/-/g, '_'));
+              if (!fact) {
+                // Special cases mapping
+                const idMap: Record<string, string> = {
+                  'united-kingdom': 'united_kingdom',
+                  'uk': 'united_kingdom',
+                  'south-korea': 'south_korea',
+                  'north-korea': 'north_korea',
+                  'saudi-arabia': 'saudi_arabia',
+                  'south-africa': 'south_africa',
+                  'new-zealand': 'new_zealand',
+                  'hong-kong': 'hong_kong',
+                  'czech-republic': 'czech',
+                  'dominican-republic': 'dominican',
+                  'bosnia-herzegovina': 'bosnia',
+                  'united-states': 'usa',
+                  'us': 'usa',
+                  'vatican-city': 'vatican',
+                  'antigua-and-barbuda': 'antigua_barbuda',
+                  'trinidad-and-tobago': 'trinidad_tobago'
+                };
+                const mappedId = idMap[nationId.toLowerCase()] || nationId.toLowerCase();
+                const mappedFact = getCountryFact(mappedId);
+                if (mappedFact) {
+                  setNationFactDisplay({
+                    nationId,
+                    nationName,
+                    flag,
+                    fact: mappedFact.fact,
+                    source: mappedFact.source,
+                    timestamp: performance.now()
+                  });
+                }
+              } else {
+                setNationFactDisplay({
+                  nationId,
+                  nationName,
+                  flag,
+                  fact: fact.fact,
+                  source: fact.source,
+                  timestamp: performance.now()
+                });
               }
             }}
           />

@@ -39,7 +39,7 @@ ${sortedNations.map(nation => {
       <div className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[80vh] overflow-hidden">
         <div className="bg-gray-800 p-4 flex justify-between items-center">
           <h2 className="text-2xl font-bold text-white">
-            🏆 撃破した国家一覧 ({sortedNations.length}カ国)
+            🏆 <ruby>撃破<rt>げきは</rt></ruby>した<ruby>国家<rt>こっか</rt></ruby><ruby>一覧<rt>いちらん</rt></ruby> ({sortedNations.length}カ国)
           </h2>
           <div className="flex gap-2">
             <button
@@ -52,14 +52,14 @@ ${sortedNations.map(nation => {
               onClick={onClose}
               className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded text-white font-bold"
             >
-              ✕ 閉じる
+              ✕ <ruby>閉<rt>と</rt></ruby>じる
             </button>
           </div>
         </div>
         
         <div className="p-4 overflow-y-auto" style={{ maxHeight: 'calc(80vh - 100px)' }}>
           {sortedNations.length === 0 ? (
-            <p className="text-center text-gray-400 py-8">まだ国家を撃破していません</p>
+            <p className="text-center text-gray-400 py-8">まだ<ruby>国家<rt>こっか</rt></ruby>を<ruby>撃破<rt>げきは</rt></ruby>していません</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {sortedNations.map(nation => {

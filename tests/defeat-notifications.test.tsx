@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { IntegratedGameV5 } from '../src/spike/integrated-game-v5';
 import { GDPEnemySystem, NATION_DATABASE } from '../src/spike/gdp-enemy-system';
+import { SideShop } from '../src/spike/side-shop';
 
 // モックの設定
 vi.mock('../src/spike/flag-renderer', () => ({
@@ -568,6 +569,141 @@ describe('Defeat Notification System Tests', { timeout: 10000 }, () => {
         call[0]?.includes('Wave完了')
       );
       expect(hasWaveCompleteNow).toBeFalsy();
+    });
+  });
+});
+
+describe('撃破履歴クリック機能', () => {
+  it('撃破履歴の国家をクリックすると詳細モーダルが表示される', async () => {
+    const defeatedNations = {
+      japan: { id: 'japan', name: 'Japan', flag: '🇯🇵', gdp: 5000, colors: ['#BC002D', '#FFFFFF'] },
+      usa: { id: 'usa', name: 'USA', flag: '🇺🇸', gdp: 20000, colors: ['#B22234', '#FFFFFF', '#3C3B6E'] }
+    };
+    
+    render(<SideShop
+      coins={1000}
+      lives={3}
+      ownedNations={['nauru']}
+      powerupsPurchased={{}}
+      defeatedNations={defeatedNations}
+      onPurchase={vi.fn()}
+      onLivesPurchase={vi.fn()}
+      onNationPurchase={vi.fn()}
+    />);
+    
+    // 撃破セクションを開く
+    const defeatButton = screen.getByText(/🏆/);
+    fireEvent.click(defeatButton);
+    
+    // 日本をクリック（撃破セクション内のボタン）
+    await waitFor(() => {
+      const japanButtons = screen.getAllByText((content, element) => {
+        return element?.textContent?.includes('Japan') ?? false;
+      });
+      // 撃破セクション内のボタンを選択（orangeスタイルのもの）
+      const defeatButton = japanButtons.find(btn => 
+        btn.className?.includes('bg-orange-600')
+      );
+      expect(defeatButton).toBeDefined();
+      fireEvent.click(defeatButton!);
+    });
+    
+    // モーダルが表示される
+    // 背景オーバーレイが存在することを確認
+    const modal = document.querySelector('.fixed.inset-0.bg-black');
+    expect(modal).toBeInTheDocument();
+    
+    // モーダル内にJapanが表示されている
+    const modalContent = document.querySelector('.bg-gradient-to-r.from-yellow-600');
+    expect(modalContent).toBeInTheDocument();
+    expect(modalContent?.textContent).toContain('Japan');
+    expect(modalContent?.textContent).toContain('5,000');
+  });
+  
+  it('モーダルの閉じるボタンが機能する', async () => {
+    const defeatedNations = {
+      japan: { id: 'japan', name: 'Japan', flag: '🇯🇵', gdp: 5000, colors: ['#BC002D', '#FFFFFF'] }
+    };
+    
+    render(<SideShop
+      coins={1000}
+      lives={3}
+      ownedNations={['nauru']}
+      powerupsPurchased={{}}
+      defeatedNations={defeatedNations}
+      onPurchase={vi.fn()}
+      onLivesPurchase={vi.fn()}
+      onNationPurchase={vi.fn()}
+    />);
+    
+    // 撃破セクションを開く
+    const defeatButton = screen.getByText(/🏆/);
+    fireEvent.click(defeatButton);
+    
+    // 日本をクリック（撃破セクション内のボタン）
+    await waitFor(() => {
+      const japanButtons = screen.getAllByText((content, element) => {
+        return element?.textContent?.includes('Japan') ?? false;
+      });
+      // 撃破セクション内のボタンを選択（orangeスタイルのもの）
+      const defeatButton = japanButtons.find(btn => 
+        btn.className?.includes('bg-orange-600')
+      );
+      expect(defeatButton).toBeDefined();
+      fireEvent.click(defeatButton!);
+    });
+    
+    // 閉じるボタンをクリック
+    const closeButton = screen.getByText(/じる/);
+    fireEvent.click(closeButton);
+    
+    // モーダルが消える
+    await waitFor(() => {
+      expect(screen.queryByText(/🎉.*情報/)).not.toBeInTheDocument();
+    });
+  });
+  
+  it('モーダルの背景をクリックしても閉じる', async () => {
+    const defeatedNations = {
+      japan: { id: 'japan', name: 'Japan', flag: '🇯🇵', gdp: 5000, colors: ['#BC002D', '#FFFFFF'] }
+    };
+    
+    render(<SideShop
+      coins={1000}
+      lives={3}
+      ownedNations={['nauru']}
+      powerupsPurchased={{}}
+      defeatedNations={defeatedNations}
+      onPurchase={vi.fn()}
+      onLivesPurchase={vi.fn()}
+      onNationPurchase={vi.fn()}
+    />);
+    
+    // 撃破セクションを開く
+    const defeatButton = screen.getByText(/🏆/);
+    fireEvent.click(defeatButton);
+    
+    // 日本をクリック（撃破セクション内のボタン）
+    await waitFor(() => {
+      const japanButtons = screen.getAllByText((content, element) => {
+        return element?.textContent?.includes('Japan') ?? false;
+      });
+      // 撃破セクション内のボタンを選択（orangeスタイルのもの）
+      const defeatButton = japanButtons.find(btn => 
+        btn.className?.includes('bg-orange-600')
+      );
+      expect(defeatButton).toBeDefined();
+      fireEvent.click(defeatButton!);
+    });
+    
+    // 背景をクリック
+    const backdrop = document.querySelector('.fixed.inset-0.bg-black');
+    expect(backdrop).toBeInTheDocument();
+    fireEvent.click(backdrop!);
+    
+    // モーダルが消える
+    await waitFor(() => {
+      expect(screen.queryByText(/🎉.*情報/)).not.toBeInTheDocument();
     });
   });
 });
