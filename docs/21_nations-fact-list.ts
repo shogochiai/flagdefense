@@ -75,7 +75,7 @@ export const nationsFacts: Record<string, CountryFact> = {
   },
 
   // 中南米(ちゅうなんべい)地域(ちいき)
-  antigua_and_barbuda: {
+  antigua_barbuda: {
     fact: "東(ひがし)カリブ海(かい)のこの比較的(ひかくてき)小(ちい)さな島(しま)には、世界(せかい)で最(もっと)も甘(あま)くて希少(きしょう)なパイナップルの品種(ひんしゅ)であるアンティグア・ブラックという甘(あま)い秘密(ひみつ)がある。",
     source: "https://danifrancuzrose.com/2021/04/03/interesting-country-facts-a-z/"
   },
@@ -867,7 +867,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/rwanda-facts"
   },
 
-  saint_kitts_and_nevis: {
+  saint_kitts_nevis: {
     fact: "セントクリストファー・ネイビスは西半球(にしはんきゅう)で最(もっと)も小(ちい)さな国(くに)で、砂糖産業(さとうさんぎょう)で栄(さか)えた歴史(れきし)がある。",
     source: "https://example.com/saint-kitts-and-nevis-facts"
   },
@@ -1022,7 +1022,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/tonga-facts"
   },
 
-  trinidad_and_tobago: {
+  trinidad_tobago: {
     fact: "トリニダード・トバゴはカリブ海(かい)で最(もっと)も南(みなみ)に位置(いち)する国(くに)で、カーニバル(かーにばる)とスティールドラム(すてぃーるどらむ)の発祥地(はっしょうち)である。",
     source: "https://example.com/trinidad-and-tobago-facts"
   },
@@ -1095,6 +1095,21 @@ export const nationsFacts: Record<string, CountryFact> = {
   whangamomona: {
     fact: "ワンガモモナはニュージーランド北島(きたじま)の小(ちい)さな町(まち)で、1989年(ねん)に地方自治体(ちほうじちたい)の再編成(さいへんせい)に抗議(こうぎ)して「共和国(きょうわこく)」を宣言(せんげん)し、独自(どくじ)の大統領(だいとうりょう)を選出(せんしゅつ)している。過去(かこ)には羊(ひつじ)や山羊(やぎ)が大統領(だいとうりょう)に選(えら)ばれたこともある。",
     source: "https://www.atlasobscura.com/places/republic-of-whangamomona"
+  },
+
+  wallis_futuna: {
+    fact: "ウォリス・フツナはフランスの海外領土(かいがいりょうど)で、太平洋(たいへいよう)に位置(いち)する3つの主要(しゅよう)な島(しま)からなり、独自(どくじ)のポリネシア文化(ぶんか)を保持(ほじ)している。また、伝統的(でんとうてき)な首長制度(しゅちょうせいど)が現代(げんだい)の行政(ぎょうせい)システムと共存(きょうぞん)している珍(めずら)しい地域(ちいき)である。",
+    source: "https://www.worldatlas.com/oceania/wallis-and-futuna.html"
+  },
+
+  tokelau: {
+    fact: "トケラウはニュージーランドの自治領(じちりょう)で、南太平洋(みなみたいへいよう)に位置(いち)する3つの環礁(かんしょう)からなり、国土面積(こくどめんせき)はわずか10平方(へいほう)キロメートルで、車(くるま)がほとんどなく、太陽光発電(たいようこうはつでん)で電力(でんりょく)の100%を賄(まかな)っている世界(せかい)で初(はじ)めての国(くに)である。",
+    source: "https://example.com/tokelau-facts"
+  },
+
+  niue: {
+    fact: "ニウエは世界(せかい)で最(もっと)も小(ちい)さな独立国家(どくりつこっか)の一(ひと)つで、「ポリネシアの岩(いわ)」と呼(よ)ばれる珊瑚(さんご)の島(しま)であり、ニュージーランドと自由連合(じゆうれんごう)を結(むす)んでいる。また、世界初(せかいはつ)のWi-Fi国家(こっか)として知(し)られ、島全体(しまぜんたい)で無料(むりょう)のインターネット接続(せつぞく)を提供(ていきょう)している。",
+    source: "https://example.com/niue-facts"
   },
 
   zambia: {
