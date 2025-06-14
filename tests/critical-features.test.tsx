@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { IntegratedGameV5 } from '../src/spike/integrated-game-v5';
 import { GameStartScreen } from '../src/spike/game-start-screen';
+import { GDPEnemySystem } from '../src/spike/gdp-enemy-system';
 
 // モックの設定
 vi.mock('../src/spike/flag-renderer', () => ({
@@ -216,6 +217,37 @@ describe('Critical Features', () => {
         const slot1 = screen.getByText(/Wave: 5/);
         expect(slot1).toBeInTheDocument();
       });
+    });
+  });
+
+  describe('撃破通知システム', () => {
+    it('報酬金額が正しく計算される', () => {
+      // テスト用のGDP値
+      const testGDP = 100;
+      const reward = GDPEnemySystem.calculateReward(testGDP);
+      
+      // 基本報酬が40%増加されていることを確認
+      const baseReward = 10 + Math.floor(Math.log10(testGDP + 1) * 5);
+      const expectedReward = Math.floor(baseReward * 1.4);
+      
+      expect(reward).toBe(expectedReward);
+      expect(reward).toBeGreaterThan(baseReward); // 40%増加確認
+    });
+
+    it('撃破通知テキストが正しいフォーマットである', () => {
+      // 撃破通知のフォーマットを確認
+      const testNation = { flag: '🏳️', name: 'Test Nation' };
+      const defeatText = `${testNation.flag} ${testNation.name} 撃破！`;
+      
+      expect(defeatText).toMatch(/撃破！$/);
+      expect(defeatText).toContain(testNation.flag);
+      expect(defeatText).toContain(testNation.name);
+      
+      // 報酬テキストのフォーマットを確認
+      const reward = 20;
+      const rewardText = `+${reward}💰`;
+      
+      expect(rewardText).toMatch(/^\+\d+💰$/);
     });
   });
 

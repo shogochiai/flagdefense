@@ -581,7 +581,8 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           // スコア表示
           ctx.font = '12px Arial';
           ctx.fillStyle = '#ffd700';
-          const rewardText = `+${notification.nation.reward || 10}💰`;
+          const reward = GDPEnemySystem.calculateReward(notification.nation.gdp);
+          const rewardText = `+${reward}💰`;
           ctx.fillText(rewardText, x + 170, y - 10);
           
           ctx.restore();

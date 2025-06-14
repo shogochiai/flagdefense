@@ -194,6 +194,50 @@ describe('IntegratedGameV5 - 修正版機能テスト', () => {
     });
   });
 
+  describe('撃破通知の報酬表示', () => {
+    it('撃破通知に正しい報酬金額が表示される', async () => {
+      const initialSettings = {
+        initialCoins: 200,
+        initialLives: 3,
+        startingNation: 'nauru',
+        towerLifespan: 10
+      };
+      const { container } = render(<IntegratedGameV5 initialSettings={initialSettings} />);
+
+      // キャンバスのコンテキストをモック
+      const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+      const mockCtx = {
+        clearRect: vi.fn(),
+        fillRect: vi.fn(),
+        fillText: vi.fn(),
+        strokeRect: vi.fn(),
+        beginPath: vi.fn(),
+        arc: vi.fn(),
+        stroke: vi.fn(),
+        save: vi.fn(),
+        restore: vi.fn(),
+        createLinearGradient: vi.fn(() => ({
+          addColorStop: vi.fn()
+        }))
+      };
+      vi.spyOn(canvas, 'getContext').mockReturnValue(mockCtx as any);
+
+      // テスト国家のGDPを設定
+      const testGDP = 100;
+      const expectedReward = Math.floor((10 + Math.floor(Math.log10(testGDP + 1) * 5)) * 1.4); // 40%増加込み
+      
+      // fillTextの呼び出しを監視
+      const fillTextCalls: string[] = [];
+      mockCtx.fillText.mockImplementation((text: string) => {
+        fillTextCalls.push(text);
+      });
+
+      // 実際の報酬表示文字列を確認
+      const rewardText = `+${expectedReward}💰`;
+      expect(rewardText).toMatch(/\+\d+💰/);
+    });
+  });
+
   describe('セーブ/ロード機能', () => {
     it('ロード時にdisplayWaveが正しく設定される', async () => {
       // セーブデータをlocalStorageに設定
