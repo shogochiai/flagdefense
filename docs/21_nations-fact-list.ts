@@ -1067,9 +1067,14 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/uzupis-facts"
   },
 
-  united_arab_emirates: {
+  uae: {
     fact: "アラブ首長国連邦(しゅちょうこくれんぽう)は世界(せかい)で最(もっと)も高(たか)い建物(たてもの)ブルジュ・ハリファがあり、石油収入(せきゆしゅうにゅう)で急速(きゅうそく)に発展(はってん)した。",
     source: "https://example.com/uae-facts"
+  },
+
+  sahrawi: {
+    fact: "西サハラ(さはら)は北(きた)アフリカに位置(いち)する係争地域(けいそうちいき)で、モロッコと独立(どくりつ)を主張(しゅちょう)するサハラ・アラブ民主共和国(みんしゅきょうわこく)の間(あいだ)で分割(ぶんかつ)されている。世界(せかい)で最後(さいご)の主要(しゅよう)な非植民地化(ひしょくみんちか)の問題(もんだい)の一(ひと)つとされている。",
+    source: "https://example.com/sahrawi-facts"
   },
 
   uruguay: {
