@@ -210,6 +210,10 @@ export const nationsGDP = {
   anguilla: 0.3,
   reunion: 22,
   mayotte: 3,
+
+  // === アフリカの小国 ===
+  malawi: 12,
+  somalia: 10,
 };
 
 // GDP階層判定関数

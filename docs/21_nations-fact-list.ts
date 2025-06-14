@@ -722,6 +722,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/french-polynesia-facts"
   },
 
+  malawi: {
+    fact: "マラウイは「アフリカの暖(あたた)かい心臓(しんぞう)」と呼(よ)ばれ、国土(こくど)の約(やく)20%を占(し)めるマラウイ湖(こ)は世界(せかい)で9番目(ばんめ)に大(おお)きな湖(みずうみ)である。",
+    source: "https://example.com/malawi-facts"
+  },
+
   moldova: {
     fact: "モルドバは世界最大(せかいさいだい)のワインセラー(わいんせらー)を有(ゆう)し、地下都市(ちかとし)のような巨大(きょだい)なワイン貯蔵庫(ちょぞうこ)がある。",
     source: "https://example.com/moldova-facts"
@@ -872,7 +877,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/saint-lucia-facts"
   },
 
-  saint_vincent_and_the_grenadines: {
+  saint_vincent: {
     fact: "セントビンセント及(およ)びグレナディーン諸島(しょとう)は32の島(しま)からなり、映画(えいが)「パイレーツ・オブ・カリビアン(ぱいれーつ・おぶ・かりびあん)」の撮影地(さつえいち)である。",
     source: "https://example.com/saint-vincent-and-the-grenadines-facts"
   },

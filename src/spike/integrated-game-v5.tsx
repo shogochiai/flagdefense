@@ -149,6 +149,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     source: string;
     timestamp: number;
   } | null>(null);
+  const [defeatingNation, setDefeatingNation] = useState<typeof NATION_DATABASE[0] | null>(null);
   const animationRef = useRef<number>(0);
   const enemiesRef = useRef<GDPEnemy[]>([]);
   const towersRef = useRef<Tower[]>([]);
@@ -395,7 +396,13 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           if (specialEffects.shield > 0) {
             setSpecialEffects(prev => ({ ...prev, shield: prev.shield - 1 }));
           } else {
-            setLives(prev => Math.max(0, prev - 1));
+            setLives(prev => {
+              const newLives = Math.max(0, prev - 1);
+              if (newLives === 0) {
+                setDefeatingNation(enemy.nation);
+              }
+              return newLives;
+            });
           }
           return false;
         }
@@ -1066,12 +1073,31 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
 
   // ゲームオーバーチェック
   if (lives <= 0) {
+    const nationFact = defeatingNation ? getCountryFact(defeatingNation.id) : null;
+    
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 flex items-center justify-center" role="main">
-        <div className="text-center bg-black bg-opacity-80 p-12 rounded-2xl shadow-2xl border border-red-600">
+        <div className="text-center bg-black bg-opacity-80 p-12 rounded-2xl shadow-2xl border border-red-600 max-w-4xl">
           <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-red-500 to-orange-500 text-transparent bg-clip-text">
             Game Over
           </h1>
+          
+          {defeatingNation && (
+            <div className="mb-8">
+              <h2 className="text-2xl mb-4 text-gray-300">とどめを刺した国</h2>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-6xl">{defeatingNation.flag}</span>
+                <h3 className="text-3xl font-bold text-white">{defeatingNation.name}</h3>
+              </div>
+              {nationFact && (
+                <div className="bg-gray-800 bg-opacity-50 p-4 rounded-lg text-left">
+                  <p className="text-lg text-gray-300 mb-2">{nationFact.fact}</p>
+                  <p className="text-sm text-gray-500">出典: {nationFact.source}</p>
+                </div>
+              )}
+            </div>
+          )}
+          
           <p className="text-3xl mb-8 text-gray-300">Wave {displayWave} まで到達</p>
           <button
             onClick={() => window.location.reload()}
