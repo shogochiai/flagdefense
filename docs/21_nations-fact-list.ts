@@ -907,6 +907,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/san-marino-facts"
   },
 
+  northern_mariana: {
+    fact: "北マリアナ諸島(きたまりあなしょとう)はアメリカ合衆国(がっしゅうこく)の自治領(じちりょう)で、太平洋(たいへいよう)に位置(いち)し、サイパン島(とう)やテニアン島(とう)など15の島々(しまじま)からなる。",
+    source: "https://example.com/northern-mariana-facts"
+  },
+
   sao_tome: {
     fact: "サントメ・プリンシペは世界(せかい)で2番目(ばんめ)に小(ちい)さなアフリカの国(くに)で、カカオの産地(さんち)として有名(ゆうめい)である。",
     source: "https://example.com/sao-tome-and-principe-facts"

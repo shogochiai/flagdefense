@@ -175,6 +175,7 @@ export const nationsGDP = {
   curacao: 3,
   french_polynesia: 6,
   new_caledonia: 10,
+  northern_mariana: 1.2,
   
   // === 非承認・ミクロ国家 ===
   vatican: 0.8,
