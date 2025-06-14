@@ -417,6 +417,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/cyprus-facts"
   },
 
+  northern_cyprus: {
+    fact: "北キプロス・トルコ共和国(きたきぷろす・とるこきょうわこく)は国際的(こくさいてき)に広(ひろ)く承認(しょうにん)されていない国家(こっか)で、キプロス島(とう)の北部(ほくぶ)に位置(いち)し、トルコのみに承認(しょうにん)されている。",
+    source: "https://example.com/northern-cyprus-facts"
+  },
+
   czech_republic: {
     fact: "チェコ共和国(きょうわこく)は世界(せかい)で最(もっと)もビールを消費(しょうひ)する国(くに)で、ピルスナービールの発祥地(はっしょうち)でもある。",
     source: "https://example.com/czech-republic-facts"
