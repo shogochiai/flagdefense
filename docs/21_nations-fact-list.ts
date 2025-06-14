@@ -1122,6 +1122,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://awaytothecity.com/facts-about-gibraltar/"
   },
 
+  greenland: {
+    fact: "グリーンランドは世界最大(せかいさいだい)の島(しま)でありながら、人口(じんこう)はわずか56,000人(にん)ほどで、その80%以上(いじょう)が氷(こおり)に覆(おお)われており、デンマーク王国(おうこく)の自治領(じちりょう)として独自(どくじ)の議会(ぎかい)と政府(せいふ)を持(も)っている。",
+    source: "https://example.com/greenland-facts"
+  },
+
   anguilla: {
     fact: "アンギラには伝統的(でんとうてき)な住所(じゅうしょ)システムがなく、住民(じゅうみん)は郵便局(ゆうびんきょく)で郵便(ゆうびん)を受(う)け取(と)り、島全体(しまぜんたい)で使用(しよう)される郵便番号(ゆうびんばんごう)は「AI-2640」のみで、ボートレース(ぼーとれーす)が国技(こくぎ)となっている。",
     source: "https://rusticpathways.com/blog/fun-facts-about-anguilla"
