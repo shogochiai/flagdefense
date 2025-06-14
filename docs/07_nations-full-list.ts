@@ -255,6 +255,7 @@ export const allNations = [
   { id: 'russia', name: 'ロシア', cost: 2360, damage: 238, range: 680, colors: ['#FFFFFF', '#0039A6', '#DA291C'], flag: '🐻', tier: 6 },
   { id: 'china', name: '中国', cost: 2370, damage: 239, range: 680, colors: ['#EE1C25', '#FFFF00'], flag: '🇨🇳', tier: 6 },
   { id: 'usa', name: 'アメリカ', cost: 2380, damage: 240, range: 685, colors: ['#B22234', '#FFFFFF', '#3C3B6E'], flag: '🇺🇸', tier: 6 },
+
 ];
 
 // ティア別の国数

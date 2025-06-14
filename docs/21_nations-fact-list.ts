@@ -348,7 +348,7 @@ export const nationsFacts: Record<string, CountryFact> = {
   },
 
   chechnya: {
-    fact: "チェチェンは北コーカサス地方(ほくこーかさすちほう)に位置(いち)し、複雑(ふくざつ)な歴史(れきし)と独自(どくじ)の文化(ぶんか)を持(も)ち、伝統的(でんとうてき)な山岳民族(さんがくみんぞく)として知(し)られている。",
+    fact: "チェチェンは北(きた)コーカサス地方(ちほう)に位置(いち)し、複雑(ふくざつ)な歴史(れきし)と独自(どくじ)の文化(ぶんか)を持(も)ち、伝統的(でんとうてき)な山岳民族(さんがくみんぞく)として知(し)られている。",
     source: "https://example.com/chechnya-facts"
   },
 
@@ -642,9 +642,19 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/liberia-facts"
   },
 
+  liberland: {
+    fact: "リバーランドは2015年(ねん)に設立(せつりつ)された自称(じしょう)の極小国家(きょくしょうこっか)で、クロアチアとセルビアの間(あいだ)の係争地(けいそうち)に位置(いち)している。",
+    source: "https://example.com/liberland-facts"
+  },
+
   libya: {
     fact: "リビアは世界最大(せかいさいだい)の石油埋蔵量(せきゆまいぞうりょう)を有(ゆう)する国(くに)の一(ひと)つで、サハラ砂漠(さばく)の大部分(だいぶぶん)を占(し)めている。",
     source: "https://example.com/libya-facts"
+  },
+
+  ladonia: {
+    fact: "ラドニアはスウェーデン南部(なんぶ)の海岸(かいがん)に位置(いち)する自称(じしょう)の極小国家(きょくしょうこっか)で、1996年(ねん)に芸術家(げいじゅつか)のラース・ヴィルクスによって設立(せつりつ)され、二(ふた)つの芸術作品(げいじゅつさくひん)「ニモイス」と「アルキ」を中心(ちゅうしん)とした領土(りょうど)を主張(しゅちょう)し、インターネット上(じょう)で「市民権(しみんけん)」を付与(ふよ)している。",
+    source: "https://www.ladonia.org/about/"
   },
 
   liechtenstein: {
@@ -730,6 +740,11 @@ export const nationsFacts: Record<string, CountryFact> = {
   morocco: {
     fact: "モロッコは世界最大(せかいさいだい)のリン鉱石(こうせき)産出国(さんしゅつこく)で、サハラ砂漠(さばく)とアトラス山脈(さんみゃく)を有(ゆう)している。",
     source: "https://example.com/morocco-facts"
+  },
+
+  molossia: {
+    fact: "モロッシアは米国ネバダ州(べいこくねばだしゅう)に位置(いち)する未承認(みしょうにん)の微小国家(びしょうこっか)で、1999年(ねん)に独立(どくりつ)を宣言(せんげん)したが、国際的(こくさいてき)には認(みと)められていない。",
+    source: "https://example.com/molossia-facts"
   },
 
   mozambique: {
@@ -877,7 +892,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/san-marino-facts"
   },
 
-  sao_tome_and_principe: {
+  sao_tome: {
     fact: "サントメ・プリンシペは世界(せかい)で2番目(ばんめ)に小(ちい)さなアフリカの国(くに)で、カカオの産地(さんち)として有名(ゆうめい)である。",
     source: "https://example.com/sao-tome-and-principe-facts"
   },
@@ -1027,9 +1042,19 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/tuvalu-facts"
   },
 
+  transnistria: {
+    fact: "トランスニストリアはモルドバ東部(とうぶ)に位置(いち)する事実上(じじつじょう)の独立国家(どくりつこっか)で、旧ソ連(きゅうそれん)の象徴(しょうちょう)であるハンマーと鎌(かま)が描(えが)かれた国旗(こっき)を使用(しよう)している。",
+    source: "https://example.com/transnistria-facts"
+  },
+
   ukraine: {
     fact: "ウクライナは世界最大(せかいさいだい)の国(くに)の一(ひと)つで、チェルノブイリ原発事故(げんぱつじこ)の現場(げんば)がある。",
     source: "https://example.com/ukraine-facts"
+  },
+
+  uzupis: {
+    fact: "ウジュピスはリトアニアの首都(しゅと)ビリニュス内(ない)にある自称(じしょう)「独立共和国(どくりつきょうわこく)」で、独自(どくじ)の憲法(けんぽう)、国旗(こっき)、大統領(だいとうりょう)を持(も)ち、芸術家(げいじゅつか)たちが多(おお)く住(す)む文化(ぶんか)の中心地(ちゅうしんち)である。",
+    source: "https://example.com/uzupis-facts"
   },
 
   united_arab_emirates: {
@@ -1060,6 +1085,11 @@ export const nationsFacts: Record<string, CountryFact> = {
   vietnam: {
     fact: "ベトナムは世界第(せかいだい)2位(い)のコーヒー産出国(さんしゅつこく)で、美(うつく)しいハロン湾(わん)で有名(ゆうめい)である。",
     source: "https://example.com/vietnam-facts"
+  },
+
+  whangamomona: {
+    fact: "ワンガモモナはニュージーランド北島(きたじま)の小(ちい)さな町(まち)で、1989年(ねん)に地方自治体(ちほうじちたい)の再編成(さいへんせい)に抗議(こうぎ)して「共和国(きょうわこく)」を宣言(せんげん)し、独自(どくじ)の大統領(だいとうりょう)を選出(せんしゅつ)している。過去(かこ)には羊(ひつじ)や山羊(やぎ)が大統領(だいとうりょう)に選(えら)ばれたこともある。",
+    source: "https://www.atlasobscura.com/places/republic-of-whangamomona"
   },
 
   zambia: {

@@ -201,6 +201,15 @@ export const nationsGDP = {
   ladonia: 0.001,
   uzupis: 0.001,
   whangamomona: 0.001,
+
+  // === 自治領・王室属領 ===
+  isle_of_man: 7,
+  jersey: 6,
+  guernsey: 3.5,
+  gibraltar: 2.5,
+  anguilla: 0.3,
+  reunion: 22,
+  mayotte: 3,
 };
 
 // GDP階層判定関数
