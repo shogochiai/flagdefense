@@ -58,7 +58,7 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://danifrancuzrose.com/2021/04/03/interesting-country-facts-a-z/"
   },
 
-  vatican_city: {
+  vatican: {
     fact: "バチカンを守(まも)る衛兵(えいへい)は19-30歳(さい)のスイス人男性(じんだんせい)で、身長(しんちょう)174cm以上(いじょう)でなければならず、制服(せいふく)の着用(ちゃくよう)が義務付(ぎむづ)けられている。",
     source: "https://danifrancuzrose.com/2021/04/03/interesting-country-facts-a-z/"
   },
@@ -397,7 +397,17 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/czech-republic-facts"
   },
 
-  democratic_republic_of_the_congo: {
+  east_timor: {
+    fact: "東ティモール(ひがしてぃもーる)は21世紀(せいき)に独立(どくりつ)した最初(さいしょ)の国(くに)で、2002年(ねん)5月(がつ)20日(にち)に独立(どくりつ)を果(は)たした。",
+    source: "https://example.com/east-timor-facts"
+  },
+
+  faroe: {
+    fact: "フェロー諸島(しょとう)はデンマーク王国(おうこく)の自治領(じちりょう)で、北大西洋(きたたいせいよう)に位置(いち)し、羊(ひつじ)の数(かず)が人口(じんこう)より多(おお)い。",
+    source: "https://example.com/faroe-islands-facts"
+  },
+
+  congo_dem: {
     fact: "コンゴ民主共和国(みんしゅきょうわこく)は世界最大(せかいさいだい)のコバルト産出国(さんしゅつこく)で、スマートフォン(すまーとふぉん)のバッテリー(ばってりー)に不可欠(ふかけつ)な鉱物(こうぶつ)を供給(きょうきゅう)している。",
     source: "https://example.com/drc-facts"
   },
@@ -882,6 +892,11 @@ export const nationsFacts: Record<string, CountryFact> = {
     source: "https://example.com/somalia-facts"
   },
 
+  somaliland: {
+    fact: "ソマリランドは国際的(こくさいてき)に広(ひろ)く承認(しょうにん)されていない事実上(じじつじょう)の独立国家(どくりつこっか)で、ソマリアの一部(いちぶ)とされているが、独自(どくじ)の政府(せいふ)、通貨(つうか)、軍隊(ぐんたい)を持(も)っている。",
+    source: "https://example.com/somaliland-facts"
+  },
+
   south_africa: {
     fact: "南(みなみ)アフリカは世界(せかい)で唯一(ゆいいつ)、核兵器(かくへいき)を自主的(じしゅてき)に廃棄(はいき)した国(くに)で、11の公用語(こうようご)を持(も)つ。",
     source: "https://example.com/south-africa-facts"
@@ -1081,6 +1096,16 @@ export const nationsFacts: Record<string, CountryFact> = {
     fact: "ニューカレドニアはフランスの海外領土(かいがいりょうど)で、世界(せかい)で2番目(ばんめ)に大(おお)きいサンゴ礁(しょう)を持(も)ち、その広(ひろ)さは約(やく)1,600キロメートルに及(およ)び、固有種(こゆうしゅ)が多(おお)く生息(せいそく)し、特(とく)にカグー鳥(どり)は飛(と)べない鳥(とり)として有名(ゆうめい)で、ニッケルの世界的(せかいてき)な産地(さんち)としても知(し)られている。",
     source: "https://www.newcaledonia.travel/en/discover/new-caledonia-facts"
   },
+
+  virgin_islands_uk: {
+    fact: "イギリス領ヴァージン諸島(しょとう)は「カリブ海(かい)のヨットの首都(しゅと)」として知(し)られ、60以上(いじょう)の島々(しまじま)からなり、その多(おお)くは火山起源(かざんきげん)で、世界(せかい)で最(もっと)も美(うつく)しいビーチの一(ひと)つであるホワイトベイを有(ゆう)している。",
+    source: "https://example.com/virgin-islands-uk-facts"
+  },
+
+  virgin_islands_us: {
+    fact: "アメリカ領ヴァージン諸島(しょとう)は以前(いぜん)デンマーク領(りょう)だったが1917年(ねん)に米国(べいこく)に売却(ばいきゃく)され、セントトーマス島(とう)には世界(せかい)で2番目(ばんめ)に古(ふる)いユダヤ教会堂(きょうかいどう)があり、島民(とうみん)は道路(どうろ)の左側(ひだりがわ)を運転(うんてん)する。",
+    source: "https://example.com/virgin-islands-us-facts"
+  }
 
 };
 

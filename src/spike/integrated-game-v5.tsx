@@ -645,69 +645,93 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
       // 国家ファクトの表示
       if (nationFactDisplay) {
         const age = timestamp - nationFactDisplay.timestamp;
-        const duration = 10000; // 10秒間表示
         
-        if (age <= duration) {
-          const opacity = Math.max(0, 1 - age / duration);
-          
-          ctx.save();
-          ctx.globalAlpha = opacity;
-          
-          // 中央やや下に表示
-          const maxWidth = 600;
-          const x = (800 - maxWidth) / 2;
-          const y = 250;
-          
-          // テキストの高さを計算
-          ctx.font = '14px Arial';
-          const lines = wrapText(ctx, nationFactDisplay.fact, maxWidth - 40);
-          const textHeight = lines.length * 20 + 80; // 行数 * 行高 + パディング
-          
-          // 背景
-          const gradient = ctx.createLinearGradient(x, y, x + maxWidth, y);
-          gradient.addColorStop(0, 'rgba(20, 20, 30, 0.95)');
-          gradient.addColorStop(0.5, 'rgba(30, 30, 40, 0.95)');
-          gradient.addColorStop(1, 'rgba(20, 20, 30, 0.95)');
-          ctx.fillStyle = gradient;
-          ctx.fillRect(x, y, maxWidth, textHeight);
-          
-          // 枠線（赤）
-          ctx.strokeStyle = '#ff4444';
-          ctx.lineWidth = 3;
-          ctx.strokeRect(x, y, maxWidth, textHeight);
-          
-          // ヘッダー
-          ctx.fillStyle = '#ffffff';
-          ctx.font = 'bold 18px Arial';
-          ctx.fillText(`${nationFactDisplay.flag} ${nationFactDisplay.nationName}`, x + 20, y + 30);
-          
-          // ファクトテキスト（複数行対応）
-          ctx.font = '14px Arial';
-          ctx.fillStyle = '#e0e0e0';
-          lines.forEach((line, index) => {
-            ctx.fillText(line, x + 20, y + 60 + index * 20);
-          });
-          
-          // クリックで詳細を見るテキスト
-          ctx.font = '12px Arial';
-          ctx.fillStyle = '#66ccff';
-          ctx.fillText('クリックして詳細を見る →', x + 20, y + textHeight - 15);
-          
-          // クリック可能エリアを保存
-          if (canvasRef.current) {
-            (canvasRef.current as any).factClickArea = {
-              x, y, width: maxWidth, height: textHeight,
-              source: nationFactDisplay.source
-            };
-          }
-          
-          ctx.restore();
-        } else {
-          // 表示時間が過ぎたらクリア
-          setNationFactDisplay(null);
-          if (canvasRef.current) {
-            (canvasRef.current as any).factClickArea = null;
-          }
+        ctx.save();
+        
+        // 右半分に表示
+        const maxWidth = 380;
+        const x = 410; // 右半分の開始位置
+        const y = 20;
+        
+        // テキストの高さを計算
+        ctx.font = '14px Arial';
+        const lines = wrapText(ctx, nationFactDisplay.fact, maxWidth - 40);
+        const textHeight = lines.length * 20 + 170; // 行数 * 行高 + パディング（旗用のスペースを追加）
+        
+        // 背景
+        const gradient = ctx.createLinearGradient(x, y, x + maxWidth, y);
+        gradient.addColorStop(0, 'rgba(20, 20, 30, 0.98)');
+        gradient.addColorStop(0.5, 'rgba(30, 30, 40, 0.98)');
+        gradient.addColorStop(1, 'rgba(20, 20, 30, 0.98)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x, y, maxWidth, textHeight);
+        
+        // 枠線（赤）
+        ctx.strokeStyle = '#ff4444';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(x, y, maxWidth, textHeight);
+        
+        // 閉じるボタン（×）を描画
+        const closeButtonSize = 24;
+        const closeButtonX = x + maxWidth - closeButtonSize - 10;
+        const closeButtonY = y + 10;
+        
+        // 閉じるボタンの背景
+        ctx.fillStyle = 'rgba(255, 68, 68, 0.9)';
+        ctx.fillRect(closeButtonX, closeButtonY, closeButtonSize, closeButtonSize);
+        
+        // ×マーク
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(closeButtonX + 6, closeButtonY + 6);
+        ctx.lineTo(closeButtonX + 18, closeButtonY + 18);
+        ctx.moveTo(closeButtonX + 18, closeButtonY + 6);
+        ctx.lineTo(closeButtonX + 6, closeButtonY + 18);
+        ctx.stroke();
+        
+        // ヘッダー
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 18px Arial';
+        ctx.fillText(`${nationFactDisplay.flag} ${nationFactDisplay.nationName}`, x + 20, y + 30);
+        
+        // 正式な国旗を描画（位置を右下に調整）
+        const flagX = x + 75;  // 20から75に変更（右に移動）
+        const flagY = y + 85;  // 50から85に変更（下に移動）
+        const flagWidth = 60;
+        const flagHeight = 40;
+        
+        // FlagRendererで国旗を描画
+        const nation = NATION_DATABASE.find(n => n.id === nationFactDisplay.nationId);
+        if (nation) {
+          FlagRenderer.drawFlag(ctx, nationFactDisplay.nationId, flagX, flagY, flagWidth, flagHeight, nation.colors);
+        }
+        
+        // ファクトテキスト（複数行対応）
+        ctx.font = '14px Arial';
+        ctx.fillStyle = '#e0e0e0';
+        lines.forEach((line, index) => {
+          ctx.fillText(line, x + 20, y + 145 + index * 20); // y位置を調整（国旗の分下げる）
+        });
+        
+        // クリックで詳細を見るテキスト
+        ctx.font = '12px Arial';
+        ctx.fillStyle = '#66ccff';
+        ctx.fillText('クリックして詳細を見る →', x + 20, y + textHeight - 15);
+        
+        // クリック可能エリアを保存
+        if (canvasRef.current) {
+          (canvasRef.current as any).factClickArea = {
+            x, y, width: maxWidth, height: textHeight,
+            source: nationFactDisplay.source
+          };
+        }
+        
+        ctx.restore();
+      } else {
+        // クリック可能エリアをクリア
+        if (canvasRef.current) {
+          (canvasRef.current as any).factClickArea = null;
         }
       }
 
@@ -850,8 +874,23 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     const y = (e.clientY - rect.top) * scaleY;
 
     // Check if clicking on nation fact display
-    if ((canvas as any).factClickArea) {
+    if ((canvas as any).factClickArea && nationFactDisplay) {
       const area = (canvas as any).factClickArea;
+      
+      // 閉じるボタンのクリック判定
+      const closeButtonSize = 24;
+      const closeButtonX = area.x + area.width - closeButtonSize - 10;
+      const closeButtonY = area.y + 10;
+      
+      if (x >= closeButtonX && x <= closeButtonX + closeButtonSize && 
+          y >= closeButtonY && y <= closeButtonY + closeButtonSize) {
+        // 閉じるボタンがクリックされた
+        setNationFactDisplay(null);
+        (canvas as any).factClickArea = null;
+        return;
+      }
+      
+      // それ以外のエリアのクリック判定
       if (x >= area.x && x <= area.x + area.width && 
           y >= area.y && y <= area.y + area.height) {
         window.open(area.source, '_blank');
