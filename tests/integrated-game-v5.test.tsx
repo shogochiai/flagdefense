@@ -238,20 +238,8 @@ describe('IntegratedGameV5 - 修正版機能テスト', () => {
     });
   });
 
-  describe('セーブ/ロード機能', () => {
-    it('ロード時にdisplayWaveが正しく設定される', async () => {
-      // セーブデータをlocalStorageに設定
-      const saveData = {
-        wave: 5,
-        coins: 500,
-        lives: 2,
-        towers: [],
-        ownedNations: ['nauru', 'tuvalu'],
-        powerups: {},
-        timestamp: Date.now()
-      };
-      localStorage.setItem('flagdefence_save_slot_1', JSON.stringify(saveData));
-      
+  describe('ショップボタンの位置', () => {
+    it('ショップボタンが左寄せで表示される', () => {
       const initialSettings = {
         initialCoins: 200,
         initialLives: 3,
@@ -260,22 +248,211 @@ describe('IntegratedGameV5 - 修正版機能テスト', () => {
       };
       render(<IntegratedGameV5 initialSettings={initialSettings} />);
       
-      // ロードボタンをクリック
-      const loadButton = screen.getByText(/📂 ロード/);
-      fireEvent.click(loadButton);
+      // ショップボタンが存在し、セーブ/ロードボタンが存在しないことを確認
+      const shopButton = screen.getByText(/🛒 ショップ/);
+      expect(shopButton).toBeInTheDocument();
       
-      // スロット1をクリック
+      // セーブ/ロードボタンが削除されていることを確認
+      expect(screen.queryByText(/💾 セーブ/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/📂 ロード/)).not.toBeInTheDocument();
+    });
+  });
+
+  describe('Enemy Defeat Timing', () => {
+    beforeEach(() => {
+      // Mock canvas context
+      const mockCtx = {
+        fillRect: vi.fn(),
+        strokeRect: vi.fn(),
+        fillText: vi.fn(),
+        clearRect: vi.fn(),
+        beginPath: vi.fn(),
+        arc: vi.fn(),
+        stroke: vi.fn(),
+        fill: vi.fn(),
+        save: vi.fn(),
+        restore: vi.fn(),
+        translate: vi.fn(),
+        createLinearGradient: vi.fn(() => ({
+          addColorStop: vi.fn()
+        })),
+        moveTo: vi.fn(),
+        lineTo: vi.fn(),
+        shadowColor: '',
+        shadowBlur: 0,
+        fillStyle: '',
+        strokeStyle: '',
+        lineWidth: 1,
+        font: '',
+        globalAlpha: 1
+      };
+      
+      HTMLCanvasElement.prototype.getContext = vi.fn(() => mockCtx);
+    });
+
+    it('通知は全ての敵が倒された後にのみ表示される', async () => {
+      vi.useFakeTimers();
+      
+      const initialSettings = {
+        initialCoins: 500,
+        initialLives: 3,
+        startingNation: 'nauru',
+        towerLifespan: 10
+      };
+      
+      const { container } = render(<IntegratedGameV5 initialSettings={initialSettings} />);
+      const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+      const ctx = canvas.getContext('2d') as any;
+      
+      // Wave開始
+      const startButton = screen.getByText(/🌊 Wave 1 開始/);
+      fireEvent.click(startButton);
+      
+      // 敵がまだ生存している間（15秒経過）
+      vi.advanceTimersByTime(15000);
+      
+      // Wave完了通知が表示されていないことを確認
+      let fillTextCalls = ctx.fillText.mock.calls;
+      let hasWaveComplete = fillTextCalls.some((call: any[]) => 
+        call[0]?.includes('Wave完了')
+      );
+      expect(hasWaveComplete).toBeFalsy();
+      
+      // 全ての敵が倒された後（26秒経過）
+      vi.advanceTimersByTime(11000);
+      
+      // Wave完了通知が表示されることを確認
       await waitFor(() => {
-        const slot1 = screen.getByText(/Wave: 5/);
-        fireEvent.click(slot1);
+        fillTextCalls = ctx.fillText.mock.calls;
+        hasWaveComplete = fillTextCalls.some((call: any[]) => 
+          call[0]?.includes('Wave完了')
+        );
+        expect(hasWaveComplete).toBeTruthy();
       });
       
-      // Wave 5が表示されることを確認（複数の要素がある場合は最初の1つ）
+      vi.useRealTimers();
+    });
+
+    it('敵撃破タイミングが正しく処理される', async () => {
+      vi.useFakeTimers();
+      
+      const initialSettings = {
+        initialCoins: 1000,
+        initialLives: 3,
+        startingNation: 'nauru',
+        towerLifespan: 10
+      };
+      
+      const { container } = render(<IntegratedGameV5 initialSettings={initialSettings} />);
+      const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+      const rect = canvas.getBoundingClientRect();
+      
+      // 複数のタワーを配置
+      for (let i = 0; i < 5; i++) {
+        fireEvent.click(canvas, {
+          clientX: rect.left + 200 + i * 80,
+          clientY: rect.top + 200
+        });
+      }
+      
+      // Wave開始
+      const startButton = screen.getByText(/🌊 Wave 1 開始/);
+      fireEvent.click(startButton);
+      
+      // 敵が徐々に倒されていく
+      vi.advanceTimersByTime(10000);
+      
+      // まだWaveは進行中
+      expect(screen.getByText(/Wave 1 進行中/)).toBeInTheDocument();
+      
+      // Wave完了
+      vi.advanceTimersByTime(20000);
+      
+      // 次のWaveボタンが表示される
       await waitFor(() => {
-        const waveElements = screen.getAllByText(/🌊 Wave/);
-        const wave5Element = waveElements.find(el => el.textContent?.includes('Wave 5'));
-        expect(wave5Element).toBeInTheDocument();
+        expect(screen.getByText(/🌊 Wave 2 開始/)).toBeInTheDocument();
       });
+      
+      vi.useRealTimers();
+    });
+
+    it('Wave時間が25秒経過しても敵が残っていれば通知は表示されない', async () => {
+      vi.useFakeTimers();
+      
+      // 強力な敵を生成するようモック
+      vi.spyOn(GDPEnemySystem, 'generateWaveNations').mockReturnValue([
+        { ...NATION_DATABASE[0], gdp: 100000 } // 非常に高いHP
+      ]);
+      
+      const initialSettings = {
+        initialCoins: 200,
+        initialLives: 3,
+        startingNation: 'nauru',
+        towerLifespan: 10
+      };
+      
+      const { container } = render(<IntegratedGameV5 initialSettings={initialSettings} />);
+      const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+      const ctx = canvas.getContext('2d') as any;
+      
+      // Wave開始
+      const startButton = screen.getByText(/🌊 Wave 1 開始/);
+      fireEvent.click(startButton);
+      
+      // 25秒経過
+      vi.advanceTimersByTime(25000);
+      
+      // Wave完了通知が表示されていないことを確認
+      const fillTextCalls = ctx.fillText.mock.calls;
+      const hasWaveComplete = fillTextCalls.some((call: any[]) => 
+        call[0]?.includes('Wave完了')
+      );
+      expect(hasWaveComplete).toBeFalsy();
+      
+      // Waveはまだ進行中
+      expect(screen.getByText(/Wave 1 進行中/)).toBeInTheDocument();
+      
+      vi.useRealTimers();
+    });
+
+    it('撃破通知が正しいタイミングで表示される', async () => {
+      vi.useFakeTimers();
+      
+      const initialSettings = {
+        initialCoins: 500,
+        initialLives: 3,
+        startingNation: 'nauru',
+        towerLifespan: 10
+      };
+      
+      const { container } = render(<IntegratedGameV5 initialSettings={initialSettings} />);
+      const canvas = container.querySelector('canvas') as HTMLCanvasElement;
+      const ctx = canvas.getContext('2d') as any;
+      const rect = canvas.getBoundingClientRect();
+      
+      // タワーを配置
+      fireEvent.click(canvas, {
+        clientX: rect.left + 400,
+        clientY: rect.top + 200
+      });
+      
+      // Wave開始
+      const startButton = screen.getByText(/🌊 Wave 1 開始/);
+      fireEvent.click(startButton);
+      
+      // 敵が倒されるまで時間を進める
+      vi.advanceTimersByTime(5000);
+      
+      // 撃破通知が表示されることを確認
+      await waitFor(() => {
+        const fillTextCalls = ctx.fillText.mock.calls;
+        const hasDefeatNotification = fillTextCalls.some((call: any[]) => 
+          call[0]?.includes('撃破！')
+        );
+        expect(hasDefeatNotification).toBeTruthy();
+      });
+      
+      vi.useRealTimers();
     });
   });
 });

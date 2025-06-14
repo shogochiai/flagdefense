@@ -6,7 +6,6 @@ import { AbilityProcessor } from './nation-abilities';
 import { ShopSystemV2, ShopItem } from './shop-system-v2';
 import { SideShop } from './side-shop';
 import { SaveSlotsModal, useSaveSlots, SaveData } from './save-slots';
-import { DefeatedNationsSidePanel } from './defeated-nations-side-panel';
 import { ALL_NATION_ABILITIES } from './nation-abilities-v2';
 
 interface Tower {
@@ -96,6 +95,8 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
   const [towerLifespan] = useState(initialSettings.towerLifespan);
   const [isWaveActive, setIsWaveActive] = useState(false);
   const [newNationNotification, setNewNationNotification] = useState<{nation: any, show: boolean} | null>(null);
+  const [waveCompleteNotification, setWaveCompleteNotification] = useState<{nations: typeof NATION_DATABASE[0][], show: boolean} | null>(null);
+  const waveCompleteNotificationRef = useRef<{x: number, y: number, width: number, height: number} | null>(null);
   const [gameModifiers, setGameModifiers] = useState<GameModifiers>({
     damageBoost: 1.0,
     rangeBoost: 1.0,
@@ -111,7 +112,6 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
   const [attackEffects, setAttackEffects] = useState<AttackEffect[]>([]);
   const [defeatNotifications, setDefeatNotifications] = useState<DefeatNotification[]>([]);
   const [defeatedNations, setDefeatedNations] = useState<Record<string, typeof NATION_DATABASE[0]>>({});
-  const [showDefeatedList, setShowDefeatedList] = useState(true);
   const [saveNotification, setSaveNotification] = useState<{ show: boolean; timestamp: number } | null>(null);
   const animationRef = useRef<number>(0);
   const enemiesRef = useRef<GDPEnemy[]>([]);
@@ -121,6 +121,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
   const enemiesDefeatedInWave = useRef<number>(0);
   const totalEnemiesInWave = useRef<number>(0);
   const spawnedEnemiesInWave = useRef<number>(0);
+  const defeatedInCurrentWave = useRef<typeof NATION_DATABASE[0][]>([]);
   const { showModal, modalMode, openSaveModal, openLoadModal, closeModal } = useSaveSlots();
 
   // パスシステムの初期化
@@ -379,13 +380,17 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             timestamp: performance.now()
           }]);
 
-          // 撃破した国家を記録
-          setDefeatedNations(prev => {
-            if (!prev[enemy.nation.id]) {
-              return { ...prev, [enemy.nation.id]: enemy.nation };
+          // 撃破した国家を記録（重複チェック改善）
+          if (!defeatedNations[enemy.nation.id]) {
+            // まだ撃破していない場合のみ追加
+            setDefeatedNations(prev => ({ ...prev, [enemy.nation.id]: enemy.nation }));
+            
+            // 現在のWaveで撃破した国家リストにも追加（重複チェック）
+            const alreadyInList = defeatedInCurrentWave.current.some(n => n.id === enemy.nation.id);
+            if (!alreadyInList) {
+              defeatedInCurrentWave.current.push(enemy.nation);
             }
-            return prev;
-          });
+          }
 
           // パーティクルエフェクト
           ctx.fillStyle = '#ffff00';
@@ -478,8 +483,8 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
       enemiesRef.current = updatedEnemies;
       setEnemies(updatedEnemies);
 
-      // Wave時間チェック（25秒）
-      if (isWaveActive && timestamp - waveStartTime.current > 25000) {
+      // Wave時間チェック（25秒）AND全ての敵が倒されているかチェック
+      if (isWaveActive && timestamp - waveStartTime.current > 25000 && enemiesRef.current.length === 0) {
         setIsWaveActive(false);
         
         setSpecialEffects(prev => ({
@@ -487,47 +492,57 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           slowField: false,
           doubleCoins: false
         }));
+
+        // Wave完了通知を表示
+        if (defeatedInCurrentWave.current.length > 0) {
+          setWaveCompleteNotification({
+            nations: [...defeatedInCurrentWave.current],
+            show: true
+          });
+          
+          // 10秒後に消す
+          setTimeout(() => {
+            setWaveCompleteNotification(null);
+          }, 10000);
+        }
         
         // Wave完了時に次のWave番号に更新
         setWave(prev => prev + 1);
         
-        // レア度制限付きのガチャ
-        const unownedNations = NATION_DATABASE.filter(n => !ownedNations.includes(n.id));
-        if (unownedNations.length > 0) {
-          // 現在所有している最高レア度を取得
-          let maxOwnedRarity = 1;
-          ownedNations.forEach(nationId => {
-            const nation = NATION_DATABASE.find(n => n.id === nationId);
-            if (nation) {
+        // レア度制限付きのガチャ（Wave完了通知の後に処理）
+        setTimeout(() => {
+          const unownedNations = NATION_DATABASE.filter(n => !ownedNations.includes(n.id));
+          if (unownedNations.length > 0) {
+            // 現在所有している最高レア度を取得
+            let maxOwnedRarity = 1;
+            ownedNations.forEach(nationId => {
+              const nation = NATION_DATABASE.find(n => n.id === nationId);
+              if (nation) {
+                const rarity = GDPEnemySystem.getRarity(nation.gdp);
+                if (rarity.stars > maxOwnedRarity) {
+                  maxOwnedRarity = rarity.stars;
+                }
+              }
+            });
+            
+            // 最高レア度+1までの国をフィルタリング
+            const eligibleNations = unownedNations.filter(nation => {
               const rarity = GDPEnemySystem.getRarity(nation.gdp);
-              if (rarity.stars > maxOwnedRarity) {
-                maxOwnedRarity = rarity.stars;
+              return rarity.stars <= maxOwnedRarity + 1;
+            });
+            
+            if (eligibleNations.length > 0) {
+              const randomNation = eligibleNations[Math.floor(Math.random() * eligibleNations.length)];
+              setOwnedNations(prev => [...prev, randomNation.id]);
+              setNewNationNotification({ nation: randomNation, show: false }); // Initially hidden
+              
+              // 最初の国（nauru）しか持っていない場合は自動的に選択を切り替える
+              if (selectedNation === 'nauru' && randomNation.id !== 'nauru') {
+                setSelectedNation(randomNation.id);
               }
             }
-          });
-          
-          // 最高レア度+1までの国をフィルタリング
-          const eligibleNations = unownedNations.filter(nation => {
-            const rarity = GDPEnemySystem.getRarity(nation.gdp);
-            return rarity.stars <= maxOwnedRarity + 1;
-          });
-          
-          if (eligibleNations.length > 0) {
-            const randomNation = eligibleNations[Math.floor(Math.random() * eligibleNations.length)];
-            setOwnedNations(prev => [...prev, randomNation.id]);
-            setNewNationNotification({ nation: randomNation, show: true });
-            
-            // 最初の国（nauru）しか持っていない場合は自動的に選択を切り替える
-            if (selectedNation === 'nauru' && randomNation.id !== 'nauru') {
-              setSelectedNation(randomNation.id);
-            }
-            
-            // 5秒後に通知を非表示にする
-            setTimeout(() => {
-              setNewNationNotification(null);
-            }, 5000);
           }
-        }
+        }, 100); // Small delay to ensure proper state update
       }
 
       // 攻撃エフェクトテキストの描画
@@ -591,8 +606,75 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         return displayNotifications;
       });
 
-      // 新国家獲得通知の表示
-      if (newNationNotification && newNationNotification.show) {
+      // Wave完了通知の表示（撃破国家一覧）
+      if (waveCompleteNotification && waveCompleteNotification.show) {
+        const notification = waveCompleteNotification;
+        const nations = notification.nations;
+        const width = 600;
+        const height = Math.min(300, 100 + nations.length * 30);
+        const x = (800 - width) / 2;
+        const y = 50;
+        
+        // Store notification bounds for click detection
+        waveCompleteNotificationRef.current = { x, y, width, height };
+        
+        ctx.save();
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.95)';
+        ctx.fillRect(x, y, width, height);
+        
+        ctx.strokeStyle = '#ff6b6b';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(x, y, width, height);
+        
+        // Hover effect hint
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.fillRect(x + 3, y + 3, width - 6, height - 6);
+        
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 24px Arial';
+        ctx.fillText('🏆 Wave完了！撃破国家一覧', x + 20, y + 35);
+        
+        ctx.font = '12px Arial';
+        ctx.fillStyle = '#aaaaaa';
+        ctx.fillText('(クリックして新国家通知を表示)', x + 350, y + 35);
+        
+        ctx.font = '16px Arial';
+        let yOffset = y + 70;
+        nations.slice(0, 8).forEach((nation, index) => {
+          // Draw actual flag instead of emoji
+          FlagRenderer.drawFlag(
+            ctx,
+            nation.id,
+            x + 20,
+            yOffset - 15,
+            30,
+            20,
+            nation.colors
+          );
+          
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(nation.name, x + 60, yOffset);
+          
+          const rarity = GDPEnemySystem.getRarity(nation.gdp);
+          ctx.fillStyle = rarity.color;
+          ctx.fillText(`★${rarity.stars} GDP: ${nation.gdp.toLocaleString()}`, x + 300, yOffset);
+          
+          yOffset += 30;
+        });
+        
+        if (nations.length > 8) {
+          ctx.fillStyle = '#999999';
+          ctx.fillText(`他 ${nations.length - 8} カ国...`, x + 20, yOffset);
+        }
+        
+        ctx.restore();
+      } else {
+        // Clear the reference when not showing
+        waveCompleteNotificationRef.current = null;
+      }
+
+      // 新国家獲得通知の表示（Wave完了通知が非表示の時のみ表示）
+      if (newNationNotification && newNationNotification.show && !waveCompleteNotification?.show) {
         const notification = newNationNotification;
         const ability = getAbilityDescriptionWithBonus(notification.nation.id);
         const rarity = GDPEnemySystem.getRarity(notification.nation.gdp);
@@ -647,7 +729,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isWaveActive, wave, displayWave, gameModifiers, specialEffects, newNationNotification, ownedNations, selectedNation, towerLifespan, defeatedNations, attackEffects, defeatNotifications, saveNotification]);
+  }, [isWaveActive, wave, displayWave, gameModifiers, specialEffects, newNationNotification, waveCompleteNotification, ownedNations, selectedNation, towerLifespan, defeatedNations, attackEffects, defeatNotifications, saveNotification]);
 
   // キャンバスクリックでタワー配置（修正版：スケーリング対応）
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -661,6 +743,24 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     // クリック座標をキャンバス座標系に変換
     const x = (e.clientX - rect.left) * scaleX;
     const y = (e.clientY - rect.top) * scaleY;
+
+    // Check if clicking on wave complete notification
+    if (waveCompleteNotificationRef.current && waveCompleteNotification?.show) {
+      const notif = waveCompleteNotificationRef.current;
+      if (x >= notif.x && x <= notif.x + notif.width && 
+          y >= notif.y && y <= notif.y + notif.height) {
+        // Hide wave complete notification and show new nation notification if available
+        setWaveCompleteNotification(null);
+        if (newNationNotification && !newNationNotification.show) {
+          setNewNationNotification({ ...newNationNotification, show: true });
+          // Auto-hide after 5 seconds
+          setTimeout(() => {
+            setNewNationNotification(null);
+          }, 5000);
+        }
+        return;
+      }
+    }
 
     if (pathRef.current.isOnPath(x, y)) {
       return;
@@ -697,6 +797,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
     enemiesDefeatedInWave.current = 0;
     spawnedEnemiesInWave.current = 0;
     totalEnemiesInWave.current = waveNations.length;
+    defeatedInCurrentWave.current = []; // Reset defeated nations for new wave
 
     const spawnInterval = 25000 / waveNations.length;
 
@@ -860,30 +961,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
 
         {/* コントロールパネル */}
         <div className="bg-black bg-opacity-50 p-4 rounded-xl mb-6 backdrop-blur-sm">
-          <div className="flex flex-wrap gap-4 items-center justify-between">
-            <div className="flex items-center gap-4">
-              <select
-                value={selectedNation}
-                onChange={(e) => setSelectedNation(e.target.value)}
-                className="bg-gray-800 px-4 py-3 rounded-lg border border-gray-600 text-white"
-              >
-                {ownedNations.map(nationId => {
-                  const nation = NATION_DATABASE.find(n => n.id === nationId);
-                  if (!nation) return null;
-                  const rarity = GDPEnemySystem.getRarity(nation.gdp);
-                  const ability = getAbilityDescriptionWithBonus(nationId);
-                  return (
-                    <option key={nationId} value={nationId}>
-                      {nation.flag} {nation.name} (★{rarity.stars}) - {ability}
-                    </option>
-                  );
-                })}
-              </select>
-              <div className="text-sm text-gray-400">
-                配置コスト: 💰 50 ({towerLifespan}Wave後に消滅)
-              </div>
-            </div>
-            
+          <div className="flex flex-wrap gap-4 items-center">
             <button
               onClick={() => setShowSideShop(!showSideShop)}
               className={`px-6 py-3 rounded-xl font-bold text-lg shadow-xl transition-all ${
@@ -894,6 +972,27 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             >
               {showSideShop ? '🛒 ショップを閉じる' : '🛒 ショップを開く'}
             </button>
+            
+            <select
+              value={selectedNation}
+              onChange={(e) => setSelectedNation(e.target.value)}
+              className="bg-gray-800 px-4 py-3 rounded-lg border border-gray-600 text-white"
+            >
+              {ownedNations.map(nationId => {
+                const nation = NATION_DATABASE.find(n => n.id === nationId);
+                if (!nation) return null;
+                const rarity = GDPEnemySystem.getRarity(nation.gdp);
+                const ability = getAbilityDescriptionWithBonus(nationId);
+                return (
+                  <option key={nationId} value={nationId}>
+                    {nation.flag} {nation.name} (★{rarity.stars}) - {ability}
+                  </option>
+                );
+              })}
+            </select>
+            <div className="text-sm text-gray-400">
+              配置コスト: 💰 50 ({towerLifespan}Wave後に消滅)
+            </div>
           </div>
         </div>
 
@@ -939,18 +1038,6 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
               {isWaveActive ? '⏳ Wave進行中...' : `🌊 Wave ${wave} 開始`}
             </span>
           </button>
-          <button
-            onClick={openSaveModal}
-            className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-xl font-bold text-xl shadow-2xl transition-all transform hover:scale-105"
-          >
-            💾 セーブ
-          </button>
-          <button
-            onClick={openLoadModal}
-            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-xl font-bold text-xl shadow-2xl transition-all transform hover:scale-105"
-          >
-            📂 ロード
-          </button>
         </div>
 
         {/* 操作説明 */}
@@ -965,19 +1052,6 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
         </div>
 
 
-        {/* セーブ/ロードモーダル */}
-        {showModal && (
-          <SaveSlotsModal
-            currentData={getCurrentSaveData()}
-            onLoad={handleLoad}
-            onClose={closeModal}
-            mode={modalMode}
-            onSaveSuccess={() => {
-              setSaveNotification({ show: true, timestamp: performance.now() });
-              setTimeout(() => setSaveNotification(null), 3000);
-            }}
-          />
-        )}
 
         {/* サイドショップ */}
         {showSideShop && (
@@ -986,6 +1060,7 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
             lives={lives}
             ownedNations={ownedNations}
             powerupsPurchased={powerupsPurchased}
+            defeatedNations={defeatedNations}
             onPurchase={(itemId, cost) => {
               if (coins >= cost) {
                 setCoins(coins - cost);
@@ -1015,12 +1090,6 @@ export const IntegratedGameV5: React.FC<IntegratedGameV5Props> = ({ initialSetti
           />
         )}
 
-        {/* 撃破国家サイドパネル */}
-        <DefeatedNationsSidePanel
-          defeatedNations={defeatedNations}
-          isOpen={showDefeatedList}
-          onToggle={() => setShowDefeatedList(!showDefeatedList)}
-        />
       </div>
 
       <style>{`

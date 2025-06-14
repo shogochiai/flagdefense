@@ -7,6 +7,7 @@ interface SideShopProps {
   lives: number;
   ownedNations: string[];
   powerupsPurchased: Record<string, number>;
+  defeatedNations: Record<string, typeof NATION_DATABASE[0]>;
   onPurchase: (itemId: string, cost: number) => void;
   onLivesPurchase: () => void;
   onNationPurchase: (nationId: string, cost: number) => void;
@@ -17,12 +18,14 @@ export const SideShop: React.FC<SideShopProps> = ({
   lives,
   ownedNations,
   powerupsPurchased,
+  defeatedNations,
   onPurchase,
   onLivesPurchase,
   onNationPurchase
 }) => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [nationSkipCount, setNationSkipCount] = useState(0);
+  const [defeatedSkipCount, setDefeatedSkipCount] = useState(0);
 
   const getLifePrice = () => 300 + (lives - 1) * 200;
 
@@ -122,11 +125,11 @@ export const SideShop: React.FC<SideShopProps> = ({
           </button>
           {expandedSection === 'nations' && (
             <div className="p-2 space-y-1">
-              <div className="flex justify-between mb-2">
+              <div className="flex justify-between mb-2 min-w-full">
                 <button
                   onClick={() => setNationSkipCount(Math.max(0, nationSkipCount - 1))}
                   disabled={nationSkipCount === 0}
-                  className={`px-2 py-1 text-xs rounded ${
+                  className={`px-2 py-1 text-xs rounded w-16 ${
                     nationSkipCount === 0 
                       ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
                       : 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -134,13 +137,13 @@ export const SideShop: React.FC<SideShopProps> = ({
                 >
                   ◀ 前へ
                 </button>
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-gray-400 text-center flex-1">
                   {nationSkipCount * 12 + 1}-{Math.min((nationSkipCount + 1) * 12, allAvailableNations.length)} / {allAvailableNations.length}
                 </span>
                 <button
                   onClick={() => setNationSkipCount(nationSkipCount + 1)}
                   disabled={(nationSkipCount + 1) * 12 >= allAvailableNations.length}
-                  className={`px-2 py-1 text-xs rounded ${
+                  className={`px-2 py-1 text-xs rounded w-16 ${
                     (nationSkipCount + 1) * 12 >= allAvailableNations.length
                       ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
                       : 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -166,14 +169,84 @@ export const SideShop: React.FC<SideShopProps> = ({
                       }`}
                       title={AbilityProcessor.getAbilityDescription(nation.id)}
                     >
-                      <span>{nation.flag} {nation.name}</span>
-                      <span>
+                      <span className="truncate max-w-[120px]">{nation.flag} {nation.name}</span>
+                      <span className="flex-shrink-0">
                         <span className="text-yellow-300">★{rarity.stars}</span> 💰{price}
                       </span>
                     </button>
                   );
                 })}
               </div>
+            </div>
+          )}
+        </div>
+
+        {/* 撃破履歴セクション */}
+        <div className="bg-gray-800 rounded-lg">
+          <button
+            onClick={() => toggleSection('defeated')}
+            className="w-full px-3 py-2 text-left font-bold text-orange-400 hover:bg-gray-700 transition-colors flex items-center justify-between"
+          >
+            <span>🏆 撃破</span>
+            <span className="text-xs">{expandedSection === 'defeated' ? '▼' : '◀'}</span>
+          </button>
+          {expandedSection === 'defeated' && (
+            <div className="p-2 space-y-1">
+              {Object.keys(defeatedNations).length === 0 ? (
+                <p className="text-xs text-gray-500 text-center py-2">
+                  まだ国家を撃破していません
+                </p>
+              ) : (
+                <>
+                  <div className="flex justify-between mb-2 min-w-full">
+                    <button
+                      onClick={() => setDefeatedSkipCount(Math.max(0, defeatedSkipCount - 1))}
+                      disabled={defeatedSkipCount === 0}
+                      className={`px-2 py-1 text-xs rounded w-16 ${
+                        defeatedSkipCount === 0 
+                          ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
+                          : 'bg-orange-600 hover:bg-orange-700 text-white'
+                      }`}
+                    >
+                      ◀ 前へ
+                    </button>
+                    <span className="text-xs text-gray-400 text-center flex-1">
+                      {defeatedSkipCount * 12 + 1}-{Math.min((defeatedSkipCount + 1) * 12, Object.keys(defeatedNations).length)} / {Object.keys(defeatedNations).length}
+                    </span>
+                    <button
+                      onClick={() => setDefeatedSkipCount(defeatedSkipCount + 1)}
+                      disabled={(defeatedSkipCount + 1) * 12 >= Object.keys(defeatedNations).length}
+                      className={`px-2 py-1 text-xs rounded w-16 ${
+                        (defeatedSkipCount + 1) * 12 >= Object.keys(defeatedNations).length
+                          ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                          : 'bg-orange-600 hover:bg-orange-700 text-white'
+                      }`}
+                    >
+                      次へ ▶
+                    </button>
+                  </div>
+                  <div className="max-h-56 overflow-y-auto space-y-1">
+                    {Object.values(defeatedNations)
+                      .sort((a, b) => b.gdp - a.gdp)
+                      .slice(defeatedSkipCount * 12, (defeatedSkipCount + 1) * 12)
+                      .map(nation => {
+                        const rarity = GDPEnemySystem.getRarity(nation.gdp);
+                        return (
+                          <button
+                            key={nation.id}
+                            className="w-full px-2 py-1 rounded text-xs flex items-center justify-between bg-orange-700 hover:bg-orange-600 text-white transition-colors cursor-default"
+                            disabled
+                          >
+                            <span className="truncate max-w-[120px]">{nation.flag} {nation.name}</span>
+                            <span className="flex-shrink-0">
+                              <span className="text-yellow-300">★{rarity.stars}</span> GDP:{nation.gdp.toLocaleString()}
+                            </span>
+                          </button>
+                        );
+                      })}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
