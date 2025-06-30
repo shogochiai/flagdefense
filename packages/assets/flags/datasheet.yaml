@@ -1,0 +1,6061 @@
+# 国旗データ（YAML形式）
+flags:
+  - id: "usa"
+    japanese_name: "アメリカ合衆国"
+    japanese_reading: "あめりかがっしゅうこく"
+    english_name: "United States of America"
+    image_path: "img/usa.png"
+    flag_emoji: "🇺🇸"
+    gdp_info:
+      gdp_billion_usd: 25462
+      gdp_tier: "super"
+      gdp_rank: 1
+    game_stats:
+      cost: 2380
+      damage: 240
+      range: 685
+      tier: 6
+      colors: ["#B22234", "#FFFFFF", "#3C3B6E"]
+    flag_design:
+      stripes: 13
+      stars: 50
+      main_colors: ["赤", "白", "青"]
+      symbolism:
+        stripes: "独立当初の13州"
+        stars: "現在の50州"
+        red: "勇気と忍耐"
+        white: "純粋と潔白"
+        blue: "正義と忍耐"
+    trivia:
+      historical_facts:
+        - "現在の50星の国旗は1958年に高校生がアラスカとハワイの加入を見越してクラスプロジェクトでデザインし、教師からB-の評価を受けた"
+        - "1960年7月4日に正式採用"
+        - "星条旗は過去27回デザインが変更された"
+      design_facts:
+        - "星は1列9個と1列10個が交互に配列"
+        - "縦横比は1:1.9"
+        - "公式には「Old Glory」とも呼ばれる"
+    category: "北米"
+    continent: "North America"
+    capital: "ワシントンD.C."
+    population: "約3億3000万人"
+    area_km2: 9833517
+    independence: "1776年7月4日"
+    official_language: "英語（連邦レベルの公用語なし）"
+    currency: "米ドル（USD）"
+
+  - id: "china"
+    japanese_name: "中華人民共和国"
+    japanese_reading: "ちゅうかじんみんきょうわこく"
+    english_name: "People's Republic of China"
+    image_path: "img/china.png"
+    flag_emoji: "🇨🇳"
+    gdp_info:
+      gdp_billion_usd: 17963
+      gdp_tier: "super"
+      gdp_rank: 2
+    game_stats:
+      cost: 2370
+      damage: 239
+      range: 680
+      tier: 6
+      colors: ["#EE1C25", "#FFFF00"]
+    flag_design:
+      main_color: "赤"
+      stars: 5
+      star_arrangement: "大星1つ、小星4つ"
+      symbolism:
+        red: "革命"
+        large_star: "中国共産党"
+        small_stars: "労働者、農民、小ブルジョア、民族ブルジョア"
+    trivia:
+      historical_facts:
+        - "1949年10月1日に採用"
+        - "デザインは曽聯松による"
+        - "3000を超える応募作品から選ばれた"
+      cultural_facts:
+        - "年間6300万組（1億2600万本）の箸が製造されており、使い捨てから高品質なものまで製造に最大1ヶ月かかるものもある"
+        - "五星紅旗と呼ばれる"
+    category: "アジア"
+    continent: "Asia"
+    capital: "北京"
+    population: "約14億人"
+    area_km2: 9596961
+    founded: "1949年10月1日"
+    official_language: "中国語（北京官話）"
+    currency: "人民元（CNY）"
+
+  - id: "japan"
+    japanese_name: "日本"
+    japanese_reading: "にほん・にっぽん"
+    english_name: "Japan"
+    image_path: "img/japan.png"
+    flag_emoji: "🇯🇵"
+    gdp_info:
+      gdp_billion_usd: 4231
+      gdp_tier: "major"
+      gdp_rank: 3
+    game_stats:
+      cost: 2350
+      damage: 237
+      range: 675
+      tier: 6
+      colors: ["#FFFFFF", "#BC002D"]
+    flag_design:
+      name: "日章旗"
+      nickname: "日の丸"
+      shape: "長方形に円"
+      colors: ["白地", "赤円"]
+      symbolism:
+        white: "純粋さ、正直さ"
+        red_circle: "太陽、生命、活力"
+    trivia:
+      historical_facts:
+        - "1999年に国旗国歌法で正式に国旗となる"
+        - "円の直径は旗の縦の長さの5分の3"
+        - "歴史的には7世紀頃から太陽を象徴として使用"
+      cultural_facts:
+        - "世界の6.0マグニチュード以上の地震の20%が日本で発生し、地震多発地帯である環太平洋火山帯に位置している"
+        - "世界で最もシンプルなデザインの国旗の一つ"
+    category: "アジア"
+    continent: "Asia"
+    capital: "東京"
+    population: "約1億2500万人"
+    area_km2: 377975
+    government_form: "立憲君主制"
+    official_language: "日本語"
+    currency: "円（JPY）"
+
+  - id: "germany"
+    japanese_name: "ドイツ連邦共和国"
+    japanese_reading: "どいつれんぽうきょうわこく"
+    english_name: "Federal Republic of Germany"
+    image_path: "img/germany.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 4072
+      gdp_tier: "major"
+      gdp_rank: 4
+    game_stats:
+      cost: 2290
+      damage: 231
+      range: 660
+      tier: 6
+      colors: ["#000000", "#FF0000", "#FFD700"]
+    flag_design:
+      stripes: 3
+      orientation: "横縞"
+      colors_top_to_bottom: ["黒", "赤", "金"]
+      symbolism:
+        black: "勤勉"
+        red: "情熱"
+        gold: "名誉"
+    trivia:
+      historical_facts:
+        - "1949年に西ドイツで採用、1990年統一後も継続"
+        - "ワイマール共和国時代（1919-1933）にも使用"
+        - "19世紀の自由主義運動に起源"
+      cultural_facts:
+        - "外国人を含む全ての人が大学に無料で通うことができる"
+        - "黒赤金の配色は「暗闇から血を経て黄金の自由へ」を表すという説も"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "ベルリン"
+    population: "約8300万人"
+    area_km2: 357582
+    founded: "1949年5月23日（西ドイツ）、1990年10月3日（統一）"
+    official_language: "ドイツ語"
+    currency: "ユーロ（EUR）"
+
+  - id: "india"
+    japanese_name: "インド"
+    japanese_reading: "いんど"
+    english_name: "Republic of India"
+    image_path: "img/india.png"
+    flag_emoji: "☸️"
+    gdp_info:
+      gdp_billion_usd: 3732
+      gdp_tier: "major"
+      gdp_rank: 5
+    game_stats:
+      cost: 2340
+      damage: 236
+      range: 675
+      tier: 6
+      colors: ["#FF9933", "#FFFFFF", "#00A550", "#000080"]
+    flag_design:
+      stripes: 3
+      orientation: "横縞"
+      colors_top_to_bottom: ["サフラン", "白", "緑"]
+      center_symbol: "アショーカ・チャクラ（24本のスポークを持つ輪）"
+      symbolism:
+        saffron: "勇気と犠牲"
+        white: "真実と平和"
+        green: "信仰と豊穣"
+        chakra: "正義の輪、進歩"
+    trivia:
+      historical_facts:
+        - "1947年7月22日に採用"
+        - "チャクラはアショーカ王の柱から取られた"
+        - "ガンディーが提案した糸車のデザインから発展"
+      cultural_facts:
+        - "約2500年前にインドでサトウキビが初めて化学的に精製され、世界に甘味への欲求をもたらした"
+        - "世界最大の民主主義国家"
+    category: "アジア"
+    continent: "Asia"
+    capital: "ニューデリー"
+    population: "約14億人"
+    area_km2: 3287263
+    independence: "1947年8月15日"
+    official_language: "ヒンディー語、英語（他21言語）"
+    currency: "インド・ルピー（INR）"
+
+  - id: "uk"
+    japanese_name: "イギリス"
+    japanese_reading: "いぎりす"
+    english_name: "United Kingdom"
+    image_path: "img/uk.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 3070
+      gdp_tier: "major"
+      gdp_rank: 6
+    game_stats:
+      cost: 2280
+      damage: 230
+      range: 660
+      tier: 6
+      colors: ["#012169", "#FFFFFF", "#C8102E"]
+    flag_design:
+      name: "ユニオンジャック"
+      official_name: "ユニオンフラッグ"
+      components: ["イングランドの聖ジョージ旗", "スコットランドの聖アンドリュー旗", "アイルランドの聖パトリック旗"]
+      symbolism:
+        red_cross: "イングランドの聖ジョージ"
+        white_diagonal: "スコットランドの聖アンドリュー"
+        red_diagonal: "アイルランドの聖パトリック"
+    trivia:
+      historical_facts:
+        - "1801年に現在のデザインが完成"
+        - "ウェールズの要素は含まれていない"
+        - "正しく掲揚する向きがある（非対称デザイン）"
+      cultural_facts:
+        - "ウェールズは英国の一部だが、ロアルド・ダール、キャサリン・ゼタ・ジョーンズ、アンソニー・ホプキンスなど驚くほど多くの有名人がウェールズ出身である"
+        - "世界で最も複雑な国旗デザインの一つ"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "ロンドン"
+    population: "約6700万人"
+    area_km2: 242495
+    government_form: "立憲君主制"
+    official_language: "英語"
+    currency: "英ポンド（GBP）"
+
+  - id: "france"
+    japanese_name: "フランス共和国"
+    japanese_reading: "ふらんすきょうわこく"
+    english_name: "French Republic"
+    image_path: "img/france.png"
+    flag_emoji: "🗼"
+    gdp_info:
+      gdp_billion_usd: 2957
+      gdp_tier: "major"
+      gdp_rank: 7
+    game_stats:
+      cost: 2270
+      damage: 229
+      range: 655
+      tier: 6
+      colors: ["#002654", "#FFFFFF", "#ED2939"]
+    flag_design:
+      name: "トリコロール"
+      stripes: 3
+      orientation: "縦縞"
+      colors_left_to_right: ["青", "白", "赤"]
+      symbolism:
+        blue: "自由"
+        white: "平等"
+        red: "博愛"
+    trivia:
+      historical_facts:
+        - "1794年に正式採用"
+        - "フランス革命の象徴"
+        - "パリの色（青と赤）に王家の白を加えたデザイン"
+      design_facts:
+        - "縦横比は2:3"
+        - "多くの国の三色旗のモデルとなった"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "パリ"
+    population: "約6700万人"
+    area_km2: 643801
+    government_form: "共和制"
+    official_language: "フランス語"
+    currency: "ユーロ（EUR）"
+
+  - id: "brazil"
+    japanese_name: "ブラジル連邦共和国"
+    japanese_reading: "ぶらじるれんぽうきょうわこく"
+    english_name: "Federative Republic of Brazil"
+    image_path: "img/brazil.png"
+    flag_emoji: "⚽"
+    gdp_info:
+      gdp_billion_usd: 2126
+      gdp_tier: "major"
+      gdp_rank: 10
+    game_stats:
+      cost: 2320
+      damage: 234
+      range: 670
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#002776", "#FFFFFF"]
+    flag_design:
+      main_color: "緑"
+      shape: "緑地に黄色のひし形、中央に青い天球"
+      stars: 27
+      motto: "秩序と進歩（Ordem e Progresso）"
+      symbolism:
+        green: "ブラジルの森林"
+        yellow: "鉱物資源"
+        blue_sphere: "リオデジャネイロの空"
+        stars: "26州と連邦区"
+    trivia:
+      historical_facts:
+        - "1889年11月19日に採用"
+        - "星の配置は1889年11月15日の夜空を表現"
+        - "世界で唯一、国のモットーが書かれた国旗"
+      cultural_facts:
+        - "南半球最大の国"
+        - "ポルトガル語圏最大の国"
+    category: "南米"
+    continent: "South America"
+    capital: "ブラジリア"
+    population: "約2億1500万人"
+    area_km2: 8515767
+    independence: "1822年9月7日"
+    official_language: "ポルトガル語"
+    currency: "レアル（BRL）"
+
+  - id: "italy"
+    japanese_name: "イタリア共和国"
+    japanese_reading: "いたりあきょうわこく"
+    english_name: "Italian Republic"
+    image_path: "img/italy.png"
+    flag_emoji: "🏛️"
+    gdp_info:
+      gdp_billion_usd: 2107
+      gdp_tier: "major"
+      gdp_rank: 8
+    game_stats:
+      cost: 2260
+      damage: 228
+      range: 655
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      name: "イル・トリコローレ"
+      stripes: 3
+      orientation: "縦縞"
+      colors_left_to_right: ["緑", "白", "赤"]
+      symbolism:
+        green: "希望、国土"
+        white: "信仰、アルプスの雪"
+        red: "慈愛、血"
+    trivia:
+      historical_facts:
+        - "1946年6月19日に正式採用"
+        - "ナポレオン時代のチサルピーナ共和国旗が起源"
+        - "フランス国旗の影響を受けたデザイン"
+      cultural_facts:
+        - "トマトはイタリア語で「ポモドーロ（金色のリンゴ）」と呼ばれる"
+        - "イタリア料理には欠かせないトマトは16世紀に新大陸から伝来"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "ローマ"
+    population: "約6000万人"
+    area_km2: 301338
+    government_form: "共和制"
+    official_language: "イタリア語"
+    currency: "ユーロ（EUR）"
+
+  - id: "canada"
+    japanese_name: "カナダ"
+    japanese_reading: "かなだ"
+    english_name: "Canada"
+    image_path: "img/canada.png"
+    flag_emoji: "🍁"
+    gdp_info:
+      gdp_billion_usd: 2139
+      gdp_tier: "major"
+      gdp_rank: 9
+    game_stats:
+      cost: 2310
+      damage: 233
+      range: 665
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      name: "メープルリーフ旗"
+      bands: 3
+      arrangement: "赤・白・赤の縦縞"
+      center_symbol: "11の頂点を持つカエデの葉"
+      symbolism:
+        red: "大西洋と太平洋"
+        white: "雪"
+        maple_leaf: "カナダの自然"
+    trivia:
+      historical_facts:
+        - "1965年2月15日に採用"
+        - "それ以前はイギリス国旗を含むデザイン"
+        - "「大論争」を経て現在のデザインに決定"
+      design_facts:
+        - "カエデの葉の11の頂点には特別な意味はない"
+        - "風になびいても識別しやすいデザイン"
+    category: "北米"
+    continent: "North America"
+    capital: "オタワ"
+    population: "約3800万人"
+    area_km2: 9984670
+    independence: "1867年7月1日（英国から）"
+    official_language: "英語、フランス語"
+    currency: "カナダドル（CAD）"
+
+  # 小国・特殊地域の例
+  - id: "vatican"
+    japanese_name: "バチカン市国"
+    japanese_reading: "ばちかんしこく"
+    english_name: "Vatican City State"
+    image_path: "img/vatican.png"
+    flag_emoji: "✝️"
+    gdp_info:
+      gdp_billion_usd: 0.8
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 450
+      damage: 47
+      range: 200
+      tier: 4
+      colors: ["#FFE000", "#FFFFFF"]
+    flag_design:
+      bands: 2
+      orientation: "縦縞"
+      colors: ["黄", "白"]
+      coat_of_arms: "教皇の紋章（三重冠と鍵）"
+      symbolism:
+        yellow: "教皇の世俗的権力"
+        white: "教皇の精神的権力"
+        keys: "天国の鍵"
+    trivia:
+      historical_facts:
+        - "1929年のラテラノ条約で制定"
+        - "世界最小の独立国家"
+        - "人口は約800人"
+      cultural_facts:
+        - "バチカンを守る衛兵は19-30歳のスイス人男性で、身長174cm以上でなければならず、制服の着用が義務付けられている"
+        - "唯一の非四角形の国旗（正方形）"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "バチカン市国（都市国家）"
+    population: "約800人"
+    area_km2: 0.44
+    government_form: "絶対君主制（教皇制）"
+    official_language: "ラテン語、イタリア語"
+    currency: "ユーロ（EUR）"
+
+  - id: "sealand"
+    japanese_name: "シーランド公国"
+    japanese_reading: "しーらんどこうこく"
+    english_name: "Principality of Sealand"
+    image_path: "img/sealand.png"
+    flag_emoji: "⚓"
+    gdp_info:
+      gdp_billion_usd: 0.001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 10
+      damage: 2
+      range: 70
+      tier: 1
+      colors: ["#000000", "#FF0000", "#FFFFFF"]
+    flag_design:
+      stripes: 3
+      orientation: "横縞"
+      colors_top_to_bottom: ["赤", "白", "黒"]
+      diagonal: "左上から右下への赤い対角線"
+    trivia:
+      historical_facts:
+        - "1967年に独立を宣言"
+        - "第二次世界大戦時の海上要塞が領土"
+        - "イギリス沖約10kmに位置"
+      interesting_facts:
+        - "世界最小の自称国家の一つ"
+        - "爵位や騎士号を販売"
+        - "独自のパスポートや切手を発行"
+    category: "未承認国家"
+    continent: "Europe"
+    capital: "シーランド（プラットフォーム）"
+    population: "約27人"
+    area_km2: 0.00055
+    independence: "1967年9月2日（自称）"
+    official_language: "英語"
+    currency: "シーランドドル（非流通）"
+
+  - id: "taiwan"
+    japanese_name: "台湾"
+    japanese_reading: "たいわん"
+    english_name: "Taiwan (Republic of China)"
+    image_path: "img/taiwan.png"
+    flag_emoji: "🇹🇼"
+    gdp_info:
+      gdp_billion_usd: 790
+      gdp_tier: "large"
+      gdp_rank: null
+    game_stats:
+      cost: 420
+      damage: 44
+      range: 195
+      tier: 4
+      colors: ["#FE0000", "#000095", "#FFFFFF"]
+    flag_design:
+      main_color: "赤"
+      canton: "青地に白い太陽"
+      sun_rays: 12
+      symbolism:
+        red: "民族主義"
+        blue: "民主主義"
+        white_sun: "民生主義"
+        twelve_rays: "12時間（昼夜）"
+    trivia:
+      historical_facts:
+        - "1928年に中華民国の国旗として制定"
+        - "青天白日満地紅旗と呼ばれる"
+        - "孫文の三民主義を表現"
+      cultural_facts:
+        - "台湾は世界で最も山が多い島とされ、島の3分の2が山で覆われており、3000メートル以上の山が268座もある"
+        - "半導体産業の世界的中心地"
+    category: "アジア"
+    continent: "Asia"
+    capital: "台北"
+    population: "約2300万人"
+    area_km2: 36197
+    government_form: "民主共和制"
+    official_language: "中国語（繁体字）"
+    currency: "新台湾ドル（TWD）"
+
+  - id: "south_korea"
+    japanese_name: "大韓民国"
+    japanese_reading: "だいかんみんこく"
+    english_name: "Republic of Korea"
+    image_path: "img/south_korea.png"
+    flag_emoji: "☯️"
+    gdp_info:
+      gdp_billion_usd: 1709
+      gdp_tier: "major"
+      gdp_rank: 12
+    game_stats:
+      cost: 2210
+      damage: 223
+      range: 640
+      tier: 6
+      colors: ["#FFFFFF", "#FF0000", "#0033A0", "#000000"]
+    flag_design:
+      name: "太極旗"
+      background: "白"
+      center_symbol: "太極（陰陽）"
+      corner_symbols: "四卦"
+      symbolism:
+        white: "平和と純潔"
+        taegeuk: "宇宙の調和"
+        four_trigrams: "天・地・水・火"
+    trivia:
+      historical_facts:
+        - "1949年に現在のデザインが確定"
+        - "1882年に最初のデザインが作成"
+        - "易経の原理に基づくデザイン"
+      cultural_facts:
+        - "韓国では赤ちゃんが生まれた時点で自動的に1歳とされ、新生児は韓国では1歳と考えられている"
+        - "世界で最も哲学的な国旗の一つ"
+    category: "アジア"
+    continent: "Asia"
+    capital: "ソウル"
+    population: "約5200万人"
+    area_km2: 100210
+    independence: "1948年8月15日"
+    official_language: "韓国語"
+    currency: "ウォン（KRW）"
+
+  - id: "russia"
+    japanese_name: "ロシア連邦"
+    japanese_reading: "ろしあれんぽう"
+    english_name: "Russian Federation"
+    image_path: "img/russia.png"
+    flag_emoji: "🐻"
+    gdp_info:
+      gdp_billion_usd: 2062
+      gdp_tier: "major"
+      gdp_rank: 11
+    game_stats:
+      cost: 2360
+      damage: 238
+      range: 680
+      tier: 6
+      colors: ["#FFFFFF", "#0039A6", "#DA291C"]
+    flag_design:
+      stripes: 3
+      orientation: "横縞"
+      colors_top_to_bottom: ["白", "青", "赤"]
+      symbolism:
+        white: "高貴と率直"
+        blue: "忠実と正直"
+        red: "勇気と愛"
+    trivia:
+      historical_facts:
+        - "1991年に旧ロシア帝国の旗を復活"
+        - "ソ連時代（1922-1991）は赤旗を使用"
+        - "ピョートル大帝時代（1705年）に起源"
+      cultural_facts:
+        - "ロシアは巨大で、国全体を横断するシベリア横断鉄道は9300km以上の長さがあり、世界で最も長く最も忙しい鉄道路線の一つである"
+        - "11のタイムゾーンを持つ世界最大の国"
+    category: "ヨーロッパ/アジア"
+    continent: "Europe/Asia"
+    capital: "モスクワ"
+    population: "約1億4600万人"
+    area_km2: 17098246
+    independence: "1991年12月25日（ソ連から）"
+    official_language: "ロシア語"
+    currency: "ルーブル（RUB）"
+
+  - id: "mongolia"
+    japanese_name: "モンゴル国"
+    japanese_reading: "もんごるこく"
+    english_name: "Mongolia"
+    image_path: "img/mongolia.png"
+    flag_emoji: "☯️"
+    gdp_info:
+      gdp_billion_usd: 17
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 1020
+      damage: 104
+      range: 345
+      tier: 5
+      colors: ["#FF0000", "#0066CC", "#FFD700"]
+    flag_design:
+      bands: 3
+      orientation: "縦縞"
+      colors: ["赤", "青", "赤"]
+      soyombo: "左側の赤帯にソヨンボ文字"
+      symbolism:
+        red: "進歩と繁栄"
+        blue: "永遠の青空"
+        soyombo: "自由と独立"
+    trivia:
+      historical_facts:
+        - "1992年に現在のデザインを採用"
+        - "ソヨンボは17世紀の文字"
+        - "仏教とモンゴルの伝統を融合"
+      cultural_facts:
+        - "モンゴルでは冬に-30度の気温でも街頭でアイスクリームが紙箱から販売されており、冷凍庫が不要な冬の人気おやつとなっている"
+        - "人口密度が世界で最も低い国の一つ"
+    category: "アジア"
+    continent: "Asia"
+    capital: "ウランバートル"
+    population: "約340万人"
+    area_km2: 1564110
+    independence: "1911年12月29日"
+    official_language: "モンゴル語"
+    currency: "トゥグルグ（MNT）"
+
+  - id: "indonesia"
+    japanese_name: "インドネシア共和国"
+    japanese_reading: "いんどねしあきょうわこく"
+    english_name: "Republic of Indonesia"
+    image_path: "img/indonesia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 1289
+      gdp_tier: "major"
+      gdp_rank: 16
+    game_stats:
+      cost: 2330
+      damage: 235
+      range: 670
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      name: "サンサカメラプティ（紅白旗）"
+      stripes: 2
+      orientation: "横縞"
+      colors_top_to_bottom: ["赤", "白"]
+      symbolism:
+        red: "勇気と血"
+        white: "精神と純潔"
+    trivia:
+      historical_facts:
+        - "1945年8月17日に制定"
+        - "13世紀のマジャパヒト王国の旗が起源"
+        - "モナコ公国の旗とほぼ同じデザイン"
+      cultural_facts:
+        - "この東南アジアの国は世界最大の島嶼国だが、正確にいくつの島があるかは誰も知らない（数千の島々）"
+        - "17,000以上の島からなる世界最大の群島国家"
+    category: "アジア"
+    continent: "Asia"
+    capital: "ジャカルタ"
+    population: "約2億7600万人"
+    area_km2: 1904569
+    independence: "1945年8月17日"
+    official_language: "インドネシア語"
+    currency: "ルピア（IDR）"
+
+  - id: "hong_kong"
+    japanese_name: "香港特別行政区"
+    japanese_reading: "ほんこんとくべつぎょうせいく"
+    english_name: "Hong Kong SAR"
+    image_path: "img/hong_kong.png"
+    flag_emoji: "🌸"
+    gdp_info:
+      gdp_billion_usd: 382
+      gdp_tier: "large"
+      gdp_rank: null
+    game_stats:
+      cost: 430
+      damage: 45
+      range: 195
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      main_color: "赤"
+      center_symbol: "白いバウヒニアの花"
+      petals: 5
+      stars: "各花弁に赤い星"
+      symbolism:
+        red: "中国との結びつき"
+        bauhinia: "香港の象徴"
+        five_petals: "中国の五星紅旗との調和"
+    trivia:
+      historical_facts:
+        - "1997年7月1日に制定"
+        - "イギリスから中国への返還時に採用"
+        - "バウヒニアは香港原産の花"
+      cultural_facts:
+        - "香港は1平方キロメートルあたりの億万長者数がニューヨーク、ドバイ、上海よりも多い"
+        - "世界で最も人口密度の高い地域の一つ"
+    category: "アジア"
+    continent: "Asia"
+    capital: "なし（特別行政区）"
+    population: "約750万人"
+    area_km2: 1106
+    established: "1997年7月1日（特別行政区として）"
+    official_language: "中国語（広東語）、英語"
+    currency: "香港ドル（HKD）"
+    japanese_name: "コソボ共和国"
+    japanese_reading: "こそぼきょうわこく"
+    english_name: "Republic of Kosovo"
+    image_path: "img/kosovo.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 9.4
+      gdp_tier: "small"
+      gdp_rank: 145
+    game_stats:
+      cost: 400
+      damage: 42
+      range: 190
+      tier: 3
+      colors: ["#244AA5", "#D4AF37", "#FFFFFF"]
+    flag_design:
+      main_color: "青"
+      stars: 6
+      map_silhouette: true
+      symbolism:
+        blue: "ヨーロッパへの帰属"
+        stars: "主要民族グループ"
+        gold_map: "コソボの地図"
+    trivia:
+      historical_facts:
+        - "2008年2月17日に独立宣言"
+        - "最も新しい国旗の一つ"
+        - "国際コンペで選ばれたデザイン"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    capital: "プリシュティナ"
+    
+  - id: "palestine"
+    japanese_name: "パレスチナ"
+    japanese_reading: "ぱれすちな"
+    english_name: "State of Palestine"
+    image_path: "img/palestine.png"
+    flag_emoji: "🇵🇸"
+    gdp_info:
+      gdp_billion_usd: 15.5
+      gdp_tier: "small"
+      gdp_rank: 131
+    game_stats:
+      cost: 410
+      damage: 43
+      range: 190
+      tier: 4
+      colors: ["#000000", "#FFFFFF", "#00A550", "#FF0000"]
+    flag_design:
+      stripes: 3
+      triangle: "左側に赤い三角形"
+      colors: ["黒", "白", "緑", "赤"]
+      symbolism:
+        black: "アッバース朝"
+        white: "ウマイヤ朝"
+        green: "ファーティマ朝"
+        red: "ハーシム家"
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "macau"
+    japanese_name: "マカオ特別行政区"
+    japanese_reading: "まかおとくべつぎょうせいく"
+    english_name: "Macau SAR"
+    image_path: "img/macau.png"
+    flag_emoji: "🎰"
+    gdp_info:
+      gdp_billion_usd: 54.5
+      gdp_tier: "small"
+      gdp_rank: 102
+    game_stats:
+      cost: 440
+      damage: 46
+      range: 200
+      tier: 4
+      colors: ["#00A550", "#FFFFFF"]
+    flag_design:
+      main_color: "緑"
+      lotus: true
+      bridge_and_water: true
+      stars: 5
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "monaco"
+    japanese_name: "モナコ公国"
+    japanese_reading: "もなここうこく"
+    english_name: "Principality of Monaco"
+    image_path: "img/monaco.png"
+    flag_emoji: "🎲"
+    gdp_info:
+      gdp_billion_usd: 7.2
+      gdp_tier: "small"
+      gdp_rank: 156
+    game_stats:
+      cost: 460
+      damage: 48
+      range: 205
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      stripes: 2
+      orientation: "横縞"
+      colors: ["赤", "白"]
+    trivia:
+      cultural_facts:
+        - "世界で2番目に小さい国"
+        - "人口密度が世界一高い"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "san_marino"
+    japanese_name: "サンマリノ共和国"
+    japanese_reading: "さんまりのきょうわこく"
+    english_name: "Republic of San Marino"
+    image_path: "img/san_marino.png"
+    flag_emoji: "🏰"
+    gdp_info:
+      gdp_billion_usd: 1.8
+      gdp_tier: "micro"
+      gdp_rank: 183
+    game_stats:
+      cost: 470
+      damage: 49
+      range: 205
+      tier: 4
+      colors: ["#FFFFFF", "#5BCEFA"]
+    flag_design:
+      stripes: 2
+      coat_of_arms: true
+      colors: ["白", "水色"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "liechtenstein"
+    japanese_name: "リヒテンシュタイン公国"
+    japanese_reading: "りひてんしゅたいんこうこく"
+    english_name: "Principality of Liechtenstein"
+    image_path: "img/liechtenstein.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 6.8
+      gdp_tier: "small"
+      gdp_rank: 158
+    game_stats:
+      cost: 480
+      damage: 50
+      range: 210
+      tier: 4
+      colors: ["#002B7F", "#CE1126"]
+    flag_design:
+      stripes: 2
+      crown: true
+      colors: ["青", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "andorra"
+    japanese_name: "アンドラ公国"
+    japanese_reading: "あんどらこうこく"
+    english_name: "Principality of Andorra"
+    image_path: "img/andorra.png"
+    flag_emoji: "⛷️"
+    gdp_info:
+      gdp_billion_usd: 3.3
+      gdp_tier: "micro"
+      gdp_rank: 176
+    game_stats:
+      cost: 490
+      damage: 51
+      range: 210
+      tier: 4
+      colors: ["#002B7F", "#FFD700", "#CE1126"]
+    flag_design:
+      stripes: 3
+      coat_of_arms: true
+      colors: ["青", "黄", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "malta"
+    japanese_name: "マルタ共和国"
+    japanese_reading: "まるたきょうわこく"
+    english_name: "Republic of Malta"
+    image_path: "img/malta.png"
+    flag_emoji: "✠"
+    gdp_info:
+      gdp_billion_usd: 17.3
+      gdp_tier: "small"
+      gdp_rank: 129
+    game_stats:
+      cost: 500
+      damage: 52
+      range: 215
+      tier: 4
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      stripes: 2
+      george_cross: true
+      colors: ["白", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "cyprus"
+    japanese_name: "キプロス共和国"
+    japanese_reading: "きぷろすきょうわこく"
+    english_name: "Republic of Cyprus"
+    image_path: "img/cyprus.png"
+    flag_emoji: "🌿"
+    gdp_info:
+      gdp_billion_usd: 28.4
+      gdp_tier: "small"
+      gdp_rank: 116
+    game_stats:
+      cost: 510
+      damage: 53
+      range: 215
+      tier: 4
+      colors: ["#FFFFFF", "#FF8200"]
+    flag_design:
+      map_silhouette: true
+      olive_branches: true
+      colors: ["白", "オレンジ", "緑"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "luxembourg"
+    japanese_name: "ルクセンブルク大公国"
+    japanese_reading: "るくせんぶるくたいこうこく"
+    english_name: "Grand Duchy of Luxembourg"
+    image_path: "img/luxembourg.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 86.9
+      gdp_tier: "medium"
+      gdp_rank: 71
+    game_stats:
+      cost: 520
+      damage: 54
+      range: 220
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF", "#00A1DE"]
+    flag_design:
+      stripes: 3
+      colors: ["赤", "白", "水色"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "iceland"
+    japanese_name: "アイスランド共和国"
+    japanese_reading: "あいすらんどきょうわこく"
+    english_name: "Republic of Iceland"
+    image_path: "img/iceland.png"
+    flag_emoji: "🌋"
+    gdp_info:
+      gdp_billion_usd: 27.8
+      gdp_tier: "small"
+      gdp_rank: 117
+    game_stats:
+      cost: 530
+      damage: 55
+      range: 220
+      tier: 4
+      colors: ["#003897", "#FFFFFF", "#D72828"]
+    flag_design:
+      nordic_cross: true
+      colors: ["青", "白", "赤"]
+    trivia:
+      cultural_facts:
+        - "警察官が銃を携帯しない数少ない国の一つ"
+        - "世界で最も平和な国の一つ"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "bahrain"
+    japanese_name: "バーレーン王国"
+    japanese_reading: "ばーれーんおうこく"
+    english_name: "Kingdom of Bahrain"
+    image_path: "img/bahrain.png"
+    flag_emoji: "🏝️"
+    gdp_info:
+      gdp_billion_usd: 44.4
+      gdp_tier: "small"
+      gdp_rank: 99
+    game_stats:
+      cost: 540
+      damage: 56
+      range: 225
+      tier: 4
+      colors: ["#FFFFFF", "#CE1126"]
+    flag_design:
+      serrated_line: true
+      colors: ["白", "赤"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "qatar"
+    japanese_name: "カタール国"
+    japanese_reading: "かたーるこく"
+    english_name: "State of Qatar"
+    image_path: "img/qatar.png"
+    flag_emoji: "🏜️"
+    gdp_info:
+      gdp_billion_usd: 237.3
+      gdp_tier: "medium"
+      gdp_rank: 54
+    game_stats:
+      cost: 550
+      damage: 57
+      range: 225
+      tier: 4
+      colors: ["#8D1B3D", "#FFFFFF"]
+    flag_design:
+      serrated_line: true
+      points: 9
+      colors: ["栗色", "白"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "kuwait"
+    japanese_name: "クウェート国"
+    japanese_reading: "くうぇーとこく"
+    english_name: "State of Kuwait"
+    image_path: "img/kuwait.png"
+    flag_emoji: "🛢️"
+    gdp_info:
+      gdp_billion_usd: 184.6
+      gdp_tier: "medium"
+      gdp_rank: 57
+    game_stats:
+      cost: 560
+      damage: 58
+      range: 230
+      tier: 4
+      colors: ["#00A550", "#FFFFFF", "#FF0000", "#000000"]
+    flag_design:
+      trapezoid: true
+      stripes: 3
+      colors: ["緑", "白", "赤", "黒"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "brunei"
+    japanese_name: "ブルネイ・ダルサラーム国"
+    japanese_reading: "ぶるねい・だるさらーむこく"
+    english_name: "Brunei Darussalam"
+    image_path: "img/brunei.png"
+    flag_emoji: "🕌"
+    gdp_info:
+      gdp_billion_usd: 14.0
+      gdp_tier: "small"
+      gdp_rank: 134
+    game_stats:
+      cost: 570
+      damage: 59
+      range: 230
+      tier: 4
+      colors: ["#FFD700", "#FFFFFF", "#000000", "#FF0000"]
+    flag_design:
+      diagonal_stripes: true
+      coat_of_arms: true
+      colors: ["黄", "白", "黒", "赤"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "singapore"
+    japanese_name: "シンガポール共和国"
+    japanese_reading: "しんがぽーるきょうわこく"
+    english_name: "Republic of Singapore"
+    image_path: "img/singapore.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 501.4
+      gdp_tier: "major"
+      gdp_rank: 38
+    game_stats:
+      cost: 580
+      damage: 60
+      range: 235
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      stripes: 2
+      crescent_and_stars: true
+      star_count: 5
+    trivia:
+      cultural_facts:
+        - "チューインガムの持ち込みが禁止"
+        - "世界で最も清潔な都市の一つ"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "east_timor"
+    japanese_name: "東ティモール民主共和国"
+    japanese_reading: "ひがしてぃもーるみんしゅきょうわこく"
+    english_name: "Democratic Republic of Timor-Leste"
+    image_path: "img/east_timor.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 3.6
+      gdp_tier: "micro"
+      gdp_rank: 174
+    game_stats:
+      cost: 590
+      damage: 61
+      range: 235
+      tier: 4
+      colors: ["#FF0000", "#FFD700", "#000000"]
+    flag_design:
+      triangles: true
+      star: true
+      colors: ["赤", "黄", "黒"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "maldives"
+    japanese_name: "モルディブ共和国"
+    japanese_reading: "もるでぃぶきょうわこく"
+    english_name: "Republic of Maldives"
+    image_path: "img/maldives.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 6.2
+      gdp_tier: "micro"
+      gdp_rank: 162
+    game_stats:
+      cost: 600
+      damage: 62
+      range: 240
+      tier: 4
+      colors: ["#00A550", "#FF0000"]
+    flag_design:
+      green_rectangle: true
+      red_border: true
+      white_crescent: true
+    trivia:
+      geographical_facts:
+        - "平均標高が世界で最も低い国"
+        - "1190の珊瑚島から成る"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "bhutan"
+    japanese_name: "ブータン王国"
+    japanese_reading: "ぶーたんおうこく"
+    english_name: "Kingdom of Bhutan"
+    image_path: "img/bhutan.png"
+    flag_emoji: "🐉"
+    gdp_info:
+      gdp_billion_usd: 2.9
+      gdp_tier: "micro"
+      gdp_rank: 179
+    game_stats:
+      cost: 610
+      damage: 63
+      range: 240
+      tier: 4
+      colors: ["#FFD700", "#FF8200"]
+    flag_design:
+      diagonal: true
+      dragon: true
+      colors: ["黄", "オレンジ"]
+    trivia:
+      cultural_facts:
+        - "国民総幸福量（GNH）を提唱"
+        - "世界で唯一カーボンネガティブな国"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "fiji"
+    japanese_name: "フィジー共和国"
+    japanese_reading: "ふぃじーきょうわこく"
+    english_name: "Republic of Fiji"
+    image_path: "img/fiji.png"
+    flag_emoji: "🏝️"
+    gdp_info:
+      gdp_billion_usd: 5.5
+      gdp_tier: "micro"
+      gdp_rank: 164
+    game_stats:
+      cost: 620
+      damage: 64
+      range: 245
+      tier: 4
+      colors: ["#68BFE5", "#FFFFFF", "#CE1126"]
+    flag_design:
+      british_ensign: true
+      coat_of_arms: true
+      colors: ["水色", "白", "赤"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "vanuatu"
+    japanese_name: "バヌアツ共和国"
+    japanese_reading: "ばぬあつきょうわこく"
+    english_name: "Republic of Vanuatu"
+    image_path: "img/vanuatu.png"
+    flag_emoji: "🐗"
+    gdp_info:
+      gdp_billion_usd: 1.0
+      gdp_tier: "micro"
+      gdp_rank: 188
+    game_stats:
+      cost: 630
+      damage: 65
+      range: 245
+      tier: 4
+      colors: ["#FF0000", "#00A550", "#000000", "#FFD700"]
+    flag_design:
+      y_pattern: true
+      boar_tusk: true
+      colors: ["赤", "緑", "黒", "黄"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "solomon_islands"
+    japanese_name: "ソロモン諸島"
+    japanese_reading: "そろもんしょとう"
+    english_name: "Solomon Islands"
+    image_path: "img/solomon_islands.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 1.7
+      gdp_tier: "micro"
+      gdp_rank: 184
+    game_stats:
+      cost: 640
+      damage: 66
+      range: 250
+      tier: 4
+      colors: ["#00A550", "#0066CC", "#FFD700"]
+    flag_design:
+      diagonal: true
+      stars: 5
+      colors: ["緑", "青", "黄"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "samoa"
+    japanese_name: "サモア独立国"
+    japanese_reading: "さもあどくりつこく"
+    english_name: "Independent State of Samoa"
+    image_path: "img/samoa.png"
+    flag_emoji: "🌺"
+    gdp_info:
+      gdp_billion_usd: 0.8
+      gdp_tier: "micro"
+      gdp_rank: 193
+    game_stats:
+      cost: 650
+      damage: 67
+      range: 250
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF", "#0066CC"]
+    flag_design:
+      canton: true
+      stars: 5
+      colors: ["赤", "白", "青"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "tonga"
+    japanese_name: "トンガ王国"
+    japanese_reading: "とんがおうこく"
+    english_name: "Kingdom of Tonga"
+    image_path: "img/tonga.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 0.5
+      gdp_tier: "micro"
+      gdp_rank: 201
+    game_stats:
+      cost: 660
+      damage: 68
+      range: 255
+      tier: 4
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      red_cross: true
+      canton: true
+      colors: ["赤", "白"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "kiribati"
+    japanese_name: "キリバス共和国"
+    japanese_reading: "きりばすきょうわこく"
+    english_name: "Republic of Kiribati"
+    image_path: "img/kiribati.png"
+    flag_emoji: "🏖️"
+    gdp_info:
+      gdp_billion_usd: 0.2
+      gdp_tier: "micro"
+      gdp_rank: 214
+    game_stats:
+      cost: 670
+      damage: 69
+      range: 255
+      tier: 4
+      colors: ["#FF0000", "#FFD700", "#0066CC", "#FFFFFF"]
+    flag_design:
+      wavy_stripes: true
+      frigate_bird: true
+      rising_sun: true
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "tuvalu"
+    japanese_name: "ツバル"
+    japanese_reading: "つばる"
+    english_name: "Tuvalu"
+    image_path: "img/tuvalu.png"
+    flag_emoji: "🌊"
+    gdp_info:
+      gdp_billion_usd: 0.06
+      gdp_tier: "micro"
+      gdp_rank: 228
+    game_stats:
+      cost: 680
+      damage: 70
+      range: 260
+      tier: 4
+      colors: ["#00BFFF", "#FFD700", "#FFFFFF"]
+    flag_design:
+      british_ensign: true
+      stars: 9
+      star_arrangement: "島の地理的配置"
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "nauru"
+    japanese_name: "ナウル共和国"
+    japanese_reading: "なうるきょうわこく"
+    english_name: "Republic of Nauru"
+    image_path: "img/nauru.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 0.13
+      gdp_tier: "micro"
+      gdp_rank: 222
+    game_stats:
+      cost: 690
+      damage: 71
+      range: 260
+      tier: 4
+      colors: ["#002B7F", "#FFD700", "#FFFFFF"]
+    flag_design:
+      horizontal_stripe: true
+      star: true
+      colors: ["青", "黄", "白"]
+    trivia:
+      geographical_facts:
+        - "世界で3番目に小さい国"
+        - "首都がない唯一の国"
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "palau"
+    japanese_name: "パラオ共和国"
+    japanese_reading: "ぱらおきょうわこく"
+    english_name: "Republic of Palau"
+    image_path: "img/palau.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 0.28
+      gdp_tier: "micro"
+      gdp_rank: 211
+    game_stats:
+      cost: 700
+      damage: 72
+      range: 265
+      tier: 4
+      colors: ["#00BFFF", "#FFD700"]
+    flag_design:
+      golden_disk: true
+      off_center: true
+      colors: ["空色", "金"]
+    trivia:
+      design_facts:
+        - "月は満月を表し、中央からやや左にずれている"
+        - "日本の国旗に似たデザイン"
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "marshall_islands"
+    japanese_name: "マーシャル諸島共和国"
+    japanese_reading: "まーしゃるしょとうきょうわこく"
+    english_name: "Republic of the Marshall Islands"
+    image_path: "img/marshall_islands.png"
+    flag_emoji: "🌅"
+    gdp_info:
+      gdp_billion_usd: 0.28
+      gdp_tier: "micro"
+      gdp_rank: 210
+    game_stats:
+      cost: 710
+      damage: 73
+      range: 265
+      tier: 4
+      colors: ["#003893", "#FFFFFF", "#FF8200"]
+    flag_design:
+      diagonal_rays: true
+      star: true
+      colors: ["青", "白", "オレンジ"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "micronesia"
+    japanese_name: "ミクロネシア連邦"
+    japanese_reading: "みくろねしあれんぽう"
+    english_name: "Federated States of Micronesia"
+    image_path: "img/micronesia.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 0.4
+      gdp_tier: "micro"
+      gdp_rank: 206
+    game_stats:
+      cost: 720
+      damage: 74
+      range: 270
+      tier: 4
+      colors: ["#75B2DD", "#FFFFFF"]
+    flag_design:
+      stars: 4
+      star_arrangement: "ダイヤモンド型"
+      colors: ["水色", "白"]
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "barbados"
+    japanese_name: "バルバドス"
+    japanese_reading: "ばるばどす"
+    english_name: "Barbados"
+    image_path: "img/barbados.png"
+    flag_emoji: "🔱"
+    gdp_info:
+      gdp_billion_usd: 5.7
+      gdp_tier: "micro"
+      gdp_rank: 163
+    game_stats:
+      cost: 730
+      damage: 75
+      range: 270
+      tier: 4
+      colors: ["#00267F", "#FFD700", "#000000"]
+    flag_design:
+      vertical_stripes: 3
+      trident: true
+      colors: ["青", "金", "青"]
+    category: "北米"
+    continent: "North America"
+    
+  - id: "saint_lucia"
+    japanese_name: "セントルシア"
+    japanese_reading: "せんとるしあ"
+    english_name: "Saint Lucia"
+    image_path: "img/saint_lucia.png"
+    flag_emoji: "🌋"
+    gdp_info:
+      gdp_billion_usd: 2.2
+      gdp_tier: "micro"
+      gdp_rank: 181
+    game_stats:
+      cost: 740
+      damage: 76
+      range: 275
+      tier: 4
+      colors: ["#65CFFF", "#FFD700", "#000000", "#FFFFFF"]
+    flag_design:
+      triangle: true
+      colors: ["青", "金", "黒", "白"]
+    category: "北米"
+    continent: "North America"
+    
+  - id: "dominica"
+    japanese_name: "ドミニカ国"
+    japanese_reading: "どみにかこく"
+    english_name: "Commonwealth of Dominica"
+    image_path: "img/dominica.png"
+    flag_emoji: "🦜"
+    gdp_info:
+      gdp_billion_usd: 0.6
+      gdp_tier: "micro"
+      gdp_rank: 197
+    game_stats:
+      cost: 750
+      damage: 77
+      range: 275
+      tier: 4
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000"]
+    flag_design:
+      cross: true
+      circle: true
+      parrot: true
+    category: "北米"
+    continent: "North America"
+    
+  - id: "grenada"
+    japanese_name: "グレナダ"
+    japanese_reading: "ぐれなだ"
+    english_name: "Grenada"
+    image_path: "img/grenada.png"
+    flag_emoji: "🌺"
+    gdp_info:
+      gdp_billion_usd: 1.3
+      gdp_tier: "micro"
+      gdp_rank: 186
+    game_stats:
+      cost: 760
+      damage: 78
+      range: 280
+      tier: 4
+      colors: ["#FF0000", "#FFD700", "#00A550"]
+    flag_design:
+      border: "赤と金の縁取り"
+      stars: 7
+      nutmeg: true
+    category: "北米"
+    continent: "North America"
+    
+  - id: "antigua_barbuda"
+    japanese_name: "アンティグア・バーブーダ"
+    japanese_reading: "あんてぃぐあ・ばーぶーだ"
+    english_name: "Antigua and Barbuda"
+    image_path: "img/antigua_barbuda.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 1.9
+      gdp_tier: "micro"
+      gdp_rank: 182
+    game_stats:
+      cost: 770
+      damage: 79
+      range: 280
+      tier: 4
+      colors: ["#000000", "#0072C6", "#FFD700", "#FFFFFF", "#CE1126"]
+    flag_design:
+      v_shape: true
+      rising_sun: true
+      colors: ["黒", "青", "金", "白", "赤"]
+    category: "北米"
+    continent: "North America"
+    
+  - id: "saint_kitts_nevis"
+    japanese_name: "セントクリストファー・ネイビス"
+    japanese_reading: "せんとくりすとふぁー・ねいびす"
+    english_name: "Saint Kitts and Nevis"
+    image_path: "img/saint_kitts_nevis.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 1.1
+      gdp_tier: "micro"
+      gdp_rank: 187
+    game_stats:
+      cost: 780
+      damage: 80
+      range: 285
+      tier: 4
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000"]
+    flag_design:
+      diagonal_stripe: true
+      stars: 2
+      colors: ["緑", "金", "赤", "黒"]
+    category: "北米"
+    continent: "North America"
+    
+  - id: "saint_vincent"
+    japanese_name: "セントビンセント・グレナディーン諸島"
+    japanese_reading: "せんとびんせんと・ぐれなでぃーんしょとう"
+    english_name: "Saint Vincent and the Grenadines"
+    image_path: "img/saint_vincent.png"
+    flag_emoji: "💎"
+    gdp_info:
+      gdp_billion_usd: 1.0
+      gdp_tier: "micro"
+      gdp_rank: 189
+    game_stats:
+      cost: 790
+      damage: 81
+      range: 285
+      tier: 4
+      colors: ["#0066CC", "#FFD700", "#00A550"]
+    flag_design:
+      vertical_stripes: 3
+      diamonds: 3
+      colors: ["青", "金", "緑"]
+    category: "北米"
+    continent: "North America"
+    
+  - id: "seychelles"
+    japanese_name: "セーシェル共和国"
+    japanese_reading: "せーしぇるきょうわこく"
+    english_name: "Republic of Seychelles"
+    image_path: "img/seychelles.png"
+    flag_emoji: "🐠"
+    gdp_info:
+      gdp_billion_usd: 2.1
+      gdp_tier: "micro"
+      gdp_rank: 182
+    game_stats:
+      cost: 800
+      damage: 82
+      range: 290
+      tier: 4
+      colors: ["#0066CC", "#FFD700", "#FF0000", "#FFFFFF", "#00A550"]
+    flag_design:
+      radiating_bands: true
+      colors: ["青", "黄", "赤", "白", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "montenegro"
+    japanese_name: "モンテネグロ"
+    japanese_reading: "もんてねぐろ"
+    english_name: "Montenegro"
+    image_path: "img/montenegro.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 6.1
+      gdp_tier: "small"
+      gdp_rank: 161
+    game_stats:
+      cost: 810
+      damage: 83
+      range: 290
+      tier: 5
+      colors: ["#FF0000", "#D4AF37", "#000000"]
+    flag_design:
+      coat_of_arms: true
+      double_headed_eagle: true
+      golden_border: true
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "slovenia"
+    japanese_name: "スロベニア共和国"
+    japanese_reading: "すろべにあきょうわこく"
+    english_name: "Republic of Slovenia"
+    image_path: "img/slovenia.png"
+    flag_emoji: "⛰️"
+    gdp_info:
+      gdp_billion_usd: 61.7
+      gdp_tier: "medium"
+      gdp_rank: 92
+    game_stats:
+      cost: 820
+      damage: 84
+      range: 295
+      tier: 5
+      colors: ["#FFFFFF", "#0066CC", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["白", "青", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "croatia"
+    japanese_name: "クロアチア共和国"
+    japanese_reading: "くろあちあきょうわこく"
+    english_name: "Republic of Croatia"
+    image_path: "img/croatia.png"
+    flag_emoji: "🏁"
+    gdp_info:
+      gdp_billion_usd: 71.0
+      gdp_tier: "medium"
+      gdp_rank: 82
+    game_stats:
+      cost: 830
+      damage: 85
+      range: 295
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#002B7F"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      checkerboard_shield: true
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "bosnia"
+    japanese_name: "ボスニア・ヘルツェゴビナ"
+    japanese_reading: "ぼすにあ・へるつぇごびな"
+    english_name: "Bosnia and Herzegovina"
+    image_path: "img/bosnia.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 24.5
+      gdp_tier: "small"
+      gdp_rank: 122
+    game_stats:
+      cost: 840
+      damage: 86
+      range: 300
+      tier: 5
+      colors: ["#0066CC", "#FFD700"]
+    flag_design:
+      diagonal_stars: true
+      triangle: true
+      colors: ["青", "金"]
+    category: "ヨーロッパ"
+    continent: "Europe"    japanese_name: "アルバニア共和国"
+    japanese_reading: "あるばにあきょうわこく"
+    english_name: "Republic of Albania"
+    image_path: "img/albania.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 18.9
+      gdp_tier: "small"
+      gdp_rank: 127
+    game_stats:
+      cost: 850
+      damage: 87
+      range: 300
+      tier: 5
+      colors: ["#FF0000", "#000000"]
+    flag_design:
+      double_headed_eagle: true
+      colors: ["赤", "黒"]
+    trivia:
+      historical_facts:
+        - "双頭の鷲はスカンデルベグの紋章に由来"
+        - "1912年の独立時に採用"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "north_macedonia"
+    japanese_name: "北マケドニア共和国"
+    japanese_reading: "きたまけどにあきょうわこく"
+    english_name: "Republic of North Macedonia"
+    image_path: "img/north_macedonia.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 13.8
+      gdp_tier: "small"
+      gdp_rank: 135
+    game_stats:
+      cost: 860
+      damage: 88
+      range: 305
+      tier: 5
+      colors: ["#FF0000", "#FFD700"]
+    flag_design:
+      sun_rays: 8
+      colors: ["赤", "金"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "moldova"
+    japanese_name: "モルドバ共和国"
+    japanese_reading: "もるどばきょうわこく"
+    english_name: "Republic of Moldova"
+    image_path: "img/moldova.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 14.4
+      gdp_tier: "small"
+      gdp_rank: 133
+    game_stats:
+      cost: 870
+      damage: 89
+      range: 305
+      tier: 5
+      colors: ["#0046A8", "#FFD700", "#CC092F"]
+    flag_design:
+      vertical_stripes: 3
+      coat_of_arms: true
+      colors: ["青", "黄", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "lithuania"
+    japanese_name: "リトアニア共和国"
+    japanese_reading: "りとあにあきょうわこく"
+    english_name: "Republic of Lithuania"
+    image_path: "img/lithuania.png"
+    flag_emoji: "⚔️"
+    gdp_info:
+      gdp_billion_usd: 70.3
+      gdp_tier: "medium"
+      gdp_rank: 83
+    game_stats:
+      cost: 880
+      damage: 90
+      range: 310
+      tier: 5
+      colors: ["#FFD700", "#00A550", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["黄", "緑", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "latvia"
+    japanese_name: "ラトビア共和国"
+    japanese_reading: "らとびあきょうわこく"
+    english_name: "Republic of Latvia"
+    image_path: "img/latvia.png"
+    flag_emoji: "🌲"
+    gdp_info:
+      gdp_billion_usd: 41.2
+      gdp_tier: "small"
+      gdp_rank: 101
+    game_stats:
+      cost: 890
+      damage: 91
+      range: 310
+      tier: 5
+      colors: ["#9E3039", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      narrow_white_stripe: true
+      colors: ["海老茶", "白"]
+    trivia:
+      historical_facts:
+        - "世界で最も古い国旗デザインの一つ（1280年）"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "estonia"
+    japanese_name: "エストニア共和国"
+    japanese_reading: "えすとにあきょうわこく"
+    english_name: "Republic of Estonia"
+    image_path: "img/estonia.png"
+    flag_emoji: "🏰"
+    gdp_info:
+      gdp_billion_usd: 38.1
+      gdp_tier: "small"
+      gdp_rank: 103
+    game_stats:
+      cost: 900
+      damage: 92
+      range: 315
+      tier: 5
+      colors: ["#0072CE", "#000000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["青", "黒", "白"]
+      symbolism:
+        blue: "空、海、湖"
+        black: "土地と苦難の歴史"
+        white: "雪と希望"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "armenia"
+    japanese_name: "アルメニア共和国"
+    japanese_reading: "あるめにあきょうわこく"
+    english_name: "Republic of Armenia"
+    image_path: "img/armenia.png"
+    flag_emoji: "⛰️"
+    gdp_info:
+      gdp_billion_usd: 19.5
+      gdp_tier: "small"
+      gdp_rank: 126
+    game_stats:
+      cost: 910
+      damage: 93
+      range: 315
+      tier: 5
+      colors: ["#FF0000", "#0033A0", "#FF9E1B"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "青", "オレンジ"]
+    trivia:
+      cultural_facts:
+        - "世界で最初にキリスト教を国教とした国（301年）"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "georgia"
+    japanese_name: "ジョージア"
+    japanese_reading: "じょーじあ"
+    english_name: "Georgia"
+    image_path: "img/georgia.png"
+    flag_emoji: "✝️"
+    gdp_info:
+      gdp_billion_usd: 24.6
+      gdp_tier: "small"
+      gdp_rank: 121
+    game_stats:
+      cost: 920
+      damage: 94
+      range: 320
+      tier: 5
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      five_cross_flag: true
+      colors: ["白", "赤"]
+    trivia:
+      cultural_facts:
+        - "ワイン発祥の地とされる（8000年の歴史）"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "azerbaijan"
+    japanese_name: "アゼルバイジャン共和国"
+    japanese_reading: "あぜるばいじゃんきょうわこく"
+    english_name: "Republic of Azerbaijan"
+    image_path: "img/azerbaijan.png"
+    flag_emoji: "🔥"
+    gdp_info:
+      gdp_billion_usd: 78.7
+      gdp_tier: "medium"
+      gdp_rank: 78
+    game_stats:
+      cost: 930
+      damage: 95
+      range: 320
+      tier: 5
+      colors: ["#00B5E2", "#FF0000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      crescent_and_star: true
+      colors: ["青", "赤", "緑"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "jordan"
+    japanese_name: "ヨルダン・ハシミテ王国"
+    japanese_reading: "よるだん・はしみておうこく"
+    english_name: "Hashemite Kingdom of Jordan"
+    image_path: "img/jordan.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 50.8
+      gdp_tier: "medium"
+      gdp_rank: 95
+    game_stats:
+      cost: 940
+      damage: 96
+      range: 325
+      tier: 5
+      colors: ["#000000", "#FFFFFF", "#00A550", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      star: true
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "lebanon"
+    japanese_name: "レバノン共和国"
+    japanese_reading: "ればのんきょうわこく"
+    english_name: "Lebanese Republic"
+    image_path: "img/lebanon.png"
+    flag_emoji: "🌲"
+    gdp_info:
+      gdp_billion_usd: 23.1
+      gdp_tier: "small"
+      gdp_rank: 123
+    game_stats:
+      cost: 950
+      damage: 97
+      range: 325
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      cedar_tree: true
+      colors: ["赤", "白", "赤"]
+    trivia:
+      historical_facts:
+        - "杉の木はレバノン杉（聖書にも記載）"
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "oman"
+    japanese_name: "オマーン国"
+    japanese_reading: "おまーんこく"
+    english_name: "Sultanate of Oman"
+    image_path: "img/oman.png"
+    flag_emoji: "🗡️"
+    gdp_info:
+      gdp_billion_usd: 114.7
+      gdp_tier: "medium"
+      gdp_rank: 64
+    game_stats:
+      cost: 960
+      damage: 98
+      range: 330
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      vertical_red_bar: true
+      national_emblem: true
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "uae"
+    japanese_name: "アラブ首長国連邦"
+    japanese_reading: "あらぶしゅちょうこくれんぽう"
+    english_name: "United Arab Emirates"
+    image_path: "img/uae.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 507.5
+      gdp_tier: "major"
+      gdp_rank: 37
+    game_stats:
+      cost: 970
+      damage: 99
+      range: 330
+      tier: 5
+      colors: ["#FF0000", "#00A550", "#FFFFFF", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      vertical_red_bar: true
+      colors: ["赤", "緑", "白", "黒"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "nepal"
+    japanese_name: "ネパール連邦民主共和国"
+    japanese_reading: "ねぱーるれんぽうみんしゅきょうわこく"
+    english_name: "Federal Democratic Republic of Nepal"
+    image_path: "img/nepal.png"
+    flag_emoji: "🏔️"
+    gdp_info:
+      gdp_billion_usd: 40.8
+      gdp_tier: "small"
+      gdp_rank: 102
+    game_stats:
+      cost: 980
+      damage: 100
+      range: 335
+      tier: 5
+      colors: ["#DC143C", "#003893", "#FFFFFF"]
+    flag_design:
+      unique_shape: "二つの三角形"
+      sun_and_moon: true
+      colors: ["赤", "青", "白"]
+    trivia:
+      design_facts:
+        - "世界で唯一長方形でない国旗"
+        - "数学的に最も複雑な国旗"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "sri_lanka"
+    japanese_name: "スリランカ民主社会主義共和国"
+    japanese_reading: "すりらんかみんしゅしゃかいしゅぎきょうわこく"
+    english_name: "Democratic Socialist Republic of Sri Lanka"
+    image_path: "img/sri_lanka.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 74.4
+      gdp_tier: "medium"
+      gdp_rank: 80
+    game_stats:
+      cost: 990
+      damage: 101
+      range: 335
+      tier: 5
+      colors: ["#FFB700", "#FF5E00", "#00A550", "#8B0000"]
+    flag_design:
+      lion_holding_sword: true
+      bo_leaves: true
+      colors: ["金", "オレンジ", "緑", "栗色"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "cambodia"
+    japanese_name: "カンボジア王国"
+    japanese_reading: "かんぼじあおうこく"
+    english_name: "Kingdom of Cambodia"
+    image_path: "img/cambodia.png"
+    flag_emoji: "🏛️"
+    gdp_info:
+      gdp_billion_usd: 29.3
+      gdp_tier: "small"
+      gdp_rank: 115
+    game_stats:
+      cost: 1000
+      damage: 102
+      range: 340
+      tier: 5
+      colors: ["#032EA1", "#E00025", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      angkor_wat: true
+      colors: ["青", "赤", "青"]
+    trivia:
+      cultural_facts:
+        - "アンコールワットを描いた唯一の国旗"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "laos"
+    japanese_name: "ラオス人民民主共和国"
+    japanese_reading: "らおすじんみんみんしゅきょうわこく"
+    english_name: "Lao People's Democratic Republic"
+    image_path: "img/laos.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 15.3
+      gdp_tier: "small"
+      gdp_rank: 132
+    game_stats:
+      cost: 1010
+      damage: 103
+      range: 340
+      tier: 5
+      colors: ["#FF0000", "#002868", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      white_circle: true
+      colors: ["赤", "青", "赤"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "kyrgyzstan"
+    japanese_name: "キルギス共和国"
+    japanese_reading: "きるぎすきょうわこく"
+    english_name: "Kyrgyz Republic"
+    image_path: "img/kyrgyzstan.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 13.1
+      gdp_tier: "small"
+      gdp_rank: 138
+    game_stats:
+      cost: 1030
+      damage: 105
+      range: 345
+      tier: 5
+      colors: ["#FF0000", "#FFD700"]
+    flag_design:
+      sun_symbol: true
+      forty_rays: true
+      tunduk: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "tajikistan"
+    japanese_name: "タジキスタン共和国"
+    japanese_reading: "たじきすたんきょうわこく"
+    english_name: "Republic of Tajikistan"
+    image_path: "img/tajikistan.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 11.5
+      gdp_tier: "small"
+      gdp_rank: 143
+    game_stats:
+      cost: 1040
+      damage: 106
+      range: 350
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#00A550", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      crown_and_stars: true
+      colors: ["赤", "白", "緑"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "turkmenistan"
+    japanese_name: "トルクメニスタン"
+    japanese_reading: "とるくめにすたん"
+    english_name: "Turkmenistan"
+    image_path: "img/turkmenistan.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 81.8
+      gdp_tier: "medium"
+      gdp_rank: 76
+    game_stats:
+      cost: 1050
+      damage: 107
+      range: 350
+      tier: 5
+      colors: ["#00A550", "#FF0000", "#FFFFFF"]
+    flag_design:
+      carpet_pattern: true
+      crescent_and_stars: true
+      colors: ["緑", "赤", "白"]
+    trivia:
+      design_facts:
+        - "世界で最も複雑なデザインの国旗の一つ"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "papua_new_guinea"
+    japanese_name: "パプアニューギニア独立国"
+    japanese_reading: "ぱぷあにゅーぎにあどくりつこく"
+    english_name: "Independent State of Papua New Guinea"
+    image_path: "img/papua_new_guinea.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 31.4
+      gdp_tier: "small"
+      gdp_rank: 112
+    game_stats:
+      cost: 1060
+      damage: 108
+      range: 355
+      tier: 5
+      colors: ["#FF0000", "#000000", "#FFD700"]
+    flag_design:
+      diagonal_division: true
+      bird_of_paradise: true
+      southern_cross: true
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "new_zealand"
+    japanese_name: "ニュージーランド"
+    japanese_reading: "にゅーじーらんど"
+    english_name: "New Zealand"
+    image_path: "img/new_zealand.png"
+    flag_emoji: "🥝"
+    gdp_info:
+      gdp_billion_usd: 253.5
+      gdp_tier: "medium"
+      gdp_rank: 53
+    game_stats:
+      cost: 1070
+      damage: 109
+      range: 355
+      tier: 5
+      colors: ["#00247D", "#CC142B", "#FFFFFF"]
+    flag_design:
+      british_ensign: true
+      southern_cross: true
+      red_stars: true
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "uruguay"
+    japanese_name: "ウルグアイ東方共和国"
+    japanese_reading: "うるぐあいとうほうきょうわこく"
+    english_name: "Oriental Republic of Uruguay"
+    image_path: "img/uruguay.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 64.3
+      gdp_tier: "medium"
+      gdp_rank: 89
+    game_stats:
+      cost: 1080
+      damage: 110
+      range: 360
+      tier: 5
+      colors: ["#FFFFFF", "#0038A8", "#FFD700"]
+    flag_design:
+      stripes: 9
+      sun_of_may: true
+      colors: ["白", "青"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "paraguay"
+    japanese_name: "パラグアイ共和国"
+    japanese_reading: "ぱらぐあいきょうわこく"
+    english_name: "Republic of Paraguay"
+    image_path: "img/paraguay.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 44.2
+      gdp_tier: "small"
+      gdp_rank: 100
+    game_stats:
+      cost: 1090
+      damage: 111
+      range: 360
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#0038A8"]
+    flag_design:
+      horizontal_stripes: 3
+      different_sides: true
+      coat_of_arms: true
+    trivia:
+      design_facts:
+        - "表と裏で異なる紋章を持つ唯一の国旗"
+    category: "南米"
+    continent: "South America"
+    
+  - id: "bolivia"
+    japanese_name: "ボリビア多民族国"
+    japanese_reading: "ぼりびあたみんぞくこく"
+    english_name: "Plurinational State of Bolivia"
+    image_path: "img/bolivia.png"
+    flag_emoji: "🦙"
+    gdp_info:
+      gdp_billion_usd: 47.1
+      gdp_tier: "small"
+      gdp_rank: 96
+    game_stats:
+      cost: 1100
+      damage: 112
+      range: 365
+      tier: 5
+      colors: ["#FF0000", "#FFD700", "#007934"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "黄", "緑"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "ecuador"
+    japanese_name: "エクアドル共和国"
+    japanese_reading: "えくあどるきょうわこく"
+    english_name: "Republic of Ecuador"
+    image_path: "img/ecuador.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 121.3
+      gdp_tier: "medium"
+      gdp_rank: 62
+    game_stats:
+      cost: 1110
+      damage: 113
+      range: 365
+      tier: 5
+      colors: ["#FFD700", "#0033A0", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["黄", "青", "赤"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "peru"
+    japanese_name: "ペルー共和国"
+    japanese_reading: "ぺるーきょうわこく"
+    english_name: "Republic of Peru"
+    image_path: "img/peru.png"
+    flag_emoji: "🦙"
+    gdp_info:
+      gdp_billion_usd: 268.2
+      gdp_tier: "medium"
+      gdp_rank: 51
+    game_stats:
+      cost: 1120
+      damage: 114
+      range: 370
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["赤", "白", "赤"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "venezuela"
+    japanese_name: "ベネズエラ・ボリバル共和国"
+    japanese_reading: "べねずえら・ぼりばるきょうわこく"
+    english_name: "Bolivarian Republic of Venezuela"
+    image_path: "img/venezuela.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 102.3
+      gdp_tier: "medium"
+      gdp_rank: 67
+    game_stats:
+      cost: 1130
+      damage: 115
+      range: 370
+      tier: 5
+      colors: ["#FFD700", "#0033A0", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      arc_of_stars: 8
+      colors: ["黄", "青", "赤"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "guyana"
+    japanese_name: "ガイアナ共和国"
+    japanese_reading: "がいあなきょうわこく"
+    english_name: "Co-operative Republic of Guyana"
+    image_path: "img/guyana.png"
+    flag_emoji: "🏹"
+    gdp_info:
+      gdp_billion_usd: 16.0
+      gdp_tier: "small"
+      gdp_rank: 130
+    game_stats:
+      cost: 1140
+      damage: 116
+      range: 375
+      tier: 5
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000", "#FFFFFF"]
+    flag_design:
+      golden_arrowhead: true
+      colors: ["緑", "金", "赤", "黒", "白"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "suriname"
+    japanese_name: "スリナム共和国"
+    japanese_reading: "すりなむきょうわこく"
+    english_name: "Republic of Suriname"
+    image_path: "img/suriname.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 3.8
+      gdp_tier: "micro"
+      gdp_rank: 172
+    game_stats:
+      cost: 1150
+      damage: 117
+      range: 375
+      tier: 5
+      colors: ["#00A550", "#FFFFFF", "#FF0000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 5
+      star: true
+      colors: ["緑", "白", "赤", "白", "緑"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "panama"
+    japanese_name: "パナマ共和国"
+    japanese_reading: "ぱなまきょうわこく"
+    english_name: "Republic of Panama"
+    image_path: "img/panama.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 77.3
+      gdp_tier: "medium"
+      gdp_rank: 79
+    game_stats:
+      cost: 1160
+      damage: 118
+      range: 380
+      tier: 5
+      colors: ["#FFFFFF", "#FF0000", "#0033A0"]
+    flag_design:
+      quarters: 4
+      stars: 2
+      colors: ["白", "赤", "青"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "costa_rica"
+    japanese_name: "コスタリカ共和国"
+    japanese_reading: "こすたりかきょうわこく"
+    english_name: "Republic of Costa Rica"
+    image_path: "img/costa_rica.png"
+    flag_emoji: "🦜"
+    gdp_info:
+      gdp_billion_usd: 71.8
+      gdp_tier: "medium"
+      gdp_rank: 81
+    game_stats:
+      cost: 1170
+      damage: 119
+      range: 380
+      tier: 5
+      colors: ["#0033A0", "#FFFFFF", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 5
+      colors: ["青", "白", "赤", "白", "青"]
+    trivia:
+      cultural_facts:
+        - "軍隊を持たない国"
+    category: "中米"
+    continent: "North America"
+    
+  - id: "nicaragua"
+    japanese_name: "ニカラグア共和国"
+    japanese_reading: "にからぐあきょうわこく"
+    english_name: "Republic of Nicaragua"
+    image_path: "img/nicaragua.png"
+    flag_emoji: "🌋"
+    gdp_info:
+      gdp_billion_usd: 17.4
+      gdp_tier: "small"
+      gdp_rank: 128
+    game_stats:
+      cost: 1180
+      damage: 120
+      range: 385
+      tier: 5
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["青", "白", "青"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "honduras"
+    japanese_name: "ホンジュラス共和国"
+    japanese_reading: "ほんじゅらすきょうわこく"
+    english_name: "Republic of Honduras"
+    image_path: "img/honduras.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 34.4
+      gdp_tier: "small"
+      gdp_rank: 108
+    game_stats:
+      cost: 1190
+      damage: 121
+      range: 385
+      tier: 5
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      five_stars: true
+      colors: ["青", "白", "青"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "el_salvador"
+    japanese_name: "エルサルバドル共和国"
+    japanese_reading: "えるさるばどるきょうわこく"
+    english_name: "Republic of El Salvador"
+    image_path: "img/el_salvador.png"
+    flag_emoji: "🌋"
+    gdp_info:
+      gdp_billion_usd: 33.8
+      gdp_tier: "small"
+      gdp_rank: 109
+    game_stats:
+      cost: 1200
+      damage: 122
+      range: 390
+      tier: 5
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["青", "白", "青"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "guatemala"
+    japanese_name: "グアテマラ共和国"
+    japanese_reading: "ぐあてまらきょうわこく"
+    english_name: "Republic of Guatemala"
+    image_path: "img/guatemala.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 102.3
+      gdp_tier: "medium"
+      gdp_rank: 68
+    game_stats:
+      cost: 1210
+      damage: 123
+      range: 390
+      tier: 5
+      colors: ["#4997D0", "#FFFFFF"]
+    flag_design:
+      vertical_stripes: 3
+      coat_of_arms: true
+      colors: ["青", "白", "青"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "belize"
+    japanese_name: "ベリーズ"
+    japanese_reading: "べりーず"
+    english_name: "Belize"
+    image_path: "img/belize.png"
+    flag_emoji: "🌳"
+    gdp_info:
+      gdp_billion_usd: 2.8
+      gdp_tier: "micro"
+      gdp_rank: 180
+    game_stats:
+      cost: 1220
+      damage: 124
+      range: 395
+      tier: 5
+      colors: ["#FF0000", "#003F87", "#FFFFFF"]
+    flag_design:
+      red_borders: true
+      coat_of_arms: true
+      colors: ["赤", "青", "白"]
+    category: "中米"
+    continent: "North America"
+    
+  - id: "haiti"
+    japanese_name: "ハイチ共和国"
+    japanese_reading: "はいちきょうわこく"
+    english_name: "Republic of Haiti"
+    image_path: "img/haiti.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 20.3
+      gdp_tier: "small"
+      gdp_rank: 125
+    game_stats:
+      cost: 1230
+      damage: 125
+      range: 395
+      tier: 5
+      colors: ["#00209F", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 2
+      coat_of_arms: true
+      colors: ["青", "赤"]
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "dominican_republic"
+    japanese_name: "ドミニカ共和国"
+    japanese_reading: "どみにかきょうわこく"
+    english_name: "Dominican Republic"
+    image_path: "img/dominican_republic.png"
+    flag_emoji: "✝️"
+    gdp_info:
+      gdp_billion_usd: 113.6
+      gdp_tier: "medium"
+      gdp_rank: 65
+    game_stats:
+      cost: 1240
+      damage: 126
+      range: 400
+      tier: 5
+      colors: ["#FF0000", "#002D62", "#FFFFFF"]
+    flag_design:
+      quarters: 4
+      white_cross: true
+      coat_of_arms: true
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "jamaica"
+    japanese_name: "ジャマイカ"
+    japanese_reading: "じゃまいか"
+    english_name: "Jamaica"
+    image_path: "img/jamaica.png"
+    flag_emoji: "🎵"
+    gdp_info:
+      gdp_billion_usd: 17.1
+      gdp_tier: "small"
+      gdp_rank: 130
+    game_stats:
+      cost: 1250
+      damage: 127
+      range: 400
+      tier: 5
+      colors: ["#00A550", "#FFD700", "#000000"]
+    flag_design:
+      saltire: true
+      colors: ["緑", "金", "黒"]
+    trivia:
+      cultural_facts:
+        - "レゲエ音楽発祥の地"
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "trinidad_tobago"
+    japanese_name: "トリニダード・トバゴ共和国"
+    japanese_reading: "とりにだーど・とばごきょうわこく"
+    english_name: "Republic of Trinidad and Tobago"
+    image_path: "img/trinidad_tobago.png"
+    flag_emoji: "🦜"
+    gdp_info:
+      gdp_billion_usd: 28.0
+      gdp_tier: "small"
+      gdp_rank: 116
+    game_stats:
+      cost: 1260
+      damage: 128
+      range: 405
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#000000"]
+    flag_design:
+      diagonal_stripe: true
+      colors: ["赤", "白", "黒"]
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "bahamas"
+    japanese_name: "バハマ国"
+    japanese_reading: "ばはまこく"
+    english_name: "Commonwealth of The Bahamas"
+    image_path: "img/bahamas.png"
+    flag_emoji: "🏖️"
+    gdp_info:
+      gdp_billion_usd: 14.4
+      gdp_tier: "small"
+      gdp_rank: 134
+    game_stats:
+      cost: 1270
+      damage: 129
+      range: 405
+      tier: 5
+      colors: ["#00ABC9", "#FFD700", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      black_triangle: true
+      colors: ["水色", "金", "黒"]
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "cuba"
+    japanese_name: "キューバ共和国"
+    japanese_reading: "きゅーばきょうわこく"
+    english_name: "Republic of Cuba"
+    image_path: "img/cuba.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 142.0
+      gdp_tier: "medium"
+      gdp_rank: 60
+    game_stats:
+      cost: 1280
+      damage: 130
+      range: 410
+      tier: 5
+      colors: ["#002A8F", "#FFFFFF", "#CF142B"]
+    flag_design:
+      horizontal_stripes: 5
+      triangle: true
+      star: true
+    category: "カリブ海"
+    continent: "North America"
+    
+  - id: "ireland"
+    japanese_name: "アイルランド"
+    japanese_reading: "あいるらんど"
+    english_name: "Ireland"
+    image_path: "img/ireland.png"
+    flag_emoji: "☘️"
+    gdp_info:
+      gdp_billion_usd: 545.6
+      gdp_tier: "major"
+      gdp_rank: 34
+    game_stats:
+      cost: 1290
+      damage: 131
+      range: 410
+      tier: 5
+      colors: ["#00A550", "#FFFFFF", "#FF8200"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["緑", "白", "オレンジ"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "portugal"
+    japanese_name: "ポルトガル共和国"
+    japanese_reading: "ぽるとがるきょうわこく"
+    english_name: "Portuguese Republic"
+    image_path: "img/portugal.png"
+    flag_emoji: "⚓"
+    gdp_info:
+      gdp_billion_usd: 287.1
+      gdp_tier: "medium"
+      gdp_rank: 48
+    game_stats:
+      cost: 1300
+      damage: 132
+      range: 415
+      tier: 5
+      colors: ["#00A550", "#FF0000", "#FFD700"]
+    flag_design:
+      vertical_division: true
+      coat_of_arms: true
+      colors: ["緑", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "belgium"
+    japanese_name: "ベルギー王国"
+    japanese_reading: "べるぎーおうこく"
+    english_name: "Kingdom of Belgium"
+    image_path: "img/belgium.png"
+    flag_emoji: "🍺"
+    gdp_info:
+      gdp_billion_usd: 627.5
+      gdp_tier: "major"
+      gdp_rank: 26
+    game_stats:
+      cost: 1310
+      damage: 133
+      range: 415
+      tier: 5
+      colors: ["#000000", "#FFD700", "#FF0000"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["黒", "黄", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "netherlands"
+    japanese_name: "オランダ王国"
+    japanese_reading: "おらんだおうこく"
+    english_name: "Kingdom of the Netherlands"
+    image_path: "img/netherlands.png"
+    flag_emoji: "🌷"
+    gdp_info:
+      gdp_billion_usd: 1118.1
+      gdp_tier: "major"
+      gdp_rank: 17
+    game_stats:
+      cost: 1320
+      damage: 134
+      range: 420
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#21468B"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "白", "青"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "denmark"
+    japanese_name: "デンマーク王国"
+    japanese_reading: "でんまーくおうこく"
+    english_name: "Kingdom of Denmark"
+    image_path: "img/denmark.png"
+    flag_emoji: "🏰"
+    gdp_info:
+      gdp_billion_usd: 409.9
+      gdp_tier: "major"
+      gdp_rank: 41
+    game_stats:
+      cost: 1330
+      damage: 135
+      range: 420
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      nordic_cross: true
+      colors: ["赤", "白"]
+    trivia:
+      historical_facts:
+        - "世界最古の国旗（1219年）"
+    category: "ヨーロッパ"
+    continent: "Europe"    japanese_name: "ノルウェー王国"
+    japanese_reading: "のるうぇーおうこく"
+    english_name: "Kingdom of Norway"
+    image_path: "img/norway.png"
+    flag_emoji: "🎿"
+    gdp_info:
+      gdp_billion_usd: 482.2
+      gdp_tier: "major"
+      gdp_rank: 39
+    game_stats:
+      cost: 1340
+      damage: 136
+      range: 425
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#002868"]
+    flag_design:
+      nordic_cross: true
+      colors: ["赤", "白", "青"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "sweden"
+    japanese_name: "スウェーデン王国"
+    japanese_reading: "すうぇーでんおうこく"
+    english_name: "Kingdom of Sweden"
+    image_path: "img/sweden.png"
+    flag_emoji: "🇸🇪"
+    gdp_info:
+      gdp_billion_usd: 593.3
+      gdp_tier: "major"
+      gdp_rank: 31
+    game_stats:
+      cost: 1350
+      damage: 137
+      range: 425
+      tier: 5
+      colors: ["#0066CC", "#FFD700"]
+    flag_design:
+      nordic_cross: true
+      colors: ["青", "黄"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "finland"
+    japanese_name: "フィンランド共和国"
+    japanese_reading: "ふぃんらんどきょうわこく"
+    english_name: "Republic of Finland"
+    image_path: "img/finland.png"
+    flag_emoji: "🎅"
+    gdp_info:
+      gdp_billion_usd: 305.7
+      gdp_tier: "medium"
+      gdp_rank: 47
+    game_stats:
+      cost: 1360
+      damage: 138
+      range: 430
+      tier: 5
+      colors: ["#FFFFFF", "#003580"]
+    flag_design:
+      nordic_cross: true
+      colors: ["白", "青"]
+    trivia:
+      cultural_facts:
+        - "サウナ発祥の地"
+        - "サンタクロースの故郷とされる"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "switzerland"
+    japanese_name: "スイス連邦"
+    japanese_reading: "すいすれんぽう"
+    english_name: "Swiss Confederation"
+    image_path: "img/switzerland.png"
+    flag_emoji: "🏔️"
+    gdp_info:
+      gdp_billion_usd: 884.9
+      gdp_tier: "major"
+      gdp_rank: 19
+    game_stats:
+      cost: 1370
+      damage: 139
+      range: 430
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      square_flag: true
+      white_cross: true
+      colors: ["赤", "白"]
+    trivia:
+      design_facts:
+        - "正方形の国旗（バチカンと共に）"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "austria"
+    japanese_name: "オーストリア共和国"
+    japanese_reading: "おーすとりあきょうわこく"
+    english_name: "Republic of Austria"
+    image_path: "img/austria.png"
+    flag_emoji: "🎻"
+    gdp_info:
+      gdp_billion_usd: 516.0
+      gdp_tier: "major"
+      gdp_rank: 36
+    game_stats:
+      cost: 1380
+      damage: 140
+      range: 435
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "白", "赤"]
+    trivia:
+      historical_facts:
+        - "世界で最も古い国旗デザインの一つ（1230年）"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "czech_republic"
+    japanese_name: "チェコ共和国"
+    japanese_reading: "ちぇこきょうわこく"
+    english_name: "Czech Republic"
+    image_path: "img/czech_republic.png"
+    flag_emoji: "🏰"
+    gdp_info:
+      gdp_billion_usd: 335.2
+      gdp_tier: "medium"
+      gdp_rank: 46
+    game_stats:
+      cost: 1390
+      damage: 141
+      range: 435
+      tier: 5
+      colors: ["#11457E", "#FFFFFF", "#D7141A"]
+    flag_design:
+      triangle: true
+      horizontal_stripes: 2
+      colors: ["青", "白", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "slovakia"
+    japanese_name: "スロバキア共和国"
+    japanese_reading: "すろばきあきょうわこく"
+    english_name: "Slovak Republic"
+    image_path: "img/slovakia.png"
+    flag_emoji: "🏔️"
+    gdp_info:
+      gdp_billion_usd: 133.0
+      gdp_tier: "medium"
+      gdp_rank: 61
+    game_stats:
+      cost: 1400
+      damage: 142
+      range: 440
+      tier: 5
+      colors: ["#FFFFFF", "#0B4EA2", "#EE1C25"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["白", "青", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "hungary"
+    japanese_name: "ハンガリー"
+    japanese_reading: "はんがりー"
+    english_name: "Hungary"
+    image_path: "img/hungary.png"
+    flag_emoji: "🏰"
+    gdp_info:
+      gdp_billion_usd: 212.4
+      gdp_tier: "medium"
+      gdp_rank: 56
+    game_stats:
+      cost: 1410
+      damage: 143
+      range: 440
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "白", "緑"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "romania"
+    japanese_name: "ルーマニア"
+    japanese_reading: "るーまにあ"
+    english_name: "Romania"
+    image_path: "img/romania.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 351.0
+      gdp_tier: "medium"
+      gdp_rank: 45
+    game_stats:
+      cost: 1420
+      damage: 144
+      range: 445
+      tier: 5
+      colors: ["#002B7F", "#FFD700", "#CE1126"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["青", "黄", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "bulgaria"
+    japanese_name: "ブルガリア共和国"
+    japanese_reading: "ぶるがりあきょうわこく"
+    english_name: "Republic of Bulgaria"
+    image_path: "img/bulgaria.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 103.6
+      gdp_tier: "medium"
+      gdp_rank: 66
+    game_stats:
+      cost: 1430
+      damage: 145
+      range: 445
+      tier: 5
+      colors: ["#FFFFFF", "#00966E", "#D62612"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["白", "緑", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "serbia"
+    japanese_name: "セルビア共和国"
+    japanese_reading: "せるびあきょうわこく"
+    english_name: "Republic of Serbia"
+    image_path: "img/serbia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 75.2
+      gdp_tier: "medium"
+      gdp_rank: 78
+    game_stats:
+      cost: 1440
+      damage: 146
+      range: 450
+      tier: 5
+      colors: ["#FF0000", "#0066CC", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      colors: ["赤", "青", "白"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "greece"
+    japanese_name: "ギリシャ共和国"
+    japanese_reading: "ぎりしゃきょうわこく"
+    english_name: "Hellenic Republic"
+    image_path: "img/greece.png"
+    flag_emoji: "🏛️"
+    gdp_info:
+      gdp_billion_usd: 238.2
+      gdp_tier: "medium"
+      gdp_rank: 54
+    game_stats:
+      cost: 1450
+      damage: 147
+      range: 450
+      tier: 5
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      stripes: 9
+      cross_canton: true
+      colors: ["青", "白"]
+    trivia:
+      cultural_facts:
+        - "民主主義発祥の地"
+        - "オリンピック発祥の地"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "belarus"
+    japanese_name: "ベラルーシ共和国"
+    japanese_reading: "べらるーしきょうわこく"
+    english_name: "Republic of Belarus"
+    image_path: "img/belarus.png"
+    flag_emoji: "🌾"
+    gdp_info:
+      gdp_billion_usd: 73.0
+      gdp_tier: "medium"
+      gdp_rank: 81
+    game_stats:
+      cost: 1460
+      damage: 148
+      range: 455
+      tier: 5
+      colors: ["#FF0000", "#00A550", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 2
+      ornamental_pattern: true
+      colors: ["赤", "緑"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "ukraine"
+    japanese_name: "ウクライナ"
+    japanese_reading: "うくらいな"
+    english_name: "Ukraine"
+    image_path: "img/ukraine.png"
+    flag_emoji: "🌻"
+    gdp_info:
+      gdp_billion_usd: 178.8
+      gdp_tier: "medium"
+      gdp_rank: 58
+    game_stats:
+      cost: 1470
+      damage: 149
+      range: 455
+      tier: 5
+      colors: ["#0066CC", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 2
+      colors: ["青", "黄"]
+      symbolism:
+        blue: "空"
+        yellow: "小麦畑"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "kazakhstan"
+    japanese_name: "カザフスタン共和国"
+    japanese_reading: "かざふすたんきょうわこく"
+    english_name: "Republic of Kazakhstan"
+    image_path: "img/kazakhstan.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 259.7
+      gdp_tier: "medium"
+      gdp_rank: 52
+    game_stats:
+      cost: 1480
+      damage: 150
+      range: 460
+      tier: 5
+      colors: ["#00AFCA", "#FFD700"]
+    flag_design:
+      sun_symbol: true
+      eagle: true
+      ornamental_pattern: true
+    trivia:
+      geographical_facts:
+        - "世界最大の内陸国"
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "uzbekistan"
+    japanese_name: "ウズベキスタン共和国"
+    japanese_reading: "うずべきすたんきょうわこく"
+    english_name: "Republic of Uzbekistan"
+    image_path: "img/uzbekistan.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 90.8
+      gdp_tier: "medium"
+      gdp_rank: 73
+    game_stats:
+      cost: 1490
+      damage: 151
+      range: 460
+      tier: 5
+      colors: ["#0099B5", "#FFFFFF", "#00A550", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      crescent_and_stars: true
+      thin_red_stripes: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "afghanistan"
+    japanese_name: "アフガニスタン・イスラム首長国"
+    japanese_reading: "あふがにすたん・いすらむしゅちょうこく"
+    english_name: "Islamic Emirate of Afghanistan"
+    image_path: "img/afghanistan.png"
+    flag_emoji: "🕌"
+    gdp_info:
+      gdp_billion_usd: 14.8
+      gdp_tier: "small"
+      gdp_rank: 133
+    game_stats:
+      cost: 1500
+      damage: 152
+      range: 465
+      tier: 5
+      colors: ["#000000", "#FF0000", "#00A550"]
+    flag_design:
+      vertical_stripes: 3
+      shahada: true
+      colors: ["黒", "赤", "緑"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "iraq"
+    japanese_name: "イラク共和国"
+    japanese_reading: "いらくきょうわこく"
+    english_name: "Republic of Iraq"
+    image_path: "img/iraq.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 264.2
+      gdp_tier: "medium"
+      gdp_rank: 52
+    game_stats:
+      cost: 1510
+      damage: 153
+      range: 465
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#000000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      takbir: true
+      colors: ["赤", "白", "黒"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "syria"
+    japanese_name: "シリア・アラブ共和国"
+    japanese_reading: "しりあ・あらぶきょうわこく"
+    english_name: "Syrian Arab Republic"
+    image_path: "img/syria.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 11.1
+      gdp_tier: "small"
+      gdp_rank: 144
+    game_stats:
+      cost: 1520
+      damage: 154
+      range: 470
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#000000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      two_stars: true
+      colors: ["赤", "白", "黒"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "yemen"
+    japanese_name: "イエメン共和国"
+    japanese_reading: "いえめんきょうわこく"
+    english_name: "Republic of Yemen"
+    image_path: "img/yemen.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 21.0
+      gdp_tier: "small"
+      gdp_rank: 124
+    game_stats:
+      cost: 1530
+      damage: 155
+      range: 470
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["赤", "白", "黒"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "israel"
+    japanese_name: "イスラエル国"
+    japanese_reading: "いすらえるこく"
+    english_name: "State of Israel"
+    image_path: "img/israel.png"
+    flag_emoji: "✡️"
+    gdp_info:
+      gdp_billion_usd: 530.7
+      gdp_tier: "major"
+      gdp_rank: 35
+    game_stats:
+      cost: 1540
+      damage: 156
+      range: 475
+      tier: 6
+      colors: ["#FFFFFF", "#0066CC"]
+    flag_design:
+      horizontal_stripes: 3
+      star_of_david: true
+      colors: ["白", "青"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "tunisia"
+    japanese_name: "チュニジア共和国"
+    japanese_reading: "ちゅにじあきょうわこく"
+    english_name: "Republic of Tunisia"
+    image_path: "img/tunisia.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 48.7
+      gdp_tier: "small"
+      gdp_rank: 96
+    game_stats:
+      cost: 1550
+      damage: 157
+      range: 475
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      red_field: true
+      white_circle: true
+      crescent_and_star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "libya"
+    japanese_name: "リビア"
+    japanese_reading: "りびあ"
+    english_name: "State of Libya"
+    image_path: "img/libya.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 45.8
+      gdp_tier: "small"
+      gdp_rank: 98
+    game_stats:
+      cost: 1560
+      damage: 158
+      range: 480
+      tier: 6
+      colors: ["#FF0000", "#000000", "#00A550", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      crescent_and_star: true
+      colors: ["赤", "黒", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "algeria"
+    japanese_name: "アルジェリア民主人民共和国"
+    japanese_reading: "あるじぇりあみんしゅじんみんきょうわこく"
+    english_name: "People's Democratic Republic of Algeria"
+    image_path: "img/algeria.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 266.8
+      gdp_tier: "medium"
+      gdp_rank: 51
+    game_stats:
+      cost: 1570
+      damage: 159
+      range: 480
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      vertical_division: true
+      crescent_and_star: true
+      colors: ["緑", "白"]
+    trivia:
+      geographical_facts:
+        - "アフリカ最大の国"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "morocco"
+    japanese_name: "モロッコ王国"
+    japanese_reading: "もろっこおうこく"
+    english_name: "Kingdom of Morocco"
+    image_path: "img/morocco.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 152.4
+      gdp_tier: "medium"
+      gdp_rank: 59
+    game_stats:
+      cost: 1580
+      damage: 160
+      range: 485
+      tier: 6
+      colors: ["#FF0000", "#00A550"]
+    flag_design:
+      red_field: true
+      pentagram: true
+      colors: ["赤", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "mauritania"
+    japanese_name: "モーリタニア・イスラム共和国"
+    japanese_reading: "もーりたにあ・いすらむきょうわこく"
+    english_name: "Islamic Republic of Mauritania"
+    image_path: "img/mauritania.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 10.4
+      gdp_tier: "small"
+      gdp_rank: 146
+    game_stats:
+      cost: 1590
+      damage: 161
+      range: 485
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      green_field: true
+      crescent_and_star: true
+      red_stripes: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "mali"
+    japanese_name: "マリ共和国"
+    japanese_reading: "まりきょうわこく"
+    english_name: "Republic of Mali"
+    image_path: "img/mali.png"
+    flag_emoji: "🌍"
+    gdp_info:
+      gdp_billion_usd: 20.2
+      gdp_tier: "small"
+      gdp_rank: 125
+    game_stats:
+      cost: 1600
+      damage: 162
+      range: 490
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["緑", "金", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "niger"
+    japanese_name: "ニジェール共和国"
+    japanese_reading: "にじぇーるきょうわこく"
+    english_name: "Republic of Niger"
+    image_path: "img/niger.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 16.6
+      gdp_tier: "small"
+      gdp_rank: 129
+    game_stats:
+      cost: 1610
+      damage: 163
+      range: 490
+      tier: 6
+      colors: ["#FF8200", "#FFFFFF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      orange_circle: true
+      colors: ["オレンジ", "白", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "chad"
+    japanese_name: "チャド共和国"
+    japanese_reading: "ちゃどきょうわこく"
+    english_name: "Republic of Chad"
+    image_path: "img/chad.png"
+    flag_emoji: "🌍"
+    gdp_info:
+      gdp_billion_usd: 12.7
+      gdp_tier: "small"
+      gdp_rank: 140
+    game_stats:
+      cost: 1620
+      damage: 164
+      range: 495
+      tier: 6
+      colors: ["#002664", "#FFD700", "#C60C30"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["青", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "sudan"
+    japanese_name: "スーダン共和国"
+    japanese_reading: "すーだんきょうわこく"
+    english_name: "Republic of the Sudan"
+    image_path: "img/sudan.png"
+    flag_emoji: "🌍"
+    gdp_info:
+      gdp_billion_usd: 51.7
+      gdp_tier: "medium"
+      gdp_rank: 94
+    game_stats:
+      cost: 1630
+      damage: 165
+      range: 495
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#000000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      colors: ["赤", "白", "黒", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "south_sudan"
+    japanese_name: "南スーダン共和国"
+    japanese_reading: "みなみすーだんきょうわこく"
+    english_name: "Republic of South Sudan"
+    image_path: "img/south_sudan.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 7.0
+      gdp_tier: "small"
+      gdp_rank: 157
+    game_stats:
+      cost: 1640
+      damage: 166
+      range: 500
+      tier: 6
+      colors: ["#000000", "#FF0000", "#00A550", "#0066CC", "#FFD700", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      star: true
+    trivia:
+      historical_facts:
+        - "世界で最も新しい国（2011年独立）"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "eritrea"
+    japanese_name: "エリトリア国"
+    japanese_reading: "えりとりあこく"
+    english_name: "State of Eritrea"
+    image_path: "img/eritrea.png"
+    flag_emoji: "🌿"
+    gdp_info:
+      gdp_billion_usd: 2.6
+      gdp_tier: "micro"
+      gdp_rank: 180
+    game_stats:
+      cost: 1650
+      damage: 167
+      range: 500
+      tier: 6
+      colors: ["#00A550", "#4189DD", "#FF0000", "#FFD700"]
+    flag_design:
+      triangle: true
+      olive_wreath: true
+      colors: ["緑", "青", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "djibouti"
+    japanese_name: "ジブチ共和国"
+    japanese_reading: "じぶちきょうわこく"
+    english_name: "Republic of Djibouti"
+    image_path: "img/djibouti.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 3.9
+      gdp_tier: "micro"
+      gdp_rank: 171
+    game_stats:
+      cost: 1660
+      damage: 168
+      range: 505
+      tier: 6
+      colors: ["#6AB2E7", "#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      triangle: true
+      star: true
+      colors: ["水色", "緑", "白", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "somalia"
+    japanese_name: "ソマリア連邦共和国"
+    japanese_reading: "そまりあれんぽうきょうわこく"
+    english_name: "Federal Republic of Somalia"
+    image_path: "img/somalia.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 12.3
+      gdp_tier: "small"
+      gdp_rank: 141
+    game_stats:
+      cost: 1670
+      damage: 169
+      range: 505
+      tier: 6
+      colors: ["#4189DD", "#FFFFFF"]
+    flag_design:
+      blue_field: true
+      white_star: true
+      colors: ["青", "白"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "ethiopia"
+    japanese_name: "エチオピア連邦民主共和国"
+    japanese_reading: "えちおぴあれんぽうみんしゅきょうわこく"
+    english_name: "Federal Democratic Republic of Ethiopia"
+    image_path: "img/ethiopia.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 156.1
+      gdp_tier: "medium"
+      gdp_rank: 59
+    game_stats:
+      cost: 1680
+      damage: 170
+      range: 510
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000", "#0066CC"]
+    flag_design:
+      horizontal_stripes: 3
+      emblem: true
+      colors: ["緑", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "kenya"
+    japanese_name: "ケニア共和国"
+    japanese_reading: "けにあきょうわこく"
+    english_name: "Republic of Kenya"
+    image_path: "img/kenya.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 118.1
+      gdp_tier: "medium"
+      gdp_rank: 63
+    game_stats:
+      cost: 1690
+      damage: 171
+      range: 510
+      tier: 6
+      colors: ["#000000", "#FF0000", "#00A550", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      maasai_shield: true
+      spears: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "uganda"
+    japanese_name: "ウガンダ共和国"
+    japanese_reading: "うがんだきょうわこく"
+    english_name: "Republic of Uganda"
+    image_path: "img/uganda.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 55.3
+      gdp_tier: "medium"
+      gdp_rank: 93
+    game_stats:
+      cost: 1700
+      damage: 172
+      range: 515
+      tier: 6
+      colors: ["#000000", "#FFD700", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 6
+      crested_crane: true
+      colors: ["黒", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "rwanda"
+    japanese_name: "ルワンダ共和国"
+    japanese_reading: "るわんだきょうわこく"
+    english_name: "Republic of Rwanda"
+    image_path: "img/rwanda.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 14.1
+      gdp_tier: "small"
+      gdp_rank: 134
+    game_stats:
+      cost: 1710
+      damage: 173
+      range: 515
+      tier: 6
+      colors: ["#00A1DE", "#FFD700", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      sun_symbol: true
+      colors: ["青", "黄", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "burundi"
+    japanese_name: "ブルンジ共和国"
+    japanese_reading: "ぶるんじきょうわこく"
+    english_name: "Republic of Burundi"
+    image_path: "img/burundi.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 3.1
+      gdp_tier: "micro"
+      gdp_rank: 178
+    game_stats:
+      cost: 1720
+      damage: 174
+      range: 520
+      tier: 6
+      colors: ["#FF0000", "#00A550", "#FFFFFF"]
+    flag_design:
+      diagonal_cross: true
+      three_stars: true
+      colors: ["赤", "緑", "白"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "tanzania"
+    japanese_name: "タンザニア連合共和国"
+    japanese_reading: "たんざにあれんごうきょうわこく"
+    english_name: "United Republic of Tanzania"
+    image_path: "img/tanzania.png"
+    flag_emoji: "🦒"
+    gdp_info:
+      gdp_billion_usd: 85.4
+      gdp_tier: "medium"
+      gdp_rank: 74
+    game_stats:
+      cost: 1730
+      damage: 175
+      range: 520
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#00BFFF", "#000000"]
+    flag_design:
+      diagonal_stripe: true
+      colors: ["緑", "金", "青", "黒"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "mozambique"
+    japanese_name: "モザンビーク共和国"
+    japanese_reading: "もざんびーくきょうわこく"
+    english_name: "Republic of Mozambique"
+    image_path: "img/mozambique.png"
+    flag_emoji: "🔫"
+    gdp_info:
+      gdp_billion_usd: 21.9
+      gdp_tier: "small"
+      gdp_rank: 123
+    game_stats:
+      cost: 1740
+      damage: 176
+      range: 525
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      ak47_and_hoe: true
+    trivia:
+      design_facts:
+        - "AK-47を描いた唯一の国旗"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "madagascar"
+    japanese_name: "マダガスカル共和国"
+    japanese_reading: "まだがすかるきょうわこく"
+    english_name: "Republic of Madagascar"
+    image_path: "img/madagascar.png"
+    flag_emoji: "🦎"
+    gdp_info:
+      gdp_billion_usd: 16.5
+      gdp_tier: "small"
+      gdp_rank: 129
+    game_stats:
+      cost: 1750
+      damage: 177
+      range: 525
+      tier: 6
+      colors: ["#FFFFFF", "#FF0000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 2
+      vertical_white_bar: true
+      colors: ["白", "赤", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "malawi"
+    japanese_name: "マラウイ共和国"
+    japanese_reading: "まらういきょうわこく"
+    english_name: "Republic of Malawi"
+    image_path: "img/malawi.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 13.2
+      gdp_tier: "small"
+      gdp_rank: 137
+    game_stats:
+      cost: 1760
+      damage: 178
+      range: 530
+      tier: 6
+      colors: ["#000000", "#FF0000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      rising_sun: true
+      colors: ["黒", "赤", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "zambia"
+    japanese_name: "ザンビア共和国"
+    japanese_reading: "ざんびあきょうわこく"
+    english_name: "Republic of Zambia"
+    image_path: "img/zambia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 29.6
+      gdp_tier: "small"
+      gdp_rank: 114
+    game_stats:
+      cost: 1770
+      damage: 179
+      range: 530
+      tier: 6
+      colors: ["#00A550", "#FF8200", "#FF0000", "#000000"]
+    flag_design:
+      green_field: true
+      vertical_stripes: 3
+      eagle: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "zimbabwe"
+    japanese_name: "ジンバブエ共和国"
+    japanese_reading: "じんばぶえきょうわこく"
+    english_name: "Republic of Zimbabwe"
+    image_path: "img/zimbabwe.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 35.6
+      gdp_tier: "small"
+      gdp_rank: 106
+    game_stats:
+      cost: 1780
+      damage: 180
+      range: 535
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 7
+      triangle: true
+      zimbabwe_bird: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "botswana"
+    japanese_name: "ボツワナ共和国"
+    japanese_reading: "ぼつわなきょうわこく"
+    english_name: "Republic of Botswana"
+    image_path: "img/botswana.png"
+    flag_emoji: "🦓"
+    gdp_info:
+      gdp_billion_usd: 20.9
+      gdp_tier: "small"
+      gdp_rank: 124
+    game_stats:
+      cost: 1790
+      damage: 181
+      range: 535
+      tier: 6
+      colors: ["#75AADB", "#FFFFFF", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      thin_white_stripes: true
+      colors: ["水色", "白", "黒"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "namibia"
+    japanese_name: "ナミビア共和国"
+    japanese_reading: "なみびあきょうわこく"
+    english_name: "Republic of Namibia"
+    image_path: "img/namibia.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 13.0
+      gdp_tier: "small"
+      gdp_rank: 139
+    game_stats:
+      cost: 1800
+      damage: 182
+      range: 540
+      tier: 6
+      colors: ["#003580", "#FFD700", "#FF0000", "#00A550", "#FFFFFF"]
+    flag_design:
+      diagonal_stripe: true
+      sun_symbol: true
+      colors: ["青", "金", "赤", "緑", "白"]
+    category: "アフリカ"
+    continent: "Africa"    japanese_name: "アンゴラ共和国"
+    japanese_reading: "あんごらきょうわこく"
+    english_name: "Republic of Angola"
+    image_path: "img/angola.png"
+    flag_emoji: "⚙️"
+    gdp_info:
+      gdp_billion_usd: 106.8
+      gdp_tier: "medium"
+      gdp_rank: 66
+    game_stats:
+      cost: 1810
+      damage: 183
+      range: 540
+      tier: 6
+      colors: ["#FF0000", "#000000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 2
+      cogwheel_and_machete: true
+      star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "congo_dem"
+    japanese_name: "コンゴ民主共和国"
+    japanese_reading: "こんごみんしゅきょうわこく"
+    english_name: "Democratic Republic of the Congo"
+    image_path: "img/congo_dem.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 66.0
+      gdp_tier: "medium"
+      gdp_rank: 88
+    game_stats:
+      cost: 1820
+      damage: 184
+      range: 545
+      tier: 6
+      colors: ["#007FFF", "#FFD700", "#FF0000"]
+    flag_design:
+      diagonal_stripe: true
+      star: true
+      colors: ["青", "金", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "congo"
+    japanese_name: "コンゴ共和国"
+    japanese_reading: "こんごきょうわこく"
+    english_name: "Republic of the Congo"
+    image_path: "img/congo.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 20.5
+      gdp_tier: "small"
+      gdp_rank: 124
+    game_stats:
+      cost: 1830
+      damage: 185
+      range: 545
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      diagonal_stripe: true
+      colors: ["緑", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "gabon"
+    japanese_name: "ガボン共和国"
+    japanese_reading: "がぼんきょうわこく"
+    english_name: "Gabonese Republic"
+    image_path: "img/gabon.png"
+    flag_emoji: "🌳"
+    gdp_info:
+      gdp_billion_usd: 22.0
+      gdp_tier: "small"
+      gdp_rank: 123
+    game_stats:
+      cost: 1840
+      damage: 186
+      range: 550
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#3A75C4"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["緑", "黄", "青"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "equatorial_guinea"
+    japanese_name: "赤道ギニア共和国"
+    japanese_reading: "せきどうぎにあきょうわこく"
+    english_name: "Republic of Equatorial Guinea"
+    image_path: "img/equatorial_guinea.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 12.4
+      gdp_tier: "small"
+      gdp_rank: 142
+    game_stats:
+      cost: 1850
+      damage: 187
+      range: 550
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000", "#3A75C4"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      coat_of_arms: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "cameroon"
+    japanese_name: "カメルーン共和国"
+    japanese_reading: "かめるーんきょうわこく"
+    english_name: "Republic of Cameroon"
+    image_path: "img/cameroon.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 48.6
+      gdp_tier: "small"
+      gdp_rank: 96
+    game_stats:
+      cost: 1860
+      damage: 188
+      range: 555
+      tier: 6
+      colors: ["#00A550", "#FF0000", "#FFD700"]
+    flag_design:
+      vertical_stripes: 3
+      star: true
+      colors: ["緑", "赤", "黄"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "central_african"
+    japanese_name: "中央アフリカ共和国"
+    japanese_reading: "ちゅうおうあふりかきょうわこく"
+    english_name: "Central African Republic"
+    image_path: "img/central_african.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 2.8
+      gdp_tier: "micro"
+      gdp_rank: 180
+    game_stats:
+      cost: 1870
+      damage: 189
+      range: 555
+      tier: 6
+      colors: ["#003082", "#FFFFFF", "#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 4
+      vertical_red_stripe: true
+      star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "burkina_faso"
+    japanese_name: "ブルキナファソ"
+    japanese_reading: "ぶるきなふぁそ"
+    english_name: "Burkina Faso"
+    image_path: "img/burkina_faso.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 19.7
+      gdp_tier: "small"
+      gdp_rank: 126
+    game_stats:
+      cost: 1880
+      damage: 190
+      range: 560
+      tier: 6
+      colors: ["#FF0000", "#00A550", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 2
+      star: true
+      colors: ["赤", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "benin"
+    japanese_name: "ベナン共和国"
+    japanese_reading: "べなんきょうわこく"
+    english_name: "Republic of Benin"
+    image_path: "img/benin.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 19.4
+      gdp_tier: "small"
+      gdp_rank: 126
+    game_stats:
+      cost: 1890
+      damage: 191
+      range: 560
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      vertical_green_bar: true
+      horizontal_stripes: 2
+      colors: ["緑", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "togo"
+    japanese_name: "トーゴ共和国"
+    japanese_reading: "とーごきょうわこく"
+    english_name: "Togolese Republic"
+    image_path: "img/togo.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 9.0
+      gdp_tier: "small"
+      gdp_rank: 148
+    game_stats:
+      cost: 1900
+      damage: 192
+      range: 565
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 5
+      canton: true
+      star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "ghana"
+    japanese_name: "ガーナ共和国"
+    japanese_reading: "がーなきょうわこく"
+    english_name: "Republic of Ghana"
+    image_path: "img/ghana.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 75.5
+      gdp_tier: "medium"
+      gdp_rank: 77
+    game_stats:
+      cost: 1910
+      damage: 193
+      range: 565
+      tier: 6
+      colors: ["#FF0000", "#FFD700", "#00A550", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      black_star: true
+      colors: ["赤", "金", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "ivory_coast"
+    japanese_name: "コートジボワール共和国"
+    japanese_reading: "こーとじぼわーるきょうわこく"
+    english_name: "Republic of Côte d'Ivoire"
+    image_path: "img/ivory_coast.png"
+    flag_emoji: "🐘"
+    gdp_info:
+      gdp_billion_usd: 86.9
+      gdp_tier: "medium"
+      gdp_rank: 72
+    game_stats:
+      cost: 1920
+      damage: 194
+      range: 570
+      tier: 6
+      colors: ["#FF8200", "#FFFFFF", "#00A550"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["オレンジ", "白", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "liberia"
+    japanese_name: "リベリア共和国"
+    japanese_reading: "りべりあきょうわこく"
+    english_name: "Republic of Liberia"
+    image_path: "img/liberia.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 4.1
+      gdp_tier: "micro"
+      gdp_rank: 169
+    game_stats:
+      cost: 1930
+      damage: 195
+      range: 570
+      tier: 6
+      colors: ["#BF0A30", "#FFFFFF", "#002868"]
+    flag_design:
+      stripes: 11
+      canton: true
+      star: true
+    trivia:
+      design_facts:
+        - "アメリカ国旗に類似（解放奴隷が建国）"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "sierra_leone"
+    japanese_name: "シエラレオネ共和国"
+    japanese_reading: "しえられおねきょうわこく"
+    english_name: "Republic of Sierra Leone"
+    image_path: "img/sierra_leone.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 4.0
+      gdp_tier: "micro"
+      gdp_rank: 170
+    game_stats:
+      cost: 1940
+      damage: 196
+      range: 575
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#0072C6"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["緑", "白", "青"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "guinea"
+    japanese_name: "ギニア共和国"
+    japanese_reading: "ぎにあきょうわこく"
+    english_name: "Republic of Guinea"
+    image_path: "img/guinea.png"
+    flag_emoji: "🌍"
+    gdp_info:
+      gdp_billion_usd: 23.1
+      gdp_tier: "small"
+      gdp_rank: 123
+    game_stats:
+      cost: 1950
+      damage: 197
+      range: 575
+      tier: 6
+      colors: ["#FF0000", "#FFD700", "#00A550"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["赤", "黄", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "guinea_bissau"
+    japanese_name: "ギニアビサウ共和国"
+    japanese_reading: "ぎにあびさうきょうわこく"
+    english_name: "Republic of Guinea-Bissau"
+    image_path: "img/guinea_bissau.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 2.1
+      gdp_tier: "micro"
+      gdp_rank: 182
+    game_stats:
+      cost: 1960
+      damage: 198
+      range: 580
+      tier: 6
+      colors: ["#FF0000", "#FFD700", "#00A550", "#000000"]
+    flag_design:
+      vertical_red_bar: true
+      horizontal_stripes: 2
+      black_star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "senegal"
+    japanese_name: "セネガル共和国"
+    japanese_reading: "せねがるきょうわこく"
+    english_name: "Republic of Senegal"
+    image_path: "img/senegal.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 31.2
+      gdp_tier: "small"
+      gdp_rank: 111
+    game_stats:
+      cost: 1970
+      damage: 199
+      range: 580
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000"]
+    flag_design:
+      vertical_stripes: 3
+      star: true
+      colors: ["緑", "金", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "gambia"
+    japanese_name: "ガンビア共和国"
+    japanese_reading: "がんびあきょうわこく"
+    english_name: "Republic of The Gambia"
+    image_path: "img/gambia.png"
+    flag_emoji: "🌍"
+    gdp_info:
+      gdp_billion_usd: 2.3
+      gdp_tier: "micro"
+      gdp_rank: 180
+    game_stats:
+      cost: 1980
+      damage: 200
+      range: 585
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#0000FF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      thin_white_stripes: true
+      colors: ["赤", "白", "青", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "cape_verde"
+    japanese_name: "カーボベルデ共和国"
+    japanese_reading: "かーぼべるできょうわこく"
+    english_name: "Republic of Cabo Verde"
+    image_path: "img/cape_verde.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 2.4
+      gdp_tier: "micro"
+      gdp_rank: 179
+    game_stats:
+      cost: 1990
+      damage: 201
+      range: 585
+      tier: 6
+      colors: ["#003893", "#FFFFFF", "#FFD700", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 5
+      ten_stars: true
+      colors: ["青", "白", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "sao_tome"
+    japanese_name: "サントメ・プリンシペ民主共和国"
+    japanese_reading: "さんとめ・ぷりんしぺみんしゅきょうわこく"
+    english_name: "Democratic Republic of São Tomé and Príncipe"
+    image_path: "img/sao_tome.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 0.5
+      gdp_tier: "micro"
+      gdp_rank: 201
+    game_stats:
+      cost: 2000
+      damage: 202
+      range: 590
+      tier: 6
+      colors: ["#00A550", "#FFD700", "#FF0000", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      two_stars: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "mauritius"
+    japanese_name: "モーリシャス共和国"
+    japanese_reading: "もーりしゃすきょうわこく"
+    english_name: "Republic of Mauritius"
+    image_path: "img/mauritius.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 13.9
+      gdp_tier: "small"
+      gdp_rank: 135
+    game_stats:
+      cost: 2010
+      damage: 203
+      range: 590
+      tier: 6
+      colors: ["#FF0000", "#002664", "#FFD700", "#00A550"]
+    flag_design:
+      horizontal_stripes: 4
+      colors: ["赤", "青", "黄", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "comoros"
+    japanese_name: "コモロ連合"
+    japanese_reading: "こもろれんごう"
+    english_name: "Union of the Comoros"
+    image_path: "img/comoros.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 1.4
+      gdp_tier: "micro"
+      gdp_rank: 185
+    game_stats:
+      cost: 2020
+      damage: 204
+      range: 595
+      tier: 6
+      colors: ["#FFD700", "#FFFFFF", "#FF0000", "#002664", "#00A550"]
+    flag_design:
+      horizontal_stripes: 4
+      triangle: true
+      crescent_and_stars: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "lesotho"
+    japanese_name: "レソト王国"
+    japanese_reading: "れそとおうこく"
+    english_name: "Kingdom of Lesotho"
+    image_path: "img/lesotho.png"
+    flag_emoji: "🎩"
+    gdp_info:
+      gdp_billion_usd: 2.6
+      gdp_tier: "micro"
+      gdp_rank: 180
+    game_stats:
+      cost: 2030
+      damage: 205
+      range: 595
+      tier: 6
+      colors: ["#0066CC", "#FFFFFF", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      traditional_hat: true
+      colors: ["青", "白", "緑"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "eswatini"
+    japanese_name: "エスワティニ王国"
+    japanese_reading: "えすわてぃにおうこく"
+    english_name: "Kingdom of Eswatini"
+    image_path: "img/eswatini.png"
+    flag_emoji: "🛡️"
+    gdp_info:
+      gdp_billion_usd: 5.0
+      gdp_tier: "micro"
+      gdp_rank: 166
+    game_stats:
+      cost: 2040
+      damage: 206
+      range: 600
+      tier: 6
+      colors: ["#3E5EB9", "#FFD700", "#B10C0C"]
+    flag_design:
+      horizontal_stripes: 5
+      shield_and_spears: true
+      colors: ["青", "黄", "赤"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "south_africa"
+    japanese_name: "南アフリカ共和国"
+    japanese_reading: "みなみあふりかきょうわこく"
+    english_name: "Republic of South Africa"
+    image_path: "img/south_africa.png"
+    flag_emoji: "🌈"
+    gdp_info:
+      gdp_billion_usd: 373.2
+      gdp_tier: "medium"
+      gdp_rank: 43
+    game_stats:
+      cost: 2050
+      damage: 207
+      range: 600
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#00A550", "#000000", "#FFD700", "#002664"]
+    flag_design:
+      y_pattern: true
+      six_colors: true
+      colors: ["赤", "白", "緑", "黒", "金", "青"]
+    trivia:
+      cultural_facts:
+        - "「虹の国」と呼ばれる多民族国家"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "chile"
+    japanese_name: "チリ共和国"
+    japanese_reading: "ちりきょうわこく"
+    english_name: "Republic of Chile"
+    image_path: "img/chile.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 344.4
+      gdp_tier: "medium"
+      gdp_rank: 46
+    game_stats:
+      cost: 2060
+      damage: 208
+      range: 605
+      tier: 6
+      colors: ["#0039A6", "#FFFFFF", "#D52B1E"]
+    flag_design:
+      horizontal_stripes: 2
+      canton: true
+      star: true
+    category: "南米"
+    continent: "South America"
+    
+  - id: "argentina"
+    japanese_name: "アルゼンチン共和国"
+    japanese_reading: "あるぜんちんきょうわこく"
+    english_name: "Argentine Republic"
+    image_path: "img/argentina.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 489.4
+      gdp_tier: "major"
+      gdp_rank: 38
+    game_stats:
+      cost: 2070
+      damage: 209
+      range: 605
+      tier: 6
+      colors: ["#74ACDF", "#FFFFFF", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      sun_of_may: true
+      colors: ["水色", "白", "水色"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "colombia"
+    japanese_name: "コロンビア共和国"
+    japanese_reading: "ころんびあきょうわこく"
+    english_name: "Republic of Colombia"
+    image_path: "img/colombia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 363.8
+      gdp_tier: "medium"
+      gdp_rank: 44
+    game_stats:
+      cost: 2080
+      damage: 210
+      range: 610
+      tier: 6
+      colors: ["#FFD700", "#003893", "#CE1126"]
+    flag_design:
+      horizontal_stripes: 3
+      yellow_half: true
+      colors: ["黄", "青", "赤"]
+    category: "南米"
+    continent: "South America"
+    
+  - id: "malaysia"
+    japanese_name: "マレーシア"
+    japanese_reading: "まれーしあ"
+    english_name: "Malaysia"
+    image_path: "img/malaysia.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 447.0
+      gdp_tier: "major"
+      gdp_rank: 40
+    game_stats:
+      cost: 2090
+      damage: 211
+      range: 610
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#0033A0", "#FFD700"]
+    flag_design:
+      stripes: 14
+      canton: true
+      crescent_and_star: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "thailand"
+    japanese_name: "タイ王国"
+    japanese_reading: "たいおうこく"
+    english_name: "Kingdom of Thailand"
+    image_path: "img/thailand.png"
+    flag_emoji: "🐘"
+    gdp_info:
+      gdp_billion_usd: 574.2
+      gdp_tier: "major"
+      gdp_rank: 33
+    game_stats:
+      cost: 2100
+      damage: 212
+      range: 615
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#002664"]
+    flag_design:
+      horizontal_stripes: 5
+      colors: ["赤", "白", "青", "白", "赤"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "myanmar"
+    japanese_name: "ミャンマー連邦共和国"
+    japanese_reading: "みゃんまーれんぽうきょうわこく"
+    english_name: "Republic of the Union of Myanmar"
+    image_path: "img/myanmar.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 65.1
+      gdp_tier: "medium"
+      gdp_rank: 90
+    game_stats:
+      cost: 2110
+      damage: 213
+      range: 615
+      tier: 6
+      colors: ["#FFD700", "#00A550", "#FF0000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      large_star: true
+      colors: ["黄", "緑", "赤"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "vietnam"
+    japanese_name: "ベトナム社会主義共和国"
+    japanese_reading: "べとなむしゃかいしゅぎきょうわこく"
+    english_name: "Socialist Republic of Vietnam"
+    image_path: "img/vietnam.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 465.8
+      gdp_tier: "major"
+      gdp_rank: 40
+    game_stats:
+      cost: 2120
+      damage: 214
+      range: 620
+      tier: 6
+      colors: ["#FF0000", "#FFD700"]
+    flag_design:
+      red_field: true
+      gold_star: true
+      colors: ["赤", "金"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "philippines"
+    japanese_name: "フィリピン共和国"
+    japanese_reading: "ふぃりぴんきょうわこく"
+    english_name: "Republic of the Philippines"
+    image_path: "img/philippines.png"
+    flag_emoji: "☀️"
+    gdp_info:
+      gdp_billion_usd: 437.1
+      gdp_tier: "major"
+      gdp_rank: 40
+    game_stats:
+      cost: 2130
+      damage: 215
+      range: 620
+      tier: 6
+      colors: ["#0066CC", "#FF0000", "#FFD700", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 2
+      triangle: true
+      sun_and_stars: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "bangladesh"
+    japanese_name: "バングラデシュ人民共和国"
+    japanese_reading: "ばんぐらでしゅじんみんきょうわこく"
+    english_name: "People's Republic of Bangladesh"
+    image_path: "img/bangladesh.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 455.0
+      gdp_tier: "major"
+      gdp_rank: 39
+    game_stats:
+      cost: 2140
+      damage: 216
+      range: 625
+      tier: 6
+      colors: ["#006A4E", "#F42A41"]
+    flag_design:
+      green_field: true
+      red_circle: true
+      off_center: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "pakistan"
+    japanese_name: "パキスタン・イスラム共和国"
+    japanese_reading: "ぱきすたん・いすらむきょうわこく"
+    english_name: "Islamic Republic of Pakistan"
+    image_path: "img/pakistan.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 374.7
+      gdp_tier: "medium"
+      gdp_rank: 42
+    game_stats:
+      cost: 2150
+      damage: 217
+      range: 625
+      tier: 6
+      colors: ["#00A550", "#FFFFFF"]
+    flag_design:
+      green_field: true
+      white_stripe: true
+      crescent_and_star: true
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "saudi_arabia"
+    japanese_name: "サウジアラビア王国"
+    japanese_reading: "さうじあらびあおうこく"
+    english_name: "Kingdom of Saudi Arabia"
+    image_path: "img/saudi_arabia.png"
+    flag_emoji: "⚔️"
+    gdp_info:
+      gdp_billion_usd: 1108.1
+      gdp_tier: "major"
+      gdp_rank: 18
+    game_stats:
+      cost: 2160
+      damage: 218
+      range: 630
+      tier: 6
+      colors: ["#00A550", "#FFFFFF"]
+    flag_design:
+      green_field: true
+      shahada: true
+      sword: true
+    trivia:
+      design_facts:
+        - "裏返しにできない国旗（宗教的文言のため）"
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "iran"
+    japanese_name: "イラン・イスラム共和国"
+    japanese_reading: "いらん・いすらむきょうわこく"
+    english_name: "Islamic Republic of Iran"
+    image_path: "img/iran.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 368.0
+      gdp_tier: "medium"
+      gdp_rank: 43
+    game_stats:
+      cost: 2170
+      damage: 219
+      range: 630
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      emblem: true
+      takbir_border: true
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "turkey"
+    japanese_name: "トルコ共和国"
+    japanese_reading: "とるこきょうわこく"
+    english_name: "Republic of Turkey"
+    image_path: "img/turkey.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 1029.3
+      gdp_tier: "major"
+      gdp_rank: 20
+    game_stats:
+      cost: 2180
+      damage: 220
+      range: 635
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      red_field: true
+      crescent_and_star: true
+      colors: ["赤", "白"]
+    category: "中東"
+    continent: "Asia"
+    
+  - id: "egypt"
+    japanese_name: "エジプト・アラブ共和国"
+    japanese_reading: "えじぷと・あらぶきょうわこく"
+    english_name: "Arab Republic of Egypt"
+    image_path: "img/egypt.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 347.6
+      gdp_tier: "medium"
+      gdp_rank: 45
+    game_stats:
+      cost: 2190
+      damage: 221
+      range: 635
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#000000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      eagle_of_saladin: true
+      colors: ["赤", "白", "黒"]
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "nigeria"
+    japanese_name: "ナイジェリア連邦共和国"
+    japanese_reading: "ないじぇりあれんぽうきょうわこく"
+    english_name: "Federal Republic of Nigeria"
+    image_path: "img/nigeria.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 362.8
+      gdp_tier: "medium"
+      gdp_rank: 44
+    game_stats:
+      cost: 2200
+      damage: 222
+      range: 640
+      tier: 6
+      colors: ["#00A550", "#FFFFFF"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["緑", "白", "緑"]
+    trivia:
+      geographical_facts:
+        - "アフリカ最大の人口（2億人以上）"
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "north_korea"
+    japanese_name: "朝鮮民主主義人民共和国"
+    japanese_reading: "ちょうせんみんしゅしゅぎじんみんきょうわこく"
+    english_name: "Democratic People's Republic of Korea"
+    image_path: "img/north_korea.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 18.4
+      gdp_tier: "small"
+      gdp_rank: 127
+    game_stats:
+      cost: 2220
+      damage: 224
+      range: 645
+      tier: 6
+      colors: ["#FF0000", "#FFFFFF", "#0033A0"]
+    flag_design:
+      horizontal_stripes: 5
+      red_star: true
+      colors: ["青", "白", "赤", "白", "青"]
+    category: "アジア"
+    continent: "Asia"
+    
+  - id: "australia"
+    japanese_name: "オーストラリア連邦"
+    japanese_reading: "おーすとらりあれんぽう"
+    english_name: "Commonwealth of Australia"
+    image_path: "img/australia.png"
+    flag_emoji: "🦘"
+    gdp_info:
+      gdp_billion_usd: 1724.8
+      gdp_tier: "major"
+      gdp_rank: 12
+    game_stats:
+      cost: 2230
+      damage: 225
+      range: 645
+      tier: 6
+      colors: ["#00008B", "#FFFFFF", "#FF0000"]
+    flag_design:
+      british_ensign: true
+      commonwealth_star: true
+      southern_cross: true
+    category: "オセアニア"
+    continent: "Oceania"
+    
+  - id: "poland"
+    japanese_name: "ポーランド共和国"
+    japanese_reading: "ぽーらんどきょうわこく"
+    english_name: "Republic of Poland"
+    image_path: "img/poland.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 844.6
+      gdp_tier: "major"
+      gdp_rank: 21
+    game_stats:
+      cost: 2240
+      damage: 226
+      range: 650
+      tier: 6
+      colors: ["#FFFFFF", "#DC143C"]
+    flag_design:
+      horizontal_stripes: 2
+      colors: ["白", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "spain"
+    japanese_name: "スペイン王国"
+    japanese_reading: "すぺいんおうこく"
+    english_name: "Kingdom of Spain"
+    image_path: "img/spain.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 1581.8
+      gdp_tier: "major"
+      gdp_rank: 15
+    game_stats:
+      cost: 2250
+      damage: 227
+      range: 650
+      tier: 6
+      colors: ["#FF0000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+      red_yellow_red_ratio: "1:2:1"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "italy"
+    japanese_name: "イタリア共和国"
+    japanese_reading: "いたりあきょうわこく"
+    english_name: "Italian Republic"
+    image_path: "img/italy.png"
+    flag_emoji: "🏛️"
+    gdp_info:
+      gdp_billion_usd: 2256.0
+      gdp_tier: "major"
+      gdp_rank: 8
+    game_stats:
+      cost: 2260
+      damage: 228
+      range: 655
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["緑", "白", "赤"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "france"
+    japanese_name: "フランス共和国"
+    japanese_reading: "ふらんすきょうわこく"
+    english_name: "French Republic"
+    image_path: "img/france.png"
+    flag_emoji: "🗼"
+    gdp_info:
+      gdp_billion_usd: 3132.0
+      gdp_tier: "major"
+      gdp_rank: 7
+    game_stats:
+      cost: 2270
+      damage: 229
+      range: 655
+      tier: 6
+      colors: ["#002654", "#FFFFFF", "#ED2939"]
+    flag_design:
+      vertical_stripes: 3
+      colors: ["青", "白", "赤"]
+    trivia:
+      cultural_facts:
+        - "トリコロール（三色旗）の起源"
+        - "自由・平等・博愛を象徴"
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "mexico"
+    japanese_name: "メキシコ合衆国"
+    japanese_reading: "めきしこがっしゅうこく"
+    english_name: "United Mexican States"
+    image_path: "img/mexico.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 1663.2
+      gdp_tier: "major"
+      gdp_rank: 13
+    game_stats:
+      cost: 2300
+      damage: 232
+      range: 665
+      tier: 6
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      vertical_stripes: 3
+      coat_of_arms: true
+      eagle_on_cactus: true
+    category: "北米"
+    continent: "North America"  - id: "abkhazia"
+    japanese_name: "アブハジア共和国"
+    japanese_reading: "あぶはじあきょうわこく"
+    english_name: "Republic of Abkhazia"
+    image_path: "img/abkhazia.png"
+    flag_emoji: "🌟"
+    gdp_info:
+      gdp_billion_usd: 0.5
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 80
+      damage: 10
+      range: 110
+      tier: 2
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      stripes: 7
+      hand_symbol: true
+      stars: 7
+    category: "部分承認国家"
+    continent: "Asia"
+    
+  - id: "aland"
+    japanese_name: "オーランド諸島"
+    japanese_reading: "おーらんどしょとう"
+    english_name: "Åland Islands"
+    image_path: "img/aland.png"
+    flag_emoji: "🌊"
+    gdp_info:
+      gdp_billion_usd: 1.5
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 220
+      damage: 24
+      range: 145
+      tier: 3
+      colors: ["#0066CC", "#FFD700", "#FF0000"]
+    flag_design:
+      nordic_cross: true
+      colors: ["青", "黄", "赤"]
+    category: "自治地域"
+    continent: "Europe"
+    
+  - id: "albania"
+    japanese_name: "アルバニア共和国"
+    japanese_reading: "あるばにあきょうわこく"
+    english_name: "Republic of Albania"
+    image_path: "img/albania.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 18.9
+      gdp_tier: "small"
+      gdp_rank: 127
+    game_stats:
+      cost: 850
+      damage: 87
+      range: 300
+      tier: 5
+      colors: ["#FF0000", "#000000"]
+    flag_design:
+      double_headed_eagle: true
+      colors: ["赤", "黒"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "american_samoa"
+    japanese_name: "アメリカ領サモア"
+    japanese_reading: "あめりかりょうさもあ"
+    english_name: "American Samoa"
+    image_path: "img/american_samoa.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 0.7
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 330
+      damage: 35
+      range: 170
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF", "#0066CC"]
+    flag_design:
+      triangle: true
+      eagle: true
+      colors: ["赤", "白", "青"]
+    category: "アメリカ領"
+    continent: "Oceania"
+    
+  - id: "angola"
+    japanese_name: "アンゴラ共和国"
+    japanese_reading: "あんごらきょうわこく"
+    english_name: "Republic of Angola"
+    image_path: "img/angola.png"
+    flag_emoji: "⚙️"
+    gdp_info:
+      gdp_billion_usd: 106.8
+      gdp_tier: "medium"
+      gdp_rank: 66
+    game_stats:
+      cost: 1810
+      damage: 183
+      range: 540
+      tier: 6
+      colors: ["#FF0000", "#000000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 2
+      cogwheel_and_machete: true
+      star: true
+    category: "アフリカ"
+    continent: "Africa"
+    
+  - id: "aruba"
+    japanese_name: "アルバ"
+    japanese_reading: "あるば"
+    english_name: "Aruba"
+    image_path: "img/aruba.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 3.5
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 230
+      damage: 25
+      range: 145
+      tier: 3
+      colors: ["#4682B4", "#FFD700", "#FF0000", "#FFFFFF"]
+    flag_design:
+      blue_field: true
+      star: true
+      stripes: 2
+    category: "オランダ領"
+    continent: "North America"
+    
+  - id: "bermuda"
+    japanese_name: "バミューダ諸島"
+    japanese_reading: "ばみゅーだしょとう"
+    english_name: "Bermuda"
+    image_path: "img/bermuda.png"
+    flag_emoji: "⛵"
+    gdp_info:
+      gdp_billion_usd: 7.5
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 250
+      damage: 27
+      range: 150
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF", "#0000FF"]
+    flag_design:
+      british_red_ensign: true
+      coat_of_arms: true
+    category: "イギリス領"
+    continent: "North America"
+    
+  - id: "cayman"
+    japanese_name: "ケイマン諸島"
+    japanese_reading: "けいまんしょとう"
+    english_name: "Cayman Islands"
+    image_path: "img/cayman.png"
+    flag_emoji: "🐢"
+    gdp_info:
+      gdp_billion_usd: 6.0
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 260
+      damage: 28
+      range: 155
+      tier: 3
+      colors: ["#0000FF", "#FFFFFF", "#FF0000"]
+    flag_design:
+      british_blue_ensign: true
+      coat_of_arms: true
+    category: "イギリス領"
+    continent: "North America"
+    
+  - id: "chechnya"
+    japanese_name: "チェチェン・イチケリア共和国"
+    japanese_reading: "ちぇちぇん・いちけりあきょうわこく"
+    english_name: "Chechen Republic of Ichkeria"
+    image_path: "img/chechnya.png"
+    flag_emoji: "🐺"
+    gdp_info:
+      gdp_billion_usd: 0.3
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 150
+      damage: 17
+      range: 125
+      tier: 2
+      colors: ["#00A550", "#FFFFFF", "#FF0000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      wolf_emblem: true
+    category: "部分承認国家"
+    continent: "Asia"
+    
+  - id: "christiania"
+    japanese_name: "クリスチャニア自由都市"
+    japanese_reading: "くりすちゃにあじゆうとし"
+    english_name: "Freetown Christiania"
+    image_path: "img/christiania.png"
+    flag_emoji: "🌻"
+    gdp_info:
+      gdp_billion_usd: 0.01
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 20
+      damage: 3
+      range: 80
+      tier: 1
+      colors: ["#FF0000", "#FFD700", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      three_dots: true
+    category: "未承認国家"
+    continent: "Europe"
+    
+  - id: "conch_republic"
+    japanese_name: "コンク共和国"
+    japanese_reading: "こんくきょうわこく"
+    english_name: "Conch Republic"
+    image_path: "img/conch_republic.png"
+    flag_emoji: "🐚"
+    gdp_info:
+      gdp_billion_usd: 0.005
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 35
+      damage: 5
+      range: 90
+      tier: 1
+      colors: ["#00BFFF", "#FFD700"]
+    flag_design:
+      sunburst: true
+      conch_shell: true
+    category: "未承認国家"
+    continent: "North America"
+    
+  - id: "cook_islands"
+    japanese_name: "クック諸島"
+    japanese_reading: "くっくしょとう"
+    english_name: "Cook Islands"
+    image_path: "img/cook_islands.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 0.4
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 390
+      damage: 41
+      range: 185
+      tier: 3
+      colors: ["#002B7F", "#FFFFFF"]
+    flag_design:
+      british_blue_ensign: true
+      stars: 15
+    category: "ニュージーランド自由連合"
+    continent: "Oceania"
+    
+  - id: "curacao"
+    japanese_name: "キュラソー"
+    japanese_reading: "きゅらそー"
+    english_name: "Curaçao"
+    image_path: "img/curacao.png"
+    flag_emoji: "🦜"
+    gdp_info:
+      gdp_billion_usd: 3.2
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 240
+      damage: 26
+      range: 150
+      tier: 3
+      colors: ["#0000FF", "#FFD700"]
+    flag_design:
+      blue_field: true
+      two_stars: true
+      yellow_stripe: true
+    category: "オランダ領"
+    continent: "North America"
+    
+  - id: "donetsk"
+    japanese_name: "ドネツク人民共和国"
+    japanese_reading: "どねつくじんみんきょうわこく"
+    english_name: "Donetsk People's Republic"
+    image_path: "img/donetsk.png"
+    flag_emoji: "⚒️"
+    gdp_info:
+      gdp_billion_usd: 0.8
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 130
+      damage: 15
+      range: 120
+      tier: 2
+      colors: ["#000000", "#0033FF", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+    category: "部分承認国家"
+    continent: "Europe"
+    
+  - id: "faroe"
+    japanese_name: "フェロー諸島"
+    japanese_reading: "ふぇろーしょとう"
+    english_name: "Faroe Islands"
+    image_path: "img/faroe.png"
+    flag_emoji: "🐏"
+    gdp_info:
+      gdp_billion_usd: 3.6
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 170
+      damage: 19
+      range: 130
+      tier: 3
+      colors: ["#FFFFFF", "#FF0000", "#0066CC"]
+    flag_design:
+      nordic_cross: true
+      offset_cross: true
+    category: "デンマーク自治領"
+    continent: "Europe"
+    
+  - id: "french_polynesia"
+    japanese_name: "フランス領ポリネシア"
+    japanese_reading: "ふらんすりょうぽりねしあ"
+    english_name: "French Polynesia"
+    image_path: "img/french_polynesia.png"
+    flag_emoji: "🌊"
+    gdp_info:
+      gdp_billion_usd: 5.9
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 340
+      damage: 36
+      range: 175
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      sun_and_waves: true
+    category: "フランス領"
+    continent: "Oceania"
+    
+  - id: "gibraltar"
+    japanese_name: "ジブラルタル"
+    japanese_reading: "じぶらるたる"
+    english_name: "Gibraltar"
+    image_path: "img/gibraltar.png"
+    flag_emoji: "🗝️"
+    gdp_info:
+      gdp_billion_usd: 3.1
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 180
+      damage: 20
+      range: 135
+      tier: 3
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      castle_and_key: true
+      banner: true
+    category: "イギリス領"
+    continent: "Europe"
+    
+  - id: "greenland"
+    japanese_name: "グリーンランド"
+    japanese_reading: "ぐりーんらんど"
+    english_name: "Greenland"
+    image_path: "img/greenland.png"
+    flag_emoji: "🐻‍❄️"
+    gdp_info:
+      gdp_billion_usd: 3.2
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 160
+      damage: 18
+      range: 130
+      tier: 3
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      horizontal_division: true
+      circle: true
+    category: "デンマーク自治領"
+    continent: "North America"
+    
+  - id: "guam"
+    japanese_name: "グアム"
+    japanese_reading: "ぐあむ"
+    english_name: "Guam"
+    image_path: "img/guam.png"
+    flag_emoji: "🌺"
+    gdp_info:
+      gdp_billion_usd: 6.1
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 310
+      damage: 33
+      range: 165
+      tier: 3
+      colors: ["#FF0000", "#0066CC"]
+    flag_design:
+      red_border: true
+      seal: true
+    category: "アメリカ領"
+    continent: "Oceania"
+    
+  - id: "guernsey"
+    japanese_name: "ガーンジー島"
+    japanese_reading: "がーんじーとう"
+    english_name: "Bailiwick of Guernsey"
+    image_path: "img/guernsey.png"
+    flag_emoji: "⚜️"
+    gdp_info:
+      gdp_billion_usd: 3.8
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 190
+      damage: 21
+      range: 135
+      tier: 3
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      st_george_cross: true
+      gold_cross: true
+    category: "イギリス王室属領"
+    continent: "Europe"
+    
+  - id: "hutt_river"
+    japanese_name: "ハット・リバー公国"
+    japanese_reading: "はっと・りばーこうこく"
+    english_name: "Principality of Hutt River"
+    image_path: "img/hutt_river.png"
+    flag_emoji: "👑"
+    gdp_info:
+      gdp_billion_usd: 0.0001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 25
+      damage: 4
+      range: 85
+      tier: 1
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+    category: "未承認国家"
+    continent: "Oceania"
+    
+  - id: "isle_of_man"
+    japanese_name: "マン島"
+    japanese_reading: "まんとう"
+    english_name: "Isle of Man"
+    image_path: "img/isle_of_man.png"
+    flag_emoji: "🦵"
+    gdp_info:
+      gdp_billion_usd: 7.4
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 210
+      damage: 23
+      range: 140
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      triskelion: true
+      three_legs: true
+    category: "イギリス王室属領"
+    continent: "Europe"
+    
+  - id: "jersey"
+    japanese_name: "ジャージー島"
+    japanese_reading: "じゃーじーとう"
+    english_name: "Bailiwick of Jersey"
+    image_path: "img/jersey.png"
+    flag_emoji: "🦁"
+    gdp_info:
+      gdp_billion_usd: 5.7
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 200
+      damage: 22
+      range: 140
+      tier: 3
+      colors: ["#FFFFFF", "#FF0000"]
+    flag_design:
+      st_patrick_saltire: true
+      coat_of_arms: true
+    category: "イギリス王室属領"
+    continent: "Europe"
+    
+  - id: "ladonia"
+    japanese_name: "ラドニア"
+    japanese_reading: "らどにあ"
+    english_name: "Ladonia"
+    image_path: "img/ladonia.png"
+    flag_emoji: "🎨"
+    gdp_info:
+      gdp_billion_usd: 0.00001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 40
+      damage: 5
+      range: 95
+      tier: 1
+      colors: ["#00FF00", "#0000FF"]
+    flag_design:
+      solid_green: true
+      nordic_cross: true
+    category: "未承認国家"
+    continent: "Europe"
+    
+  - id: "liberland"
+    japanese_name: "リベルランド自由共和国"
+    japanese_reading: "りべるらんどじゆうきょうわこく"
+    english_name: "Free Republic of Liberland"
+    image_path: "img/liberland.png"
+    flag_emoji: "🏴"
+    gdp_info:
+      gdp_billion_usd: 0.0001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 15
+      damage: 3
+      range: 75
+      tier: 1
+      colors: ["#FFD700", "#000000"]
+    flag_design:
+      horizontal_stripes: 3
+      coat_of_arms: true
+    category: "未承認国家"
+    continent: "Europe"
+    
+  - id: "luhansk"
+    japanese_name: "ルガンスク人民共和国"
+    japanese_reading: "るがんすくじんみんきょうわこく"
+    english_name: "Luhansk People's Republic"
+    image_path: "img/luhansk.png"
+    flag_emoji: "🌾"
+    gdp_info:
+      gdp_billion_usd: 0.6
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 140
+      damage: 16
+      range: 125
+      tier: 2
+      colors: ["#87CEEB", "#0000FF", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["水色", "青", "赤"]
+    category: "部分承認国家"
+    continent: "Europe"
+    
+  - id: "molossia"
+    japanese_name: "モロッシア共和国"
+    japanese_reading: "もろっしあきょうわこく"
+    english_name: "Republic of Molossia"
+    image_path: "img/molossia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 0.00005
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 30
+      damage: 4
+      range: 90
+      tier: 1
+      colors: ["#0000FF", "#FFFFFF", "#0000FF"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["青", "白", "青"]
+    category: "未承認国家"
+    continent: "North America"
+    
+  - id: "nagorno_karabakh"
+    japanese_name: "ナゴルノ・カラバフ共和国"
+    japanese_reading: "なごるの・からばふきょうわこく"
+    english_name: "Republic of Artsakh"
+    image_path: "img/nagorno_karabakh.png"
+    flag_emoji: "⛰️"
+    gdp_info:
+      gdp_billion_usd: 0.6
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 100
+      damage: 12
+      range: 115
+      tier: 2
+      colors: ["#FF0000", "#0000FF", "#FFB700"]
+    flag_design:
+      horizontal_stripes: 3
+      arrow_pattern: true
+    category: "部分承認国家"
+    continent: "Asia"
+    
+  - id: "new_caledonia"
+    japanese_name: "ニューカレドニア"
+    japanese_reading: "にゅーかれどにあ"
+    english_name: "New Caledonia"
+    image_path: "img/new_caledonia.png"
+    flag_emoji: "🦜"
+    gdp_info:
+      gdp_billion_usd: 10.1
+      gdp_tier: "small"
+      gdp_rank: null
+    game_stats:
+      cost: 350
+      damage: 37
+      range: 175
+      tier: 3
+      colors: ["#0066CC", "#FF0000", "#00A550"]
+    flag_design:
+      horizontal_stripes: 3
+      sun_symbol: true
+    category: "フランス領"
+    continent: "Oceania"
+    
+  - id: "niue"
+    japanese_name: "ニウエ"
+    japanese_reading: "にうえ"
+    english_name: "Niue"
+    image_path: "img/niue.png"
+    flag_emoji: "🌺"
+    gdp_info:
+      gdp_billion_usd: 0.02
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 380
+      damage: 40
+      range: 185
+      tier: 3
+      colors: ["#FED100", "#002B7F"]
+    flag_design:
+      british_ensign: true
+      yellow_field: true
+      stars: 5
+    category: "ニュージーランド自由連合"
+    continent: "Oceania"
+    
+  - id: "northern_cyprus"
+    japanese_name: "北キプロス・トルコ共和国"
+    japanese_reading: "きたきぷろす・とるこきょうわこく"
+    english_name: "Turkish Republic of Northern Cyprus"
+    image_path: "img/northern_cyprus.png"
+    flag_emoji: "☪️"
+    gdp_info:
+      gdp_billion_usd: 4.9
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 110
+      damage: 13
+      range: 115
+      tier: 2
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      horizontal_stripes: 2
+      crescent_and_star: true
+    category: "部分承認国家"
+    continent: "Asia"
+    
+  - id: "northern_mariana"
+    japanese_name: "北マリアナ諸島"
+    japanese_reading: "きたまりあなしょとう"
+    english_name: "Northern Mariana Islands"
+    image_path: "img/northern_mariana.png"
+    flag_emoji: "🌸"
+    gdp_info:
+      gdp_billion_usd: 1.3
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 320
+      damage: 34
+      range: 170
+      tier: 3
+      colors: ["#0066CC", "#FFFFFF"]
+    flag_design:
+      blue_field: true
+      star: true
+      latte_stone: true
+    category: "アメリカ領"
+    continent: "Oceania"
+    
+  - id: "norway"
+    japanese_name: "ノルウェー王国"
+    japanese_reading: "のるうぇーおうこく"
+    english_name: "Kingdom of Norway"
+    image_path: "img/norway.png"
+    flag_emoji: "🎿"
+    gdp_info:
+      gdp_billion_usd: 482.2
+      gdp_tier: "major"
+      gdp_rank: 39
+    game_stats:
+      cost: 1340
+      damage: 136
+      range: 425
+      tier: 5
+      colors: ["#FF0000", "#FFFFFF", "#002868"]
+    flag_design:
+      nordic_cross: true
+      colors: ["赤", "白", "青"]
+    category: "ヨーロッパ"
+    continent: "Europe"
+    
+  - id: "puerto_rico"
+    japanese_name: "プエルトリコ"
+    japanese_reading: "ぷえるとりこ"
+    english_name: "Puerto Rico"
+    image_path: "img/puerto_rico.png"
+    flag_emoji: "🇵🇷"
+    gdp_info:
+      gdp_billion_usd: 113.4
+      gdp_tier: "medium"
+      gdp_rank: null
+    game_stats:
+      cost: 300
+      damage: 32
+      range: 165
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF", "#0066CC"]
+    flag_design:
+      stripes: 5
+      triangle: true
+      star: true
+    category: "アメリカ領"
+    continent: "North America"
+    
+  - id: "sahrawi"
+    japanese_name: "サハラ・アラブ民主共和国"
+    japanese_reading: "さはら・あらぶみんしゅきょうわこく"
+    english_name: "Sahrawi Arab Democratic Republic"
+    image_path: "img/sahrawi.png"
+    flag_emoji: "🌙"
+    gdp_info:
+      gdp_billion_usd: 0.9
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 120
+      damage: 14
+      range: 120
+      tier: 2
+      colors: ["#000000", "#FFFFFF", "#00A550", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      triangle: true
+      crescent_and_star: true
+    category: "部分承認国家"
+    continent: "Africa"
+    
+  - id: "somaliland"
+    japanese_name: "ソマリランド共和国"
+    japanese_reading: "そまりらんどきょうわこく"
+    english_name: "Republic of Somaliland"
+    image_path: "img/somaliland.png"
+    flag_emoji: "⭐"
+    gdp_info:
+      gdp_billion_usd: 2.6
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 70
+      damage: 9
+      range: 105
+      tier: 2
+      colors: ["#00A550", "#FFFFFF", "#FF0000"]
+    flag_design:
+      horizontal_stripes: 3
+      star: true
+      shahada: true
+    category: "部分承認国家"
+    continent: "Africa"
+    
+  - id: "south_ossetia"
+    japanese_name: "南オセチア共和国"
+    japanese_reading: "みなみおせちあきょうわこく"
+    english_name: "Republic of South Ossetia"
+    image_path: "img/south_ossetia.png"
+    flag_emoji: "🦅"
+    gdp_info:
+      gdp_billion_usd: 0.1
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 90
+      damage: 11
+      range: 110
+      tier: 2
+      colors: ["#FFFFFF", "#FF0000", "#FFD700"]
+    flag_design:
+      horizontal_stripes: 3
+      colors: ["白", "赤", "黄"]
+    category: "部分承認国家"
+    continent: "Asia"
+    
+  - id: "tokelau"
+    japanese_name: "トケラウ"
+    japanese_reading: "とけらう"
+    english_name: "Tokelau"
+    image_path: "img/tokelau.png"
+    flag_emoji: "🌴"
+    gdp_info:
+      gdp_billion_usd: 0.01
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 370
+      damage: 39
+      range: 180
+      tier: 3
+      colors: ["#FFD700", "#0066CC"]
+    flag_design:
+      blue_field: true
+      canoe: true
+      stars: 4
+    category: "ニュージーランド領"
+    continent: "Oceania"
+    
+  - id: "transnistria"
+    japanese_name: "沿ドニエストル共和国"
+    japanese_reading: "えんどにえすとるきょうわこく"
+    english_name: "Pridnestrovian Moldavian Republic"
+    image_path: "img/transnistria.png"
+    flag_emoji: "🔨"
+    gdp_info:
+      gdp_billion_usd: 1.0
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 60
+      damage: 8
+      range: 100
+      tier: 2
+      colors: ["#FF0000", "#00FF00"]
+    flag_design:
+      horizontal_stripes: 3
+      hammer_and_sickle: true
+    category: "部分承認国家"
+    continent: "Europe"
+    
+  - id: "turks_caicos"
+    japanese_name: "タークス・カイコス諸島"
+    japanese_reading: "たーくす・かいこすしょとう"
+    english_name: "Turks and Caicos Islands"
+    image_path: "img/turks_caicos.png"
+    flag_emoji: "🦩"
+    gdp_info:
+      gdp_billion_usd: 1.1
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 270
+      damage: 29
+      range: 155
+      tier: 3
+      colors: ["#0000FF", "#FFD700", "#FFFFFF"]
+    flag_design:
+      british_blue_ensign: true
+      coat_of_arms: true
+    category: "イギリス領"
+    continent: "North America"
+    
+  - id: "uzupis"
+    japanese_name: "ウジュピス共和国"
+    japanese_reading: "うじゅぴすきょうわこく"
+    english_name: "Republic of Užupis"
+    image_path: "img/uzupis.png"
+    flag_emoji: "🎭"
+    gdp_info:
+      gdp_billion_usd: 0.0001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 45
+      damage: 6
+      range: 95
+      tier: 1
+      colors: ["#000000", "#FFFFFF", "#FFD700"]
+    flag_design:
+      hand_symbol: true
+      colors: ["黒", "白", "金"]
+    category: "未承認国家"
+    continent: "Europe"
+    
+  - id: "virgin_islands_uk"
+    japanese_name: "イギリス領ヴァージン諸島"
+    japanese_reading: "いぎりすりょうヴぁーじんしょとう"
+    english_name: "British Virgin Islands"
+    image_path: "img/virgin_islands_uk.png"
+    flag_emoji: "⛱️"
+    gdp_info:
+      gdp_billion_usd: 1.0
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 280
+      damage: 30
+      range: 160
+      tier: 3
+      colors: ["#0000FF", "#FF0000", "#FFFFFF"]
+    flag_design:
+      british_blue_ensign: true
+      coat_of_arms: true
+    category: "イギリス領"
+    continent: "North America"
+    
+  - id: "virgin_islands_us"
+    japanese_name: "アメリカ領ヴァージン諸島"
+    japanese_reading: "あめりかりょうヴぁーじんしょとう"
+    english_name: "United States Virgin Islands"
+    image_path: "img/virgin_islands_us.png"
+    flag_emoji: "🏝️"
+    gdp_info:
+      gdp_billion_usd: 3.9
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 290
+      damage: 31
+      range: 160
+      tier: 3
+      colors: ["#FFFFFF", "#FFD700", "#0066CC"]
+    flag_design:
+      white_field: true
+      eagle: true
+      initials: "V.I."
+    category: "アメリカ領"
+    continent: "North America"
+    
+  - id: "wallis_futuna"
+    japanese_name: "ウォリス・フツナ"
+    japanese_reading: "うぉりす・ふつな"
+    english_name: "Wallis and Futuna"
+    image_path: "img/wallis_futuna.png"
+    flag_emoji: "🏵️"
+    gdp_info:
+      gdp_billion_usd: 0.19
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 360
+      damage: 38
+      range: 180
+      tier: 3
+      colors: ["#FF0000", "#FFFFFF"]
+    flag_design:
+      red_field: true
+      squares: 4
+    category: "フランス領"
+    continent: "Oceania"
+    
+  - id: "whangamomona"
+    japanese_name: "ファンガモモナ共和国"
+    japanese_reading: "ふぁんがももなきょうわこく"
+    english_name: "Republic of Whangamomona"
+    image_path: "img/whangamomona.png"
+    flag_emoji: "🐑"
+    gdp_info:
+      gdp_billion_usd: 0.00001
+      gdp_tier: "micro"
+      gdp_rank: null
+    game_stats:
+      cost: 50
+      damage: 6
+      range: 100
+      tier: 1
+      colors: ["#006400", "#FFD700"]
+    flag_design:
+      green_field: true
+      coat_of_arms: true
+    category: "未承認国家"
+    continent: "Oceania"

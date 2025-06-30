@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlagDefense V2 Test</title>
+</head>
+<body>
+    <h1>FlagDefense V2 Manual Test</h1>
+    <p>The game should be running at: <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></p>
+    
+    <h2>Test Steps:</h2>
+    <ol>
+        <li>Click the link above to open the game</li>
+        <li>Check if the game loads (you should see a canvas with a path)</li>
+        <li>Click on the canvas to place towers</li>
+        <li>Watch for enemies spawning and moving along the path</li>
+    </ol>
+    
+    <h2>Expected Results:</h2>
+    <ul>
+        <li>✅ Game loads without errors</li>
+        <li>✅ Canvas is visible with a brown path</li>
+        <li>✅ "Flag Defense V2" title appears in top right</li>
+        <li>✅ Money, Lives, and Wave counters are visible</li>
+        <li>✅ Clicking places towers (random flags)</li>
+        <li>✅ Enemies (flags) spawn and move along path</li>
+        <li>✅ Towers shoot at enemies in range</li>
+    </ul>
+    
+    <h2>Console Output:</h2>
+    <p>Open browser console (F12) to see:</p>
+    <pre>
+App useEffect running
+Creating game instance
+Game initializing...
+Loading assets from: /flags/datasheet.yaml
+YAML loaded, length: 143547
+Parsed YAML data: ['flags']
+Found [number] flags
+Assets loaded, preloading images...
+Game initialization complete
+Setting loading to false
+    </pre>
+</body>
+</html>
