@@ -1,0 +1,96 @@
+.flag-info {
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.flag-info h3 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.flag-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.current-flag {
+  margin-bottom: 1.5rem;
+}
+
+.flag-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.flag-emoji {
+  font-size: 3rem;
+}
+
+.flag-text {
+  flex: 1;
+}
+
+.flag-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.flag-name-ja {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.flag-fact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.flag-fact .label {
+  color: #888;
+}
+
+.flag-fact .value {
+  color: #ccc;
+}
+
+.recent-flags {
+  margin-top: 1rem;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flag-emoji-small {
+  font-size: 1.5rem;
+}
+
+.flag-name-small {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.placeholder {
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 2rem;
+}

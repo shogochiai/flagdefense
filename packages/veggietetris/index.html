@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieTetris - 野菜で学ぶテトリス</title>
+    <link rel="stylesheet" href="styles/game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>VeggieTetris</h1>
+            <p class="subtitle">野菜で学ぶテトリス</p>
+        </div>
+        
+        <div class="game-content">
+            <div class="side-panel left-panel">
+                <div class="score-board">
+                    <h3>スコア</h3>
+                    <p class="score">0</p>
+                </div>
+                <div class="level-board">
+                    <h3>レベル</h3>
+                    <p class="level">1</p>
+                </div>
+                <div class="lines-board">
+                    <h3>ライン</h3>
+                    <p class="lines">0</p>
+                </div>
+            </div>
+            
+            <div class="game-board-container">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div class="game-over-overlay" style="display: none;">
+                    <h2>Game Over</h2>
+                    <p class="final-score">最終スコア: <span>0</span></p>
+                    <p class="vegetables-collected">収穫した野菜: <span>0</span></p>
+                    <button class="restart-btn" onclick="restartGame()">もう一度プレイ</button>
+                </div>
+                <div class="pause-overlay" style="display: none;">
+                    <h2>一時停止中</h2>
+                    <p>Pキーで再開</p>
+                </div>
+            </div>
+            
+            <div class="side-panel right-panel">
+                <div class="next-piece">
+                    <h3>次のブロック</h3>
+                    <canvas id="nextCanvas" width="100" height="100"></canvas>
+                </div>
+                <div class="vegetable-info">
+                    <h3>野菜情報</h3>
+                    <div class="info-content">
+                        <p class="vegetable-name">-</p>
+                        <p class="vegetable-fact">ゲームを始めて野菜について学ぼう！</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <h3>操作方法</h3>
+                    <ul>
+                        <li>←/→: 移動</li>
+                        <li>↑: 回転</li>
+                        <li>↓: 加速</li>
+                        <li>Space: 即落下</li>
+                        <li>P: 一時停止</li>
+                        <li>R: リスタート</li>
+                        <li>V: 🎉パーティーモード</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="vegetable-collection">
+            <h3>野菜コレクション</h3>
+            <div class="collection-grid">
+                <div class="vegetable-item has-image" data-vegetable="carrot">
+                    <img src="assets/vegetables/img/carrot.png" alt="ニンジン">
+                    <span class="icon">🥕</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="tomato">
+                    <img src="assets/vegetables/img/tomato.png" alt="トマト">
+                    <span class="icon">🍅</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="eggplant">
+                    <img src="assets/vegetables/img/eggplant.png" alt="ナス">
+                    <span class="icon">🍆</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="pepper">
+                    <img src="assets/vegetables/img/bell_pepper.png" alt="ピーマン">
+                    <span class="icon">🫑</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="paprika">
+                    <img src="assets/vegetables/img/bell_pepper.png" alt="パプリカ">
+                    <span class="icon">🌶️</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="broccoli">
+                    <img src="assets/vegetables/img/broccoli.png" alt="ブロッコリー">
+                    <span class="icon">🥦</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="vegetable-item has-image" data-vegetable="pumpkin">
+                    <img src="assets/vegetables/img/pumpkin.png" alt="カボチャ">
+                    <span class="icon">🎃</span>
+                    <span class="count">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="src/vegetables.js"></script>
+    <script src="src/tetromino.js"></script>
+    <script src="src/board.js"></script>
+    <script src="src/renderer.js"></script>
+    <script src="src/input.js"></script>
+    <script src="src/storage.js"></script>
+    <script src="src/game.js"></script>
+</body>
+</html>

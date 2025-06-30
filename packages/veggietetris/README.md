@@ -1,6 +1,90 @@
 # VeggieTetris
 
-- VeggieTetris is educational tetris. Just a browser-based normal tetris but with so many educational info of vegetables.
-- Every row erasing event, random veggies and its tip info shown in the popup.
-- One minute play makes 3% faster (level increased).
-- Higher level, heavier veggies.
+野菜教育要素を含むテトリスゲーム
+
+## 概要
+
+VeggieTetrisは、クラシックなテトリスゲームに野菜教育要素を組み込んだエデュテインメントゲームです。各テトリミノ（ブロック）は異なる野菜を表し、プレイヤーはゲームを楽しみながら野菜について学ぶことができます。
+
+## ゲーム仕様
+
+### 基本機能
+- クラシックなテトリスのゲームプレイ
+- 野菜テーマのテトリミノ（各形状が異なる野菜を表現）
+- スコアリングシステム
+- レベルアップシステム（速度が徐々に増加）
+- ゲームオーバー時の統計表示
+
+### 野菜教育要素
+- 各テトリミノには以下の野菜が割り当てられます：
+  - I型：ニンジン（オレンジ）
+  - O型：トマト（赤）
+  - T型：ナス（紫）
+  - S型：ピーマン（緑）
+  - Z型：パプリカ（黄）
+  - J型：ブロッコリー（濃い緑）
+  - L型：カボチャ（オレンジ）
+
+- ラインを消すと、その野菜に関する豆知識が表示されます
+- 野菜の栄養価情報の表示
+- 収穫した野菜の統計
+
+### 操作方法
+- ←/→ キー：左右移動
+- ↓ キー：高速落下
+- ↑ キー：回転
+- スペースキー：即座に落下
+- P キー：一時停止/再開
+- R キー：ゲームリスタート
+
+### 技術仕様
+- 純粋なHTML5/CSS3/JavaScript実装
+- Canvasを使用したレンダリング
+- レスポンシブデザイン対応
+- ローカルストレージによるハイスコア保存
+
+## インストール・実行方法
+
+```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
+npm start
+```
+
+ブラウザで `http://localhost:8080` にアクセスしてプレイ開始
+
+## テスト
+
+```bash
+# テストの実行
+npm test
+
+# lint実行
+npm run lint
+```
+
+## プロジェクト構造
+
+```
+VeggieTetris/
+├── index.html          # メインHTMLファイル
+├── src/
+│   ├── game.js         # メインゲームロジック
+│   ├── tetromino.js    # テトリミノクラス
+│   ├── board.js        # ゲームボード管理
+│   ├── renderer.js     # Canvas描画処理
+│   ├── input.js        # 入力処理
+│   ├── vegetables.js   # 野菜データと教育コンテンツ
+│   └── storage.js      # ローカルストレージ管理
+├── styles/
+│   └── game.css        # ゲームスタイル
+├── tests/              # テストファイル
+├── logs/               # ログファイル
+└── package.json        # プロジェクト設定
+```
+
+## ライセンス
+
+MIT License

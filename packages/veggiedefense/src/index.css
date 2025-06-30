@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Veggie Party Animations! */
+@keyframes veggie-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.1); }
+}
+
+@keyframes veggie-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rainbow-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes party-shake {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(-5deg); }
+  20% { transform: rotate(5deg); }
+  30% { transform: rotate(-5deg); }
+  40% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
+}
+
+.veggie-bounce {
+  animation: veggie-bounce 0.5s ease-in-out;
+}
+
+.veggie-spin {
+  animation: veggie-spin 0.5s ease-in-out;
+}
+
+.veggie-tower {
+  transition: all 0.3s ease;
+}
+
+.veggie-tower:hover {
+  animation: veggie-bounce 0.5s ease-in-out infinite;
+}
+
+/* Party mode styles */
+.party-mode {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6ab04c, #130f40);
+  background-size: 400% 400%;
+  animation: rainbow-bg 10s ease infinite;
+}
+
+.party-mode .veggie-tower {
+  animation: party-shake 2s ease-in-out infinite;
+  animation-delay: calc(var(--tower-index) * 0.1s);
+}
+
+.party-mode .enemy {
+  animation: veggie-bounce 1s ease-in-out infinite;
+}
+
+/* Celebration effects */
+.celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  z-index: 1000;
+  pointer-events: none;
+  animation: veggie-bounce 1s ease-in-out;
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #f0932b;
+  animation: confetti-fall 3s ease-in-out forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Tower selection glow */
+.selected-tower {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+/* Projectile trails */
+.projectile-trail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0.5;
+  animation: veggie-spin 1s linear infinite;
+}
+
+/* Enemy defeat particles */
+@keyframes particle-explode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0);
+    opacity: 0;
+  }
+}
+
+.defeat-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: particle-explode 0.5s ease-out forwards;
+}

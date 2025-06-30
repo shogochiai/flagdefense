@@ -1,0 +1,3326 @@
+# 第1段階：野菜データ（YAML形式）
+vegetables:
+  - id: "tomato"
+    japanese_name: "トマト"
+    japanese_reading: "とまと"
+    image_path: "images/vegetables/tomato.png"
+    physical_properties:
+      length_cm: "5-15"
+      weight_g: "10-500"
+      shape: "球形から楕円形"
+      color: "緑（未熟）から赤（完熟）"
+    discovery_year: 1519
+    trivia:
+      etymology: 
+        - "ナワトル語の「tomatl」（膨らんだ果実）が語源"
+        - "イタリア語では「ポモドーロ（金色のリンゴ）」と呼ばれる"
+        - "日本では「唐柿」「赤茄子」「蕃茄」などの別名"
+      historical_facts:
+        - "ヨーロッパでは16-18世紀まで毒があると信じられていた"
+        - "貴族のピューター製食器から鉛が溶け出し、トマトの酸で鉛中毒を起こしたため"
+        - "1519年にエルナン・コルテスがヨーロッパに持ち帰った"
+        - "1753年にカール・フォン・リンネが学名を記載"
+      cultural_significance:
+        - "植物学的には果実だが、料理では野菜として扱われる"
+        - "世界で最も消費される野菜の一つ"
+        - "イタリア料理には欠かせない食材"
+      interesting_properties:
+        - "果実の赤色はリコピンという抗酸化物質による"
+        - "多年生植物だが日本では一年草として栽培"
+        - "自然な草姿は藪状"
+        - "仮軸分枝による独特の成長パターン"
+      records:
+        - "年間世界生産量は約1億8000万トン"
+        - "大玉トマトは100g以上、ミニトマトは10-30g"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Solanum lycopersicum"
+    english_name: "tomato"
+    family: "ナス科"
+    genus: "ナス属"
+    origin: "南アメリカ・アンデス山脈高原地帯"
+    nutritional_info:
+      main_nutrients: "リコピン、ビタミンC、カリウム"
+      health_benefits: "抗酸化作用、血圧降下、美肌効果"
+      calories: 19
+    cultivation_history: "紀元前1600年頃メキシコのアステカ族が栽培開始、1519年ヨーロッパ伝来、江戸時代初期に日本伝来（観賞用）、明治時代に食用として普及"
+    characteristics: "緑黄色野菜、車形花冠の黄色い花を咲かせる、高温を好み寒さに弱い"
+
+  - id: "eggplant"
+    japanese_name: "ナス"
+    japanese_reading: "なす"
+    image_path: "images/vegetables/eggplant.png"
+    physical_properties:
+      length_cm: "5-30"
+      weight_g: "50-500"
+      shape: "卵形から長楕円形"
+      color: "黒紫色（一般的）、緑色、白色もある"
+    discovery_year: 750
+    trivia:
+      etymology:
+        - "別名「ナスビ」は関西地方でよく使われる"
+        - "英名「eggplant」は白い卵形品種に由来"
+        - "学名の「melongena」はアラビア語起源"
+      historical_facts:
+        - "日本最古の記録は750年（天平宝字二年）正倉院文書"
+        - "7-8世紀頃に中国から日本に伝来"
+        - "インドでは3000年以上前から栽培"
+        - "5世紀頃に中国へ伝播"
+      cultural_significance:
+        - "「親の意見とナスビの花は千に一つも無駄はない」という諺"
+        - "「秋ナスは嫁に食わすな」の諺は体を冷やすためという説と美味しいから惜しいという説"
+        - "日本では約70品種、世界では1000品種以上"
+      interesting_properties:
+        - "果肉はスポンジ状で密度が低く、油をよく吸収する"
+        - "ヘタの部分にトゲがあり、鋭いトゲは鮮度の目安"
+        - "ナスニンという紫色の色素（アントシアニン）を含む"
+        - "連作障害が出やすいため接ぎ木栽培が一般的"
+      misconceptions:
+        - "昔は完熟した黄色いものを食べていた時代もある"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Solanum melongena"
+    english_name: "eggplant, aubergine"
+    family: "ナス科"
+    genus: "ナス属"
+    origin: "インド亜大陸東部"
+    nutritional_info:
+      main_nutrients: "カリウム、食物繊維、ナスニン"
+      health_benefits: "抗酸化作用、血圧降下、コレステロール低下"
+      calories: 22
+    cultivation_history: "紀元前よりインドで栽培、5世紀頃中国伝来、7-8世紀頃日本伝来、1753年リンネが学名記載"
+    characteristics: "淡色野菜、高温を好み寒さや乾燥に弱い、紫色の花を下向きに咲かせる"
+
+  - id: "bell_pepper"
+    japanese_name: "ピーマン"
+    japanese_reading: "ぴーまん"
+    image_path: "images/vegetables/bell_pepper.png"
+    physical_properties:
+      length_cm: "5-15"
+      weight_g: "30-150"
+      shape: "ベル形（鐘形）"
+      color: "緑（未熟）、赤・黄・橙（完熟）"
+    discovery_year: 1846
+    trivia:
+      etymology:
+        - "フランス語の「piment（ピマン）」が語源"
+        - "ラテン語の「pigmentum」（塗料・顔料）に由来"
+        - "明治期では「西洋とうがらし」「甘とうがらし」と呼ばれた"
+      historical_facts:
+        - "18世紀にアメリカ合衆国で大型品種が誕生"
+        - "明治時代初頭にアメリカから日本に伝来"
+        - "1956年にF1品種「緑王」が大ヒット"
+        - "1993年にオランダからパプリカが初輸入"
+      cultural_significance:
+        - "戦後の食糧不足時に政府規制を受けないため生産が拡大"
+        - "1960年代以降の食生活洋風化とともに普及"
+        - "現在日本のパプリカの70%以上は韓国産"
+      interesting_properties:
+        - "植物学上はトウガラシと同種だが辛味成分カプサイシンを含まない"
+        - "果肉は種子以外ほとんど空洞"
+        - "緑色は未熟果で、完熟すると赤・黄・橙色に変わる"
+        - "パプリカは肉厚の大果種ピーマンの一種"
+      misconceptions:
+        - "青臭い独特の風味があるため当初は日本であまり普及しなかった"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Capsicum annuum 'Grossum'"
+    english_name: "bell pepper, sweet pepper"
+    family: "ナス科"
+    genus: "トウガラシ属"
+    origin: "熱帯アメリカ（中央アメリカ〜南アメリカ）"
+    nutritional_info:
+      main_nutrients: "ビタミンC、カロテン、ビタミンE"
+      health_benefits: "抗酸化作用、免疫力向上、美肌効果"
+      calories: 22
+    cultivation_history: "16世紀に日本にトウガラシ伝来、18世紀アメリカで品種改良、明治時代初頭日本伝来、1960年代本格普及"
+    characteristics: "代表的な夏野菜、高温を好み寒さに弱い、連作障害が出やすい"
+
+  - id: "cucumber"
+    japanese_name: "キュウリ"
+    japanese_reading: "きゅうり"
+    image_path: "images/vegetables/cucumber.png"
+    physical_properties:
+      length_cm: "10-50"
+      weight_g: "50-300"
+      shape: "長い円筒形"
+      color: "濃緑色（一般的）、淡緑色、白色もある"
+    discovery_year: -4000
+    trivia:
+      etymology:
+        - "「黄瓜（きうり）」が語源。熟すと黄色くなるため"
+        - "漢字の「胡瓜」は中国から見た西方諸民族を意味する「胡」から"
+        - "別名でカラスウリ、ツバウリとも呼ばれる"
+      historical_facts:
+        - "紀元前4000年頃にメソポタミアで栽培開始"
+        - "6世紀に中国から日本に伝来"
+        - "江戸時代まで完熟した黄色いものを食べていた"
+        - "砂村（現江東区）での品種改良により人気野菜となった"
+      cultural_significance:
+        - "暑い地域では水分補給用として重用されてきた"
+        - "ローマ皇帝ティベリウスが好物としていた"
+        - "空海が元祖といわれる「きゅうり加持」（きゅうり封じ）に使用"
+      interesting_properties:
+        - "果実成分の95%が水分"
+        - "表面の白い粉（ブルーム）は水分蒸発を防ぐ保護膜"
+        - "つるの成長は1日約3cm"
+        - "雌雄異花だが単為結果する（雄花がなくても結実）"
+      misconceptions:
+        - "徳川光圀は「毒多くして能無し。植えるべからず」と酷評"
+        - "貝原益軒も「味良からず、かつ小毒あり」と記述"
+        - "江戸時代末期まで人気がない野菜だった"
+      famous_people:
+        - "クリストファー・コロンブスがハイチに持ち込み普及"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Cucumis sativus"
+    english_name: "cucumber"
+    family: "ウリ科"
+    genus: "キュウリ属"
+    origin: "インド北部・ヒマラヤ山麓"
+    nutritional_info:
+      main_nutrients: "カリウム、ビタミンK、水分"
+      health_benefits: "利尿作用、むくみ解消、水分補給"
+      calories: 14
+    cultivation_history: "紀元前4000年メソポタミアで栽培、6世紀中国伝来、6世紀日本伝来、昭和初期本格普及"
+    characteristics: "つる性一年草、暗発芽種子、栄養生長と生殖生長を同時に行う、根の酸素要求量が大きい"
+
+
+  - id: "pumpkin"
+    japanese_name: "カボチャ"
+    japanese_reading: "かぼちゃ"
+    image_path: "images/vegetables/pumpkin.png"
+    physical_properties:
+      length_cm: "15-40"
+      weight_g: "500-5000"
+      shape: "球形から楕円形"
+      color: "緑、オレンジ、黄色、白色など多様"
+    discovery_year: -4000
+    trivia:
+      etymology:
+        - "ポルトガル語の「Camboja」（カンボジア）が語源"
+        - "方言では「ぼうぶら」「ボーボラ」とも呼ばれる（ポルトガル語「abóbora」由来）"
+        - "江戸時代は「唐茄子」「南京」とも呼ばれた"
+        - "中国では「庭園の皇帝」と呼ばれる"
+      historical_facts:
+        - "ペルーで紀元前4000-3000年頃の出土品が発見"
+        - "メソアメリカで8000-10000年前に栽培化開始"
+        - "トウモロコシや豆より約4000年早い栽培化"
+        - "1541年頃にポルトガル船により九州に伝来"
+        - "大友義鎮（宗麟）に種が献上された"
+      cultural_significance:
+        - "戦時中は食糧不足を補う重要な作物"
+        - "ハロウィンのジャック・オー・ランタンに使用"
+        - "中国では健康と豊穣の象徴"
+        - "アイヌの人々も古くから栽培"
+      interesting_properties:
+        - "つる性一年草で単性花のため人工授粉が必要"
+        - "皮を含む果実全体が食用可能"
+        - "若葉、茎、花も食べられる"
+        - "種はパンプキンシードオイルの原料"
+        - "βカロテンが豊富で緑黄色野菜に分類"
+      records:
+        - "世界最大のカボチャは1000kg超の記録"
+        - "日本の主産地は北海道（全国の約50%）"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Cucurbita spp."
+    english_name: "pumpkin, squash"
+    family: "ウリ科"
+    genus: "カボチャ属"
+    origin: "南北アメリカ大陸（種により異なる）"
+    nutritional_info:
+      main_nutrients: "βカロテン、ビタミンC、ビタミンE、カリウム"
+      health_benefits: "抗酸化作用、免疫力向上、目の健康維持"
+      calories: 91
+    cultivation_history: "紀元前8000-10000年メソアメリカで栽培化、1541年日本伝来（ニホンカボチャ）、1863年西洋カボチャ伝来"
+    characteristics: "緑黄色野菜、長期保存可能、寒さに強い、大型になる品種もある"
+
+
+  - id: "okra"
+    japanese_name: "オクラ"
+    japanese_reading: "おくら"
+    image_path: "images/vegetables/okra.png"
+    physical_properties:
+      length_cm: "5-30"
+      weight_g: "5-50"
+      shape: "先の尖った五稜形"
+      color: "緑色（一般的）、赤色、白色もある"
+    discovery_year: 0
+    trivia:
+      etymology:
+        - "英語名「okra」からの借用語"
+        - "語源はガーナのトウィ語「nkrama」"
+        - "和名は「アメリカネリ」、別名「陸蓮根」"
+        - "英語では「Lady's finger（婦人の指）」とも呼ばれる"
+      historical_facts:
+        - "エジプトでは紀元前元年頃にはすでに栽培"
+        - "アフリカ系奴隷によってアメリカ大陸に伝播"
+        - "日本には幕末頃に渡来"
+        - "昭和30年代から一般に広く栽培されるように"
+      cultural_significance:
+        - "沖縄や鹿児島では昭和50年代以前から「ネリ」と呼ばれ食用"
+        - "アメリカ南部、西インド諸島、ブラジル北部でよく栽培"
+        - "アフリカ系住民の多い地域の伝統的野菜"
+      interesting_properties:
+        - "熱帯では多年草だが日本では一年草"
+        - "10℃以下では生育できない高温性野菜"
+        - "花は夜から早朝にかけて咲き、昼にはしぼむ"
+        - "表面に細くて鋭いトゲがあり素手で触る際は注意が必要"
+        - "独特のぬめり成分（ムチン）を含む"
+        - "大きくなりすぎると繊維が発達して食感が悪くなる"
+      records:
+        - "島オクラは17-18cmと一般のオクラより大きい"
+        - "短期間で50cm-2mほどに成長"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Abelmoschus esculentus"
+    english_name: "okra, lady's finger, gumbo"
+    family: "アオイ科"
+    genus: "トロロアオイ属"
+    origin: "アフリカ北東部（エチオピアが有力）"
+    nutritional_info:
+      main_nutrients: "ムチン、βカロテン、ビタミンC、カルシウム"
+      health_benefits: "整腸作用、血糖値上昇抑制、疲労回復"
+      calories: 30
+    cultivation_history: "紀元前よりエジプトで栽培、幕末頃日本伝来、昭和30年代本格普及"
+    characteristics: "高温性野菜、連作不可、夏から秋まで長期収穫可能、栽培難度は容易"
+
+
+  - id: "zucchini"
+    japanese_name: "ズッキーニ"
+    japanese_reading: "ずっきーに"
+    image_path: "images/vegetables/zucchini.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "100-300"
+      shape: "細長い円筒形"
+      color: "緑色、黄色、縞模様など多様"
+    discovery_year: 1870
+    trivia:
+      etymology:
+        - "イタリア語「zucchina（ズッキーナ）」が語源"
+        - "和名は「ウリカボチャ」、別名「蔓なしカボチャ」"
+        - "アメリカでは「summer squash」と呼ばれる"
+        - "イギリス英語では「courgette（カージェット）」"
+      historical_facts:
+        - "16世紀にアメリカからヨーロッパに持ち込まれた"
+        - "19世紀後半にイタリアで細長い形状に品種改良"
+        - "20世紀に入ってから本格的に普及開始"
+        - "日本には1970年代後半にアメリカから輸入開始"
+      cultural_significance:
+        - "イタリア料理ブームとともに日本で普及"
+        - "地中海沿岸地方の代表的野菜"
+        - "カポナータやラタトゥイユに欠かせない食材"
+        - "エリザベス・デイビッドがイギリスで紹介し人気に"
+      interesting_properties:
+        - "見た目はキュウリに似るがカボチャの仲間"
+        - "つるが短く、一般的なカボチャのように長く伸びない"
+        - "雌雄異花のため受粉には昆虫や人の花粉媒介が必要"
+        - "花も食用になる（花ズッキーニ）"
+        - "未熟果を食用とするため一般のカボチャより低カロリー"
+        - "UFO型や球形など様々な形状の品種がある"
+      misconceptions:
+        - "キュウリと混同されることがあるが全く別の植物"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Cucurbita pepo 'Melopepo'"
+    english_name: "zucchini, courgette, summer squash"
+    family: "ウリ科"
+    genus: "カボチャ属"
+    origin: "北アメリカ南部（テキサス州）からメキシコ"
+    nutritional_info:
+      main_nutrients: "ビタミンC、カリウム、βカロテン、食物繊維"
+      health_benefits: "低カロリー、むくみ解消、抗酸化作用"
+      calories: 14
+    cultivation_history: "16世紀ヨーロッパ伝来、19世紀後半イタリアで品種改良、1970年代後半日本伝来"
+    characteristics: "夏野菜、つる性一年草、油との相性が良い、淡泊でクセのない食味"
+
+
+  - id: "bitter_gourd"
+    japanese_name: "ゴーヤー"
+    japanese_reading: "ごーやー"
+    image_path: "images/vegetables/bitter_gourd.png"
+    physical_properties:
+      length_cm: "20-50"
+      weight_g: "150-500"
+      shape: "細長い紡錘形"
+      color: "緑色（未熟）、黄色（完熟）"
+    discovery_year: 1603
+    trivia:
+      etymology:
+        - "標準和名は「ツルレイシ（蔓茘枝）」"
+        - "沖縄方言「ゴーヤー」は「苦いウリ」の意味"
+        - "九州では「ニガゴリ」「ニガゴーリ」と呼ぶ"
+        - "奄美大島では「ニギャグリ」「トーグリ」"
+        - "果実の外観がライチに似ることから命名"
+      historical_facts:
+        - "1603年『日葡辞書』に記録が残る"
+        - "1649年林羅山の『多識篇』に「苦瓜」として収録"
+        - "沖縄での文献記録は1713年『琉球国由来記』"
+        - "1990年まで沖縄本島産の域外持ち出し禁止"
+        - "1993年ウリミバエ根絶により全国出荷可能に"
+      cultural_significance:
+        - "NHK連続テレビ小説『ちゅらさん』でゴーヤーマンが登場"
+        - "沖縄料理ブームで全国に普及"
+        - "ゴーヤーチャンプルーの材料として有名"
+        - "夏バテ防止の健康野菜として認知"
+        - "グリーンカーテンとしても利用"
+      interesting_properties:
+        - "つる性一年生草本で4-5mまで成長"
+        - "完熟すると黄変軟化して裂開する"
+        - "完熟した仮種皮は赤いゼリー状で甘い"
+        - "鳥による種子散布を行う戦略"
+        - "イボが大きく緑色が薄いものは苦味が少ない"
+        - "白色で苦味が少ない白レイシ品種もある"
+      records:
+        - "沖縄県が全国シェアの3割以上を占める"
+        - "長ニガウリは80cmにもなる品種がある"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Momordica charantia var. pavel"
+    english_name: "bitter gourd, bitter melon"
+    family: "ウリ科"
+    genus: "ツルレイシ属"
+    origin: "熱帯アジア（インド、ボルネオなど）"
+    nutritional_info:
+      main_nutrients: "ビタミンC、モモルデシン、チャランチン、カリウム"
+      health_benefits: "血糖値抑制、夏バテ防止、抗酸化作用、制癌作用"
+      calories: 17
+    cultivation_history: "中国経由で日本伝来、1603年文献記録、1990年代全国普及"
+    characteristics: "苦味成分モモルデシン含有、夏野菜、健康野菜、グリーンカーテン用途"
+
+
+  - id: "green_bean"
+    japanese_name: "インゲン"
+    japanese_reading: "いんげん"
+    image_path: "images/vegetables/green_bean.png"
+    physical_properties:
+      length_cm: "10-20"
+      weight_g: "3-8"
+      shape: "細長い莢状"
+      color: "緑色（一般的）、黄色、紫色もある"
+    discovery_year: 1654
+    trivia:
+      etymology:
+        - "隠元隆琦禅師が日本に持ち込んだことから「隠元豆」"
+        - "別名「サイトウ（菜豆）」「サンドマメ（三度豆）」"
+        - "関西では伝統的にフジマメを「インゲンマメ」と呼ぶ"
+        - "英語では「French bean」「snap bean」"
+      historical_facts:
+        - "原産地は中央アメリカ、南米アンデス"
+        - "アステカ帝国では税の物納品目として徴収"
+        - "コロンブスの二度目の航海でヨーロッパに持ち込まれた"
+        - "16世紀末に中国経由で日本に伝来"
+        - "1654年隠元隆琦が日本に持ち込んだとされる"
+      cultural_significance:
+        - "フランス料理で「アリコ・ヴェル」として発達"
+        - "英語圏では莢ごと食べる方法を「フレンチスタイル」と呼ぶ"
+        - "世界的にマメ類で最も生産量が多い"
+        - "学校教育で種子の実験によく使用される"
+      interesting_properties:
+        - "つる性とつるなし品種がある"
+        - "つる性の方が収穫期間が長く収穫量が多い"
+        - "肥料を多く必要とせず痩せた土地でも栽培可能"
+        - "完熟豆と若い莢の両方が食用になる"
+        - "生または加熱不十分だと中毒症状を起こす"
+        - "食物繊維を最も多く含む身近な食材の一つ"
+      misconceptions:
+        - "隠元禅師が持ち込んだのは実際にはフジマメという説もある"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Phaseolus vulgaris"
+    english_name: "green bean, snap bean, French bean, kidney bean"
+    family: "マメ科"
+    genus: "インゲンマメ属"
+    origin: "中央アメリカ、南米アンデス"
+    nutritional_info:
+      main_nutrients: "タンパク質、食物繊維、ビタミンK、葉酸"
+      health_benefits: "腸内環境改善、血糖値安定、骨の健康維持"
+      calories: 23
+    cultivation_history: "古代アメリカ大陸の主要作物、16世紀ヨーロッパ伝来、1654年日本伝来"
+    characteristics: "一年生草本、つる性・つるなし品種、夏に白・ピンクの花、秋に莢"
+
+
+  - id: "pea"
+    japanese_name: "エンドウ"
+    japanese_reading: "えんどう"
+    image_path: "images/vegetables/pea.png"
+    physical_properties:
+      length_cm: "5-15"
+      weight_g: "2-10"
+      shape: "細長い莢状"
+      color: "緑色（一般的）、紫色もある"
+    discovery_year: -4000
+    trivia:
+      etymology:
+        - "フェルガナの中国名「大宛国」から「豌豆（宛の豆）」"
+        - "別名「ノラマメ」「エンドウマメ」"
+        - "北東北では「ヨサクマメ」と呼ぶ"
+        - "キヌサヤは「莢のこすれる音が衣ずれのよう」から命名"
+      historical_facts:
+        - "世界最古の農作物の一つ"
+        - "古代エジプトや古代ギリシアでの記録がある"
+        - "5世紀に中国に伝来"
+        - "8世紀頃に日本に伝来"
+        - "麦類の間で雑草として生えていた原種を栽培化"
+      cultural_significance:
+        - "メンデルの遺伝学実験で使用され科学史に貢献"
+        - "ツタンカーメンの墓から出土したとされる品種がある"
+        - "スペインバスク地方の早摘みエンドウは「畑のキャビア」"
+        - "サッポロビールが第三のビールの原料として使用"
+        - "キッコーマンが醤油アレルギー対応製品を開発"
+      interesting_properties:
+        - "硬莢種と軟莢種に分類される"
+        - "発芽時に子葉は地中に残り本葉だけが地上に展開"
+        - "根粒菌による土壌の肥沃化効果がある"
+        - "連作に弱く数年間栽培困難になる"
+        - "酸性土壌に弱い"
+        - "若い苗や蔓の先は豆苗（トウミョウ）として食用"
+      famous_people:
+        - "グレゴール・メンデル：遺伝学の法則発見に使用"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Pisum sativum"
+    english_name: "pea, garden pea"
+    family: "マメ科"
+    genus: "エンドウ属"
+    origin: "エチオピア、中央アジア、近東地方"
+    nutritional_info:
+      main_nutrients: "βカロテン、ビタミンC、食物繊維、タンパク質"
+      health_benefits: "抗酸化作用、免疫力向上、腸内環境改善"
+      calories: 93
+    cultivation_history: "古代オリエント地方で麦作農耕とともに栽培化、5世紀中国伝来、8世紀日本伝来"
+    characteristics: "一・二年草、地中海性気候適応、秋まき翌春収穫、緑黄色野菜"
+
+
+  - id: "broad_bean"
+    japanese_name: "ソラマメ"
+    japanese_reading: "そらまめ"
+    image_path: "images/vegetables/broad_bean.png"
+    physical_properties:
+      length_cm: "10-30"
+      weight_g: "3-8"
+      shape: "扁平な楕円形"
+      color: "緑色（未熟）、茶色（完熟）"
+    discovery_year: -3000
+    trivia:
+      etymology:
+        - "豆果（さや）が空に向かってつくため「空豆」"
+        - "サヤの中の見た目がカイコの繭に似ているため「蚕豆」"
+        - "別名「ノラマメ」「ナツマメ」「テンマメ」「シガツマメ」"
+        - "酒場では「天豆」と表示されることが多い"
+      historical_facts:
+        - "世界最古の野菜の一つ"
+        - "イスラエルの新石器時代の遺跡から出土"
+        - "エジプトやトロイ遺跡から化石が出土"
+        - "古代ギリシアやローマでは葬儀に使用"
+        - "紀元前3000年以降中国に伝播"
+        - "8世紀頃日本に渡来"
+        - "インド僧・菩提僊那が行基に贈ったのが始まりとも"
+      cultural_significance:
+        - "エジプトでは国民的な朝食（フール・メダンメス）"
+        - "中東のファラフェルの材料"
+        - "豆板醤の原料として利用"
+        - "大豆アレルギー回避の代用食品原料"
+        - "おたふく豆（甘く煮た完熟豆）として親しまれる"
+      interesting_properties:
+        - "「そら豆がおいしいのは3日間だけ」と言われるほど鮮度落ちが早い"
+        - "豆の端部の筋状部分は「お歯黒」と呼ばれる"
+        - "若い豆は「お歯黒」が緑色、熟すと黒くなる"
+        - "上を向いていた莢が重みで下を向くと収穫適期"
+        - "グルコース-6-リン酸デヒドロゲナーゼ欠陥者は中毒を起こす"
+        - "イスラエルでは移民の中毒多発でファラフェルから除外"
+      records:
+        - "豆類の食物としては最も大きな部類"
+        - "可食部100gあたり108kcal"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Vicia faba"
+    english_name: "broad bean, fava bean"
+    family: "マメ科"
+    genus: "ソラマメ属"
+    origin: "北アフリカ、地中海、カスピ海沿岸、西南アジア"
+    nutritional_info:
+      main_nutrients: "タンパク質、ビタミンB群、ビタミンC、カリウム、鉄分"
+      health_benefits: "疲労回復、貧血予防、免疫力向上、筋肉維持"
+      calories: 108
+    cultivation_history: "紀元前3000年以降栽培、古代エジプト・ギリシア・ローマで食用、8世紀日本伝来"
+    characteristics: "一年草または越年草、秋播種春収穫、旬は5-6月、栄養バランス良好"
+
+
+  - id: "corn"
+    japanese_name: "トウモロコシ"
+    japanese_reading: "とうもろこし"
+    image_path: "images/vegetables/corn.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "200-400"
+      shape: "円筒状の穂"
+      color: "黄色（一般的）、白色、紫色、赤色もある"
+    discovery_year: -9200
+    trivia:
+      etymology:
+        - "「唐」（中国王朝名）と「モロコシ」（タカキビ）に由来"
+        - "地方名が267種類もある（日本方言大辞典）"
+        - "北海道では「とうきび」、関西では「なんば」"
+        - "英語「corn」は穀物全般を指すが北米では特にトウモロコシ"
+        - "イギリスでは「maize」（タイノ語起源）と呼ぶ"
+        - "中国植物名は「玉米」"
+      historical_facts:
+        - "約9200年前にメキシコで栽培化開始"
+        - "テオシントから品種改良で誕生"
+        - "マヤ文明・アステカ文明の主食"
+        - "1492年コロンブスがヨーロッパに持ち帰り"
+        - "16世紀終わり頃日本に伝来"
+        - "リンネの『植物の種』（1753年）で記載"
+      cultural_significance:
+        - "世界三大穀物の一つ（米・小麦・トウモロコシ）"
+        - "アステカ文明ではトウモロコシの神「センテオトル」が存在"
+        - "マヤの創世神話では人間はトウモロコシから作られた"
+        - "インカ帝国では祭祀用の酒「チチャ」の原料"
+        - "現代では年間世界生産量8億1700万トン（2009年）"
+      interesting_properties:
+        - "野生種のテオシントとは外見が大きく異なる"
+        - "人間の手なしには繁殖できない完全栽培植物"
+        - "デンプン、油、異性化糖、バイオエタノールの原料"
+        - "食用・飼料用・工業用と多用途"
+        - "遺伝子組み換え品種（GMコーン）も存在"
+        - "イネ科だが穀物と野菜の両方に分類される"
+      records:
+        - "世界最大の穀物生産量"
+        - "アメリカ大陸で約9000年の栽培歴史"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Zea mays subsp. mays"
+    english_name: "corn, maize"
+    family: "イネ科"
+    genus: "トウモロコシ属"
+    origin: "メキシコ、中央アメリカ"
+    nutritional_info:
+      main_nutrients: "炭水化物、食物繊維、ビタミンB1、葉酸、マグネシウム"
+      health_benefits: "エネルギー補給、腸内環境改善、疲労回復"
+      calories: 92
+    cultivation_history: "約9200年前メキシコで栽培化、1492年ヨーロッパ伝来、16世紀末日本伝来"
+    characteristics: "イネ科一年生植物、日当たり良好な畑地栽培、夏収穫、多用途利用"
+
+# 葉茎菜類データ（YAML形式）
+
+leafy_vegetables:
+  - id: "cabbage"
+    japanese_name: "キャベツ"
+    japanese_reading: "きゃべつ"
+    image_path: "images/vegetables/cabbage.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "1000-2000"
+      shape: "球状（結球）"
+      color: "緑色（外葉）、淡緑色（内葉）"
+    discovery_year: -600
+    trivia:
+      etymology:
+        - "英語「Cabbage」はフランス語「caboche」（頭）に由来"
+        - "学名「Brassica oleracea var. capitata」の「capitata」は「頭状の」という意味"
+        - "日本語「キャベツ」は英語からの借用語"
+        - "別名「甘藍」（かんらん）、「玉菜」（たまな）"
+        - "関西では「玉菜」と呼ばれることが多い"
+      historical_facts:
+        - "紀元前600年頃ケルト人によって栽培開始"
+        - "古代ギリシャでは薬草として利用"
+        - "古代ローマでは健康食として食用"
+        - "大プリニウスが77年に記録"
+        - "9-12世紀にヨーロッパ全土に普及"
+        - "13世紀にイタリアで現在のような球結性品種が確立"
+        - "15世紀にコロンブスが新大陸に持参"
+        - "江戸時代にオランダ人が日本に持ち込み"
+        - "明治時代に本格的な栽培開始"
+      cultural_significance:
+        - "ヨーロッパの基本的な野菜として定着"
+        - "ドイツのザワークラウト（酸っぱいキャベツ）"
+        - "韓国のキムチの材料"
+        - "日本のお好み焼きや餃子の具材"
+        - "世界中で様々な料理に使用"
+      interesting_properties:
+        - "結球は外葉が20枚前後の時に始まる"
+        - "葉は螺旋状に配列（右巻きと左巻きがある）"
+        - "自家不和合性が強く他個体の花粉が必要"
+        - "低温に晒されると花芽分化する"
+        - "モンシロチョウの幼虫の食草"
+        - "アブラナ科では珍しく菌根を形成しない"
+      misconceptions:
+        - "レタスと混同されがちだが全く別の科（アブラナ科 vs キク科）"
+        - "「キャベツの千切りは栄養がない」は誤解（ビタミンCが豊富）"
+      records:
+        - "世界最大のキャベツは重量62.71kg（2012年ギネス記録）"
+        - "1000粒重は4.3g程度"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica oleracea var. capitata"
+    english_name: "cabbage"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "ヨーロッパ地中海・大西洋沿岸"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ビタミンK、葉酸、食物繊維、カリウム"
+      health_benefits: "免疫力向上、骨の健康維持、消化促進、抗酸化作用"
+      calories: 23
+    cultivation_history: "紀元前600年ケルト人栽培開始、古代ギリシャ・ローマで薬用・食用、江戸時代日本伝来"
+    characteristics: "アブラナ科多年草、結球性、冷涼気候適応、春播種夏収穫または秋播種春収穫"
+
+
+  - id: "lettuce"
+    japanese_name: "レタス"
+    japanese_reading: "れたす"
+    image_path: "images/vegetables/lettuce.png"
+    physical_properties:
+      length_cm: "20-25"
+      weight_g: "400-500"
+      shape: "球状（結球）または葉状（リーフ）"
+      color: "緑色、淡緑色"
+    discovery_year: -2500
+    trivia:
+      etymology:
+        - "英語「lettuce」はラテン語「Lac」（牛乳）に由来"
+        - "和名「チシャ」は「乳草」（ちちくさ）の略"
+        - "切り口から出る白い液体に基づく命名"
+        - "古名は「ちさ」"
+        - "萵苣（ちしゃ）とも書く"
+      historical_facts:
+        - "約2500年前の古代エジプトで栽培開始"
+        - "ヨーロッパ各地で品種改良が重ねられる"
+        - "16世紀には現在の玉レタスの原型が確立"
+        - "奈良時代に中国から「掻きチシャ」が日本に伝来"
+        - "江戸時代には玉レタスも存在"
+        - "明治時代に西洋野菜として本格導入"
+      cultural_significance:
+        - "世界中でサラダの基本野菜として利用"
+        - "ハンバーガーやサンドイッチの定番具材"
+        - "韓国のサンチュ（包み菜）として焼肉に使用"
+        - "地中海料理の重要な食材"
+        - "低カロリー食品として健康志向の象徴"
+      interesting_properties:
+        - "キク科でキャベツ（アブラナ科）とは全く別の植物"
+        - "高温（21度超）で種子が休眠状態になる"
+        - "抽苔（とう立ち）すると食味が落ちる"
+        - "花は朝の1-2時間しか咲かない"
+        - "タンポポを小さくしたような黄色い花"
+        - "光がないと発芽しない好光性種子"
+      misconceptions:
+        - "キャベツと混同されがちだが全く別の科"
+        - "「レタスは栄養がない」は誤解（ビタミンK、葉酸が豊富）"
+        - "「レタスは水分ばかり」も誤解（食物繊維も含む）"
+      records:
+        - "栽培適温15-20度"
+        - "発芽適温15-20度"
+        - "玉レタス栽培期間約2ヶ月"
+        - "リーフレタス栽培期間約1ヶ月"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Lactuca sativa"
+    english_name: "lettuce"
+    family: "キク科"
+    genus: "アキノノゲシ属"
+    origin: "地中海沿岸、西アジア"
+    nutritional_info:
+      main_nutrients: "ビタミンK、葉酸、ビタミンC、食物繊維、カリウム"
+      health_benefits: "骨の健康維持、造血作用、免疫力向上、腸内環境改善"
+      calories: 12
+    cultivation_history: "約2500年前古代エジプト栽培開始、奈良時代日本伝来、明治時代本格導入"
+    characteristics: "キク科一年草または二年草、冷涼気候適応、春秋栽培、多品種存在"
+
+
+  - id: "spinach"
+    japanese_name: "ホウレンソウ"
+    japanese_reading: "ほうれんそう"
+    image_path: "images/vegetables/spinach.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "150-300"
+      shape: "葉状（東洋種は切れ込み深、西洋種は丸葉）"
+      color: "濃緑色"
+    discovery_year: 700
+    trivia:
+      etymology:
+        - "中国唐代に「頗稜（ホリン）国」（現ネパール）から伝来"
+        - "「菠薐（ホリン）」が転訛して「ホウレン」となった"
+        - "「法蓮草」は当て字"
+        - "「菠薐草」の「菠薐」は唐音"
+        - "英語「spinach」はアラビア語「isfanakh」に由来"
+      historical_facts:
+        - "原産地は西アジア（コーカサス地方、イラン近辺）"
+        - "ペルシア地方で初めて栽培"
+        - "7世紀頃中国にネパール経由で伝来"
+        - "12世紀以降ヨーロッパにアラブ・北アフリカ経由で伝来"
+        - "16世紀頃日本に中国から東洋種が渡来"
+        - "1862年頃フランスから西洋種導入"
+        - "大正末期から昭和初期に交配品種普及"
+        - "リンネの『植物の種』（1753年）で記載"
+      cultural_significance:
+        - "ポパイの好物として世界的に有名"
+        - "日本では「おひたし」の代表的食材"
+        - "西洋ではソテーやクリーム煮で利用"
+        - "中国では炒め物の定番野菜"
+        - "緑黄色野菜の代表格"
+      interesting_properties:
+        - "雌雄異株（雄株と雌株が別々）"
+        - "耐寒性が極めて強く-10℃でも耐える"
+        - "高温下では生殖生長に傾きやすい"
+        - "冷え込むと軟らかくなり味が良くなる"
+        - "種まきから約1ヶ月で収穫可能"
+        - "東洋種と西洋種で特性が大きく異なる"
+      misconceptions:
+        - "「鉄分が豊富」は過大評価（他の野菜と大差なし）"
+        - "「生で食べられない」は誤解（サラダほうれんそうは生食可）"
+      famous_people:
+        - "ポパイ（漫画キャラクター）- ホウレンソウで力を得る"
+      records:
+        - "日本では100種以上の品種が存在"
+        - "世界生産量1位は中国（約90%）"
+        - "栽培適温15-20℃"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Spinacia oleracea"
+    english_name: "spinach"
+    family: "ヒユ科"
+    genus: "ホウレンソウ属"
+    origin: "西アジア（コーカサス地方、イラン近辺）"
+    nutritional_info:
+      main_nutrients: "ビタミンA、ビタミンC、ビタミンK、葉酸、鉄分、カリウム"
+      health_benefits: "貧血予防、免疫力向上、骨の健康維持、抗酸化作用"
+      calories: 20
+    cultivation_history: "ペルシア地方で初栽培、7世紀中国伝来、16世紀日本伝来、1753年リンネ記載"
+    characteristics: "ヒユ科一年草、雌雄異株、耐寒性強、冷涼気候適応、東洋種・西洋種・交配種存在"
+
+
+  - id: "komatsuna"
+    japanese_name: "コマツナ"
+    japanese_reading: "こまつな"
+    image_path: "images/vegetables/komatsuna.png"
+    physical_properties:
+      length_cm: "20-30"
+      weight_g: "100-200"
+      shape: "葉状（丸みのある葉）"
+      color: "濃緑色（表）、薄緑色（裏）"
+    discovery_year: 1719
+    trivia:
+      etymology:
+        - "江戸時代の小松川地区の地名に由来"
+        - "1719年徳川吉宗が鷹狩りで訪れた際に命名"
+        - "別名「冬菜」（フユナ）、「鶯菜」（ウグイスナ）"
+        - "関東地方を代表する菜っ葉"
+        - "江戸東京野菜として認定されている品種もある"
+      historical_facts:
+        - "江戸時代初期に小松川付近で栽培開始"
+        - "ククタチナ（茎立ち）を品種改良して誕生"
+        - "1719年徳川吉宗が香取神社で命名"
+        - "一説には徳川綱吉による命名とも"
+        - "明治時代中期より城南小松菜が栽培"
+        - "1950年よりごせき晩生小松菜の育種開始"
+      cultural_significance:
+        - "関東風雑煮に欠かせない野菜"
+        - "東京の伝統野菜として親しまれる"
+        - "正月料理の定番食材"
+        - "江戸川区の特産品として有名"
+        - "家庭菜園でも人気の野菜"
+      interesting_properties:
+        - "暑さにも寒さにも強い"
+        - "霜に当たると甘味が増す"
+        - "半日陰でもよく育つ"
+        - "プランターでも簡単に栽培可能"
+        - "菜の花の仲間で黄色い十字型の花が咲く"
+        - "植え替えに弱いため直播栽培"
+      misconceptions:
+        - "「小松菜は栄養がない」は誤解（カルシウム、鉄分が豊富）"
+        - "「冬しか食べられない」は誤解（通年栽培可能）"
+      famous_people:
+        - "徳川吉宗 - 小松菜の命名者"
+        - "亀井和泉守永範 - 香取神社の神主、吉宗に小松菜を提供"
+      records:
+        - "2019年全国生産量114,900トン"
+        - "茨城県が生産量1位（20,400トン）"
+        - "栽培適温15-25℃"
+        - "発芽適温15-30℃"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica rapa var. perviridis"
+    english_name: "komatsuna"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "日本（東京都江戸川区小松川）"
+    nutritional_info:
+      main_nutrients: "ビタミンA、ビタミンC、ビタミンK、カルシウム、鉄分、葉酸"
+      health_benefits: "骨の健康維持、貧血予防、免疫力向上、抗酸化作用"
+      calories: 14
+    cultivation_history: "江戸時代初期小松川で栽培開始、1719年徳川吉宗命名、関東地方に普及"
+    characteristics: "アブラナ科一年草、耐寒性・耐暑性強、通年栽培可能、ツケナ類の一種"
+
+
+  - id: "chinese_cabbage"
+    japanese_name: "ハクサイ"
+    japanese_reading: "はくさい"
+    image_path: "images/vegetables/chinese_cabbage.png"
+    physical_properties:
+      length_cm: "30-40"
+      weight_g: "1500-3000"
+      shape: "結球状（円筒形）"
+      color: "外葉緑色、内葉淡黄色"
+    discovery_year: 1000
+    trivia:
+      etymology:
+        - "中国名「白菜」に由来"
+        - "英語名「Chinese cabbage」（中国のキャベツ）"
+        - "日本語「菜っ葉」が語源の「Napa cabbage」とも呼ばれる"
+        - "フランス語「chou chinois」、イタリア語「cavolo cinese」"
+        - "いずれも「中国のキャベツ」という意味"
+      historical_facts:
+        - "原種ブラッシカ・ラパは2300万年前に地中海東部で誕生"
+        - "200万年前に中央アジアに到達"
+        - "6000年以上前の種子が中国西安市の半坡遺跡から発掘"
+        - "11世紀頃中国で結球型が確立"
+        - "17世紀に品種改良が進み葉の巻きがきつくなる"
+        - "江戸時代後期に日本に不結球性品種が輸入"
+        - "1866年に結球性品種が日本に導入"
+        - "1875年明治政府が清に調査委員派遣、種子持ち帰り"
+        - "1888年英国キュー植物園で栽培開始"
+      cultural_significance:
+        - "中華料理の代表的野菜"
+        - "韓国のキムチの主原料"
+        - "日本の鍋料理に欠かせない食材"
+        - "中国では漬け菜として重要"
+        - "朝鮮半島では15世紀から宮廷料理に使用"
+      interesting_properties:
+        - "アブラナ科の強い交雑性により品種保持が困難"
+        - "結球する品種と結球しない品種が存在"
+        - "種子から食用油が採れる"
+        - "17世紀中国では最上の食用油源とされた"
+        - "3年で交雑により特徴を失う"
+        - "西洋科学の「種概念」導入で栽培が軌道に乗る"
+      misconceptions:
+        - "「キャベツの仲間」は誤解（アブラナ属だが別種）"
+        - "「日本古来の野菜」は誤解（中国原産で明治時代本格導入）"
+      famous_people:
+        - "板倉聖宣 - 科学史家、白菜栽培失敗の原因を解明"
+      records:
+        - "1920年代北京では野菜支出の25%を占める"
+        - "朝鮮半島では1907年に最北部まで栽培拡大"
+        - "現在の日本の年間出荷量約72万8400トン"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica rapa var. glabra 'Pe-tsai'"
+    english_name: "chinese cabbage"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "中国北東部"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ビタミンK、葉酸、カリウム、食物繊維"
+      health_benefits: "免疫力向上、骨の健康維持、腸内環境改善、むくみ解消"
+      calories: 14
+    cultivation_history: "11世紀中国で結球型確立、1866年日本導入、明治時代本格栽培開始"
+    characteristics: "アブラナ科二年生植物、結球性、冷涼気候適応、交雑性強、中華料理の基本野菜"
+
+
+  - id: "bok_choy"
+    japanese_name: "チンゲンサイ"
+    japanese_reading: "ちんげんさい"
+    image_path: "images/vegetables/bok_choy.png"
+    physical_properties:
+      length_cm: "20-25"
+      weight_g: "150-300"
+      shape: "非結球状（葉柄が厚い）"
+      color: "葉緑色、軸淡緑色"
+    discovery_year: 1972
+    trivia:
+      etymology:
+        - "中国語「青梗菜」（チンゴンツァイ）に由来"
+        - "本来の和名は「タイサイ」（体菜）"
+        - "英語では「Pak choy」（白菜の広東語発音）"
+        - "農林水産省により名称統一（軸緑色がチンゲンサイ）"
+        - "中国では「小白菜」「上海白菜」「蘇州青」など多数の呼称"
+      historical_facts:
+        - "原産地は中国華中地方"
+        - "1972年日中国交回復後に日本に導入"
+        - "千葉県柏市で先駆けて栽培開始"
+        - "老舗中華料理店「知味斎」が種を持ち込み"
+        - "地元農家西川氏らと栽培法確立"
+        - "1982年には統計データに登場"
+      cultural_significance:
+        - "中華料理の代表的野菜"
+        - "日本で最も身近な中国野菜の一つ"
+        - "中国では南方の「小白菜」の一種"
+        - "ハクサイの仲間として分類"
+        - "アジア系料理に欠かせない食材"
+      interesting_properties:
+        - "生育期間40-50日と短い"
+        - "気温変化に比較的強い"
+        - "結球することはない"
+        - "軸の下部が厚くしっかりしている"
+        - "乾燥を嫌うが病気や暑さには強い"
+        - "連作障害があり1-2年間隔必要"
+        - "ミニチンゲンサイは20-30日で収穫可能"
+      misconceptions:
+        - "「日本古来の野菜」は誤解（1972年導入の新しい野菜）"
+        - "「ハクサイと同じ」は誤解（同属だが別変種）"
+      famous_people:
+        - "西川氏 - 柏市の農家、栽培法確立に貢献"
+        - "知味斎 - 柏市の中華料理店、種子導入"
+      records:
+        - "日本の年間出荷量約3万5800トン（2022年）"
+        - "栽培面積約2050ヘクタール（2022年）"
+        - "1アール当たり196kg収穫可能"
+        - "栽培適温15-22℃、発芽適温15-25℃"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica rapa var. chinensis"
+    english_name: "bok choy"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "中国華中地方"
+    nutritional_info:
+      main_nutrients: "ビタミンA、ビタミンC、ビタミンK、カルシウム、鉄分、β-カロテン"
+      health_benefits: "免疫力向上、骨の健康維持、貧血予防、抗酸化作用"
+      calories: 9
+    cultivation_history: "1972年日中国交回復後導入、千葉県柏市で栽培法確立、全国に普及"
+    characteristics: "アブラナ科青菜系野菜、非結球性、短期栽培可能、中華料理の基本食材"
+
+
+  - id: "mizuna"
+    japanese_name: "ミズナ"
+    japanese_reading: "みずな"
+    image_path: "images/vegetables/mizuna.png"
+    physical_properties:
+      length_cm: "20-30"
+      weight_g: "100-200"
+      shape: "細かく切れ込んだ葉"
+      color: "濃緑色"
+    discovery_year: 1686
+    trivia:
+      etymology:
+        - "畦間に流水を引き入れて栽培するため「水菜」"
+        - "別名「キョウナ」（京菜）、発祥地の京都から"
+        - "「センボンナ」（千本菜）、茎の分枝が多いため"
+        - "「センスジナ」（千筋菜）、葉が数百枚にも及ぶため"
+        - "「ヒイラギナ」（柊菜）、葉の形状から"
+        - "「イトナ」（糸菜）、細い葉の形状から"
+      historical_facts:
+        - "1686年『雍州府志』に「水菜」として記載"
+        - "江戸時代から京都西南部の東寺・九条付近で栽培"
+        - "日本原産の野菜（京都発祥）"
+        - "もともと京野菜として鍋物や漬物に使用"
+        - "現在では日本全国に普及"
+        - "堆肥を使わず清流で栽培する伝統農法"
+      cultural_significance:
+        - "京野菜の代表格"
+        - "大阪のはりはり鍋に不可欠な食材"
+        - "静岡県西部から愛知県東部では正月雑煮の具"
+        - "関西地方の伝統的な漬物野菜"
+        - "現代ではサラダ野菜として人気"
+      interesting_properties:
+        - "1株から500本以上の葉が出る"
+        - "大株では1株4kg、葉500本にもなる"
+        - "耐寒性が強く越冬栽培可能"
+        - "水耕栽培も可能"
+        - "早生種は種まきから30-35日で収穫"
+        - "連作不可、輪作年限1-2年"
+        - "栽培適温15-30℃"
+      misconceptions:
+        - "「中国野菜」は誤解（日本原産の京野菜）"
+        - "「現代の野菜」は誤解（江戸時代から栽培）"
+      famous_people:
+        - "京都の農家 - 江戸時代から伝統栽培法を継承"
+      records:
+        - "関西系品種は葉の切れ込みが深く葉柄が細い"
+        - "関東系品種は葉の切れ込みが浅く葉柄が太い"
+        - "サラダミズナは長さ10-15cmの小型品種"
+        - "晩生種京水菜は大株で葉色が濃い"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica rapa var. nipposinica"
+    english_name: "mizuna"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "日本（京都府）"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ビタミンK、β-カロテン、カルシウム、鉄分、葉酸"
+      health_benefits: "免疫力向上、骨の健康維持、抗酸化作用、貧血予防"
+      calories: 23
+    cultivation_history: "1686年京都で栽培記録、江戸時代から京野菜として発達、現在全国に普及"
+    characteristics: "アブラナ科越年草、日本原産、細かく切れ込んだ葉、耐寒性強、京野菜の代表"
+
+
+  - id: "arugula"
+    japanese_name: "ルッコラ"
+    japanese_reading: "るっこら"
+    image_path: "images/vegetables/arugula.png"
+    physical_properties:
+      length_cm: "15-20"
+      weight_g: "50-100"
+      shape: "羽状に切れ込んだ葉"
+      color: "濃緑色"
+    discovery_year: -2000
+    trivia:
+      etymology:
+        - "イタリア語「rucola」（ルーコラ）に由来"
+        - "英語名「Rocket」（ロケット）"
+        - "アメリカ英語「Arugula」（アルギュラ）"
+        - "和名「キバナスズシロ」（黄花蘿蔔）"
+        - "古代エジプトでは「エスレキンキン」と呼ばれた"
+        - "フランス語「roquette」から英語「rocket」が派生"
+      historical_facts:
+        - "地中海沿岸原産の一年草"
+        - "古代ローマ帝国時代から栽培"
+        - "惚れ薬の効果があると信じられていた"
+        - "大規模生産は1990年代から開始"
+        - "日本ではイタリア料理普及とともに知名度向上"
+        - "20世紀半ば過ぎにアメリカで「arugula」使用開始"
+      cultural_significance:
+        - "イタリア料理の代表的香味野菜"
+        - "地中海料理の基本食材"
+        - "現代サラダ文化の象徴的野菜"
+        - "ヨーロッパの伝統的ハーブ"
+        - "イタリア北西部ヴェネト州が有名産地"
+      interesting_properties:
+        - "ゴマに似た風味とほのかな辛み"
+        - "成長とともに苦みが強くなる"
+        - "加熱すると辛み・苦みが消える"
+        - "発芽率が高く病気もほとんどない"
+        - "2か月ほどで収穫可能"
+        - "プランター栽培に適している"
+        - "真夏を除きいつでも種まき可能"
+        - "花は白色ないしクリーム色（和名と異なる）"
+      misconceptions:
+        - "「黄色い花」は誤解（実際は白色・クリーム色）"
+        - "「加熱料理向き」は誤解（生食で風味を活かす）"
+      famous_people:
+        - "古代ローマ人 - 惚れ薬として栽培開始"
+      records:
+        - "可食部100g当たり19kcal"
+        - "ビタミンCはホウレンソウの約2倍"
+        - "カルシウム・鉄分・ビタミンE豊富"
+        - "草丈15cmで収穫期"
+        - "株間3-4cm間隔で栽培"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Eruca vesicaria subsp. sativa"
+    english_name: "arugula"
+    family: "アブラナ科"
+    genus: "キバナスズシロ属"
+    origin: "地中海沿岸"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ビタミンE、カルシウム、鉄分、アリルイソチオシアネート"
+      health_benefits: "抗酸化作用、抗菌作用、がん抑制効果、美肌効果"
+      calories: 19
+    cultivation_history: "古代ローマ時代から栽培、1990年代大規模生産開始、日本はイタリア料理普及で導入"
+    characteristics: "アブラナ科一年草、香味野菜・ハーブ、ゴマ様風味、生食向き、栽培容易"
+
+
+  - id: "celery"
+    japanese_name: "セロリ"
+    japanese_reading: "せろり"
+    image_path: "images/vegetables/celery.png"
+    physical_properties:
+      length_cm: "30-75"
+      weight_g: "200-500"
+      shape: "長い茎と羽状複葉"
+      color: "緑、淡緑、黄白"
+    discovery_year: -800
+    trivia:
+      etymology:
+        - "英語「celery」（セルリー）からの外来語"
+        - "和名「オランダミツバ」（阿蘭陀三葉）"
+        - "古代ギリシア語「σέλινον」（selinon）が語源"
+        - "中世ギリシア語でセロリを意味"
+        - "後期ラテン語「selinon」から派生"
+        - "イタリア語ロンバルディア方言「sereli」経由"
+        - "フランス語「céleri」を経て英語「celery」"
+      historical_facts:
+        - "ヨーロッパから地中海沿岸原産"
+        - "紀元前8世紀古代ローマ・ギリシャ時代から使用"
+        - "16世紀末中国から朝鮮半島経由で日本伝来"
+        - "加藤清正が文禄・慶長の役で持ち帰り「清正ニンジン」"
+        - "17世紀ヨーロッパ南部で食用栽培開始"
+        - "18世紀江戸時代に食用種輸入も普及せず"
+        - "昭和30年代食生活洋風化で日本普及"
+      cultural_significance:
+        - "古代では香料・薬草として珍重"
+        - "男性の強精薬として使用"
+        - "古代ギリシャの祭りに飾られた"
+        - "ミイラの首飾りに使用"
+        - "現代西洋料理の基本香味野菜"
+        - "スープの香味付けに不可欠"
+      interesting_properties:
+        - "フタリド類とテルペン類による独特芳香"
+        - "葉・茎・実すべて食用可能"
+        - "栽培期間4-5か月と長期"
+        - "栽培適温15-20℃"
+        - "25℃以上の高温・寒さ・乾燥に弱い"
+        - "淡色野菜に分類"
+        - "6-9月白い小花を球状に咲かせる"
+      misconceptions:
+        - "「日本原産」は誤解（地中海沿岸原産）"
+        - "「現代の野菜」は誤解（古代から使用）"
+      famous_people:
+        - "加藤清正 - 文禄・慶長の役で日本に持ち帰り"
+        - "ディオスコリデス - 1世紀薬物誌に記載"
+      records:
+        - "β-カロテン、ビタミンB1・B2豊富"
+        - "カルシウム、鉄などミネラル豊富"
+        - "食物繊維を多く含有"
+        - "茎の高さ約30-75cm"
+        - "コーネル種が日本で一般的"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Apium graveolens var. dulce"
+    english_name: "celery"
+    family: "セリ科"
+    genus: "オランダミツバ属"
+    origin: "ヨーロッパから地中海沿岸"
+    nutritional_info:
+      main_nutrients: "β-カロテン、ビタミンB1、ビタミンB2、カルシウム、鉄、食物繊維"
+      health_benefits: "整腸作用、利尿作用、抗酸化作用、目の炎症緩和"
+      calories: 15
+    cultivation_history: "紀元前8世紀古代ローマ・ギリシャで薬草使用、17世紀食用栽培開始、昭和30年代日本普及"
+    characteristics: "セリ科一年草または二年草、独特強い香り、淡色野菜、栽培難度高、香味野菜"
+
+
+  - id: "asparagus"
+    japanese_name: "アスパラガス"
+    japanese_reading: "あすぱらがす"
+    image_path: "images/vegetables/asparagus.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "20-50"
+      shape: "槍状の若芽"
+      color: "緑、白、紫"
+    discovery_year: -2000
+    trivia:
+      etymology:
+        - "ギリシア語「ἀσπάραγος」（aspáragos）に由来"
+        - "「甚だしく裂ける」または「新芽」を意味"
+        - "和名「オランダキジカクシ」（阿蘭陀雉隠）"
+        - "別名「オランダウド」「マツバウド」「セイヨウウド」"
+        - "漢名「石刁柏」（せきちょうはく）"
+        - "フランス語「asperge」、イタリア語「asparago」"
+        - "略称「アスパラ」として親しまれる"
+      historical_facts:
+        - "ヨーロッパ地中海沿岸原産"
+        - "ローマ時代紀元前2000年頃栽培記録"
+        - "1620年北米移民とともに伝来"
+        - "1781年以降江戸時代にオランダ船で日本伝来"
+        - "1871年明治時代北海道開拓使が食用導入"
+        - "大正時代から本格栽培開始"
+        - "昭和40年代以降グリーンアスパラガス主流"
+      cultural_significance:
+        - "ヨーロッパの伝統的春野菜"
+        - "北海道開拓の象徴的作物"
+        - "西洋野菜として珍重された歴史"
+        - "缶詰輸出産業の先駆け"
+        - "現代健康志向野菜の代表"
+      interesting_properties:
+        - "多年草で雌雄異株"
+        - "草丈約1.5mまで成長"
+        - "擬葉（茎が変形した葉状器官）を持つ"
+        - "本来の葉は三角形の袴部分"
+        - "雄株の方が勢いが強く収穫量多い"
+        - "アレロパシー作用で連作障害発生"
+        - "5-7月黄白色の小花を咲かせる"
+        - "軟白栽培でホワイトアスパラガス生産"
+      misconceptions:
+        - "「葉を食べる」は誤解（若芽の茎を食用）"
+        - "「一年草」は誤解（多年草）"
+      famous_people:
+        - "北海道開拓使 - 1871年食用導入"
+        - "オランダ商人 - 江戸時代観賞用導入"
+      records:
+        - "紫アスパラはポリフェノール10倍含有"
+        - "ミニアスパラは10cm程度で早どり"
+        - "ホワイトアスパラは特有の甘味とほろ苦さ"
+        - "1年生株促成栽培では雌株が茎径太い"
+        - "翌年良質芽発生には収穫制限必要"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Asparagus officinalis"
+    english_name: "asparagus"
+    family: "キジカクシ科"
+    genus: "クサスギカズラ属"
+    origin: "ヨーロッパ地中海沿岸"
+    nutritional_info:
+      main_nutrients: "アスパラギン酸、ビタミンA、ビタミンC、ビタミンE、葉酸、食物繊維"
+      health_benefits: "疲労回復、利尿作用、抗酸化作用、血管保護、免疫力向上"
+      calories: 22
+    cultivation_history: "紀元前2000年ローマ時代栽培開始、1871年日本食用導入、大正時代本格栽培、昭和40年代グリーン主流"
+    characteristics: "キジカクシ科多年草、雌雄異株、若芽食用、軟白栽培可能、連作障害あり、春の代表野菜"
+
+# 根菜類データ（YAML形式）
+
+root_vegetables:
+
+
+  - id: "daikon"
+    japanese_name: "ダイコン"
+    japanese_reading: "だいこん"
+    image_path: "images/vegetables/daikon.png"
+    physical_properties:
+      length_cm: "20-100"
+      weight_g: "500-3000"
+      shape: "長大な根茎"
+      color: "白（青首含む）"
+    discovery_year: -2200
+    trivia:
+      etymology:
+        - "古くは「大きな根」の意味で「おほね」"
+        - "「大根」の字を当て音読みで「だいこん」"
+        - "春の七草では「すずしろ」（清白）"
+        - "中国語名「蘿蔔」（ルオポ）"
+        - "英語「daikon radish」「Japanese radish」"
+        - "ラテン語「radix」（根）が語源"
+      historical_facts:
+        - "地中海地方または中央アジア原産"
+        - "紀元前2200年古代エジプトでピラミッド建設労働者の食料"
+        - "弥生時代日本伝来"
+        - "奈良時代『日本書紀』仁徳天皇の歌に「於朋泥」記載"
+        - "平安時代『和名類聚抄』に「於保禰」記載"
+        - "江戸時代から一般普及、品種確立"
+        - "練馬大根が江戸近郊の特産品として有名"
+      cultural_significance:
+        - "春の七草「すずしろ」として親しまれる"
+        - "日本の食文化に深く根ざした基本野菜"
+        - "凶作時・冬場の重要な保存食"
+        - "地方ごとの漬物・切り干し文化発達"
+        - "薬草としても重要な位置"
+        - "「大根役者」など慣用句にも使用"
+      interesting_properties:
+        - "食用部分は茎と根の複合体"
+        - "地上部分は胚軸由来で茎の性質"
+        - "青首大根は光で葉緑体発達"
+        - "ヒゲ根の痕跡で根の部分を識別可能"
+        - "自家不和合性で交雑しやすい"
+        - "消化酵素アミラーゼを豊富に含有"
+        - "根は淡色野菜、葉は緑黄色野菜"
+        - "越年草で春に白色・淡紫色の十字花"
+      misconceptions:
+        - "「全部が根」は誤解（茎と根の複合）"
+        - "「日本原産」は誤解（地中海・中央アジア原産）"
+      famous_people:
+        - "仁徳天皇 - 日本最古の記録「於朋泥」"
+      records:
+        - "世界最大：桜島大根（平均10-20kg、最大30kg）"
+        - "世界最長：守口ダイコン"
+        - "最小：ハツカダイコン（約10g）"
+        - "日本産は独自のゲノムグループ形成"
+        - "世界500品種のゲノム解析完了"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Raphanus sativus var. hortensis"
+    english_name: "daikon"
+    family: "アブラナ科"
+    genus: "ダイコン属"
+    origin: "地中海地方または中央アジア"
+    nutritional_info:
+      main_nutrients: "ビタミンC、アミラーゼ、ビタミンA（葉）、食物繊維、カリウム"
+      health_benefits: "消化促進、血栓防止、解毒作用、免疫力向上"
+      calories: 18
+    cultivation_history: "紀元前2200年古代エジプト栽培開始、弥生時代日本伝来、江戸時代品種確立・普及"
+    characteristics: "アブラナ科越年草、茎・根複合食用部、自家不和合性、多品種、春の七草、薬用効果"
+
+
+  - id: "carrot"
+    japanese_name: "ニンジン"
+    japanese_reading: "にんじん"
+    image_path: "images/vegetables/carrot.png"
+    physical_properties:
+      length_cm: "15-20"
+      weight_g: "100-200"
+      shape: "長い倒円錐形"
+      color: "橙色（赤、黄、紫もあり）"
+    discovery_year: 1000
+    trivia:
+      etymology:
+        - "属名「Daucus」はラテン語でパースニップの意"
+        - "種小名「carota」はラテン語でニンジンの意"
+        - "英名「carrot」は種小名に由来"
+        - "本来は「胡蘿蔔」（こらふ・こらふく）と呼ばれた"
+        - "「胡」は外来、「蘿蔔」はダイコンの異名"
+        - "別名「ナニンジン」「セリニンジン」"
+        - "現在でも中国では「胡蘿蔔」と記述"
+      historical_facts:
+        - "中央アジア原産"
+        - "アフガニスタン周辺で東西に分岐"
+        - "10世紀頃中国に東洋系伝来"
+        - "15世紀頃ヨーロッパに西洋系普及"
+        - "16-17世紀日本に中国から伝来"
+        - "江戸時代農書に「菜園に欠くべからず」記載"
+        - "江戸時代後期西洋系伝来、明治期欧米品種導入"
+        - "戦後西洋系品種が主流に"
+      cultural_significance:
+        - "江戸時代から日本の基本野菜"
+        - "東洋系と西洋系の二系統文化"
+        - "薬用・食用両方の重要な位置"
+        - "現代の緑黄色野菜の代表"
+        - "ベータカロテンの象徴的食材"
+      interesting_properties:
+        - "セリ科ニンジン属の二年草"
+        - "東洋系（細長）と西洋系（太短）に大別"
+        - "カロテノイド豊富で橙色"
+        - "アントシアニン含有の紫品種もあり"
+        - "春から秋に複散形花序で白い5弁花"
+        - "果実は細長い楕円形で鋭いトゲ多数"
+        - "発芽率が低く好光性種子"
+        - "栽培適温15-25度"
+        - "種まきから収穫まで3-4ヶ月"
+      misconceptions:
+        - "「オタネニンジンと同じ科」は誤解（セリ科vsウコギ科）"
+        - "「日本原産」は誤解（中央アジア原産）"
+      famous_people:
+        - "江戸時代農学者 - 「菜園に欠くべからず」記載"
+      records:
+        - "長い品種は1メートル超"
+        - "短い品種は4cm程度"
+        - "ミニニンジンは栽培期間60-70日"
+        - "五寸ニンジン（15cm）が現在の主流"
+        - "発芽まで7-14日要する"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Daucus carota subsp. sativus"
+    english_name: "carrot"
+    family: "セリ科"
+    genus: "ニンジン属"
+    origin: "中央アジア"
+    nutritional_info:
+      main_nutrients: "ベータカロテン、ビタミンA、食物繊維、カリウム、ビタミンK"
+      health_benefits: "視力保護、免疫力向上、抗酸化作用、皮膚健康"
+      calories: 37
+    cultivation_history: "10世紀中国伝来、16-17世紀日本伝来、江戸時代普及、明治期西洋品種導入、戦後西洋系主流"
+    characteristics: "セリ科二年草、東洋系・西洋系二系統、カロテノイド豊富、複散形花序、栽培やや困難、連作可能"
+
+
+  - id: "burdock"
+    japanese_name: "ゴボウ"
+    japanese_reading: "ごぼう"
+    image_path: "images/vegetables/burdock.png"
+    physical_properties:
+      length_cm: "50-100"
+      weight_g: "200-500"
+      shape: "細長い円錐形"
+      color: "茶褐色"
+    discovery_year: 900
+    trivia:
+      etymology:
+        - "学名「Arctium lappa」はラテン語由来"
+        - "英名「Burdock」は古英語「burre」（とげ）に由来"
+        - "中国名「牛蒡」は牛の力強さを表現"
+        - "大阪弁では「ごんぼ」と呼ぶ"
+        - "別名「悪実」（中国古典）"
+      historical_facts:
+        - "ユーラシア大陸原産"
+        - "平安時代中国から薬草として伝来"
+        - "縄文時代早期から晩期まで栽培確認"
+        - "平安時代中期『新撰字鏡』最古記載"
+        - "平安末期から食物・野菜として記述"
+        - "中国3-4世紀『名医別録』で「悪実」記載"
+        - "唐代『四時纂要』で「牛蒡」初出"
+        - "北宋時代『農書』で栽培食用作物記載"
+        - "江戸時代初期滝野川ゴボウ品種改良"
+      cultural_significance:
+        - "外国産植物で日本が作物化した唯一の例"
+        - "関東は長根種、関西は短根種文化"
+        - "京野菜堀川ごぼうの特殊栽培法"
+        - "成田山新勝寺への奉納伝統"
+        - "太平洋戦争時捕虜虐待誤解事件"
+        - "日本独特の根菜食文化象徴"
+      interesting_properties:
+        - "キク科ゴボウ属の多年草"
+        - "茎高1m、主根50cm-1m"
+        - "6-7月紫色アザミ似花開花"
+        - "総苞にトゲあり"
+        - "葉表緑色、裏白っぽい"
+        - "F1品種なし、すべて固定種"
+        - "長根種と短根種に大別"
+        - "滝野川ゴボウが多品種の元"
+        - "堀川ごぼうは再植付特殊栽培"
+        - "葉ゴボウは根短く茎葉食用"
+      misconceptions:
+        - "「山ゴボウと同種」は誤解（オニアザミ別種）"
+        - "「日本原産」は誤解（ユーラシア大陸原産）"
+        - "「戦時中木の根食べさせた虐待」は誤解"
+      famous_people:
+        - "リンネ - 1753年『植物の種』で記載"
+        - "平安時代薬草師 - 日本導入"
+      records:
+        - "滝野川ゴボウ：長さ1m、直径2-3cm"
+        - "堀川ごぼう：直径5-6cm、重さ約1kg"
+        - "大浦太ゴボウ：長さ60-100cm、直径約10cm"
+        - "明治ごんぼう：長さ70-80cm、直径4cm以上"
+        - "縄文時代早期から晩期栽培確認"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Arctium lappa"
+    english_name: "burdock"
+    family: "キク科"
+    genus: "ゴボウ属"
+    origin: "ユーラシア大陸"
+    nutritional_info:
+      main_nutrients: "食物繊維、イヌリン、カリウム、マグネシウム、ポリフェノール"
+      health_benefits: "整腸作用、血糖値安定、利尿作用、抗酸化作用"
+      calories: 65
+    cultivation_history: "900年中国伝来、平安時代薬用、平安末期食用、江戸時代品種改良、現代長根種主流"
+    characteristics: "キク科多年草、長根種・短根種、特殊栽培法、F1品種なし、日本独自作物化、薬用・食用両用"
+
+
+  - id: "sweet_potato"
+    japanese_name: "サツマイモ"
+    japanese_reading: "さつまいも"
+    image_path: "images/vegetables/sweet_potato.png"
+    physical_properties:
+      length_cm: "10-30"
+      weight_g: "100-500"
+      shape: "紡錘形"
+      color: "紅色、赤紫色、黄色、白色"
+    discovery_year: 1605
+    trivia:
+      etymology:
+        - "学名「Ipomoea batatas」はラテン語由来"
+        - "英名「Sweet potato」は甘いジャガイモの意"
+        - "和名「薩摩芋」は薩摩国経由伝来に由来"
+        - "別名「甘藷」は甘味のある芋の意"
+        - "別名「唐芋」は中国から伝わった芋の意"
+        - "別名「琉球薯」「蕃薯」「アメリカイモ」"
+        - "対馬では「孝行いも」、韓国語「コグマ」に変化"
+        - "沖縄では「うむ」（いもの琉球発音）"
+      historical_facts:
+        - "中南米原産"
+        - "1605年琉球王国（沖縄）伝来"
+        - "薩摩国（鹿児島）経由で全国普及"
+        - "1955年西山市三がメキシコで祖先野生種発見"
+        - "外国産植物で日本が品種改良した代表例"
+        - "江戸時代飢饉救済作物として重要"
+        - "戦時中・戦後の食糧難を支えた"
+        - "15世紀末スペイン・ポルトガル伝来"
+        - "東南アジア、中国経由で琉球へ"
+      cultural_significance:
+        - "薩摩藩から全国に広まった歴史"
+        - "飢饉救済作物として日本史に重要な位置"
+        - "戦時中・戦後の主食代替"
+        - "焼き芋文化の発達"
+        - "焼酎原料として九州文化に根付く"
+        - "沖縄・九州の郷土料理文化"
+      interesting_properties:
+        - "ヒルガオ科サツマイモ属の多年生植物"
+        - "高温・乾燥に強く痩せ地でも育つ"
+        - "塊根（根の肥大）vs塊茎（茎の肥大）"
+        - "ピンク色アサガオ似の花"
+        - "高温短日性で本州では開花困難"
+        - "接木技術で開花促進"
+        - "つる性で地面を這う"
+        - "葉はヨウサイ・アサガオに似る"
+        - "デンプン・ビタミン類豊富"
+        - "蔓・葉も食用可能"
+      misconceptions:
+        - "「ジャガイモと同じ塊茎」は誤解（塊根vs塊茎）"
+        - "「日本原産」は誤解（中南米原産）"
+        - "「ヤム芋と同種」は誤解（別科）"
+      famous_people:
+        - "野國總管 - 沖縄本島導入"
+        - "西山市三 - 1955年祖先野生種発見"
+        - "青木昆陽 - 江戸時代普及推進"
+      records:
+        - "1605年琉球王国伝来から400年余"
+        - "江戸時代から太平洋戦争後1950年まで主要作物"
+        - "世界各地で栽培される重要作物"
+        - "日本で品種改良された外国産植物の代表例"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Ipomoea batatas"
+    english_name: "sweet potato"
+    family: "ヒルガオ科"
+    genus: "サツマイモ属"
+    origin: "中南米"
+    nutritional_info:
+      main_nutrients: "デンプン、ビタミンA、ビタミンC、食物繊維、カリウム、ベータカロテン"
+      health_benefits: "免疫力向上、視力保護、整腸作用、抗酸化作用"
+      calories: 132
+    cultivation_history: "1605年琉球伝来、薩摩経由全国普及、江戸時代飢饉救済、戦時中主食代替、現代品種改良継続"
+    characteristics: "ヒルガオ科多年草、高温乾燥耐性、痩せ地適応、塊根食用、つる性、短日開花性、品種改良進展"
+
+
+  - id: "potato"
+    japanese_name: "ジャガイモ"
+    japanese_reading: "じゃがいも"
+    image_path: "images/vegetables/potato.png"
+    physical_properties:
+      length_cm: "5-15"
+      weight_g: "50-300"
+      shape: "楕円形、球形"
+      color: "茶色、赤色、紫色、黄色"
+    discovery_year: 1600
+    trivia:
+      etymology:
+        - "学名「Solanum tuberosum」はナス属塊茎の意"
+        - "英名「potato」はタイノ族「batata」→スペイン語「patata」由来"
+        - "和名「ジャガイモ」はジャガトラ（ジャカルタ）経由伝来に由来"
+        - "別名「馬鈴薯」は馬の鈴に似た形から"
+        - "別名「バレイショ」は中国植物名由来"
+        - "ケチュア語「papa」が原産地での古名"
+        - "中国語「土豆」「洋芋」「薯仔」"
+        - "地方名「にどいも」「さんどいも」「お助けイモ」"
+      historical_facts:
+        - "南アメリカ・アンデス山脈原産"
+        - "17世紀初めオランダ船でジャワ経由日本伝来"
+        - "1753年リンネ『植物の種』記載"
+        - "18世紀小野蘭山が馬鈴薯命名"
+        - "江戸時代山間・寒冷地で普及"
+        - "飢饉救済作物として重要"
+        - "明治時代本格普及開始"
+        - "戦時中・戦後主食代替"
+      cultural_significance:
+        - "世界三大穀物の一つ（小麦、米、ジャガイモ）"
+        - "飢饉救済作物として歴史的重要性"
+        - "山間・寒冷地農業の発達"
+        - "コロッケ、ポテトチップス文化"
+        - "各地の郷土料理文化"
+        - "代官・善太夫芋など人名由来品種"
+      interesting_properties:
+        - "ナス科ナス属の多年草植物"
+        - "地下茎（塊茎）vs塊根の違い"
+        - "芽や緑化皮に有害物質含有"
+        - "デンプン・ビタミンC・カリウム豊富"
+        - "保存性に優れる"
+        - "主食にもなる野菜"
+        - "1年2-3回収穫可能品種存在"
+        - "品種改良が盛んな作物"
+      misconceptions:
+        - "「サツマイモと同じ塊根」は誤解（塊茎vs塊根）"
+        - "「芽は食べても安全」は誤解（ソラニン含有）"
+        - "「緑化した皮は安全」は誤解（有害物質含有）"
+      famous_people:
+        - "小野蘭山 - 馬鈴薯命名"
+        - "幸田善太夫 - 飛騨代官、善太夫芋由来"
+        - "リンネ - 1753年学名記載"
+      records:
+        - "世界中で栽培される重要作物"
+        - "17世紀初め日本伝来から400年余"
+        - "江戸時代から現代まで継続栽培"
+        - "世界的に多く食される食物"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Solanum tuberosum"
+    english_name: "potato"
+    family: "ナス科"
+    genus: "ナス属"
+    origin: "南アメリカ・アンデス山脈"
+    nutritional_info:
+      main_nutrients: "デンプン、ビタミンC、カリウム、ビタミンB6、食物繊維、鉄分"
+      health_benefits: "免疫力向上、血圧調整、疲労回復、整腸作用"
+      calories: 76
+    cultivation_history: "17世紀初めジャワ経由日本伝来、江戸時代山間地普及、明治時代本格栽培、現代品種改良継続"
+    characteristics: "ナス科多年草、地下茎塊茎、保存性良好、主食代替可能、有害物質注意、世界的重要作物"
+
+
+  - id: "onion"
+    japanese_name: "タマネギ"
+    japanese_reading: "たまねぎ"
+    image_path: "images/vegetables/onion.png"
+    physical_properties:
+      length_cm: "8-12"
+      weight_g: "150-300"
+      shape: "球形、扁球形"
+      color: "白色、黄色、赤色、紫色"
+    discovery_year: -1600
+    trivia:
+      etymology:
+        - "学名「Allium cepa」はラテン語でタマネギの意"
+        - "英名「onion」は古代ローマ「unionem」由来"
+        - "和名「タマネギ」は玉のように大きくなる葱の意"
+        - "仏名「oignon」、伊名「cipolla」"
+        - "中国語「洋蔥」、朝鮮語「양파」は西洋ネギの意"
+        - "スペイン語「cebolla」はラテン語派生語"
+        - "別名「葱頭」（そうとう）"
+      historical_facts:
+        - "中央アジア原産（野生種未発見）"
+        - "現存最古の栽培植物の一つ"
+        - "紀元前1600年古代メソポタミア・バビロン粘土板記録"
+        - "紀元前古代エジプト王朝時代から食用"
+        - "紀元前3世紀エジプトピラミッド建設労働者配給"
+        - "古代ギリシア・ローマ人がニンニクと共に愛好"
+        - "大プリニウス『博物誌』詳述"
+        - "1753年リンネ『植物の種』記載"
+        - "明治時代アメリカから北海道伝来"
+        - "その後全国普及"
+      cultural_significance:
+        - "世界中の料理文化に不可欠"
+        - "古代から現代まで継続栽培"
+        - "五葷・五辛の一つ（仏教・道教）"
+        - "古代中国では虫除けとして使用"
+        - "ヨーロッパ料理の基本食材"
+        - "日本の洋食文化普及と共に定着"
+      interesting_properties:
+        - "ヒガンバナ科ネギ属の多年草"
+        - "園芸上は一年草・二年草扱い"
+        - "大きく肥大した鱗茎を持つ"
+        - "特異な刺激性臭気"
+        - "日長条件で結球（短日・中日・長日種）"
+        - "倒伏性（葉鞘が支えきれず倒れる）"
+        - "染色体数2n=16"
+        - "生育適温20℃前後、寒さに強い"
+        - "花弁が開かない（ネギとの区別点）"
+        - "2021年ゲノム解読完了"
+      misconceptions:
+        - "「ユリ科植物」は旧分類（現在はヒガンバナ科）"
+        - "「根菜類」は誤解（鱗茎＝葉鞘の肥大）"
+        - "「日本原産」は誤解（中央アジア原産）"
+      famous_people:
+        - "大プリニウス - 『博物誌』でタマネギ詳述"
+        - "リンネ - 1753年学名記載"
+        - "山口大学研究チーム - 2021年ゲノム解読完了"
+      records:
+        - "現存最古の栽培植物の一つ"
+        - "紀元前1600年から栽培記録"
+        - "世界中で栽培される重要作物"
+        - "明治時代日本伝来から全国普及"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Allium cepa"
+    english_name: "onion"
+    family: "ヒガンバナ科"
+    genus: "ネギ属"
+    origin: "中央アジア"
+    nutritional_info:
+      main_nutrients: "硫化アリル、ケルセチン、ビタミンB1、ビタミンC、カリウム、食物繊維"
+      health_benefits: "血液サラサラ効果、疲労回復、免疫力向上、抗酸化作用、血糖値調整"
+      calories: 37
+    cultivation_history: "紀元前1600年古代メソポタミア栽培開始、古代エジプト・ギリシア・ローマ普及、明治時代日本伝来、現代世界的栽培"
+    characteristics: "ヒガンバナ科多年草、鱗茎肥大、刺激性臭気、日長条件結球、倒伏性、寒冷耐性、世界的重要作物"
+
+
+  - id: "garlic"
+    japanese_name: "ニンニク"
+    japanese_reading: "にんにく"
+    image_path: "images/vegetables/garlic.png"
+    physical_properties:
+      length_cm: "4-6"
+      weight_g: "30-60"
+      shape: "球形、鱗茎"
+      color: "白色、薄紫色"
+    discovery_year: -3200
+    trivia:
+      etymology:
+        - "学名「Allium sativum」はラテン語でニンニクの意"
+        - "英名「garlic」、仏名「ail」、伊名「aglio」"
+        - "和名「ニンニク」は仏教用語「忍辱」由来"
+        - "漢字「大蒜」（たいさん）は漢語由来"
+        - "別名「オオヒル」（大蒜）"
+        - "生薬名「大蒜」（たいさん）"
+      historical_facts:
+        - "中央アジア原産"
+        - "紀元前3200年古代エジプト栽培・利用"
+        - "紀元前1550年エーベルス・パピルス医学書記載"
+        - "紀元前140年中国伝来"
+        - "8世紀（平安時代）日本伝来"
+        - "江戸時代から食材として利用開始"
+        - "第二次世界大戦後需要急増"
+      cultural_significance:
+        - "世界各国で香辛料として普及"
+        - "古代から薬・強壮剤として使用"
+        - "仏教五辛の一つ（食用禁止）"
+        - "禅寺「不許葷酒入山門」"
+        - "肉食文化圏で臭み消しとして重要"
+        - "現代では健康食品として注目"
+      interesting_properties:
+        - "ヒガンバナ科ネギ属の多年草"
+        - "強烈な香りと風味"
+        - "アリイン→アリシン変化"
+        - "種子がとれず鱗片で繁殖"
+        - "分球ニンニクが一般的"
+        - "ホワイト六片、福地ホワイトが代表種"
+        - "暖地系・寒地系品種に分類"
+        - "ジャンボニンニクは別種（リーキの変種）"
+        - "生1日1片、加熱1日3片が摂取限度"
+      misconceptions:
+        - "「ユリ科植物」は旧分類（現在はヒガンバナ科）"
+        - "「ジャンボニンニクはニンニク」は誤解（リーキの変種）"
+        - "「無制限摂取可能」は危険（副作用あり）"
+      famous_people:
+        - "カルロス・トシキ - 元オメガトライブ歌手、ブラジルニンニク品種改良"
+        - "大プリニウス - 古代ローマ博物誌記載"
+      records:
+        - "中国が世界生産量8割占有"
+        - "青森県が国産80%生産"
+        - "十和田市が市町村別最大生産"
+        - "田子町「ニンニクの町」ブランド化"
+        - "紀元前3200年から栽培記録"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Allium sativum"
+    english_name: "garlic"
+    family: "ヒガンバナ科"
+    genus: "ネギ属"
+    origin: "中央アジア"
+    nutritional_info:
+      main_nutrients: "アリシン、アリイン、ビタミンB1、ビタミンB6、ビタミンC、セレン、マンガン"
+      health_benefits: "疲労回復、強壮作用、免疫力向上、抗菌作用、血液サラサラ効果、抗酸化作用"
+      calories: 134
+    cultivation_history: "紀元前3200年古代エジプト栽培開始、古代ギリシア・ローマ薬用、8世紀日本伝来、江戸時代食材化、戦後需要拡大"
+    characteristics: "ヒガンバナ科多年草、強烈香味、鱗茎食用、アリシン含有、強壮効果、世界的香辛料、種子なし鱗片繁殖"
+
+
+  - id: "ginger"
+    japanese_name: "ショウガ"
+    japanese_reading: "しょうが"
+    image_path: "images/vegetables/ginger.png"
+    physical_properties:
+      length_cm: "5-10"
+      weight_g: "20-100"
+      shape: "根茎、多肉質"
+      color: "淡黄色、白色"
+    discovery_year: -500
+    trivia:
+      etymology:
+        - "学名「Zingiber officinale」はラテン語でショウガの意"
+        - "英名「ginger」はサンスクリット語「śṛṅga-vera」（枝角の形）由来"
+        - "和名「ショウガ」は「兄香（せのか）」説と漢語「生薑」転訛説"
+        - "別名「ハジカミ」（古くはサンショウと同じ呼称）"
+        - "生薬名「ショウキョウ」（生姜）"
+        - "仏名「Gingembre」、伊名「Zenzero」"
+        - "中国植物名「姜」（きょう）、「薑」"
+      historical_facts:
+        - "熱帯アジア原産（野生種未発見）"
+        - "紀元前300-500年インドで保存食・医薬品使用"
+        - "紀元前650年中国で食用（論語・孔子記述）"
+        - "紀元1世紀ヨーロッパ伝来"
+        - "2-3世紀中国より日本伝来"
+        - "奈良時代栽培開始、古事記記載"
+        - "14世紀イギリスでヒツジ1匹価格"
+        - "13世紀マルコ・ポーロ初記録"
+        - "16世紀西インド諸島産地化"
+      cultural_significance:
+        - "世界的香辛料として普及"
+        - "古代から生薬として重要"
+        - "中世ヨーロッパでコショウ匹敵需要"
+        - "アジア料理文化の基本食材"
+        - "日本料理の薬味として定着"
+        - "現代健康食品として注目"
+      interesting_properties:
+        - "ショウガ科ショウガ属の多年草"
+        - "根茎による栄養繁殖"
+        - "日本では開花稀（気温不足）"
+        - "ギンゲロール、ジンゲロン、ショウガオール含有"
+        - "独特の辛味と香り"
+        - "産地により香り傾向異なる"
+        - "根生姜、新生姜、葉生姜、矢生姜分類"
+        - "偽茎構造（葉鞘が巻いたもの）"
+      misconceptions:
+        - "「根菜類」は誤解（根茎＝地下茎の肥大）"
+        - "「日本原産」は誤解（熱帯アジア原産）"
+        - "「野生種存在」は誤解（野生種未発見）"
+      famous_people:
+        - "孔子 - 論語に食生活記述（紀元前650年）"
+        - "マルコ・ポーロ - 13世紀初記録"
+      records:
+        - "世界最古の香辛料の一つ"
+        - "紀元前500年から利用記録"
+        - "高知県が日本最大産地"
+        - "インド・中国・ネパールが世界三大産地"
+        - "14世紀ヒツジ1匹価格の高級品"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Zingiber officinale"
+    english_name: "ginger"
+    family: "ショウガ科"
+    genus: "ショウガ属"
+    origin: "熱帯アジア"
+    nutritional_info:
+      main_nutrients: "ギンゲロール、ジンゲロン、ショウガオール、ジンギベレン、ビタミンC、カリウム、マグネシウム"
+      health_benefits: "消化促進、吐き気抑制、血行促進、抗炎症作用、免疫力向上、体温上昇"
+      calories: 30
+    cultivation_history: "紀元前500年インド利用開始、紀元前650年中国食用、2-3世紀日本伝来、奈良時代栽培開始、世界的普及"
+    characteristics: "ショウガ科多年草、根茎食用、辛味香味、栄養繁殖、生薬利用、世界的香辛料、高知県主産地"
+
+fruits:
+  - id: apple
+    name: リンゴ
+    name_kana: りんご
+    scientific_name: Malus domestica
+    english_name: Apple
+    origin_country: カザフスタン
+    origin_region: 天山山脈
+    length_cm: 7.5
+    width_cm: 7.5
+    height_cm: 7.0
+    weight_g: 180
+    discovery_year: -6500
+    nutritional_info:
+      calories_per_100g: 52
+      protein_g: 0.3
+      carbohydrates_g: 14.0
+      fat_g: 0.2
+      fiber_g: 2.4
+      vitamin_c_mg: 4.6
+    image_path: "images/fruits/apple.png"
+    fun_facts:
+      etymology:
+        - 英語「Apple」は古英語「æppel」から
+        - 日本語「リンゴ」は「林檎」、中国語から伝来
+        - 学名「Malus」はラテン語で「悪い」を意味するが、実際は「柔らかい」の意味
+      historical_facts:
+        - 紀元前6500年頃カザフスタンで野生種発見
+        - 紀元前1300年古代エジプトで栽培記録
+        - 1868年明治政府が本格的に日本導入
+        - 1980年代「ふじ」品種が世界的に普及
+      cultural_significance:
+        - 旧約聖書の「知恵の実」として象徴的存在
+        - ニュートンの万有引力発見の逸話で有名
+        - 「一日一個のリンゴで医者いらず」の諺
+        - アップル社のロゴマークで現代的象徴
+      interesting_properties:
+        - 世界に7500以上の品種が存在
+        - 花は自家不和合性で他品種との交配が必要
+        - 収穫後も呼吸を続けエチレンガスを放出
+        - 皮に含まれるペクチンが健康効果を持つ
+      misconceptions:
+        - 「赤いリンゴが甘い」色と甘さは必ずしも比例しない
+        - 「種を食べると毒」少量なら問題なし
+        - 「皮は栄養がない」実際は皮に多くの栄養素
+        - 「冷蔵庫で長期保存可能」実際は2-3週間が限度
+      famous_people:
+        - アイザック・ニュートン：万有引力発見の逸話
+        - ジョニー・アップルシード：アメリカにリンゴを広めた伝説の人物
+        - スティーブ・ジョブズ：アップル社創設者
+        - 津軽承秋：「ふじ」品種の開発者
+      records:
+        - 世界最重量のリンゴ：1.849kg（2005年、日本）
+        - 世界最古のリンゴの木：400年以上（アメリカ）
+        - 世界最大生産国：中国（年間4400万トン）
+        - 日本最大産地：青森県（全国の約60%）
+
+  - id: banana
+    name: バナナ
+    name_kana: ばなな
+    scientific_name: Musa acuminata
+    english_name: Banana
+    origin_country: マレーシア
+    origin_region: 東南アジア
+    length_cm: 18.0
+    width_cm: 3.0
+    height_cm: 3.0
+    weight_g: 120
+    discovery_year: -8000
+    nutritional_info:
+      calories_per_100g: 89
+      protein_g: 1.1
+      carbohydrates_g: 23.0
+      fat_g: 0.3
+      fiber_g: 2.6
+      potassium_mg: 358
+    image_path: "images/fruits/banana.png"
+    fun_facts:
+      etymology:
+        - アラビア語「بنان」（banan、指）が語源
+        - ポルトガル語経由で世界各国に伝播
+        - 日本では「甘蕉」「実芭蕉」とも呼ばれた
+      historical_facts:
+        - 紀元前8000年頃パプアニューギニアで栽培開始
+        - 紀元前327年アレクサンドロス大王がインドで発見
+        - 1903年日本で本格的な栽培開始
+        - 1960年代台湾バナナブームで大衆化
+      cultural_significance:
+        - 世界で最も消費される果物の一つ
+        - 発展途上国の重要な輸出品目
+        - スポーツ選手の栄養補給食品として定着
+        - 「バナナの叩き売り」など日本の商売文化に影響
+      interesting_properties:
+        - 植物学的には「草」で世界最大の草本植物
+        - 種子がなく全てクローン栽培
+        - 未熟時は緑色、成熟とともに黄色に変化
+        - カリウム含有量が果物中トップクラス
+      misconceptions:
+        - 「バナナは木になる」実際は草の仲間
+        - 「黒い斑点は腐敗」実際は糖度が高い証拠
+        - 「朝バナナは太る」実際は低カロリーで栄養豊富
+        - 「皮は滑る」実際の滑り具合は条件による
+      famous_people:
+        - アレクサンドロス大王：ヨーロッパにバナナを紹介
+        - 田中長三郎：日本のバナナ栽培の父
+        - アンディ・ウォーホル：バナナをアート作品に使用
+        - ハリー・ベラフォンテ：「バナナボート」の歌で有名
+      records:
+        - 世界最大生産国：インド（年間3100万トン）
+        - 世界最長のバナナ：63.49cm（2001年、日本）
+        - 世界最重量のバナナ房：130kg（2013年、インド）
+        - 日本年間消費量：1人当たり7.7kg
+
+  - id: orange
+    name: オレンジ
+    name_kana: おれんじ
+    scientific_name: Citrus sinensis
+    english_name: Orange
+    origin_country: 中国
+    origin_region: 中国南部
+    length_cm: 7.0
+    width_cm: 7.0
+    height_cm: 7.0
+    weight_g: 150
+    discovery_year: -2500
+    nutritional_info:
+      calories_per_100g: 47
+      protein_g: 0.9
+      carbohydrates_g: 12.0
+      fat_g: 0.1
+      fiber_g: 2.4
+      vitamin_c_mg: 53.2
+    image_path: "images/fruits/orange.png"
+    fun_facts:
+      etymology:
+        - サンスクリット語「नारङ्ग」（naranga）が語源
+        - アラビア語「نارنج」経由でヨーロッパに伝播
+        - 日本語「オレンジ」は英語から明治時代に導入
+      historical_facts:
+        - 紀元前2500年頃中国で栽培開始
+        - 11世紀十字軍によりヨーロッパに伝来
+        - 1493年コロンブスがアメリカ大陸に持ち込み
+        - 1873年日本で本格的な栽培開始
+      cultural_significance:
+        - オランダ王室の象徴色「オレンジ」の由来
+        - ビタミンC欠乏症（壊血病）の予防食品として重要
+        - 世界各地でジュースとして大量消費
+        - 中国では縁起物として正月に飾る習慣
+      interesting_properties:
+        - 世界で最も生産量の多い柑橘類
+        - 皮にはリモネンという香り成分を含有
+        - 花と果実が同時に存在する常緑樹
+        - 接ぎ木により品種改良が容易
+      misconceptions:
+        - 「オレンジ色はオレンジから」実際は逆で果物名が先
+        - 「酸っぱいオレンジは未熟」品種による特性
+        - 「皮は食べられない」実際は栄養豊富で食用可能
+        - 「ビタミンCは果肉だけ」皮にも豊富に含有
+      famous_people:
+        - ヴァスコ・ダ・ガマ：航海でオレンジを壊血病予防に使用
+        - ウィリアム3世：オランダ王室「オレンジ公」
+        - ルイ14世：ヴェルサイユ宮殿にオランジュリー建設
+        - 田中長三郎：日本の柑橘栽培の発展に貢献
+      records:
+        - 世界最大生産国：ブラジル（年間1700万トン）
+        - 世界最重量のオレンジ：2.065kg（2006年、イスラエル）
+        - 世界最古のオレンジの木：600年以上（スペイン）
+        - 日本最大産地：和歌山県（全国の約20%）
+
+
+  - id: strawberry
+    name: イチゴ
+    name_kana: いちご
+    scientific_name: Fragaria × ananassa
+    english_name: Strawberry
+    origin_country: フランス
+    origin_region: ブルターニュ地方
+    length_cm: 3.0
+    width_cm: 2.5
+    height_cm: 2.5
+    weight_g: 12
+    discovery_year: 1750
+    nutritional_info:
+      calories_per_100g: 32
+      protein_g: 0.7
+      carbohydrates_g: 7.7
+      fat_g: 0.3
+      fiber_g: 2.0
+      vitamin_c_mg: 58.8
+    image_path: "images/fruits/strawberry.png"
+    fun_facts:
+      etymology:
+        - 英語「Strawberry」は「麦わらのベリー」の意味
+        - 日本語「イチゴ」は「一期」（一度に熟す）が語源説
+        - 漢字「苺」は「母なる実」を表す
+      historical_facts:
+        - 1750年フランスで現在の品種が偶然誕生
+        - 江戸時代末期にオランダから日本導入
+        - 1899年「福羽」品種が日本で開発
+        - 1950年代ビニールハウス栽培で周年生産開始
+      cultural_significance:
+        - 日本では春の代表的果物として定着
+        - ケーキやスイーツの定番トッピング
+        - 「初物」として季節感を重視する文化
+        - バレンタインデーの贈り物としても人気
+      interesting_properties:
+        - 植物学的には果実ではなく「偽果」
+        - 表面の粒々が実際の果実（痩果）
+        - ビタミンC含有量がレモンより多い
+        - 95%が水分で低カロリー
+      misconceptions:
+        - 「赤い部分が果実」実際は花托が肥大した偽果
+        - 「種は表面の粒々」実際は粒々が果実で種は中にある
+        - 「洗うと栄養が流れる」水溶性ビタミンは若干減少
+        - 「甘いイチゴは栄養が少ない」糖度と栄養は別
+      famous_people:
+        - 福羽逸人：日本のイチゴ栽培の父
+        - アントワーヌ・ニコラ・デュシェーヌ：現代イチゴの発見者
+        - 萩原章弘：「とちおとめ」開発者
+        - 西田朝美：「あまおう」開発チームリーダー
+      records:
+        - 世界最重量のイチゴ：289.4g（2021年、イスラエル）
+        - 世界最大生産国：中国（年間300万トン）
+        - 日本最大産地：栃木県（全国の約25%）
+        - 世界最高額のイチゴ：1粒5万円（日本の高級品種）
+
+  - id: grape
+    name: ブドウ
+    name_kana: ぶどう
+    scientific_name: Vitis vinifera
+    english_name: Grape
+    origin_country: ジョージア
+    origin_region: コーカサス地方
+    length_cm: 1.5
+    width_cm: 1.5
+    height_cm: 1.5
+    weight_g: 5
+    discovery_year: -6000
+    nutritional_info:
+      calories_per_100g: 69
+      protein_g: 0.7
+      carbohydrates_g: 18.0
+      fat_g: 0.2
+      fiber_g: 0.9
+      potassium_mg: 191
+    image_path: "images/fruits/grape.png"
+    fun_facts:
+      etymology:
+        - 英語「Grape」は古フランス語「grape」（房）から
+        - 日本語「ブドウ」は「蒲桃」、中国語から伝来
+        - 学名「Vitis」はラテン語で「つる」を意味
+      historical_facts:
+        - 紀元前6000年頃コーカサス地方で栽培開始
+        - 古代エジプトでワイン醸造の記録
+        - 1186年日本最古の記録（甲州ブドウ）
+        - 1875年明治政府が西洋品種を本格導入
+      cultural_significance:
+        - キリスト教では聖餐の象徴
+        - ワイン文化の基盤となる重要作物
+        - 「豊穣」の象徴として世界各地で崇拝
+        - 日本では「房なり」で縁起物とされる
+      interesting_properties:
+        - 世界に1万種以上の品種が存在
+        - 皮にはアントシアニンなどの抗酸化物質
+        - 糖度は品種により5-25度と幅広い
+        - つる性植物で支柱が必要
+      misconceptions:
+        - 「干しブドウは栄養価が低い」実際は栄養が凝縮
+        - 「皮は消化に悪い」適量なら食物繊維として有益
+        - 「種は有害」実際はポリフェノールが豊富
+        - 「白ワインは白ブドウから」実際は赤ブドウからも製造可能
+      famous_people:
+        - ノア：聖書でブドウ栽培とワイン醸造の始祖
+        - ドン・ペリニヨン：シャンパン製法の完成者
+        - 川上善兵衛：日本ワインの父
+        - 大橋巨泉：「巨峰」品種の命名者
+      records:
+        - 世界最大のブドウ房：9.4kg（2018年、チリ）
+        - 世界最古のワイン：7000年前（ジョージア）
+        - 世界最大生産国：中国（年間1300万トン）
+        - 日本最大産地：山梨県（全国の約25%）
+
+  - id: peach
+    name: モモ
+    name_kana: もも
+    scientific_name: Prunus persica
+    english_name: Peach
+    origin_country: 中国
+    origin_region: 中国北西部
+    length_cm: 7.0
+    width_cm: 6.5
+    height_cm: 6.0
+    weight_g: 150
+    discovery_year: -2000
+    nutritional_info:
+      calories_per_100g: 39
+      protein_g: 0.9
+      carbohydrates_g: 10.0
+      fat_g: 0.3
+      fiber_g: 1.5
+      vitamin_c_mg: 6.6
+    image_path: "images/fruits/peach.png"
+    fun_facts:
+      etymology:
+        - 学名「persica」は「ペルシャの」を意味
+        - 実際の原産地は中国だが、ペルシャ経由で西洋に伝来
+        - 日本語「モモ」は「毛毛」（表面の産毛）が語源
+      historical_facts:
+        - 紀元前2000年頃中国で栽培開始
+        - 弥生時代に日本に伝来
+        - 古事記・日本書紀に「桃太郎」の原型記載
+        - 明治時代に西洋品種導入で品質向上
+      cultural_significance:
+        - 中国では不老長寿の象徴
+        - 日本では邪気を払う力があるとされる
+        - 桃の節句（ひな祭り）の由来
+        - 「桃太郎」など民話の重要モチーフ
+      interesting_properties:
+        - 表面の産毛が特徴的（ネクタリンは無毛変種）
+        - 核果類で中心に硬い種子
+        - 自家不和合性で他品種との交配が必要
+        - 収穫後の追熟で甘味が増加
+      misconceptions:
+        - 「桃は中国原産でない」学名の誤解から
+        - 「産毛は汚れ」実際は果実保護の役割
+        - 「硬い桃は未熟」品種による特性
+        - 「皮は食べられない」洗えば食用可能
+      famous_people:
+        - 西王母：中国神話の桃の女神
+        - 桃太郎：日本の代表的民話の主人公
+        - 大久保重五郎：「大久保」品種の開発者
+        - 岡山の桃太郎：岡山県の桃ブランド化に貢献
+      records:
+        - 世界最重量の桃：725g（2002年、日本）
+        - 世界最大生産国：中国（年間1500万トン）
+        - 日本最大産地：山梨県（全国の約35%）
+        - 世界最高額の桃：1個2万円（日本の高級品種）
+
+
+  - id: pear
+    name: ナシ
+    name_kana: なし
+    scientific_name: Pyrus pyrifolia
+    english_name: Asian Pear
+    origin_country: 中国
+    origin_region: 中国北部
+    length_cm: 8.0
+    width_cm: 8.0
+    height_cm: 7.5
+    weight_g: 200
+    discovery_year: -1100
+    nutritional_info:
+      calories_per_100g: 43
+      protein_g: 0.3
+      carbohydrates_g: 11.0
+      fat_g: 0.1
+      fiber_g: 3.0
+      potassium_mg: 140
+    image_path: "images/fruits/pear.png"
+    fun_facts:
+      etymology:
+        - 日本語「ナシ」は「無し」と同音で縁起を担ぐ場合は「有りの実」
+        - 英語「Pear」はラテン語「pirum」から
+        - 中国語「梨」が日本に伝来し「なし」と読まれた
+      historical_facts:
+        - 紀元前1100年頃中国で栽培記録
+        - 奈良時代に日本書紀に記載
+        - 江戸時代に品種改良が本格化
+        - 明治時代に西洋ナシも導入
+      cultural_significance:
+        - 日本では秋の代表的果物
+        - 中国では「離別」を連想し贈り物には不向き
+        - 朝鮮半島では「배」として重要な果物
+        - シャリシャリした食感が日本人に愛される
+      interesting_properties:
+        - 水分含有量が85-90%と非常に高い
+        - 石細胞により独特のシャリシャリ食感
+        - 自家不和合性で他品種との交配が必要
+        - 追熟せず樹上で完熟させる
+      misconceptions:
+        - 「ナシは縁起が悪い」音の連想だが実際は豊穣の象徴
+        - 「洋ナシと和ナシは同じ」実際は別種
+        - 「皮は栄養がない」実際は食物繊維が豊富
+        - 「甘いナシは水っぽい」品種による特性
+      famous_people:
+        - 菊池秋雄：「二十世紀」品種の発見者
+        - 石井周助：「長十郎」品種の開発者
+        - 赤穂浪士：討ち入り前に梨を食べたという逸話
+        - 松尾芭蕉：梨を詠んだ俳句で有名
+      records:
+        - 世界最重量のナシ：2.948kg（2011年、日本）
+        - 世界最大生産国：中国（年間1700万トン）
+        - 日本最大産地：千葉県（全国の約13%）
+        - 最古の品種：「長十郎」（1893年命名）
+
+  - id: persimmon
+    name: カキ
+    name_kana: かき
+    scientific_name: Diospyros kaki
+    english_name: Persimmon
+    origin_country: 中国
+    origin_region: 中国中南部
+    length_cm: 6.0
+    width_cm: 6.0
+    height_cm: 5.0
+    weight_g: 120
+    discovery_year: -1000
+    nutritional_info:
+      calories_per_100g: 60
+      protein_g: 0.4
+      carbohydrates_g: 15.0
+      fat_g: 0.2
+      fiber_g: 1.6
+      vitamin_a_ug: 420
+    image_path: "images/fruits/persimmon.png"
+    fun_facts:
+      etymology:
+        - 学名「Diospyros」は「神の食べ物」を意味
+        - 英語「Persimmon」はアメリカ先住民語から
+        - 日本語「カキ」は「輝き」が語源説
+      historical_facts:
+        - 紀元前1000年頃中国で栽培開始
+        - 奈良時代に日本に伝来
+        - 1789年シーボルトがヨーロッパに紹介
+        - 明治時代に干し柿の輸出で外貨獲得
+      cultural_significance:
+        - 日本の秋の風物詩として定着
+        - 「柿が赤くなれば医者が青くなる」の諺
+        - 干し柿は日本の伝統的保存食
+        - 正月の縁起物として重用
+      interesting_properties:
+        - 渋柿と甘柿の2タイプが存在
+        - タンニンが渋味の原因物質
+        - 干すことで渋味が抜け甘味が凝縮
+        - ビタミンAの含有量が果物中トップクラス
+      misconceptions:
+        - 「渋柿は食べられない」処理により甘くなる
+        - 「柿は体を冷やす」適量なら問題なし
+        - 「種が多いと寒い冬」迷信で科学的根拠なし
+        - 「干し柿は栄養が少ない」実際は栄養が凝縮
+      famous_people:
+        - 正岡子規：柿を詠んだ俳句で有名
+        - 種田山頭火：柿の句を多数残した俳人
+        - 平核無柿：品種名だが人名のような響き
+        - 富有柿：岐阜県の代表品種の名前
+      records:
+        - 世界最重量のカキ：1.4kg（2012年、日本）
+        - 世界最大生産国：中国（年間450万トン）
+        - 日本最大産地：和歌山県（全国の約20%）
+        - 最古の干し柿：1000年以上の歴史
+
+  - id: mandarin
+    name: ミカン
+    name_kana: みかん
+    scientific_name: Citrus unshiu
+    english_name: Satsuma Mandarin
+    origin_country: 中国
+    origin_region: 中国南部
+    length_cm: 6.0
+    width_cm: 6.0
+    height_cm: 5.0
+    weight_g: 80
+    discovery_year: 1200
+    nutritional_info:
+      calories_per_100g: 45
+      protein_g: 0.7
+      carbohydrates_g: 11.0
+      fat_g: 0.1
+      fiber_g: 1.0
+      vitamin_c_mg: 32
+    image_path: "images/fruits/mandarin.png"
+    fun_facts:
+      etymology:
+        - 日本語「ミカン」は「蜜柑」、甘い柑橘の意味
+        - 学名「unshiu」は中国の温州地方から
+        - 英語「Satsuma」は薩摩藩から世界に広まったため
+      historical_facts:
+        - 1200年頃中国から鹿児島に伝来
+        - 江戸時代に品種改良が進む
+        - 明治時代にアメリカに「Satsuma」として輸出
+        - 昭和30年代に生産量が急激に増加
+      cultural_significance:
+        - 日本の冬の代表的果物
+        - こたつでミカンは日本の冬の風景
+        - 正月の鏡餅に飾る橙の代用品
+        - 学校給食の定番デザート
+      interesting_properties:
+        - 種なし品種が主流（単為結果性）
+        - 皮が手で簡単に剥ける
+        - 白い筋（アルベド）に栄養が豊富
+        - 貯蔵性に優れ冬場の保存が可能
+      misconceptions:
+        - 「ミカンを食べすぎると黄色くなる」実際は一時的な現象
+        - 「白い筋は取る」実際は栄養豊富で食べるべき
+        - 「酸っぱいミカンは栄養が少ない」酸味と栄養は別
+        - 「皮は捨てるもの」実際は漢方薬として利用可能
+      famous_people:
+        - 田中長三郎：日本の柑橘栽培の発展に貢献
+        - 島津斉彬：薩摩藩でミカン栽培を奨励
+        - 前田利家：加賀藩でミカン栽培を導入
+        - 紀伊国屋文左衛門：ミカン商売で財を成した商人
+      records:
+        - 世界最大のミカン：直径20cm（2019年、日本）
+        - 日本最大産地：和歌山県（全国の約20%）
+        - 年間消費量：1人当たり7.2kg（2020年）
+        - 最古の品種：「紀州ミカン」（400年以上の歴史）
+
+  - id: kiwi
+    name: キウイフルーツ
+    name_kana: きういふるーつ
+    scientific_name: Actinidia deliciosa
+    english_name: Kiwifruit
+    origin_country: 中国
+    origin_region: 中国南部
+    length_cm: 6.0
+    width_cm: 4.5
+    height_cm: 4.5
+    weight_g: 80
+    discovery_year: 1904
+    nutritional_info:
+      calories_per_100g: 53
+      protein_g: 1.1
+      carbohydrates_g: 13.0
+      fat_g: 0.5
+      fiber_g: 2.5
+      vitamin_c_mg: 85.1
+    image_path: "images/fruits/kiwi.png"
+    fun_facts:
+      etymology:
+        - ニュージーランドの国鳥「キウイ」に形が似ているため命名
+        - 元々は「チャイニーズ・グーズベリー」と呼ばれた
+        - 中国名「猕猴桃」（びこうとう、猿が好む桃）
+      historical_facts:
+        - 1904年ニュージーランドに中国から種子持ち込み
+        - 1950年代に商業栽培開始
+        - 1970年代に「キウイフルーツ」と命名
+        - 1980年代に日本で本格的な栽培開始
+      cultural_significance:
+        - ニュージーランドの代表的輸出品
+        - 健康志向の高まりで世界的に人気
+        - ビタミンC含有量の多さで注目
+        - 美容効果で女性に人気の果物
+      interesting_properties:
+        - 雌雄異株で雄株と雌株が必要
+        - 収穫後の追熟で甘味が増加
+        - 酵素アクチニジンがタンパク質分解
+        - 皮ごと食べることが可能
+      misconceptions:
+        - 「キウイはニュージーランド原産」実際は中国原産
+        - 「皮は食べられない」実際は栄養豊富で食用可能
+        - 「緑色のキウイだけ」黄色や赤色の品種も存在
+        - 「酸っぱいキウイは未熟」品種による特性
+      famous_people:
+        - イザベル・フレイザー：ニュージーランドに種子を持ち込んだ教師
+        - ヘイワード・ライト：「ヘイワード」品種の開発者
+        - 中村学：日本のキウイ栽培の父
+        - ゼスプリ社：世界最大のキウイブランド
+      records:
+        - 世界最重量のキウイ：423g（2020年、イタリア）
+        - 世界最大生産国：中国（年間230万トン）
+        - 日本最大産地：愛媛県（全国の約25%）
+        - ビタミンC含有量：果物中トップクラス
+
+
+  - id: pineapple
+    name: パイナップル
+    name_kana: ぱいなっぷる
+    scientific_name: Ananas comosus
+    english_name: Pineapple
+    origin_country: ブラジル
+    origin_region: 南アメリカ北部
+    length_cm: 15.0
+    width_cm: 12.0
+    height_cm: 12.0
+    weight_g: 900
+    discovery_year: 1493
+    nutritional_info:
+      calories_per_100g: 51
+      protein_g: 0.5
+      carbohydrates_g: 13.0
+      fat_g: 0.1
+      fiber_g: 1.4
+      vitamin_c_mg: 27.4
+    image_path: "images/fruits/pineapple.png"
+    fun_facts:
+      etymology:
+        - 英語「Pineapple」は松かさ（Pine cone）とリンゴ（Apple）の合成語
+        - 学名「Ananas」は南米先住民語「nanas」（優れた果実）から
+        - 日本語「パイナップル」は英語からの借用語
+      historical_facts:
+        - 1493年コロンブスがカリブ海で発見
+        - 16世紀にヨーロッパに伝来、王侯貴族の珍味
+        - 1886年ハワイで大規模プランテーション開始
+        - 1927年日本で初の缶詰製造開始
+      cultural_significance:
+        - ハワイの代表的特産品として世界的に有名
+        - 「歓迎」「もてなし」の象徴として使用
+        - トロピカルフルーツの代表格
+        - 酢豚など中華料理の定番食材
+      interesting_properties:
+        - 複合果実で多数の小果実が集合
+        - 酵素ブロメラインがタンパク質分解
+        - 収穫後は追熟しない
+        - 葉の部分から新しい株を育てることが可能
+      misconceptions:
+        - 「パイナップルは木になる」実際は地面に近い場所に実る
+        - 「芯は食べられない」実際は食用可能で栄養豊富
+        - 「缶詰は栄養がない」適切な処理で栄養保持
+        - 「甘いパイナップルは熟している」収穫時点で熟度決定
+      famous_people:
+        - クリストファー・コロンブス：ヨーロッパ人として初めて発見
+        - ジェームズ・ドール：ハワイでパイナップル産業を発展
+        - 徳川家康：日本で初めてパイナップルを食べたとされる
+        - ドール社：世界最大のパイナップルブランド
+      records:
+        - 世界最重量のパイナップル：8.28kg（2011年、パプアニューギニア）
+        - 世界最大生産国：コスタリカ（年間340万トン）
+        - 日本最大産地：沖縄県（全国の約85%）
+        - 最高糖度：25度以上（台湾の高級品種）
+
+  - id: mango
+    name: マンゴー
+    name_kana: まんごー
+    scientific_name: Mangifera indica
+    english_name: Mango
+    origin_country: インド
+    origin_region: インド北東部
+    length_cm: 10.0
+    width_cm: 7.0
+    height_cm: 6.0
+    weight_g: 300
+    discovery_year: -2000
+    nutritional_info:
+      calories_per_100g: 64
+      protein_g: 0.6
+      carbohydrates_g: 17.0
+      fat_g: 0.3
+      fiber_g: 1.8
+      vitamin_a_ug: 610
+    image_path: "images/fruits/mango.png"
+    fun_facts:
+      etymology:
+        - タミル語「mankay」（マンの果実）が語源
+        - ポルトガル語「manga」経由で世界に伝播
+        - 学名「indica」はインド原産を示す
+      historical_facts:
+        - 紀元前2000年頃インドで栽培開始
+        - 4世紀頃仏教僧により東南アジアに伝播
+        - 1498年ヴァスコ・ダ・ガマがヨーロッパに紹介
+        - 1970年代に日本で本格的な栽培開始
+      cultural_significance:
+        - インドの国果として指定
+        - ヒンドゥー教では神聖な果実とされる
+        - 「果物の王様」として世界的に珍重
+        - 東南アジア各国で重要な輸出品
+      interesting_properties:
+        - 世界に1000種以上の品種が存在
+        - 未熟果は野菜として利用（青マンゴー）
+        - 樹齢100年以上でも実をつける長寿樹
+        - ウルシ科でアレルギー反応を起こす場合がある
+      misconceptions:
+        - 「マンゴーは全て甘い」未熟果は酸味が強い
+        - 「皮は食べられない」品種により可能だがアレルギー注意
+        - 「種は捨てるもの」一部地域では種の中身を食用
+        - 「冷蔵保存が最適」常温追熟後に冷蔵が正解
+      famous_people:
+        - アクバル大帝：10万本のマンゴー園を造営
+        - ガンジー：マンゴーを愛した政治家として有名
+        - 宮崎県知事：日本のマンゴー産業発展に貢献
+        - アルフォンソ・デ・アルブケルケ：「アルフォンソ」品種の由来
+      records:
+        - 世界最重量のマンゴー：3.435kg（2009年、フィリピン）
+        - 世界最大生産国：インド（年間2200万トン）
+        - 日本最大産地：沖縄県（全国の約40%）
+        - 最高額のマンゴー：1個50万円（宮崎県産太陽のタマゴ）
+
+  - id: avocado
+    name: アボカド
+    name_kana: あぼかど
+    scientific_name: Persea americana
+    english_name: Avocado
+    origin_country: メキシコ
+    origin_region: 中央メキシコ
+    length_cm: 12.0
+    width_cm: 8.0
+    height_cm: 8.0
+    weight_g: 200
+    discovery_year: -7000
+    nutritional_info:
+      calories_per_100g: 187
+      protein_g: 1.8
+      carbohydrates_g: 6.2
+      fat_g: 18.7
+      fiber_g: 3.3
+      potassium_mg: 720
+    image_path: "images/fruits/avocado.png"
+    fun_facts:
+      etymology:
+        - アステカ語「ahuacatl」（睾丸）が語源
+        - スペイン語「aguacate」経由で世界に伝播
+        - 形状から「ワニナシ」とも呼ばれる
+      historical_facts:
+        - 紀元前7000年頃メキシコで栽培開始
+        - 16世紀スペイン征服者がヨーロッパに紹介
+        - 1915年アメリカ・カリフォルニアで商業栽培開始
+        - 1980年代に日本で本格的な消費開始
+      cultural_significance:
+        - メキシコ料理「ワカモレ」の主原料
+        - 健康志向の高まりで「スーパーフード」として注目
+        - ミレニアル世代の象徴的食品
+        - ヴィーガン料理の重要な食材
+      interesting_properties:
+        - 果物では珍しく脂質含有量が高い
+        - 不飽和脂肪酸（オレイン酸）が豊富
+        - 収穫後に追熟が必要
+        - 切った後は酸化により変色
+      misconceptions:
+        - 「アボカドは野菜」実際は果物
+        - 「脂肪が多いので太る」良質な脂肪で適量なら健康的
+        - 「種は捨てるもの」実際は栄養豊富で利用可能
+        - 「熟したアボカドは日持ちしない」冷蔵で数日保存可能
+      famous_people:
+        - ルドルフ・ハス：「ハス」品種の開発者
+        - ジュリア・チャイルド：アメリカでアボカド料理を普及
+        - グウィネス・パルトロー：アボカドトーストブームの火付け役
+        - メキシコ先住民：最初の栽培者たち
+      records:
+        - 世界最重量のアボカド：2.55kg（2018年、ハワイ）
+        - 世界最大生産国：メキシコ（年間230万トン）
+        - 日本最大産地：和歌山県（全国の約20%）
+        - 最高価格：1個1000円以上（日本の高級品種）
+
+  - id: lemon
+    name: レモン
+    name_kana: れもん
+    scientific_name: Citrus limon
+    english_name: Lemon
+    origin_country: インド
+    origin_region: インド北東部
+    length_cm: 6.0
+    width_cm: 4.0
+    height_cm: 4.0
+    weight_g: 60
+    discovery_year: -600
+    nutritional_info:
+      calories_per_100g: 26
+      protein_g: 0.9
+      carbohydrates_g: 6.5
+      fat_g: 0.3
+      fiber_g: 4.9
+      vitamin_c_mg: 100
+    image_path: "images/fruits/lemon.png"
+    fun_facts:
+      etymology:
+        - ペルシャ語「لیمو」（limu）が語源
+        - アラビア語「ليمون」経由でヨーロッパに伝来
+        - 学名「limon」もペルシャ語由来
+      historical_facts:
+        - 紀元前600年頃インドで栽培開始
+        - 10世紀アラブ商人により地中海地域に伝来
+        - 18世紀イギリス海軍が壊血病予防に使用
+        - 1873年日本で本格的な栽培開始
+      cultural_significance:
+        - 地中海料理の重要な調味料
+        - 壊血病予防で航海史に大きな影響
+        - 「酸っぱい」の代名詞として世界的に認知
+        - 清涼感の象徴として様々な商品に使用
+      interesting_properties:
+        - ビタミンC含有量が柑橘類中トップクラス
+        - 皮にはリモネンという香り成分が豊富
+        - 酸性度が高く天然の防腐剤効果
+        - 四季咲き性で年中収穫可能
+      misconceptions:
+        - 「レモンは酸性食品」実際は体内でアルカリ性に変化
+        - 「黄色いレモンが完熟」実際は緑色でも完熟可能
+        - 「皮は食べられない」無農薬なら皮も食用可能
+        - 「レモン水は痩せる」直接的なダイエット効果は限定的
+      famous_people:
+        - ジェームズ・クック：航海でレモンを壊血病予防に使用
+        - ジェームズ・リンド：レモンの壊血病予防効果を科学的に証明
+        - 津田梅子：レモンを日本に紹介した人物の一人
+        - サンキスト社：世界最大のレモンブランド
+      records:
+        - 世界最重量のレモン：5.265kg（2003年、イスラエル）
+        - 世界最大生産国：中国（年間300万トン）
+        - 日本最大産地：広島県（全国の約60%）
+        - 最高ビタミンC含有量：100mg/100g
+
+  - id: watermelon
+    name: スイカ
+    name_kana: すいか
+    scientific_name: Citrullus lanatus
+    english_name: Watermelon
+    origin_country: アフリカ
+    origin_region: アフリカ南部
+    length_cm: 25.0
+    width_cm: 20.0
+    height_cm: 20.0
+    weight_g: 4000
+    discovery_year: -2000
+    nutritional_info:
+      calories_per_100g: 37
+      protein_g: 0.6
+      carbohydrates_g: 9.5
+      fat_g: 0.2
+      fiber_g: 0.3
+      water_content: 91.5
+    image_path: "images/fruits/watermelon.png"
+    fun_facts:
+      etymology:
+        - 英語「Watermelon」は「水のメロン」の意味
+        - 日本語「スイカ」は「西瓜」、西方から来た瓜の意味
+        - 中国語「西瓜」が日本に伝来
+      historical_facts:
+        - 紀元前2000年頃古代エジプトで栽培記録
+        - 10世紀頃中国に伝来
+        - 1549年ポルトガル人により日本に伝来
+        - 江戸時代に品種改良が進み現在の形に
+      cultural_significance:
+        - 日本の夏の風物詩として定着
+        - 縁日や海水浴場の定番食品
+        - 種飛ばし大会など遊びの対象
+        - 世界各地で夏の代表的果物
+      interesting_properties:
+        - 水分含有量が91.5%と極めて高い
+        - リコピンによる抗酸化作用
+        - 種なし品種は三倍体による無種子化
+        - 叩いた音で熟度を判断する伝統技術
+      misconceptions:
+        - 「スイカは野菜」植物学的には果物
+        - 「種を飲み込むと盲腸炎」医学的根拠なし
+        - 「冷やしすぎると甘味が落ちる」適度な冷却は問題なし
+        - 「縞模様で甘さがわかる」品種による特性
+      famous_people:
+        - ツタンカーメン：墓からスイカの種が発見
+        - 大久保長安：江戸時代のスイカ栽培普及に貢献
+        - 石垣島の農家：日本最南端のスイカ産地
+        - ギネス記録保持者：世界最大スイカの栽培者
+      records:
+        - 世界最重量のスイカ：159kg（2013年、アメリカ）
+        - 世界最大生産国：中国（年間6000万トン）
+        - 日本最大産地：熊本県（全国の約10%）
+        - 最高糖度：18度以上（高級品種）
+
+# 各国料理データ（YAML形式）
+dishes:
+  - id: sushi
+    name: 寿司
+    name_kana: すし
+    scientific_name: ""
+    english_name: Sushi
+    origin_country: 日本
+    origin_region: 関東地方
+    length_cm: 5.0
+    width_cm: 2.5
+    height_cm: 2.0
+    weight_g: 25
+    discovery_year: 1824
+    nutritional_info:
+      calories_per_100g: 150
+      protein_g: 9.0
+      carbohydrates_g: 20.0
+      fat_g: 3.5
+      fiber_g: 0.3
+      sodium_mg: 400
+    image_path: "images/dishes/sushi.png"
+    fun_facts:
+      etymology:
+        - 語源は「酸っぱい」を意味する「酸し（すし）」
+        - 元来は魚を発酵させた保存食品を指していた
+        - 現在の握り寿司は江戸時代の「早寿司」が起源
+      historical_facts:
+        - 奈良時代（8世紀）に中国から伝来した「鮓（なれずし）」が起源
+        - 1824年華屋与兵衛が江戸で握り寿司を考案
+        - 明治時代に冷蔵技術発達で生魚使用が一般化
+        - 1960年代回転寿司の登場で大衆化
+      cultural_significance:
+        - 2013年ユネスコ無形文化遺産「和食」の代表格
+        - 世界中で日本文化の象徴として認知
+        - 職人の技術と美意識を体現する芸術的料理
+        - 季節感を重視する日本の食文化の象徴
+      interesting_properties:
+        - 一口サイズで食べやすく設計された完璧なバランス
+        - 酢飯の温度は人肌程度（36-37℃）が最適
+        - 握りの強さは「赤ちゃんの手を握る程度」
+        - ネタとシャリの黄金比は1:1とされる
+      misconceptions:
+        - 「醤油はネタにつける」が正しく、シャリにつけるのは間違い
+        - わさびは本来ネタとシャリの間に入れるもの
+        - 手で食べるのが伝統的な作法で、箸は必須ではない
+        - 高級寿司店では一貫ずつ出されるのが本来の形
+      famous_people:
+        - 華屋与兵衛：江戸前寿司の創始者
+        - 小野二郎：世界的に有名な寿司職人、ミシュラン三つ星
+        - 次郎：映画「二郎は鮨の夢を見る」で世界的に有名
+        - アンソニー・ボーデイン：寿司文化を世界に広めた料理評論家
+      records:
+        - 世界最高額の寿司：1貫5000円（大間のマグロ）
+        - 世界最長の寿司：2.521km（ノルウェー、2016年）
+        - 日本の寿司店数：約45000店（2020年）
+        - 世界の寿司市場規模：約2兆円（2023年）
+
+  - id: pasta
+    name: パスタ
+    name_kana: ぱすた
+    scientific_name: ""
+    english_name: Pasta
+    origin_country: イタリア
+    origin_region: 南イタリア
+    length_cm: 25.0
+    width_cm: 0.2
+    height_cm: 0.2
+    weight_g: 100
+    discovery_year: 1154
+    nutritional_info:
+      calories_per_100g: 350
+      protein_g: 12.0
+      carbohydrates_g: 70.0
+      fat_g: 1.5
+      fiber_g: 3.0
+      sodium_mg: 6
+    image_path: "images/dishes/pasta.png"
+    fun_facts:
+      etymology:
+        - ラテン語「pasta」（練り物、ペースト）が語源
+        - ギリシャ語「παστά」（塩漬けの肉）から派生
+        - イタリア語で「練った生地」を意味する
+      historical_facts:
+        - 1154年シチリア島で最初の文献記録
+        - 13世紀マルコ・ポーロが中国から持ち帰ったは俗説
+        - 16世紀トマトの導入でトマトソースパスタが誕生
+        - 19世紀機械化により大量生産が可能に
+      cultural_significance:
+        - イタリア各地域に350種類以上の形状が存在
+        - 地域ごとに伝統的な組み合わせが確立
+        - イタリア人の国民的アイデンティティの象徴
+        - 世界中で愛される国際的料理の代表格
+      interesting_properties:
+        - デュラム小麦のセモリナ粉使用で弾力性を実現
+        - アルデンテ（歯ごたえ）が美味しさの鍵
+        - 形状により適したソースが異なる
+        - 乾燥パスタは常温で2-3年保存可能
+      misconceptions:
+        - 「パスタを茹でる時に油を入れる」は不要
+        - 「茹で上がったパスタを水で洗う」は禁物
+        - 「スプーンを使って食べる」のはイタリアでは一般的でない
+        - 「クリームソースにチーズをかける」のは重複
+      famous_people:
+        - リディア・バスティアニッチ：イタリア系アメリカ人シェフ
+        - マッシモ・ボットゥーラ：世界最高のイタリア料理シェフ
+        - ジュリア・チャイルド：アメリカでイタリア料理を普及
+        - エミリオ・デ・サンクティス：パスタ製造機械の発明者
+      records:
+        - 世界最長のパスタ：3776m（富士山の高さと同じ、2017年）
+        - 世界最大のパスタ皿：13780kg（2010年、ポーランド）
+        - イタリアの年間パスタ消費量：1人当たり23kg
+        - 世界のパスタ生産量：年間1700万トン
+
+  - id: pizza
+    name: ピザ
+    name_kana: ぴざ
+    scientific_name: ""
+    english_name: Pizza
+    origin_country: イタリア
+    origin_region: ナポリ
+    length_cm: 30.0
+    width_cm: 30.0
+    height_cm: 2.0
+    weight_g: 400
+    discovery_year: 1889
+    nutritional_info:
+      calories_per_100g: 266
+      protein_g: 11.0
+      carbohydrates_g: 33.0
+      fat_g: 10.0
+      fiber_g: 2.3
+      sodium_mg: 598
+    image_path: "images/dishes/pizza.png"
+    fun_facts:
+      etymology:
+        - 語源は古代ギリシャ語「πίττα」（ピッタ、平たいパン）
+        - ラテン語「pinsa」（押しつぶす）から派生説もある
+        - イタリア語で「焼いた平たいパン」を意味
+      historical_facts:
+        - 古代ギリシャ・ローマ時代のフラットブレッドが起源
+        - 1889年ピザ・マルゲリータがイタリア王妃のために創作
+        - 1905年アメリカ初のピザ店がニューヨークに開店
+        - 1958年冷凍ピザの発明で世界的普及
+      cultural_significance:
+        - 2017年ナポリのピザ職人技術がユネスコ無形文化遺産
+        - イタリア国旗色（赤・白・緑）のマルゲリータが象徴的
+        - アメリカで独自進化し世界的ファストフードに
+        - 各国で独自のトッピング文化が発達
+      interesting_properties:
+        - 本場ナポリピザは90秒で焼き上げる
+        - 生地の発酵時間は最低24時間必要
+        - 薪窯の温度は400-500℃の高温
+        - 手で伸ばす技術「ピザ回し」は職人技
+      misconceptions:
+        - 「ハワイアンピザはハワイ発祥」実際はカナダ発祥
+        - 「イタリア人は何でもピザにのせる」実際は伝統的トッピングを重視
+        - 「ピザは手で食べるもの」ナポリでは基本的にナイフとフォーク
+        - 「厚いピザが本格的」ナポリピザは薄い生地が伝統
+      famous_people:
+        - ラファエレ・エスポジト：ピザ・マルゲリータの創作者
+        - ジェンナーロ・ロンバルディ：アメリカ初のピザ店主
+        - フランコ・ペペ：現代ナポリピザの巨匠
+        - トニー・ジェミニャーニ：世界ピザ選手権13回優勝
+      records:
+        - 世界最大のピザ：1261.65㎡（2012年、イタリア）
+        - 世界最高額のピザ：12000ドル（トリュフとキャビア使用）
+        - 世界最速ピザ作り：47.56秒（2017年）
+        - アメリカの年間ピザ消費量：1人当たり23kg
+
+  - id: ramen
+    name: ラーメン
+    name_kana: らーめん
+    scientific_name: ""
+    english_name: Ramen
+    origin_country: 中国
+    origin_region: 中国北部
+    length_cm: 25.0
+    width_cm: 15.0
+    height_cm: 8.0
+    weight_g: 500
+    discovery_year: 1910
+    nutritional_info:
+      calories_per_100g: 436
+      protein_g: 9.0
+      carbohydrates_g: 61.0
+      fat_g: 17.0
+      fiber_g: 2.7
+      sodium_mg: 1820
+    image_path: "images/dishes/ramen.png"
+    fun_facts:
+      etymology:
+        - 中国語「拉麺」（ラーミエン、手で引き伸ばした麺）が語源
+        - 「老麺」（ラオミエン、古い麺）説もある
+        - 日本では「支那そば」「中華そば」とも呼ばれた
+      historical_facts:
+        - 1910年浅草「来々軒」が日本初のラーメン店
+        - 1958年日清食品がインスタントラーメンを発明
+        - 1970年代各地でご当地ラーメンが発達
+        - 1990年代「ラーメン博物館」開館でブーム加速
+      cultural_significance:
+        - 日本の国民食として定着
+        - 地域ごとに独特のスープ・麺・トッピング文化
+        - 深夜営業の「夜食文化」を支える存在
+        - 海外で日本文化の象徴として人気
+      interesting_properties:
+        - スープは鶏ガラ・豚骨・魚介など多様な出汁
+        - 麺は中華麺特有のかん水使用で独特の食感
+        - トッピングで栄養バランスを調整
+        - 温度管理が味の決め手（スープ70-80℃）
+      misconceptions:
+        - 「ラーメンは中国料理」日本で独自進化した日本料理
+        - 「豚骨ラーメンは九州発祥」実際は横浜が発祥
+        - 「麺をすするのは行儀が悪い」実際は香りを楽しむ作法
+        - 「インスタントラーメンは体に悪い」適量なら問題なし
+      famous_people:
+        - 安藤百福：インスタントラーメンの発明者
+        - 佐野実：「支那そばや」店主、ラーメン界の巨匠
+        - 山岸一雄：「大勝軒」創業者、つけ麺の生みの親
+        - 河原成美：「一蘭」創業者、とんこつラーメンの革新者
+      records:
+        - 世界最長のラーメン：3084m（2017年、中国）
+        - 世界最高額のラーメン：5000円（トリュフ使用）
+        - 日本のラーメン店数：約35000店（2020年）
+        - 世界のインスタントラーメン消費量：年間1036億食
+
+# 不足していた野菜データ（8種類）
+
+missing_vegetables:
+  - id: "chili_pepper"
+    japanese_name: "トウガラシ"
+    japanese_reading: "とうがらし"
+    image_path: "images/vegetables/chili_pepper.png"
+    physical_properties:
+      length_cm: "2-20"
+      weight_g: "1-15"
+      shape: "細長い円錐形"
+      color: "緑（未熟）から赤・黄・橙（完熟）"
+    discovery_year: 1493
+    trivia:
+      etymology:
+        - "「唐辛子」は中国（唐）から来た辛い子実の意味"
+        - "学名「Capsicum」はギリシア語の「kapto（噛む）」に由来"
+        - "英語「pepper」は胡椒との混同から"
+        - "方言では「なんばん」「ばんしょう」とも呼ばれる"
+      historical_facts:
+        - "1493年コロンブスがヨーロッパに持ち帰った"
+        - "16世紀にポルトガル人により日本に伝来"
+        - "当初は観賞用・薬用として栽培"
+        - "江戸時代に調味料として普及開始"
+      cultural_significance:
+        - "世界各地の料理に欠かせない香辛料"
+        - "韓国のキムチ、メキシコのサルサ、インドのカレーなど"
+        - "日本では七味唐辛子の主原料"
+        - "魔除けの効果があると信じられていた"
+      interesting_properties:
+        - "辛味成分カプサイシンは種子周辺の胎座に集中"
+        - "鳥類は辛味を感じないため種子散布に利用"
+        - "辛さの単位はスコヴィル値で測定"
+        - "ビタミンCはレモンの2倍以上含有"
+      misconceptions:
+        - "種が一番辛いと思われがちだが実際は胎座が最も辛い"
+        - "牛乳が辛味を和らげるのはカゼインがカプサイシンを溶かすため"
+      famous_people:
+        - "コロンブス：ヨーロッパ伝来の立役者"
+        - "ウィルバー・スコヴィル：辛さの測定法を開発"
+      records:
+        - "世界最辛はカロライナ・リーパー（220万スコヴィル）"
+        - "日本の激辛品種「ハバネロ」は35万スコヴィル"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Capsicum annuum"
+    english_name: "chili pepper, hot pepper"
+    family: "ナス科"
+    genus: "トウガラシ属"
+    origin: "中央アメリカ・南アメリカ"
+    nutritional_info:
+      main_nutrients: "カプサイシン、ビタミンC、βカロテン"
+      health_benefits: "新陳代謝促進、血行改善、抗酸化作用"
+      calories: 96
+    cultivation_history: "紀元前7000年メキシコで栽培開始、1493年ヨーロッパ伝来、16世紀日本伝来"
+    characteristics: "高温性野菜、辛味成分カプサイシン含有、鳥による種子散布"
+
+  - id: "broccoli"
+    japanese_name: "ブロッコリー"
+    japanese_reading: "ぶろっこりー"
+    image_path: "images/vegetables/broccoli.png"
+    physical_properties:
+      length_cm: "15-25"
+      weight_g: "300-800"
+      shape: "樹状の花蕾"
+      color: "濃緑色（一般的）、紫色もある"
+    discovery_year: 1700
+    trivia:
+      etymology:
+        - "イタリア語「broccolo」（新芽・若枝）が語源"
+        - "ラテン語「brachium（腕）」に由来"
+        - "和名は「緑花野菜」「木立花椰菜」"
+        - "別名「ミドリハナヤサイ」"
+      historical_facts:
+        - "古代ローマ時代から地中海沿岸で栽培"
+        - "18世紀にイタリアで現在の形に品種改良"
+        - "1920年代にアメリカで本格普及開始"
+        - "日本には1960年代に導入、1980年代に普及"
+      cultural_significance:
+        - "アメリカでは「スーパーフード」として人気"
+        - "イタリア料理では伝統的な食材"
+        - "健康志向の高まりとともに世界的に普及"
+        - "子供の嫌いな野菜の代表格としても有名"
+      interesting_properties:
+        - "食用部分は花蕾（つぼみ）の集合体"
+        - "収穫しないと黄色い花を咲かせる"
+        - "カリフラワーとは同じ種の変種"
+        - "茎や葉も食用可能で栄養豊富"
+        - "低温で甘味が増す性質"
+      misconceptions:
+        - "茎は捨てられがちだが実は栄養価が高い"
+        - "冷凍すると栄養が失われると思われがちだが実際は保持される"
+      famous_people:
+        - "ジョージ・H・W・ブッシュ大統領：ブロッコリー嫌いで有名"
+      records:
+        - "世界最大のブロッコリー生産国は中国"
+        - "日本では北海道が生産量第1位"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Brassica oleracea var. italica"
+    english_name: "broccoli"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "地中海沿岸"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ビタミンK、葉酸、βカロテン"
+      health_benefits: "抗酸化作用、免疫力向上、骨の健康維持"
+      calories: 33
+    cultivation_history: "古代ローマ時代から栽培、18世紀イタリアで品種改良、1960年代日本導入"
+    characteristics: "緑黄色野菜、冷涼な気候を好む、花蕾を食用とする"
+
+  - id: "garlic_chive"
+    japanese_name: "ニラ"
+    japanese_reading: "にら"
+    image_path: "images/vegetables/garlic_chive.png"
+    physical_properties:
+      length_cm: "20-40"
+      weight_g: "2-5"
+      shape: "細長い平たい葉"
+      color: "濃緑色"
+    discovery_year: -3000
+    trivia:
+      etymology:
+        - "古名は「みら」「かみら」"
+        - "漢字「韮」は「久しく食べる菜」の意味"
+        - "別名「フタモジ」「ニラネギ」"
+        - "英語では「garlic chives」「Chinese chives」"
+      historical_facts:
+        - "中国では3000年以上前から栽培"
+        - "日本には9-10世紀頃に伝来"
+        - "平安時代の『本草和名』に記載"
+        - "江戸時代には薬草として重用"
+      cultural_significance:
+        - "中国料理では「韭菜」として重要な食材"
+        - "韓国ではキムチの材料として使用"
+        - "日本では餃子やレバニラ炒めで親しまれる"
+        - "精力増強効果があると信じられてきた"
+      interesting_properties:
+        - "切っても根が残れば何度でも再生"
+        - "独特の香りはアリシンという硫黄化合物"
+        - "花も食用になり「花ニラ」として流通"
+        - "多年草で一度植えると数年間収穫可能"
+        - "夜間に香りが強くなる性質"
+      misconceptions:
+        - "スイセンと間違えて中毒事故が発生することがある"
+        - "ネギの仲間と思われがちだが実際はヒガンバナ科"
+      records:
+        - "日本の主産地は高知県、栃木県、茨城県"
+        - "年間を通じて収穫可能な数少ない葉菜"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Allium tuberosum"
+    english_name: "garlic chives, Chinese chives"
+    family: "ヒガンバナ科"
+    genus: "ネギ属"
+    origin: "中国北部"
+    nutritional_info:
+      main_nutrients: "βカロテン、ビタミンK、アリシン、葉酸"
+      health_benefits: "疲労回復、血行促進、抗菌作用"
+      calories: 21
+    cultivation_history: "紀元前3000年中国で栽培開始、9-10世紀日本伝来、江戸時代薬草利用"
+    characteristics: "多年草、強い香り、再生力が強い、緑黄色野菜"
+
+  - id: "green_onion"
+    japanese_name: "ネギ"
+    japanese_reading: "ねぎ"
+    image_path: "images/vegetables/green_onion.png"
+    physical_properties:
+      length_cm: "30-80"
+      weight_g: "50-200"
+      shape: "細長い円筒形の葉と白い茎"
+      color: "緑色の葉部、白色の茎部"
+    discovery_year: -2000
+    trivia:
+      etymology:
+        - "古語「ねき」が語源で「根っこの菜」の意味"
+        - "漢字「葱」は「匆（急ぐ）」と「菜」の合字"
+        - "関東では「長ネギ」、関西では「青ネギ」が主流"
+        - "英語では「scallion」「green onion」"
+      historical_facts:
+        - "中国では4000年以上前から栽培"
+        - "日本には奈良時代以前に伝来"
+        - "『日本書紀』に記載がある"
+        - "江戸時代に品種分化が進む"
+      cultural_significance:
+        - "日本料理の薬味として欠かせない"
+        - "中国では「蔥」として重要な香味野菜"
+        - "「ネギを背負った鴨」ということわざの語源"
+        - "風邪の民間療法として首に巻く習慣"
+      interesting_properties:
+        - "白い部分と緑の部分で栄養成分が異なる"
+        - "硫化アリルによる独特の辛味と香り"
+        - "根深ネギと葉ネギの2つの系統"
+        - "土寄せにより白い部分を長くする栽培法"
+        - "薬用植物としても利用される"
+      misconceptions:
+        - "白い部分だけが美味しいと思われがちだが緑の部分も栄養豊富"
+        - "生で食べると辛いが加熱すると甘くなる"
+      records:
+        - "日本の年間消費量は約45万トン"
+        - "埼玉県深谷市が日本一の産地"
+    category: "vegetables"
+    subcategory: "葉茎菜類"
+    scientific_name: "Allium fistulosum"
+    english_name: "green onion, scallion, spring onion"
+    family: "ヒガンバナ科"
+    genus: "ネギ属"
+    origin: "中国西部・中央アジア"
+    nutritional_info:
+      main_nutrients: "硫化アリル、ビタミンC、βカロテン、カルシウム"
+      health_benefits: "血行促進、疲労回復、抗菌作用、風邪予防"
+      calories: 28
+    cultivation_history: "紀元前2000年中国で栽培開始、奈良時代以前日本伝来、江戸時代品種分化"
+    characteristics: "多年草、薬味野菜、根深系と葉ネギ系、硫化アリル含有"
+
+  - id: "lotus_root"
+    japanese_name: "レンコン"
+    japanese_reading: "れんこん"
+    image_path: "images/vegetables/lotus_root.png"
+    physical_properties:
+      length_cm: "15-30"
+      weight_g: "200-500"
+      shape: "円筒形で節がある"
+      color: "淡黄白色"
+    discovery_year: -3000
+    trivia:
+      etymology:
+        - "「蓮根」は蓮の根という意味だが実際は地下茎"
+        - "別名「ハスネ」「ハチス」"
+        - "穴が開いているため「見通しが良い」縁起物"
+        - "英語では「lotus root」"
+      historical_facts:
+        - "古代エジプトでは3000年前から食用"
+        - "中国では2000年以上前から栽培"
+        - "日本には奈良時代に仏教とともに伝来"
+        - "江戸時代に本格的な栽培開始"
+      cultural_significance:
+        - "仏教では蓮は清浄の象徴"
+        - "正月料理の煮物に欠かせない"
+        - "「先を見通す」縁起の良い食材"
+        - "茨城県の県花は蓮の花"
+      interesting_properties:
+        - "穴は通気のための空洞"
+        - "水中の泥の中で育つ地下茎"
+        - "切ると糸を引くのはムチンのため"
+        - "アクが強いため酢水にさらす"
+        - "節によって食感が異なる"
+      misconceptions:
+        - "根と呼ばれるが実際は地下茎（根茎）"
+        - "蓮の実も食用になることはあまり知られていない"
+      records:
+        - "茨城県が全国生産量の約50%を占める"
+        - "霞ヶ浦周辺が日本最大の産地"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Nelumbo nucifera"
+    english_name: "lotus root"
+    family: "ハス科"
+    genus: "ハス属"
+    origin: "インド"
+    nutritional_info:
+      main_nutrients: "ビタミンC、食物繊維、カリウム、タンニン"
+      health_benefits: "整腸作用、血圧降下、抗酸化作用"
+      calories: 66
+    cultivation_history: "古代エジプト・インドで食用、奈良時代日本伝来、江戸時代本格栽培"
+    characteristics: "水生植物の地下茎、縁起物、独特の食感、アク抜き必要"
+
+  - id: "taro"
+    japanese_name: "サトイモ"
+    japanese_reading: "さといも"
+    image_path: "images/vegetables/taro.png"
+    physical_properties:
+      length_cm: "3-8"
+      weight_g: "30-150"
+      shape: "楕円形から球形"
+      color: "茶色の皮、白い果肉"
+    discovery_year: -3000
+    trivia:
+      etymology:
+        - "「里芋」は里（村）で作る芋の意味"
+        - "山芋に対する里芋という命名"
+        - "別名「タロイモ」「イモガシラ」"
+        - "英語では「taro」（ハワイ語由来）"
+      historical_facts:
+        - "縄文時代後期（約2500年前）に日本に伝来"
+        - "稲作以前の主要な炭水化物源"
+        - "平安時代には貴族の食べ物"
+        - "江戸時代に庶民にも普及"
+      cultural_significance:
+        - "十五夜のお月見には里芋を供える習慣"
+        - "「芋名月」とも呼ばれる"
+        - "正月の雑煮に入れる地域もある"
+        - "子芋がたくさんつくため子孫繁栄の象徴"
+      interesting_properties:
+        - "親芋から子芋、孫芋が次々と育つ"
+        - "ぬめり成分はガラクタンとムチン"
+        - "皮をむく時に手がかゆくなるのはシュウ酸カルシウム"
+        - "熱帯では多年草、日本では一年草扱い"
+        - "葉柄（ずいき）も食用になる"
+      misconceptions:
+        - "ジャガイモより歴史が古い日本の伝統野菜"
+        - "カロリーはジャガイモより低い"
+      records:
+        - "千葉県が全国生産量第1位"
+        - "世界では主食として重要な作物"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Colocasia esculenta"
+    english_name: "taro, dasheen"
+    family: "サトイモ科"
+    genus: "サトイモ属"
+    origin: "東南アジア"
+    nutritional_info:
+      main_nutrients: "炭水化物、カリウム、食物繊維、ガラクタン"
+      health_benefits: "整腸作用、血圧降下、免疫力向上"
+      calories: 58
+    cultivation_history: "縄文時代後期日本伝来、稲作以前の主食、平安時代貴族食、江戸時代庶民普及"
+    characteristics: "熱帯性作物、ぬめり成分、親子孫の球茎、月見の供え物"
+
+  - id: "turnip"
+    japanese_name: "カブ"
+    japanese_reading: "かぶ"
+    image_path: "images/vegetables/turnip.png"
+    physical_properties:
+      length_cm: "3-15"
+      weight_g: "50-500"
+      shape: "球形から扁平"
+      color: "白色（一般的）、赤色、紫色もある"
+    discovery_year: -2000
+    trivia:
+      etymology:
+        - "「蕪」は「株」と同語源で根元が膨らむ様子"
+        - "別名「カブラ」「カブラナ」「スズナ（春の七草）」"
+        - "関西では「カブラ」と呼ぶことが多い"
+        - "英語では「turnip」"
+      historical_facts:
+        - "古代エジプト・ギリシアで栽培"
+        - "日本には弥生時代に伝来"
+        - "『古事記』『日本書紀』に記載"
+        - "春の七草の「すずな」として親しまれる"
+      cultural_significance:
+        - "春の七草粥に欠かせない"
+        - "京都の千枚漬けは聖護院かぶを使用"
+        - "飛騨高山の赤かぶ漬けも有名"
+        - "ヨーロッパでは家畜の飼料としても重要"
+      interesting_properties:
+        - "根と葉の両方が食用になる"
+        - "アブラナ科でキャベツの仲間"
+        - "品種により形・色・大きさが多様"
+        - "寒さに強く冬野菜として重要"
+        - "消化酵素ジアスターゼを含む"
+      misconceptions:
+        - "大根と混同されることがあるが別の野菜"
+        - "葉も栄養価が高く捨てるのはもったいない"
+      records:
+        - "聖護院かぶは直径20cm以上になる"
+        - "千葉県、埼玉県、青森県が主産地"
+    category: "vegetables"
+    subcategory: "根菜類"
+    scientific_name: "Brassica rapa"
+    english_name: "turnip"
+    family: "アブラナ科"
+    genus: "アブラナ属"
+    origin: "中央アジア・地中海沿岸"
+    nutritional_info:
+      main_nutrients: "ビタミンC、ジアスターゼ、カリウム、食物繊維"
+      health_benefits: "消化促進、免疫力向上、整腸作用"
+      calories: 20
+    cultivation_history: "古代エジプト・ギリシアで栽培、弥生時代日本伝来、春の七草として定着"
+    characteristics: "アブラナ科、春の七草、根と葉両方食用、寒さに強い"
+
+  - id: "bitter_melon"
+    japanese_name: "ニガウリ"
+    japanese_reading: "にがうり"
+    image_path: "images/vegetables/bitter_melon.png"
+    physical_properties:
+      length_cm: "20-50"
+      weight_g: "150-500"
+      shape: "細長い紡錘形"
+      color: "緑色（未熟）、黄色（完熟）"
+    discovery_year: 1603
+    trivia:
+      etymology:
+        - "標準和名は「ツルレイシ（蔓茘枝）」"
+        - "沖縄方言「ゴーヤー」は「苦いウリ」の意味"
+        - "九州では「ニガゴリ」「ニガゴーリ」と呼ぶ"
+        - "果実の外観がライチに似ることから命名"
+      historical_facts:
+        - "1603年『日葡辞書』に記録が残る"
+        - "沖縄での文献記録は1713年『琉球国由来記』"
+        - "1990年まで沖縄本島産の域外持ち出し禁止"
+        - "1993年ウリミバエ根絶により全国出荷可能に"
+      cultural_significance:
+        - "沖縄料理ブームで全国に普及"
+        - "ゴーヤーチャンプルーの材料として有名"
+        - "夏バテ防止の健康野菜として認知"
+        - "グリーンカーテンとしても利用"
+      interesting_properties:
+        - "完熟すると黄変軟化して裂開する"
+        - "完熟した仮種皮は赤いゼリー状で甘い"
+        - "鳥による種子散布を行う戦略"
+        - "イボが大きく緑色が薄いものは苦味が少ない"
+        - "白色で苦味が少ない白レイシ品種もある"
+      records:
+        - "沖縄県が全国シェアの3割以上を占める"
+        - "長ニガウリは80cmにもなる品種がある"
+    category: "vegetables"
+    subcategory: "果菜類"
+    scientific_name: "Momordica charantia var. pavel"
+    english_name: "bitter gourd, bitter melon"
+    family: "ウリ科"
+    genus: "ツルレイシ属"
+    origin: "熱帯アジア（インド、ボルネオなど）"
+    nutritional_info:
+      main_nutrients: "ビタミンC、モモルデシン、チャランチン、カリウム"
+      health_benefits: "血糖値抑制、夏バテ防止、抗酸化作用"
+      calories: 17
+    cultivation_history: "中国経由で日本伝来、1603年文献記録、1990年代全国普及"
+    characteristics: "苦味成分モモルデシン含有、夏野菜、健康野菜、グリーンカーテン用途"
+

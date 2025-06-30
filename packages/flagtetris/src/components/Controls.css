@@ -1,0 +1,40 @@
+.controls {
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.controls h3 {
+  margin: 0 0 0.75rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.control-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.key {
+  background-color: #333;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.action {
+  color: #ccc;
+  font-size: 0.9rem;
+}

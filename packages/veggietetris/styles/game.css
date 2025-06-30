@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 3em;
+    background: linear-gradient(45deg, #00A86B, #FF6B35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.game-content {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+}
+
+.score-board, .level-board, .lines-board, .next-piece, .vegetable-info, .controls {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-board h3, .level-board h3, .lines-board h3, 
+.next-piece h3, .vegetable-info h3, .controls h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.score, .level, .lines {
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.game-board-container {
+    position: relative;
+}
+
+#gameCanvas {
+    border: 3px solid #333;
+    border-radius: 10px;
+    background: #1a1a1a;
+}
+
+#nextCanvas {
+    margin: 0 auto;
+    display: block;
+}
+
+.vegetable-info {
+    min-height: 120px;
+}
+
+.vegetable-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.vegetable-fact {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4;
+}
+
+.controls ul {
+    list-style: none;
+}
+
+.controls li {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.vegetable-collection {
+    margin-top: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vegetable-collection h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    justify-items: center;
+}
+
+.vegetable-item {
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.vegetable-item:hover {
+    transform: scale(1.1);
+}
+
+.vegetable-item .icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.vegetable-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    display: none;
+}
+
+.vegetable-item.has-image .icon {
+    display: none;
+}
+
+.vegetable-item.has-image img {
+    display: block;
+}
+
+.vegetable-item .count {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.game-over-overlay, .pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.game-over-overlay h2, .pause-overlay h2 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.final-score, .vegetables-collected {
+    color: white;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.final-score span, .vegetables-collected span {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 1.1em;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.restart-btn:hover {
+    background: #764ba2;
+}
+
+.pause-overlay p {
+    color: white;
+    font-size: 1.1em;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Veggie Party Animations! */
+@keyframes veggie-bounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    75% { transform: translateY(5px); }
+}
+
+@keyframes veggie-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rainbow-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes party-shake {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(-5deg); }
+    20% { transform: rotate(5deg); }
+    30% { transform: rotate(-5deg); }
+    40% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+}
+
+.veggie-bounce {
+    animation: veggie-bounce 0.5s ease-in-out;
+}
+
+.veggie-spin {
+    animation: veggie-spin 0.5s ease-in-out;
+}
+
+/* Party mode styles */
+.party-mode .game-container {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6ab04c, #130f40);
+    background-size: 400% 400%;
+    animation: rainbow-bg 10s ease infinite;
+}
+
+.party-mode .vegetable-item {
+    animation: party-shake 2s ease-in-out infinite;
+    animation-delay: calc(var(--item-index) * 0.1s);
+}
+
+/* Celebration effects */
+.celebration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f0932b;
+    animation: confetti-fall 3s ease-in-out forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .game-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .side-panel {
+        flex-direction: row;
+        width: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .side-panel > div {
+        min-width: 150px;
+    }
+}
